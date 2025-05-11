@@ -21,8 +21,13 @@
             padding: 0;
         }
         body{
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(23, 2, 63);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image: url('../src/Logo novo lar 01.png');
+            background-size: 200px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-y: 37vh;
 
         }
         #geral{
@@ -215,6 +220,7 @@
             border-radius: 20px;
             margin-bottom: 50px;
             padding-bottom: 30px;
+            display: none;
 
         }
         #novocad label{
@@ -226,11 +232,12 @@
             width: 95%;
             padding: 10px;  
             cursor: pointer; 
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0);
             border: 0cap;
-            border-bottom: 1px solid rgb(71, 70, 70);
-            border-radius: 3px;
+            border-bottom: 2px solid rgb(255, 251, 251);
+            border-radius: 10px;
             margin-bottom: 10px;
+            color: aliceblue;
          }
          #novocad input:hover{
             background-color: aqua;
@@ -250,7 +257,12 @@
             max-width: 333px;
             padding: 7px;
             cursor: pointer;
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 7px;
+            border: 1px solid rgba(245, 245, 220, 0.514);
+            border-bottom: 2px solid beige;
+            color: aliceblue;
+            margin-bottom: 15px;
          }
          #novocad select:hover{
             background-color: aqua;
@@ -266,15 +278,16 @@
          }
          #novocad textarea{
             width: 95%;
-            height: 10vh;
+            height: 7vh;
             max-height: 30vh;
-            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.568);
             font-size: 14px;
             padding: 10px;
             font-family: Arial, Helvetica, sans-serif;
             border-radius: 10px;
             color: rgb(255, 255, 255);
-            border: 2px solid beige;
+            border: 1px solid beige;
+            margin-top: 2px;
          }
          @media (min-width: 400px) {
             #novocad  #lbl_IMG{
@@ -291,8 +304,36 @@
             margin-bottom: 50px;
             padding-bottom: 30px;
          }
-       
-
+         #lbl_codigo{
+            float: right;
+            
+         }
+        #novocad  #codigo{
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+         }
+          #novocad h1 {
+            font-size: 28px;
+          }
+        #novocad  #sair {
+            color: aliceblue;
+            font-size: 20px;
+            cursor: pointer;
+        }
+       #novocad  #sair:hover{
+        color: red;
+       }
+        #novocad #lbl_limpar{
+            float: right;
+            margin-right: 5%;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        #novocad #lbl_limpar:hover{
+            color: red;
+        }
 
     </style>
 </head>
@@ -305,6 +346,10 @@
         </div>
         <div id="body">
             <div id="novocad">
+                <i id="sair" class="fa-solid fa-delete-left" onclick="sair()"></i>
+                <label id="lbl_codigo" for=""> Código:<br>
+                <input type="text" id="codigo" placeholder="Código do Cadastro">
+                </label>
                 <h1>Novo Cadastro</h1>
                 <select id="select_listas">
                     <option value="">Selecione uma lista</option>
@@ -353,6 +398,7 @@
                     <br><br>
                     
                     <label id="lbl_IMG" onclick="handleUpload()">Salvar <i class="fa-solid fa-image"></i> Imagem</label>
+                    <label id="lbl_limpar" for="" onclick="limpar()">Limpar Campos</label>
                     <br><br><br>
                 </div>
             </div>
@@ -362,12 +408,46 @@
 
 
      </div>
+       <script>
+        function limpar(){
+                
+     sessionStorage.setItem('IMG', '');
+     sessionStorage.setItem('Lista', '');
+     sessionStorage.setItem('dadosIMG', ``);
+     document.getElementById('titulo').value='';
+     document.getElementById('select_listas').value='';
+     document.getElementById('obs').value='';
+     document.getElementById('bairro').value='';
+     document.getElementById('valor').value='';
+     document.getElementById('endereço').value='';
+     document.getElementById('desconto').value='';
+     document.getElementById('cidade').value='';
+   
 
+        }
+       </script>
      <script>
-        function Cadastros(){
 
-        };
-         
+        function sair(){
+             document.getElementById('novocad').style.display='none'
+        }
+        function Cadastros(){
+             var hora = sessionStorage.getItem('hora');
+             var num= hora.split(':')
+             var n0= num[0];
+             var n1= num[1];
+             var n2= num[2];
+         const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+            for (let i = 0; i < 8; i++) {
+                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+          document.getElementById('codigo').value= codigo+n1+n2
+          Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
+          document.getElementById('novocad').style.display='block'
+          
+        }
+    
        // function NovoCad(){
        
      sessionStorage.setItem('IMG', '');
@@ -395,7 +475,10 @@
     var end= document.getElementById('endereço').value;
     var desconto= document.getElementById('desconto').value;
     var cidade= document.getElementById('cidade').value;
-    var codigo= '';
+    var codigo= document.getElementById('codigo').value;
+    if(!codigo|| codigo==''){
+        Cadastros('click')
+    }
 
     if (!titulo| titulo==''| !lista | !bairro | !valor| !cidade | cidade=='') {
         
@@ -420,7 +503,7 @@
         }
            mostrarAlerta('click')
         const file = e.target.files[0];
-        const storageRef = firebase.storage().ref(`${lista}/${titulo}-${hora}`);
+        const storageRef = firebase.storage().ref(`${lista}/${titulo},${codigo}`);
         const task = storageRef.put(file);
 
         task.on('state_changed', updateProgress, handleError, async () => {
@@ -444,10 +527,10 @@ if (i == 0) {
     
             sessionStorage.setItem('IMG', url_imagem);
             sessionStorage.setItem('Lista', lista);
-            sessionStorage.setItem('dadosIMG', `${lista}/${titulo}-${hora}`);
+            sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
 
             var db = firebase.firestore();
-             db.collection(`${lista}`).doc(`${titulo}-${hora}`).set({
+             db.collection(`${lista}`).doc(`${codigo}`).set({
                 Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,
@@ -459,12 +542,12 @@ if (i == 0) {
                 Descrição: descrição,
                 IMG: url_imagem,
                 Lista: lista,
-                ID: `${lista}/${titulo}-${hora}`,
+                ID: `${lista}/${codigo}`,
                 Código:codigo,
             });
             
             var dbb = firebase.firestore();
-             dbb.collection(`${lista}-${titulo}-${hora}`).doc(`${titulo}-${hora}`).set({
+             dbb.collection(`${lista}-${codigo}}`).doc(`${codigo}`).set({
                 Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,
@@ -476,13 +559,16 @@ if (i == 0) {
                 Descrição: descrição,
                 IMG: url_imagem,
                 Lista: lista,
-                ID: `${lista}/${titulo}-${hora}`,
+                ID: `${lista}/${codigo}`,
                 IMG_2:'',
                 IMG_3:'',
                 IMG_3:'',
                 IMG_5:'',
                 IMG_6:'',
                 IMG_7:'',
+                VD:'',
+                VD2:'',
+                VD3:'',
                  Código: codigo,
               
             });
