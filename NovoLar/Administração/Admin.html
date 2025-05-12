@@ -21,26 +21,26 @@
             padding: 0;
         }
         body{
-            background-color: rgb(23, 2, 63);
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            background-image: url('../src/Logo novo lar 01.png');
-            background-size: 200px;
+            background-color: rgb(40, 1, 114);
+            background-image: url('../src/Logo novo lar 01 PNG.png');
+            background-size: 300px;
             background-repeat: no-repeat;
             background-position: center;
             background-position-y: 37vh;
+            font-family: Georgia, 'Times New Roman', Times, serif;
 
         }
         #geral{
             margin: 0 auto;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1600px;
             min-width: 400px;
             padding-bottom: 300px;
         }
         #head{
             margin: 0 auto;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1600px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -56,9 +56,10 @@
             cursor: pointer;
             background-color: rgba(240, 248, 255, 0);
             color: rgb(255, 255, 255);
+            font-size: 15px;
         }
         #head button:hover{
-            color: rgb(0, 225, 255);
+            color: rgb(26, 245, 6);
         }
         .my-custom_option{
           margin: 0px;
@@ -234,7 +235,7 @@
             cursor: pointer; 
             background-color: rgba(255, 255, 255, 0);
             border: 0cap;
-            border-bottom: 2px solid rgb(255, 251, 251);
+            border-bottom: 3px solid rgb(255, 251, 251);
             border-radius: 10px;
             margin-bottom: 10px;
             color: aliceblue;
@@ -252,10 +253,10 @@
             margin-top: 10px;
             margin-bottom: 20px;
          }
-         #novocad select{
+         #novocad select, #select_listas_sw{
             width: 100%;
             max-width: 333px;
-            padding: 7px;
+            padding: 10px;
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0);
             border-radius: 7px;
@@ -264,15 +265,15 @@
             color: aliceblue;
             margin-bottom: 15px;
          }
-         #novocad select:hover{
+         #novocad select:hover, #select_listas_sw:hover{
             background-color: aqua;
             color: red;
          }
-         #novocad option{
+         #novocad option, #select_listas_sw{
             color: rgb(85, 82, 82);
             background-color: rgb(255, 255, 255);
          }
-         #novocad option:hover{
+         #novocad option:hover, .my-custom_menu  option:hover{
             background-color: rgb(91, 3, 94);
             color: rgb(102, 3, 105);
          }
@@ -288,7 +289,13 @@
             color: rgb(255, 255, 255);
             border: 1px solid beige;
             margin-top: 2px;
+            cursor: pointer;
+            border-bottom: 5px solid beige;
          }
+          #novocad textarea:hover{
+            background-color: aqua;
+            color: red;
+          }
          @media (min-width: 400px) {
             #novocad  #lbl_IMG{
             font-size: 20px;
@@ -334,15 +341,129 @@
         #novocad #lbl_limpar:hover{
             color: red;
         }
+              .my-custom_menu {
+                    margin: 0px;
+                    padding: 0px;
+                    width: 390px;
+                    min-height: 40vh;
+                    overflow: auto;
+                    border: 5px solid rgb(255, 255, 255);
+                    background-color: rgb(69, 3, 95);
+                    border-radius: 20px;
+                     font-family: Georgia, 'Times New Roman', Times, serif;
+                     padding-bottom: 40px;
+                }
+                .my-custom_menu button{
+                    width: 100%;
+                    font-size: 15px;
+                    border: 0cap;
+                    background-color: rgba(240, 248, 255, 0);
+                    border-bottom: 2px solid rgb(171, 4, 243);
+                    cursor: pointer;
+                    border-radius: 7px;
+                    color: rgb(255, 255, 255);
+                    padding: 10px;
+                   
+                }
+               .my-custom_menu button:hover{
+               color: rgb(255, 0, 179);
+               background-color: rgb(4, 235, 243);
+
+                }
+                .my-custom_Password{
+                    margin: 0px;
+                    padding: 0px;
+                    width: 395px;
+                    min-height: 40vh;
+                    overflow: auto;
+                    border: 5px solid rgb(255, 255, 255);
+                    background-color: rgb(69, 3, 95);
+                    border-radius: 20px;
+                     font-family: Georgia, 'Times New Roman', Times, serif;
+                     padding-bottom: 40px;
+                }
+                 .my-custom_Password label{
+                    color: aliceblue;
+                    font-size: 18px;
+                 }
+                     .my-custom_Password p{
+                    color: rgb(125, 126, 126);
+                    font-size: 14px;
+                 }
+                .my-custom_Password button{
+                    width: 100%;
+                    font-size: 15px;
+                    border: 0cap;
+                    background-color: rgba(240, 248, 255, 0);
+                    border-bottom: 2px solid rgb(171, 4, 243);
+                    cursor: pointer;
+                    border-radius: 7px;
+                    color: rgb(255, 255, 255);
+                    padding: 10px;
+                   
+                }
+               .my-custom_Password button:hover{
+               background-color: aqua;
+               color: red;
+
+                }
+                .my-custom_Password h2 , .my-custom_login h1{
+                    color: rgb(182, 183, 184);
+                }
+                .my-custom_menu label{
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    color: rgb(228, 228, 228);
+                }
+                 .my-custom_menu #select_listas_sw{
+                    background-color: #ffffff00;
+                    color: rgb(255, 255, 255);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    padding-bottom: 20px;
+                }
+                .my-custom_menu #select_listas_sw option{
+                        background-color: black;
+                        color: aliceblue;
+               }
+                  .my-custom_menu #select_listas_sw option:hover{
+                        background-color: aqua;
+                        color: red;
+
+                }
+                 .my-custom_menu #select_listas_sw:hover{
+                        background-color: aqua;
+                        color: red;
+                }
+                 .my-custom_Password input {
+                    width: 85%;
+                    padding: 10px;
+                    cursor: pointer;
+                    background-color: rgba(240, 248, 255, 0);
+                    border: 0cap;
+                    border-bottom: 5px solid bisque;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                    color: rgb(0, 255, 21);
+                    font-size: 18px;
+                    text-align: center;
+
+                 }
+                  .my-custom_Password input:hover{
+                    background-color: aqua;
+                    color: red;
+                  }
 
     </style>
 </head>
 <body>
      <div id="geral">
         <div id="head">
-            <button onclick="Cadastros()">Novo Cadastros</button>
-            <button onclick="toggleFullScreen()">Tela Cheia</button>
-             <button id="menu" onclick="Menu()">Menu</button>
+            <button onclick="Cadastros()">Novo Cadastros <i class="fa-solid fa-pen-to-square"></i></button>
+            <button onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>
+             <button id="menu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
         </div>
         <div id="body">
             <div id="novocad">
@@ -357,7 +478,7 @@
                     <option value="Lista Mostruario 2">Mostruário 02</option>
                     <option value="Lista Mostruario 3">Mostruário 03</option>
                     <option value="Lista Mostruario 4">Mostruário 04</option>
-                    <option value="Lista Diversos">Apresentação geral</option>
+                    <option value="Lista Diversos">Itens Divérsos</option>
                 </select>
                 <input id="input_img" type="file" accept="image/*" hidden>
                 <div id="input">
@@ -604,6 +725,138 @@ function handleError(error) {
 }
 
         
+     </script>
+     <script>
+         function Menu(){
+        Swal.fire({
+                    title: `<labe id="label_titleSwal"> Menu <i class="fa-solid fa-bars"></i></labei>`,
+                 html: `
+                    <br><br>
+                
+                    <label id='lbl_lbl'>Veja produtos cadastrados abaixo. <br>Selecione a lista desejada!</label>
+                    <br>
+                    <select id="select_listas_sw">
+                    <option id='opt00' value="">Selecione uma lista</option>
+                    <option id='opt01' value="Lista Mostruario 1">Mostruário 01</option>
+                    <option id='opt02' value="Lista Mostruario 2">Mostruário 02</option>
+                    <option id='opt03' value="Lista Mostruario 3">Mostruário 03</option>
+                    <option id='opt04' value="Lista Mostruario 4">Mostruário 04</option>
+                    <option id='opt05' value="Lista Diversos">Itens Divérsos</option>
+                </select>
+                   <br><br>
+                     <button id="btn_swal_PW" title="">Alterar password <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
+                   <br><br>
+                   <button id="btn_swal_at" title="">Password Atual <i class="fa-sharp-duotone fa-solid fa-unlock"></i></button>
+                    <br><br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_menu' // Aplica a classe CSS personalizada
+                }
+                 });
+    
+                var setI= setInterval(function(){
+                    var resp = document.getElementById('select_listas_sw').value;
+                    if(!resp|resp==''){
+
+                    } else{
+                        if(resp == 'Lista Mostruario 1') {
+                        sair('click')
+                        alert('Lista Mostruario 1')
+                        clearInterval(setI)
+                          Swal.close()
+                         
+                        } 
+                        else if(resp=='Lista Mostruario 2'){
+                         sair('click')
+                         alert('Lista Mostruario 2')
+                         clearInterval(setI)
+                         Swal.close()
+                        }
+                        else if(resp=='Lista Mostruario 3'){
+                        sair('click')
+                        alert('Lista Mostruario 3')
+                        clearInterval(setI)
+                        Swal.close()
+                            
+                        }
+                         else if(resp=='Lista Mostruario 4'){
+                        sair('click')
+                        alert('Lista Mostruario 4')
+                        clearInterval(setI)
+                          Swal.close()
+                            
+                        }
+                         else if(resp=='Lista Diversos'){
+                       sair('click')
+                       alert('Lista Diversos')
+                       clearInterval(setI)
+                         Swal.close()
+                            
+                        }
+                    }
+
+                },511)
+             
+                
+             document.getElementById('btn_swal_at').addEventListener('click', function() {
+                 clearInterval(setI)
+                  Swal.fire({
+                    title: `Password Atual <i class="fa-sharp-duotone fa-solid fa-unlock"></i>`,
+                 html: `
+                    <br><br>
+                    <h2 id='lbl_PW_at'>Atual </h2>
+                    <br><br>
+                    <p> A senha acima é a atual alterada em: <\p>
+                    <br><br>
+                    <br><br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Password' // Aplica a classe CSS personalizada
+                }
+                 });
+
+             });
+              document.getElementById('btn_swal_PW').addEventListener('click', function() {
+                 clearInterval(setI)
+                
+                  Swal.fire({
+                    title: `Novo Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+                 html: `
+                    <br><br>
+                    <label id='label_NPW'>Digite novo Password <br>
+                        <input id='inputPW_Novo' tipy='password' placeHolder='Password'
+                    </label>
+                    <br><br>
+                    <p> Digite uma nova Senha acima no campo password!<\p>
+                    <br><br>
+                          <button id="btn_password_salve" title="">Salvar</button>
+                    <br><br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Password' // Aplica a classe CSS personalizada
+                }
+                 });
+            
+                document.getElementById('btn_password_salve').addEventListener('click', function() {
+            
+                alert('password Salvo')
+           
+             });
+
+
+                 setTimeout(function(){
+                   // Swal.close()
+                },500)
+             });
+
+         }
+            
      </script>
              
         <script>

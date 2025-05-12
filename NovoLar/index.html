@@ -231,6 +231,7 @@
                     border: 5px solid rgb(255, 255, 255);
                     background-color: rgb(69, 3, 95);
                     border-radius: 20px;
+                    padding-bottom: 40px;
                 }
                 .my-custom_login button, .my-custom_login_Swl button, .my-custom_login a{
                     width: 100%;
@@ -252,7 +253,7 @@
                     padding-right:100px;
                 }
                 .my-custom_login button:hover, .my-custom_login_Swl button:hover, .my-custom_login a:hover{
-                    color: rgb(255, 255, 255);
+                    color: rgb(1, 238, 255);
                     background-color: rgb(116, 3, 145);
                 }
                 #label_titleSwal {
@@ -328,9 +329,11 @@
                 text-align: center;
                 margin-left: 7%;
                  display: none;
+                 font-size: 22px;
                }
                #mostruario2,#mostruario3,#mostruario4,#mostruario5{
                 display: none;
+                 font-size: 22px;
 
                }
            @media (min-width: 400px) {
@@ -361,12 +364,12 @@
         
                 #geral h1{
                  text-align: center;
-                 font-size: 46px;
                  font-weight: bolder;
                  color: rgb(95, 3, 114);
                  font-family: 'Times New Roman', Times, serif;
                  text-decoration: underline;
-                 margin-bottom: 50px
+                 margin-bottom: 50px;
+                  font-size: 28px;
                 };
                 #paragrafo_inicial{
                 margin: 0 auto;
@@ -444,7 +447,7 @@
             }
                     #mostruario{
                 width: 85%;
-                padding-top: 19%;
+                padding-top: 21%;
                 text-align: center;
                  display: none;
                }
@@ -454,7 +457,7 @@
  
             #mostruario{
                 width: 85%;
-                padding-top: 13%;
+                padding-top: 15%;
                 text-align: center;
                  display: none;
                }
@@ -472,10 +475,31 @@
             }
             #mostruario{
                 width: 85%;
+                padding-top: 10%;
+                text-align: center;
+                 display: none;
+               }
+            }
+             @media (min-width: 1150px) {
+            .swiper-wrapper label{
+            float: left;
+            margin-left: 10px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin-right: 10px;
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+            #mostruario{
+                width: 85%;
                 padding-top: 7%;
                 text-align: center;
                  display: none;
                }
+            }
+    
+       h1 i{
+            font-size: 20px;
         }
 
         
@@ -496,7 +520,7 @@
         <div id="rotate">
            
             </div>
-            <h1 id="mostruario">Mostruário</h1>
+            <h1 id="mostruario">Mostruário  </h1>
             <div class="swiper mySwiper" id="cont">
                 <div class="swiper-wrapper" id="lista_inicial">
                     <!-- As imagens do Firebase serão carregadas aqui -->
@@ -548,7 +572,7 @@
              <div id="Cont_final">
                 <div id="paragrafo_inicial">
                     
-                    <p><h2>🏡 Novo Lar – Soluções  Residenciais 🏡  </h2><br>
+                    <p id="paragrafo_inf_cont"><h2>🏡 Novo Lar – Soluções  Residenciais 🏡  </h2><br>
                       <b>  "A Novo Lar é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
                       </b>
                     </p>
@@ -944,16 +968,16 @@
         Swal.fire({
                     title: `<labe id="label_titleSwal"> Menu <i class="fa-solid fa-bars"></i></labei>`,
                  html: `
+                    <br>
+                         <a id="SwalmenuPesq" href="#"> Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </a> 
                     <br><br>
                     <button id="btn_swal_menu1" title="">Tela cheia </button>
                     <br><br>
                         <button id="btn_swal_menu2" title="">Descanso de Tala </button>
                     <br><br>
-                         <a id="Swalmenu9" href="#Cont_final"> Conteúdo </a> 
-                    <br><br><br>
-                        <a id="Swalmenu10" href="#footer"> Redes Sociais </a> 
+                    <a id="Swalmenu10" href="#footer"> Redes Sociais </a> 
                     <br><br>
-                      <a id="Swalmenu11" href="#paragrafo_inicial"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
+                      <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
                     <br><br>
                     <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
                     <br><br>
@@ -970,7 +994,7 @@
              document.getElementById('btn_swal_menu1').addEventListener('click', function() {
                 toggleFullScreen('click')
                  setTimeout(function(){
-                    Swal.close()
+                  Swal.close()
                 },200)
              });
              //  tel_.innerHTML= tel;
@@ -993,7 +1017,8 @@
                 },500)
              });
              
-             document.getElementById('Swalmenu9').addEventListener('click', function() {
+             document.getElementById('SwalmenuPesq').addEventListener('click', function() {
+                alert('Pequisar')
                 setTimeout(function(){
                     Swal.close()
                 },500)
@@ -1020,9 +1045,9 @@
                 window.open('Administração/Admin.html','_blank')
              })
 
-                window.open('Administração/Admin.html','_blank')
+              //  window.open('Administração/Admin.html','_blank')
                 setTimeout(function(){
-                    Swal.close()
+                   // Swal.close()
                 },500)
              });
        // lista destaque 
