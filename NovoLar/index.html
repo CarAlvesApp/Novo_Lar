@@ -856,7 +856,7 @@
             label_2.id='lbl_2';
             label.id='lbl_';
             label.textContent=`Ver mais`
-            label_2.textContent=`Bairro ${doc.bairro} em ${doc.Cidade}`
+            label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
             botao.id-'lbl_list_Inicial'
             botao.textContent=``
@@ -869,7 +869,7 @@
               document.getElementById('mostruario4').style.display='block'
             img.addEventListener('click',function(){
               
-              swal(`${doc.Titulo}`,`valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% nDescrição: ${doc.Descrição}`,`${doc.IMG}`)
+  swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -930,7 +930,7 @@
             label_2.id='lbl_2';
             label.id='lbl_';
             label.textContent=`Ver mais`
-             label_2.textContent=`Bairro ${doc.bairro} em ${doc.Cidade}`
+             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
             botao.id-'lbl_list_Inicial'
             botao.textContent=``
@@ -942,7 +942,7 @@
             lista5.appendChild(slide);
              document.getElementById('mostruario5').style.display='block'
             img.addEventListener('click',function(){
-              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n<b> ${doc.Descrição}`,`${doc.IMG}</b>`)
+                swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
