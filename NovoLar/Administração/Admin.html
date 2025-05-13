@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administração PrestServ</title>
+    <title>Administração Novo Lar Imóveis</title>
     <link rel="shortcut icon" href="../src/logo novo lar 02 PNG.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -624,7 +624,7 @@
         }
            mostrarAlerta('click')
         const file = e.target.files[0];
-        const storageRef = firebase.storage().ref(`${lista}/${titulo},${codigo}`);
+        const storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}`);
         const task = storageRef.put(file);
 
         task.on('state_changed', updateProgress, handleError, async () => {
@@ -666,9 +666,25 @@ if (i == 0) {
                 ID: `${lista}/${codigo}`,
                 Código:codigo,
             });
+                 var dbd = firebase.firestore();
+             dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
+                Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                End: end,
+                Data: data,
+                Hora: hora,
+                Descrição: descrição,
+                IMG: url_imagem,
+                Lista: lista,
+                ID: `${lista}/${codigo}`,
+                Código:codigo,
+            });
             
             var dbb = firebase.firestore();
-             dbb.collection(`${lista}-${codigo}}`).doc(`${codigo}`).set({
+             dbb.collection(`${lista}-${codigo}`).doc(`${codigo}`).set({
                 Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,

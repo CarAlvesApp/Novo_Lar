@@ -224,7 +224,7 @@
                 .my-custom_login {
                     margin: 0px;
                     padding: 0px;
-                    width: 370px;
+                    width: 390px;
                     min-height: 70vh;
                     max-height: 90vh;
                     overflow: auto;
@@ -272,14 +272,13 @@
                 .my-custom_login_Swl{
                     margin: 0px;
                     padding: 0px;
-                    width: 350px;
+                    width: 390px;
                     min-height: 50vh;
-                    max-height: 70vh;
+                    max-height: 90vh;
                     overflow: auto;
                     border: 5px solid rgb(255, 255, 255);
                     background-color: rgb(69, 3, 95);
                     border-radius: 20px;
-                    padding-bottom: 30px;
 
                 }
                 .my-custom_login_Swl label{
@@ -288,7 +287,7 @@
                     margin-bottom: 10px;
                 }
                 .my-custom_login_Swl input{
-                    width: 90%;
+                    width: 80%;
                     padding: 10px;
                     cursor: pointer;
                     border: 2px solid blanchedalmond;
@@ -502,7 +501,107 @@
        h1 i{
             font-size: 20px;
         }
+           .my-custom_Pesq_Swl{
+            width: 390px;
+            padding-bottom: 20px;
+            border: 5px solid rgb(83, 82, 82);
+            border-radius: 20px;
+           }
+           .my-custom_Pesq_Swl p{
+            font-size: 14px;
 
+           }
+            .my-custom_Pesq_Swl Label{
+            font-size: 14px;
+
+           }
+            .my-custom_Pesq_Swl input{
+            font-size: 16px;
+            width: 90%;
+            padding: 10px;
+            background-color: #000000;
+            color: rgb(255, 253, 253);
+            border: 1px solid rgb(182, 2, 189);
+            border-bottom: 3px solid rgb(85, 1, 81);
+            cursor: pointer;
+            border-radius: 7px;
+           }
+            .my-custom_Pesq_Swl #Swalpesq{
+                width: 200px;
+                padding: 10px;
+                cursor: pointer;
+                background-color: #ffffff00;
+                border: 1px solid rgb(134, 134, 134);
+                border-bottom: 5px solid rgb(43, 42, 42);
+                border-radius: 10px;
+            }
+            .my-custom_Pesq_Swl #Swalpesq:hover{
+                background-color: rgb(0, 160, 27);
+                color: #ffffff;
+            }
+            .my-custom_Pesq_Swl input:hover{
+                background-color: rgba(0, 255, 255, 0.664);
+                color: red;
+            }
+           .my-custom_Pesq_Swl #select_listas_sw{
+                        width: 80%;
+                    background-color: #ffffff;
+                    color: rgb(27, 27, 27);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                      cursor: pointer;
+                      padding: 5px;
+                 
+                }
+                .my-custom_Pesq_Swl #select_listas_sw option{
+                        background-color: black;
+                        color: rgb(255, 255, 255);
+               }
+                  .my-custom_Pesq_Swl option:hover{
+                        background-color: aqua;
+                        color: red;
+
+                }
+                 .my-custom_Pesq_Swl #select_listas_sw:hover{
+                        background-color: aqua;
+                        color: red;
+                }
+                .my-custom_resultpesquisa{
+                
+                    max-height: 60vh;
+                    overflow: auto;
+                    background-color: black;
+                    border: 5px solid beige;
+                    border-radius: 20px;
+
+                }
+                 .my-custom_resultpesquisa label{
+                    font-size: 16px;
+                    color: rgb(255, 255, 255);
+                 }
+                 .my-custom_resultpesquisa ul{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+                    border: 0cap;
+                    cursor: pointer;
+                 }
+                  .my-custom_resultpesquisa ul:hover{
+                    background-color: rgb(15, 112, 112);
+                    color: red;
+                  }
+                 .my-custom_resultpesquisa img{
+                    padding: 3px;
+                    margin-right: 10px;
+                    border-radius: 10px;
+                    border: 0cap;
+                 }
+                 .my-custom_resultpesquisa ul:hover img{
+                      background-color: rgb(15, 112, 112);
+                 }
+          
         
         
   
@@ -594,7 +693,79 @@
             </div>
         </div>
 
-  
+  <script> // result pesquisa
+     sessionStorage.setItem('Select',``)
+     sessionStorage.setItem('Pesquisa',``)
+  function ResutPesquisa() {
+     Swal.fire({
+                    title: `Resultado da Pesquisa...`,
+                 html: `
+                    <br>
+                      <div id='lista_pesquisa'></div>
+                    <br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
+                }
+                 });
+        var Select=  sessionStorage.getItem('Select')
+      var pesquisa= sessionStorage.getItem('Pesquisa')
+                  const firebaseConfigure = {
+     apiKey: "AIzaSyBEIt3VdGAYisH6mYSoyN--MR-552AFNjQ",
+     authDomain: "sgc-regional.firebaseapp.com",
+     projectId: "sgc-regional",
+     storageBucket: "sgc-regional.appspot.com",
+     messagingSenderId: "572985076108",
+     appId: "1:572985076108:web:8b41ed0ec5c15aa9becea9",
+     measurementId: "G-QDG8H9S46F"
+      };
+      firebase.initializeApp(firebaseConfigure);  
+
+ 
+    const dbP = firebase.firestore();
+    var produtosRef = dbP.collection('Pesquisar');
+
+    // Limpar a lista antes de preencher
+    var listaP = document.getElementById('lista_pesquisa');
+    listaP.innerHTML = '';
+
+    produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+
+       
+            var div= document.createElement('ul')
+            var img = document.createElement('img');
+            var lbl= document.createElement('label')
+            if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
+             img.src = `${doc.IMG}`;
+             img.alt = doc.Titulo;
+             img.style.width = "20%"; 
+             div.id='divPesq'
+              lbl.id='btnPesq'
+              lbl.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+             div.appendChild(img);   
+            div.appendChild(lbl)
+            listaP.appendChild(div);
+            } else{
+             img.src = ``;
+             img.alt = '';
+             img.style.width = ""; 
+             div.id='falso'
+              lbl.id='falso'
+              lbl.textContent=``
+            }
+        
+           div.addEventListener('click',function(){
+            swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel_________ ${doc.Código}_______\n`,`${doc.IMG}`)
+           })
+        })
+    })
+            }
+
+  </script>
   
  <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -647,7 +818,7 @@
             lista1.appendChild(slide);
             document.getElementById('mostruario').style.display='block'
             img.addEventListener('click',function(){
-             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
+             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -722,7 +893,7 @@
             lista2.appendChild(slide);
              document.getElementById('mostruario2').style.display='block'
             img.addEventListener('click',function(){
-              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
+               swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -795,7 +966,7 @@
             lista3.appendChild(slide);
              document.getElementById('mostruario3').style.display='block'
             img.addEventListener('click',function(){
-             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
+              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -869,7 +1040,7 @@
               document.getElementById('mostruario4').style.display='block'
             img.addEventListener('click',function(){
               
-  swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
+             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -942,7 +1113,7 @@
             lista5.appendChild(slide);
              document.getElementById('mostruario5').style.display='block'
             img.addEventListener('click',function(){
-                swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}`,`${doc.IMG}</b>`)
+              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
             botao.addEventListener('click',function(){
               Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
@@ -1019,10 +1190,83 @@
              });
              
              document.getElementById('SwalmenuPesq').addEventListener('click', function() {
-                alert('Pequisar')
-                setTimeout(function(){
-                    Swal.close()
-                },500)
+             
+                 Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html: `
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                     <select id="select_listas_sw">
+                    <option id='opt00' value="">Cidade, Bairro ou Código </option>
+                    <option id='opt01' value="Cidade">Cidade</option>
+                    <option id='opt02' value="Bairro">Bairro</option>
+                    <option id='opt03' value="Código">Código</option>
+                   </select>
+                   <br>
+                   <label> Digite aqui: <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                   </label>
+                    <br><br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+                
+    
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respSelect= document.getElementById('select_listas_sw').value;
+                var respPesq= document.getElementById('inputSwal').value;
+                
+                if(!respSelect|| respSelect==''){
+                     Swal.fire('Atenção','Selecione uma das opções:<br> <b> Cidade, Bairro ou Código do Imóvel</b>','warning')
+
+                     setTimeout(function(){
+                     Swal.close()
+                     Menu_head('click')
+                     },3000)
+                     
+                } else{
+                    if(!respPesq|| respPesq==''){
+                          Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                           setTimeout(function(){
+                     Swal.close()
+                     Menu_head('click')
+
+                     },3000)
+                    } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                text: 'Aguarde um momento',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                },
+                didOpen: () => {
+                    Swal.showLoading();
+
+                }
+            });
+                  
+                     setTimeout(function(){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },5000)
+                   
+                    sessionStorage.setItem('Select',`${respSelect}`);
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                mostrarAlerta()
+                    }
+                
+                }
+               
+             })
+            
+
              });
              document.getElementById('Swalmenu12').addEventListener('click', function() {
                 Swal.fire({
