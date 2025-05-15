@@ -439,7 +439,7 @@
                 }
                  .my-custom_Password input {
                     width: 85%;
-                    padding: 10px;
+                    padding: 7px;
                     cursor: pointer;
                     background-color: rgba(240, 248, 255, 0);
                     border: 0cap;
@@ -447,12 +447,21 @@
                     border-radius: 10px;
                     margin-top: 10px;
                     color: rgb(0, 255, 21);
-                    font-size: 18px;
+                    font-size: 16px;
                     text-align: center;
 
                  }
                   .my-custom_Password input:hover{
                     background-color: aqua;
+                    color: red;
+                  }
+                  #visao, #plimp{
+                    margin-left: 10px;
+                    font-size: 14px;
+                    color: aliceblue;
+                    cursor: pointer;
+                  }
+                  #visao:hover, #plimp:hover{
                     color: red;
                   }
 
@@ -503,7 +512,7 @@
                         <input id="valor" type="text" placeholder="00,00"> R$
                     </label>
                     <br>
-                    <label for="">Desconto Avista:<br>
+                    <label for="" on>Desconto Avista:<br>
                         <input id="desconto" type="number" placeholder="00"> %
                     </label>
                     <br>
@@ -525,26 +534,21 @@
             </div>
         </div>
 
-     
-
-
      </div>
        <script>
         function limpar(){
-                
-     sessionStorage.setItem('IMG', '');
-     sessionStorage.setItem('Lista', '');
-     sessionStorage.setItem('dadosIMG', ``);
-     document.getElementById('titulo').value='';
-     document.getElementById('select_listas').value='';
-     document.getElementById('obs').value='';
-     document.getElementById('bairro').value='';
-     document.getElementById('valor').value='';
-     document.getElementById('endereço').value='';
-     document.getElementById('desconto').value='';
-     document.getElementById('cidade').value='';
-   
-
+                   
+         sessionStorage.setItem('IMG', '');
+         sessionStorage.setItem('Lista', '');
+         sessionStorage.setItem('dadosIMG', ``);
+         document.getElementById('titulo').value='';
+         document.getElementById('select_listas').value='';
+         document.getElementById('obs').value='';
+         document.getElementById('bairro').value='';
+         document.getElementById('valor').value='';
+         document.getElementById('endereço').value='';
+         document.getElementById('desconto').value='';
+         document.getElementById('cidade').value='';
         }
        </script>
      <script>
@@ -568,23 +572,21 @@
           document.getElementById('novocad').style.display='block'
           
         }
-    
        // function NovoCad(){
-       
      sessionStorage.setItem('IMG', '');
      sessionStorage.setItem('Lista', '');
      sessionStorage.setItem('dadosIMG', ``);
      
      function handleUpload() {
         const firebaseConfig = {
-       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
+      apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+      authDomain: "game-dbv.firebaseapp.com",
+      projectId: "game-dbv",
+      storageBucket: "game-dbv.appspot.com",
+      messagingSenderId: "118219151865",
+      appId: "1:118219151865:web:b6414d5255233264268528",
+      measurementId: "G-K17DLDBYGR"
+    };  
       firebase.initializeApp(firebaseConfig);  
     var data = sessionStorage.getItem('data');
     var hora = sessionStorage.getItem('hora');
@@ -606,10 +608,7 @@
         Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
       
     } else{
- 
-   
     document.getElementById('input_img').click();
- 
     document.getElementById('input_img').addEventListener('change', async function(e) {
         function mostrarAlerta() {
             Swal.fire({
@@ -629,11 +628,10 @@
 
         task.on('state_changed', updateProgress, handleError, async () => {
            
-            const url_imagem = await storageRef.getDownloadURL();
-            Swal.close()
-            document.getElementById('myProgress').style.display = 'block';
-              
-            var i = 0;
+        const url_imagem = await storageRef.getDownloadURL();
+         Swal.close()
+         document.getElementById('myProgress').style.display = 'block';
+         var i = 0;
 
 if (i == 0) {
     i = 1;
@@ -645,11 +643,9 @@ if (i == 0) {
         if (width >= 100) {
             clearInterval(id);
             i = 0;                     
-    
             sessionStorage.setItem('IMG', url_imagem);
             sessionStorage.setItem('Lista', lista);
             sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
-
             var db = firebase.firestore();
              db.collection(`${lista}`).doc(`${codigo}`).set({
                 Titulo: titulo,
@@ -709,10 +705,7 @@ if (i == 0) {
                  Código: codigo,
               
             });
-
-
             swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, url_imagem);
-       
             setTimeout(() => {
                 document.getElementById('myProgress').style.display = 'none';
                 window.location.reload()
@@ -739,8 +732,6 @@ function updateProgress(snapshot) {
 function handleError(error) {
     console.error('Erro ao enviar arquivo:', error);
 }
-
-        
      </script>
      <script>
          function Menu(){
@@ -772,7 +763,7 @@ function handleError(error) {
                 }
                  });
     
-                var setI= setInterval(function(){
+                    var setI= setInterval(function(){
                     var resp = document.getElementById('select_listas_sw').value;
                     if(!resp|resp==''){
 
@@ -814,19 +805,29 @@ function handleError(error) {
                     }
 
                 },511)
-             
                 
              document.getElementById('btn_swal_at').addEventListener('click', function() {
+                const firebaseConfig = {
+                   apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                   authDomain: "game-dbv.firebaseapp.com",
+                   projectId: "game-dbv",
+                   storageBucket: "game-dbv.appspot.com",
+                   messagingSenderId: "118219151865",
+                   appId: "1:118219151865:web:b6414d5255233264268528",
+                   measurementId: "G-K17DLDBYGR"
+                 };
+                 firebase.initializeApp(firebaseConfig); 
+            
                  clearInterval(setI)
                   Swal.fire({
                     title: `Password Atual <i class="fa-sharp-duotone fa-solid fa-unlock"></i>`,
                  html: `
-                    <br><br>
+                    
                     <h2 id='lbl_PW_at'>Atual </h2>
                     <br><br>
-                    <p> A senha acima é a atual alterada em: <\p>
-                    <br><br>
-                    <br><br><br>
+                    <p id='resp2'>  <\p>
+                    <br>
+                   
                  `,
                  showCancelButton: true,
                   showConfirmButton: false,
@@ -835,16 +836,42 @@ function handleError(error) {
                 }
                  });
 
+
+                 var db= firebase.firestore();
+                 db.collection('Password').doc('Master').get().then((doc) => {
+                    var doc= doc.data()
+                    var resp= document.getElementById('lbl_PW_at');
+                    resp.innerHTML=` ( ${doc.Master} )`;
+                    var resp2= document.getElementById('resp2');
+                    resp2.innerHTML=`<b>A senha acima é a atual des de:</b> <br><br>  <h3><b>${doc.Data} - ${doc.Hora}</b></h3>`
+                 }).catch((err) => {
+                    
+                 });
+                  db.collection('Password').doc('NovoLarPassword').get().then((doc) => {
+                    var doc= doc.data()
+                // Swal.fire(`${doc.NovoLarPassword}`,'Passwod do Desenvolvedor!','warnonig')
+                   
+                 }).catch((err) => {
+                    
+                 });
+
+     
+            
              });
               document.getElementById('btn_swal_PW').addEventListener('click', function() {
                  clearInterval(setI)
                 
+                
                   Swal.fire({
                     title: `Novo Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
                  html: `
+                    <label id='label_NPW_email'>Email de Recuperação<br>
+                        <input id='inputPW_email' type='email' placeHolder='Email'><i id='plimp'>X</i>
+                    </label>
+                    
                     <br><br>
                     <label id='label_NPW'>Digite novo Password <br>
-                        <input id='inputPW_Novo' tipy='password' placeHolder='Password'
+                        <input id='inputPW_Novo' type='password' placeHolder='Password' <b><i id='visao' class="fa-solid fa-eye-low-vision"></i></b>
                     </label>
                     <br><br>
                     <p> Digite uma nova Senha acima no campo password!<\p>
@@ -858,14 +885,60 @@ function handleError(error) {
                   popup: 'my-custom_Password' // Aplica a classe CSS personalizada
                 }
                  });
-            
+                   document.getElementById('visao').addEventListener('click', function(){
+                   
+                    var visao_= document.getElementById('inputPW_Novo');
+                    if(visao_.type=='password'){
+                        visao_.type='text'
+                    } else{
+                          visao_.type='password'
+
+                    }
+                 })
+                  document.getElementById('plimp').addEventListener('click', function(){
+                    document.getElementById('inputPW_email').value=''
+                  })
+               
+               setTimeout(function(){
+                  document.getElementById('inputPW_Novo').value=''
+                  document.getElementById('inputPW_email').value=''
+               },700)
+                 const firebaseConfig = {
+                   apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                   authDomain: "game-dbv.firebaseapp.com",
+                   projectId: "game-dbv",
+                   storageBucket: "game-dbv.appspot.com",
+                   messagingSenderId: "118219151865",
+                   appId: "1:118219151865:web:b6414d5255233264268528",
+                   measurementId: "G-K17DLDBYGR"
+                 };
+                 firebase.initializeApp(firebaseConfig); 
+                  
                 document.getElementById('btn_password_salve').addEventListener('click', function() {
+                   var data = sessionStorage.getItem('data');
+                   var hora = sessionStorage.getItem('hora');
+                   var master= document.getElementById('inputPW_Novo').value;
+                   var email_= document.getElementById('inputPW_email').value;
+                   if(!master||master==''||!email_||email_==''){
+                     Swal.fire('Atenção!','Preencha os campos email e password!','warning')
+                   }else{
+                    var db= firebase.firestore()
+                    db.collection('Password').doc(`Master`).set({
+                        Master: master,
+                        Email: email_,
+                        Data: data,
+                        Hora:hora,
+                    })
+                    Swal.fire('Password Salvo! ','','success')
+                    setTimeout(function(){
+                    Swal.close()
+                    },2000)
+                   }
+
             
-                alert('password Salvo')
+               
            
              });
-
-
                  setTimeout(function(){
                    // Swal.close()
                 },500)

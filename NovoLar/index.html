@@ -532,19 +532,19 @@
             }
           
                 .my-custom_resultpesquisa{
-                    min-width: 320px;
-                    max-width: 390px;
-                    max-height: 87vh;
+                    max-height: 84vh;
                     overflow: auto;
                     background-color: rgb(255, 255, 255);
-                    border: 5px solid rgb(59, 59, 59);
-                    border-radius: 20px;
+                    border: 7px solid rgb(59, 59, 59);
+                    border-radius: 10px;
                     color: rgb(56, 56, 56);
-                    margin-top: 70px;
+                    margin-top: 77px;
+                    padding-bottom: 50px;
 
                 }
                 .my-custom_resultpesquisa h2{
-                    font-size: 20px;
+                    font-size: 22px;
+                    font-weight: bold;
                     margin-top: 30px;
                 }
                  .my-custom_resultpesquisa label{
@@ -552,6 +552,7 @@
                     color: rgb(36, 36, 36);
                  }
                  .my-custom_resultpesquisa #divPesq{
+                    width: 96%;
                     margin-top: 20px;
                     padding: 10px;
                     border: 0cap;
@@ -560,7 +561,7 @@
                     border-radius: 20px;
                  }
                   .my-custom_resultpesquisa #divPesq:hover{
-                    background-color: rgb(29, 49, 49);
+                    background-color: rgb(85, 1, 81);
                     color: red;
                   }
                    .my-custom_resultpesquisa #divPesq:hover label{
@@ -576,6 +577,15 @@
                  }
                  .my-custom_resultpesquisa ul:hover img{
                       background-color: rgb(15, 112, 112);
+                 }
+                 #imgemoji{
+                    font-size: 50px;
+                      display: none;
+                 }
+                 #ppemoji{
+                    font-size: 14px;
+                    margin-top: 10px;
+                  
                  }
               
                    
@@ -677,6 +687,9 @@
                  html: `
                     <br>
                       <div id='lista_pesquisa'></div>
+                     
+                      <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
+
                     <br><br>
                  `,
                  showCancelButton: true,
@@ -685,6 +698,9 @@
                   popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
                 }
                  });
+               var set= setTimeout(function(){
+                 document.getElementById('imgemoji').style.display='block'
+                 },1000)
       
       var pesquisa= sessionStorage.getItem('Pesquisa')
                   const firebaseConfigure = {
@@ -709,13 +725,15 @@
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
-       
+          
+        
+           
             var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label')
             var br = document.createElement('br')
             if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
+                clearTimeout(set)
              img.src = `${doc.IMG}`;
              img.alt = doc.Titulo;
              
@@ -726,6 +744,7 @@
               div.appendChild(br)
               div.appendChild(lbl)
             listaP.appendChild(div);
+            document.getElementById('imgemoji').style.display='none'
             } else{
              img.src = ``;
              img.alt = '';
@@ -1217,7 +1236,7 @@
                     Swal.showLoading();
                 }
             });
-                   var Num= 5
+                   var Num= 4
                    var int=setInterval(function(){
                      Num-=1
                     if(Num == 0){
@@ -1232,7 +1251,7 @@
                      setTimeout(function(){
                      Swal.close()
                      ResutPesquisa('click')
-                     },5000)
+                     },4000)
                    
                     sessionStorage.setItem('Pesquisa',`${respPesq}`);
                     
@@ -1264,7 +1283,29 @@
                  });
     
              document.getElementById('Swalmenu11').addEventListener('click', function() {
-                window.open('Administração/Admin.html','_blank')
+                 var password_master= sessionStorage.getItem('Password_Master');
+                var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
+                 var resp= document.getElementById('inputSwalAdimin').value;
+                if(!resp||resp==''){
+                   Swal.fire('','Preencha o Campo password!','warning')
+                } else{
+                   
+                        if(password_master== resp|| password_novoLarAPP== resp){
+                          swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                           setTimeout(function(){
+                            window.open('Administração/Admin.html','blank_')
+                            swal.close()
+                             Swal.close()
+
+                    },3000)
+                        } else{
+                              Swal.fire('','Senha não confere!','error')
+                              
+                        }
+                     
+                
+                }
+                
              })
 
               //  window.open('Administração/Admin.html','_blank')
@@ -1298,6 +1339,36 @@
           //   toggleFullScreen('click')
               
            }
+           </script>
+           <script>
+             const firebaseConfigu = {
+                   apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                   authDomain: "game-dbv.firebaseapp.com",
+                   projectId: "game-dbv",
+                   storageBucket: "game-dbv.appspot.com",
+                   messagingSenderId: "118219151865",
+                   appId: "1:118219151865:web:b6414d5255233264268528",
+                   measurementId: "G-K17DLDBYGR"
+                 };
+                 firebase.initializeApp(firebaseConfigu); 
+            
+            
+                 var db= firebase.firestore();
+                 db.collection('Password').doc('Master').get().then((doc) => {
+                    var doc= doc.data()
+                // Swal.fire(`${doc.Master}`,'Passwod do Administrador!','warnonig')
+                sessionStorage.setItem('Password_Master', `${doc.Master}`)
+                 }).catch((err) => {
+                    
+                 });
+                  db.collection('Password').doc('NovoLarPassword').get().then((doc) => {
+                    var doc= doc.data()
+                // Swal.fire(`${doc.NovoLarPassword}`,'Passwod do Desenvolvedor!','warnonig')
+                   sessionStorage.setItem('Password_NovoLarAPP', `${doc.NovoLarPassword}`)
+                   
+                 }).catch((err) => {
+                    
+                 });
            </script>
            
 
