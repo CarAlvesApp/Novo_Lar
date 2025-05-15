@@ -297,10 +297,14 @@
                 margin-left: 7%;
                  display: none;
                  font-size: 22px;
+                 margin-top: 0px;
+                 margin-bottom: 0px;
                }
                #mostruario2,#mostruario3,#mostruario4,#mostruario5{
                 display: none;
                  font-size: 22px;
+                 margin-top: 0px;
+                 margin-bottom: 0px;
 
                }
            @media (min-width: 400px) {
@@ -313,22 +317,18 @@
             font-size: 13px;
             font-family: Arial, Helvetica, sans-serif;
             }
-       
-       
                 #geral #Cont_final{
                 background-color: aqua;
                 height: 100vh;
                 padding-top: 20px;
             }
-              
                  #paragrafo_inicial p{
                  margin: 0 auto;
                  width: 85%;
                  margin-top: 30px;
                  text-align: center;
                  margin-bottom: 10px;
-                }
-        
+            }
                 #geral h1{
                  text-align: center;
                  font-weight: bolder;
@@ -337,23 +337,21 @@
                  text-decoration: underline;
                  margin-bottom: 50px;
                   font-size: 28px;
-                };
+           };
                 #paragrafo_inicial{
                 margin: 0 auto;
                 width: 85%;
                 margin-top: 70px;
-                text-align: center;
-               
+                text-align: center;  
                };
             }
-   
-           #geral #Cont_final{
+                #geral #Cont_final{
                 background-color: rgba(0, 255, 255, 0);
                 height: 50vh;
                 padding-top: 20px;
             }
               
-            @media (max-width: 850px) {
+                @media (max-width: 850px) {
                     #geral #Cont_final{
                 background-color: rgba(0, 255, 255, 0);
                 height: 90vh;
@@ -363,15 +361,16 @@
        .swiper-wrapper button{
             font-size: 18px;
             font-weight: bold;
-            color: rgb(122, 122, 122);
+            color: rgb(209, 207, 207);
             width: 100%;
             padding-top: 10px;
             padding-bottom: 10px;
             background-color: rgb(134, 3, 112);
             cursor: pointer;
-             text-align: right;
+             text-align: center;
              border: 0cap;
         }
+ 
         .swiper-wrapper button:hover {
             background-color: rgb(164, 1, 185);
             color: aqua;
@@ -402,7 +401,19 @@
             font-size: 15px;
           
         }
+           .mySwiper{
+          width: 820px;  
+          margin-top: 0px;
+          margin-bottom: 0px;
+         
+         }
+         
+     
         @media (min-width: 400px) {
+            .mySwiper{
+             width: 97%;
+         
+            }
             .swiper-wrapper label{
             float: left;
             margin-left: 10px;
@@ -412,25 +423,30 @@
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
             }
-                    #mostruario{
-                width: 85%;
-                padding-top: 21%;
-                text-align: center;
-                 display: none;
-               }
+             #mostruario{
+             width: 85%;
+             padding-top: 21%;
+             text-align: center;
+             display: none;
+           }
         }
-        
-                  @media (min-width: 470px) {
- 
-            #mostruario{
-                width: 85%;
-                padding-top: 15%;
-                text-align: center;
-                 display: none;
-               }
+        @media (min-width: 470px) {
+             .mySwiper{
+             width: 90%;  
+         
+          }
+             #mostruario{
+               width: 85%;
+               padding-top: 15%;
+               text-align: center;
+               display: none;
+             }
         }
-  
         @media (min-width: 850px) {
+              .mySwiper{
+             width: 820px;  
+         
+           }
             .swiper-wrapper label{
             float: left;
             margin-left: 10px;
@@ -470,7 +486,8 @@
         }
         .my-custom_Pesq_Swl_{
             width: 370PX;
-             border: 5px solid rgb(83, 82, 82);
+             border: 5px solid rgb(236, 232, 232);
+             background-color: #ffffff;
             border-radius: 10px;
         }
         .my-custom_Pesq_Swl_ label{
@@ -491,8 +508,9 @@
            .my-custom_Pesq_Swl{
             width: 350px;
             padding-bottom: 20px;
-            border: 5px solid rgb(83, 82, 82);
+            border: 5px solid rgb(231, 229, 229);
             border-radius: 20px;
+             background-color: #ffffff;
            }
            .my-custom_Pesq_Swl p{
             font-size: 13px;
@@ -530,68 +548,63 @@
                 background-color: rgba(0, 255, 255, 0.664);
                 color: red;
             }
-          
-                .my-custom_resultpesquisa{
-                    max-height: 84vh;
+            .my-custom_resultpesquisa{
+                    max-width:400px ;
+                    max-height: 80vh;
                     overflow: auto;
                     background-color: rgb(255, 255, 255);
-                    border: 7px solid rgb(59, 59, 59);
+                    border: 5px solid rgb(204, 203, 203);
                     border-radius: 10px;
                     color: rgb(56, 56, 56);
-                    margin-top: 77px;
-                    padding-bottom: 50px;
-
-                }
-                .my-custom_resultpesquisa h2{
+                    margin-top: 64px;
+                    padding-bottom: 20px;
+            }
+            .my-custom_resultpesquisa h2{
                     font-size: 22px;
                     font-weight: bold;
                     margin-top: 30px;
-                }
-                 .my-custom_resultpesquisa label{
+            }
+            .my-custom_resultpesquisa label{
                     font-size: 16px;
-                    color: rgb(36, 36, 36);
-                 }
-                 .my-custom_resultpesquisa #divPesq{
+                    color: rgb(255, 252, 252);
+            }
+            .my-custom_resultpesquisa #divPesq{
                     width: 96%;
                     margin-top: 20px;
                     padding: 10px;
                     border: 0cap;
                     cursor: pointer;
-                    background-color: rgba(205, 205, 200, 0);
-                    border-radius: 20px;
-                 }
-                  .my-custom_resultpesquisa #divPesq:hover{
                     background-color: rgb(85, 1, 81);
+                    border-radius: 20px;
+            }
+            .my-custom_resultpesquisa #divPesq:hover{
+                    background-color: rgb(139, 3, 133);
                     color: red;
-                  }
-                   .my-custom_resultpesquisa #divPesq:hover label{
+            }
+            .my-custom_resultpesquisa #divPesq:hover label{
       
                     color: rgb(255, 254, 254);
-                  }
-                 .my-custom_resultpesquisa img{
+            }
+            .my-custom_resultpesquisa img{
                     width: 280px;
                     height: 200px;
                     padding: 3px;
                     border-radius: 10px;
                     border: 0cap;
-                 }
-                 .my-custom_resultpesquisa ul:hover img{
+          }
+           .my-custom_resultpesquisa ul:hover img{
                       background-color: rgb(15, 112, 112);
-                 }
-                 #imgemoji{
-                    font-size: 50px;
-                      display: none;
-                 }
-                 #ppemoji{
-                    font-size: 14px;
-                    margin-top: 10px;
-                  
-                 }
-              
-                   
-        
-        
-
+           }
+            #imgemoji{
+               font-size: 50px;
+               display: none;
+          }
+            #ppemoji{
+             font-size: 14px;
+             margin-top: 10px;  
+         }
+      
+     
     </style>
 
     </head>
@@ -605,19 +618,16 @@
         <div id="heade"> <div id="head_a"> <a href="#mostruario"><i class="fa-solid fa-house"></i> Inicio</a> <a href="#Cont_final"> <i class="fa-solid fa-table-list"></i> Conteúdo</a> <a href="#" onclick="Menu_head()" >Menu <i class="fa-solid fa-bars"></i></a></div> </div>
  
   
-            <h1 id="mostruario">Mostruário  </h1>
+            <h1 id="mostruario">Mostruário </h1>
             <div class="swiper mySwiper" id="cont">
                 <div class="swiper-wrapper" id="lista_inicial">
-                    <!-- As imagens do Firebase serão carregadas aqui -->
                 </div>
-                <!-- Botões de navegação -->
                 <div class="swiper-button-next" id="BTN_swiper"></div>
                 <div class="swiper-button-prev" id="BTN_swiper"></div>
             </div>
              <br>
                 <h1 id="mostruario2">Mostruário 02</h1>
             <div id="conteudo">
-             
                 <div class="swiper mySwiper" id="cont">
                     <div class="swiper-wrapper" id="lista_conteudo">
                         <!-- As imagens do Firebase serão carregadas aqui -->
@@ -625,8 +635,8 @@
                     <!-- Botões de navegação -->
                     <div class="swiper-button-next" id="BTN_swiper"></div>
                     <div class="swiper-button-prev" id="BTN_swiper"></div>
-                </div>
-                <br> <h1 id="mostruario3">Mostruário 03</h1><br>
+                </div><br>
+                 <h1 id="mostruario3">Mostruário 03</h1>
                 <div class="swiper mySwiper" id="cont">
                     <div class="swiper-wrapper" id="lista_conteudo_2">
                         <!-- As imagens do Firebase serão carregadas aqui -->
@@ -666,10 +676,6 @@
                     </div>
                 </div>
                 
-                
-
-               
-            
             <div id="footer">
                 <div id="sociais_contatos">
                     <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
@@ -680,19 +686,17 @@
 
   <script> // result pesquisa
 
-     sessionStorage.setItem('Pesquisa',``)
-  function ResutPesquisa() {
-     Swal.fire({
-                    title: `Resultado da Pesquisa...`,
-                 html: `
-                    <br>
-                      <div id='lista_pesquisa'></div>
-                     
-                      <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
-
-                    <br><br>
+          sessionStorage.setItem('Pesquisa',``)
+         function ResutPesquisa() {
+            Swal.fire({
+             title: `Resultado da Pesquisa...`,
+             html: `
+               <br>
+               <div id='lista_pesquisa'></div>        
+               <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
+               <br><br>
                  `,
-                 showCancelButton: true,
+                  showCancelButton: true,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
@@ -700,34 +704,27 @@
                  });
                var set= setTimeout(function(){
                  document.getElementById('imgemoji').style.display='block'
-                 },1000)
-      
-      var pesquisa= sessionStorage.getItem('Pesquisa')
-                  const firebaseConfigure = {
-           apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
-      firebase.initializeApp(firebaseConfigure);  
+                 },1000);
 
- 
-    const dbP = firebase.firestore();
-    var produtosRef = dbP.collection('Pesquisar');
-
-    // Limpar a lista antes de preencher
-    var listaP = document.getElementById('lista_pesquisa');
-    listaP.innerHTML = '';
-
-    produtosRef.get().then((querySnapshot) => {
+       var pesquisa= sessionStorage.getItem('Pesquisa')
+       const firebaseConfigure = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfigure); 
+      const dbP = firebase.firestore();
+      var produtosRef = dbP.collection('Pesquisar');
+      // Limpar a lista antes de preencher
+      var listaP = document.getElementById('lista_pesquisa');
+      listaP.innerHTML = '';
+      produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-          
-        
-           
             var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label')
@@ -736,7 +733,6 @@
                 clearTimeout(set)
              img.src = `${doc.IMG}`;
              img.alt = doc.Titulo;
-             
              div.id='divPesq'
               lbl.id='btnPesq'
               lbl.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
@@ -753,47 +749,37 @@
               lbl.id='falso'
               lbl.textContent=``
             }
-        
            div.addEventListener('click',function(){
-            swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel_________ ${doc.Código}_______\n`,`${doc.IMG}`)
+            swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
         })
     })
             }
-
   </script>
-  
  <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Configuração do Firebase
     const firebaseConfig = {
-
-          apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
+      apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+      authDomain: "game-dbv.firebaseapp.com",
+      projectId: "game-dbv",
+      storageBucket: "game-dbv.appspot.com",
+      messagingSenderId: "118219151865",
+      appId: "1:118219151865:web:b6414d5255233264268528",
+      measurementId: "G-K17DLDBYGR"
+    };
       firebase.initializeApp(firebaseConfig);  
-
- 
     const db = firebase.firestore();
     var produtosRef = db.collection('Lista Mostruario 1');
-
     // Limpar a lista antes de preencher
     var lista1 = document.getElementById('lista_inicial');
     lista1.innerHTML = '';
-
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
             // Criar slide para Swiper
             var slide = document.createElement('div');
             slide.className = 'swiper-slide';
-
             var img = document.createElement('img');
             img.src = `${doc.IMG}`;
             img.alt = doc.Titulo;
@@ -802,30 +788,28 @@
             var label_2= document.createElement('label')
             label_2.id='lbl_2';
             label.id='lbl_';
-            label.textContent=`Ver mais`
+            label.textContent=``
             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
+            var botao2= document.createElement('button')
             botao.id-'lbl_list_Inicial'
-            botao.textContent=``
-            botao.className='fa-solid fa-eye'
+            botao2.id-'lbl_list_Inicial'
+            botao.textContent=`Prévia`
+            botao2.textContent=`Ver Mais`
             botao.appendChild(label_2)
             botao.appendChild(label)
             slide.appendChild(botao)
-            slide.appendChild(img);   
+            slide.appendChild(img);
+            slide.appendChild(botao2)
             lista1.appendChild(slide);
             document.getElementById('mostruario').style.display='block'
-            img.addEventListener('click',function(){
+            botao.addEventListener('click',function(){
              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
-            botao.addEventListener('click',function(){
-              Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
-              setTimeout(function(){
-                 Swal.close()
-              },1000)
+             botao2.addEventListener('click',function(){
+             Swal.fire(`Ver mais!`,`${doc.Titulo}`,``)
             });
         });
-           
-
         // Inicializar o Swiper após carregar os dados do Firebase
         var swiper = new Swiper(".mySwiper", {
             loop: true,
@@ -839,37 +823,30 @@
 
  </script>
  <script>
-    document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function() {
     // Configuração do Firebase
-    const firebaseConfig = {
+      const firebaseConfig = {
       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
       firebase.initializeApp(firebaseConfig);  
-
- 
     const db2 = firebase.firestore();
     var produtosRef = db2.collection('Lista Mostruario 2');
-
     // Limpar a lista antes de preencher
     var lista2 = document.getElementById('lista_conteudo');
     lista2.innerHTML = '';
-
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
             // Criar slide para Swiper
             var slide = document.createElement('div');
             slide.className = 'swiper-slide';
-            
-            
-            var img = document.createElement('img');
+             var img = document.createElement('img');
             img.src = `${doc.IMG}`;
             img.alt = doc.Titulo;
             img.style.width = "100%"; 
@@ -877,29 +854,28 @@
             var label_2= document.createElement('label')
             label_2.id='lbl_2';
             label.id='lbl_';
-            label.textContent=`Ver mais`
-             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
+            label.textContent=``
+            label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
+            var botao2= document.createElement('button')
             botao.id-'lbl_list_Inicial'
-            botao.textContent=``
-            botao.className='fa-solid fa-eye'
+            botao2.id-'lbl_list_Inicial'
+            botao.textContent=`Prévia`
+            botao2.textContent=`Ver Mais`
             botao.appendChild(label_2)
             botao.appendChild(label)
             slide.appendChild(botao)
-            slide.appendChild(img); 
+            slide.appendChild(img);
+            slide.appendChild(botao2)
             lista2.appendChild(slide);
-             document.getElementById('mostruario2').style.display='block'
-            img.addEventListener('click',function(){
-               swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
-            });
+            document.getElementById('mostruario2').style.display='block'
             botao.addEventListener('click',function(){
-              Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
-              setTimeout(function(){
-                 Swal.close()
-              },1000)
+             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
+            });
+             botao2.addEventListener('click',function(){
+             Swal.fire(`Ver mais!`,`${doc.Titulo}`,``)
             });
         });
-
         // Inicializar o Swiper após carregar os dados do Firebase
         var swiper = new Swiper(".mySwiper2", {
             loop: true,
@@ -910,38 +886,31 @@
         });
     });
 });
-
  </script>
  <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Configuração do Firebase
-    const firebaseConfig = {
+      const firebaseConfig = {
       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
+      authDomain: "game-dbv.firebaseapp.com",
+      projectId: "game-dbv",
+      storageBucket: "game-dbv.appspot.com",
+      messagingSenderId: "118219151865",
+      appId: "1:118219151865:web:b6414d5255233264268528",
+      measurementId: "G-K17DLDBYGR"
+    };
       firebase.initializeApp(firebaseConfig);  
-
- 
     const db3 = firebase.firestore();
     var produtosRef = db3.collection('Lista Mostruario 3');
-
     // Limpar a lista antes de preencher
     var lista3 = document.getElementById('lista_conteudo_2');
     lista3.innerHTML = '';
-
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
             // Criar slide para Swiper
             var slide = document.createElement('div');
             slide.className = 'swiper-slide';
-            
             var img = document.createElement('img');
             img.src = `${doc.IMG}`;
             img.alt = doc.Titulo;
@@ -950,29 +919,28 @@
             var label_2= document.createElement('label')
             label_2.id='lbl_2';
             label.id='lbl_';
-            label.textContent=`Ver mais`
+            label.textContent=``
             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
+            var botao2= document.createElement('button')
             botao.id-'lbl_list_Inicial'
-            botao.textContent=``
-            botao.className='fa-solid fa-eye'
+            botao2.id-'lbl_list_Inicial'
+            botao.textContent=`Prévia`
+            botao2.textContent=`Ver Mais`
             botao.appendChild(label_2)
             botao.appendChild(label)
             slide.appendChild(botao)
-            slide.appendChild(img); 
+            slide.appendChild(img);
+            slide.appendChild(botao2)
             lista3.appendChild(slide);
-             document.getElementById('mostruario3').style.display='block'
-            img.addEventListener('click',function(){
-              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
-            });
+            document.getElementById('mostruario3').style.display='block'
             botao.addEventListener('click',function(){
-              Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
-              setTimeout(function(){
-                 Swal.close()
-              },1000)
+             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
+            });
+             botao2.addEventListener('click',function(){
+             Swal.fire(`Ver mais!`,`${doc.Titulo}`,``)
             });
         });
-
         // Inicializar o Swiper após carregar os dados do Firebase
         var swiper = new Swiper(".mySwiper", {
             loop: true,
@@ -983,38 +951,31 @@
         });
     });
 });
-
  </script>
  <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Configuração do Firebase
-    const firebaseConfig = {
+     const firebaseConfig = {
      apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-  };
+     authDomain: "game-dbv.firebaseapp.com",
+     projectId: "game-dbv",
+     storageBucket: "game-dbv.appspot.com",
+     messagingSenderId: "118219151865",
+     appId: "1:118219151865:web:b6414d5255233264268528",
+     measurementId: "G-K17DLDBYGR"
+     };
       firebase.initializeApp(firebaseConfig);  
-
- 
     const db4 = firebase.firestore();
     var produtosRef = db4.collection('Lista Mostruario 4');
-
     // Limpar a lista antes de preencher
     var lista4 = document.getElementById('lista_conteudo_3');
     lista4.innerHTML = '';
-
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
             // Criar slide para Swiper
             var slide = document.createElement('div');
             slide.className = 'swiper-slide';
-            
             var img = document.createElement('img');
             img.src = `${doc.IMG}`;
             img.alt = doc.Titulo;
@@ -1023,30 +984,28 @@
             var label_2= document.createElement('label')
             label_2.id='lbl_2';
             label.id='lbl_';
-            label.textContent=`Ver mais`
+            label.textContent=``
             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
+            var botao2= document.createElement('button')
             botao.id-'lbl_list_Inicial'
-            botao.textContent=``
-            botao.className='fa-solid fa-eye'
+            botao2.id-'lbl_list_Inicial'
+            botao.textContent=`Prévia`
+            botao2.textContent=`Ver Mais`
             botao.appendChild(label_2)
             botao.appendChild(label)
             slide.appendChild(botao)
-            slide.appendChild(img); 
+            slide.appendChild(img);
+            slide.appendChild(botao2)
             lista4.appendChild(slide);
-              document.getElementById('mostruario4').style.display='block'
-            img.addEventListener('click',function(){
-              
+            document.getElementById('mostruario4').style.display='block'
+            botao.addEventListener('click',function(){
              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
             });
-            botao.addEventListener('click',function(){
-              Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
-              setTimeout(function(){
-                 Swal.close()
-              },1000)
+             botao2.addEventListener('click',function(){
+             Swal.fire(`Ver mais!`,`${doc.Titulo}`,``)
             });
         });
-
         // Inicializar o Swiper após carregar os dados do Firebase
         var swiper = new Swiper(".mySwiper", {
             loop: true,
@@ -1057,39 +1016,32 @@
         });
     });
 });
-
  </script>
  <script>
     document.addEventListener("DOMContentLoaded", function() {
     // Configuração do Firebase
-    const firebaseConfig = {
-       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
-};
+     const firebaseConfig = {
+     apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+     authDomain: "game-dbv.firebaseapp.com",
+     projectId: "game-dbv",
+     storageBucket: "game-dbv.appspot.com",
+     messagingSenderId: "118219151865",
+     appId: "1:118219151865:web:b6414d5255233264268528",
+     measurementId: "G-K17DLDBYGR"
+   };
       firebase.initializeApp(firebaseConfig);  
-
- 
     const db5 = firebase.firestore();
     var produtosRef = db5.collection('Lista Diversos');
-
     // Limpar a lista antes de preencher
     var lista5 = document.getElementById('lista_apresentação');
     lista5.innerHTML = '';
-
     produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-
             // Criar slide para Swiper
             var slide = document.createElement('div');
             slide.className = 'swiper-slide';
-            
-            var img = document.createElement('img');
+             var img = document.createElement('img');
             img.src = `${doc.IMG}`;
             img.alt = doc.Titulo;
             img.style.width = "100%"; 
@@ -1097,29 +1049,28 @@
             var label_2= document.createElement('label')
             label_2.id='lbl_2';
             label.id='lbl_';
-            label.textContent=`Ver mais`
-             label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
+            label.textContent=``
+            label_2.textContent=`Bairro ${doc.Bairro} em ${doc.Cidade}`
             var botao= document.createElement('button')
+            var botao2= document.createElement('button')
             botao.id-'lbl_list_Inicial'
-            botao.textContent=``
-            botao.className='fa-solid fa-eye'
+            botao2.id-'lbl_list_Inicial'
+            botao.textContent=`Prévia`
+            botao2.textContent=`Ver Mais`
             botao.appendChild(label_2)
             botao.appendChild(label)
             slide.appendChild(botao)
-            slide.appendChild(img); 
+            slide.appendChild(img);
+            slide.appendChild(botao2)
             lista5.appendChild(slide);
-             document.getElementById('mostruario5').style.display='block'
-            img.addEventListener('click',function(){
-              swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
-            });
+            document.getElementById('mostruario5').style.display='block'
             botao.addEventListener('click',function(){
-              Swal.fire(`Vamos ver mais sobre:`,`${doc.Titulo}<br>${doc.Descrição}`,`success`)
-              setTimeout(function(){
-                 Swal.close()
-              },1000)
+             swal(`${doc.Titulo}`,`Valor R$:${doc.Valor}\nAvista desconto de: ${doc.Desconto}% \n\n_______________Local__________________\n\n${doc.Bairro} em ${doc.Cidade}\n\nCódigo do Imóvel: ${doc.Código}`,`${doc.IMG}</b>`)
+            });
+             botao2.addEventListener('click',function(){
+             Swal.fire(`Ver mais!`,`${doc.Titulo}`,``)
             });
         });
-
         // Inicializar o Swiper após carregar os dados do Firebase
         var swiper = new Swiper(".mySwiper", {
             loop: true,
@@ -1174,7 +1125,6 @@
                     Swal.close()
                 },200)
              });
-
              document.getElementById('Swalmenu10').addEventListener('click', function() {
                 setTimeout(function(){
                     Swal.close()
@@ -1185,14 +1135,11 @@
                     Swal.close()
                 },500)
              });
-             
-             document.getElementById('SwalmenuPesq').addEventListener('click', function() {
-             
+              document.getElementById('SwalmenuPesq').addEventListener('click', function() {
                  Swal.fire({
                     title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
                  html: `
                     <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
-                
                    <br>
                    <label> Digite aqui: <br>
                    <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
@@ -1207,21 +1154,16 @@
                   popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
                 }
                  });
-                
-    
              document.getElementById('Swalpesq').addEventListener('click', function() {
-               
                 var respPesq= document.getElementById('inputSwal').value;
-                
-           
-                    if(!respPesq|| respPesq==''){
-                          Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
-                           setTimeout(function(){
-                     Swal.close()
-                     Menu_head('click')
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
 
-                     },3000)
-                    } else{
+                 },3000)
+                } else{
                          Swal.fire({
                 title: 'Pesquisando...',
                 html:`
@@ -1235,7 +1177,7 @@
                 didOpen: () => {
                     Swal.showLoading();
                 }
-            });
+               });
                    var Num= 4
                    var int=setInterval(function(){
                      Num-=1
@@ -1244,27 +1186,18 @@
                     }else{
                     var show= document.getElementById('show');
                      show.innerHTML=`(${Num})`;
-                     
                     }
                    },1000)
-                
                      setTimeout(function(){
                      Swal.close()
                      ResutPesquisa('click')
-                     },4000)
-                   
+                     },4000) 
                     sessionStorage.setItem('Pesquisa',`${respPesq}`);
-                    
                     mostrarAlerta()
                     }
-                
-                
-               
-             })
-            
-
-             });
-             document.getElementById('Swalmenu12').addEventListener('click', function() {
+               })
+              });
+                 document.getElementById('Swalmenu12').addEventListener('click', function() {
                 Swal.fire({
                     title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
                  html: `
@@ -1281,8 +1214,7 @@
                   popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
                 }
                  });
-    
-             document.getElementById('Swalmenu11').addEventListener('click', function() {
+                 document.getElementById('Swalmenu11').addEventListener('click', function() {
                  var password_master= sessionStorage.getItem('Password_Master');
                 var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
                  var resp= document.getElementById('inputSwalAdimin').value;
@@ -1290,24 +1222,19 @@
                    Swal.fire('','Preencha o Campo password!','warning')
                 } else{
                    
-                        if(password_master== resp|| password_novoLarAPP== resp){
-                          swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
-                           setTimeout(function(){
-                            window.open('Administração/Admin.html','blank_')
-                            swal.close()
-                             Swal.close()
+                   if(password_master== resp|| password_novoLarAPP== resp){
+                     swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                       setTimeout(function(){
+                        window.open('Administração/Admin.html','blank_')
+                        swal.close()
+                         Swal.close()
 
                     },3000)
                         } else{
-                              Swal.fire('','Senha não confere!','error')
-                              
-                        }
-                     
-                
-                }
-                
-             })
-
+                         Swal.fire('','Senha não confere!','error')         
+                      }
+                  }
+               })
               //  window.open('Administração/Admin.html','_blank')
                 setTimeout(function(){
                    // Swal.close()
@@ -1315,66 +1242,52 @@
              });
        // lista destaque 
                };
-
-   </script>
-
-    <script> // redes sociais
+     </script>
+     <script> // redes sociais
         function facebook(){
            var url='https://www.facebook.com/carloseduardoAlvedeoliveira'
            window.open(url,'_blank')
         }
-       
         </script>
         <script> //logos clicaveis
             function logoPrincipalClick(){
-               document.getElementById('rotate_').style.display='none'
-              
-                document.getElementById('geral').style.display='block'
+              document.getElementById('rotate_').style.display='none'
+              document.getElementById('geral').style.display='block'
              // toggleFullScreen('click')
            };
            function logoSegundarioClick(){
-               document.getElementById('rotate_').style.display='block'
-             
-                document.getElementById('geral').style.display='none'
+              document.getElementById('rotate_').style.display='block'    
+              document.getElementById('geral').style.display='none'
           //   toggleFullScreen('click')
-              
            }
            </script>
            <script>
-             const firebaseConfigu = {
-                   apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-                   authDomain: "game-dbv.firebaseapp.com",
-                   projectId: "game-dbv",
-                   storageBucket: "game-dbv.appspot.com",
-                   messagingSenderId: "118219151865",
-                   appId: "1:118219151865:web:b6414d5255233264268528",
-                   measurementId: "G-K17DLDBYGR"
-                 };
+                const firebaseConfigu = {
+                apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                authDomain: "game-dbv.firebaseapp.com",
+                projectId: "game-dbv",
+                storageBucket: "game-dbv.appspot.com",
+                messagingSenderId: "118219151865",
+                appId: "1:118219151865:web:b6414d5255233264268528",
+                measurementId: "G-K17DLDBYGR"
+             };
                  firebase.initializeApp(firebaseConfigu); 
-            
-            
                  var db= firebase.firestore();
                  db.collection('Password').doc('Master').get().then((doc) => {
                     var doc= doc.data()
                 // Swal.fire(`${doc.Master}`,'Passwod do Administrador!','warnonig')
                 sessionStorage.setItem('Password_Master', `${doc.Master}`)
                  }).catch((err) => {
-                    
                  });
                   db.collection('Password').doc('NovoLarPassword').get().then((doc) => {
                     var doc= doc.data()
                 // Swal.fire(`${doc.NovoLarPassword}`,'Passwod do Desenvolvedor!','warnonig')
                    sessionStorage.setItem('Password_NovoLarAPP', `${doc.NovoLarPassword}`)
-                   
                  }).catch((err) => {
-                    
                  });
            </script>
-           
-
-        <script>
-        setInterval(function() {
-               
+           <script>
+              setInterval(function() {
                const newDate = new Date()
                var dia = String(newDate.getDate()).padStart(2, '0');
                var mes = String(newDate.getMonth() + 1).padStart(2, '0');
@@ -1386,20 +1299,16 @@
                const seconds = now.getSeconds().toString().padStart(2, '0');
                const timeString = `${hours}:${minutes}:${seconds}`;
                // const lbl_data = document.getElementById('lbl-data');
-               
                // lbl_data.innerHTML = `${data}`
-               
                localStorage.setItem('data', data)
                localStorage.setItem('hora', timeString)
-               
                //var Data = document.getElementById('lbl_data_head')
                //Data.innerHTML= data;
-               
                }, 1000)
-  </script>
-  <script>
-    function toggleFullScreen() {
-        if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+     </script>
+     <script>
+             function toggleFullScreen() {
+           if ((document.fullScreenElement && document.fullScreenElement !== null) ||
             (!document.mozFullScreen && !document.webkitIsFullScreen)) {
             if (document.documentElement.requestFullScreen) {
                 document.documentElement.requestFullScreen();
@@ -1408,7 +1317,7 @@
             } else if (document.documentElement.webkitRequestFullScreen) {
                 document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
             }
-        } else {
+           } else {
             if (document.cancelFullScreen) {
                 document.cancelFullScreen();
             } else if (document.mozCancelFullScreen) {

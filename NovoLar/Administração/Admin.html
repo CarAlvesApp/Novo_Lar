@@ -21,9 +21,9 @@
             padding: 0;
         }
         body{
-            background-color: rgb(40, 1, 114);
+            background-color: rgb(255, 255, 255);
             background-image: url('../src/Logo novo lar 01 PNG.png');
-            background-size: 300px;
+            background-size: 200px;
             background-repeat: no-repeat;
             background-position: center;
             background-position-y: 37vh;
@@ -213,7 +213,7 @@
         }
         #novocad{
             margin: 0 auto;
-            width: 80%;
+            width: 85%;
             max-width: 600px;
             background-color: rgb(116, 4, 110);
             padding: 30px;
@@ -235,7 +235,8 @@
             cursor: pointer; 
             background-color: rgba(255, 255, 255, 0);
             border: 0cap;
-            border-bottom: 3px solid rgb(255, 251, 251);
+            border: 1px solid bisque;
+            border-bottom: 3px solid bisque;
             border-radius: 10px;
             margin-bottom: 10px;
             color: aliceblue;
@@ -344,7 +345,7 @@
               .my-custom_menu {
                     margin: 0px;
                     padding: 0px;
-                    width: 390px;
+                    width: 350px;
                     min-height: 40vh;
                     overflow: auto;
                     border: 5px solid rgb(255, 255, 255);
@@ -373,10 +374,10 @@
                 .my-custom_Password{
                     margin: 0px;
                     padding: 0px;
-                    width: 395px;
+                    width: 370px;
                     min-height: 40vh;
                     overflow: auto;
-                    border: 5px solid rgb(255, 255, 255);
+                    border: 3px solid rgb(255, 255, 255);
                     background-color: rgb(69, 3, 95);
                     border-radius: 20px;
                      font-family: Georgia, 'Times New Roman', Times, serif;
@@ -384,20 +385,20 @@
                 }
                  .my-custom_Password label{
                     color: aliceblue;
-                    font-size: 18px;
+                    font-size: 16px;
                  }
                      .my-custom_Password p{
                     color: rgb(125, 126, 126);
                     font-size: 14px;
                  }
                 .my-custom_Password button{
-                    width: 100%;
+                    width: 80%;
                     font-size: 15px;
                     border: 0cap;
                     background-color: rgba(240, 248, 255, 0);
                     border-bottom: 2px solid rgb(171, 4, 243);
                     cursor: pointer;
-                    border-radius: 7px;
+                    border-radius: 5px;
                     color: rgb(255, 255, 255);
                     padding: 10px;
                    
@@ -422,7 +423,7 @@
                     margin-bottom: 10px;
                     font-size: 16px;
                     font-family: Georgia, 'Times New Roman', Times, serif;
-                    padding-bottom: 20px;
+                    padding-bottom: 10px;
                 }
                 .my-custom_menu #select_listas_sw option{
                         background-color: black;
@@ -438,16 +439,17 @@
                         color: red;
                 }
                  .my-custom_Password input {
-                    width: 85%;
-                    padding: 7px;
+                    width: 80%;
+                    padding: 10px;
                     cursor: pointer;
                     background-color: rgba(240, 248, 255, 0);
                     border: 0cap;
-                    border-bottom: 5px solid bisque;
-                    border-radius: 10px;
+                     border: 1px solid bisque;
+                    border-bottom: 2px solid bisque;
+                    border-radius: 7px;
                     margin-top: 10px;
                     color: rgb(0, 255, 21);
-                    font-size: 16px;
+                    font-size: 15px;
                     text-align: center;
 
                  }
@@ -456,7 +458,7 @@
                     color: red;
                   }
                   #visao, #plimp{
-                    margin-left: 10px;
+                    margin-left: 5px;
                     font-size: 14px;
                     color: aliceblue;
                     cursor: pointer;
@@ -658,9 +660,18 @@ if (i == 0) {
                 Hora: hora,
                 Descrição: descrição,
                 IMG: url_imagem,
+                IMG_2:'',
+                IMG_3:'',
+                IMG_3:'',
+                IMG_5:'',
+                IMG_6:'',
+                IMG_7:'',
+                VD:'',
+                VD2:'',
+                VD3:'',
+                Código: codigo,
                 Lista: lista,
                 ID: `${lista}/${codigo}`,
-                Código:codigo,
             });
                  var dbd = firebase.firestore();
              dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
@@ -674,25 +685,6 @@ if (i == 0) {
                 Hora: hora,
                 Descrição: descrição,
                 IMG: url_imagem,
-                Lista: lista,
-                ID: `${lista}/${codigo}`,
-                Código:codigo,
-            });
-            
-            var dbb = firebase.firestore();
-             dbb.collection(`${lista}-${codigo}`).doc(`${codigo}`).set({
-                Titulo: titulo,
-                Bairro: bairro,
-                Cidade:cidade,
-                Valor: valor,
-                Desconto: desconto,
-                End: end,
-                Data: data,
-                Hora: hora,
-                Descrição: descrição,
-                IMG: url_imagem,
-                Lista: lista,
-                ID: `${lista}/${codigo}`,
                 IMG_2:'',
                 IMG_3:'',
                 IMG_3:'',
@@ -702,9 +694,11 @@ if (i == 0) {
                 VD:'',
                 VD2:'',
                 VD3:'',
-                 Código: codigo,
-              
+                Código: codigo,
+                Lista: lista,
+                ID: `${lista}/${codigo}`,
             });
+            
             swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, url_imagem);
             setTimeout(() => {
                 document.getElementById('myProgress').style.display = 'none';
@@ -823,9 +817,9 @@ function handleError(error) {
                     title: `Password Atual <i class="fa-sharp-duotone fa-solid fa-unlock"></i>`,
                  html: `
                     
-                    <h2 id='lbl_PW_at'>Atual </h2>
+                    <h2 id='lbl_PW_at'>Atual</h2>
                     <br><br>
-                    <p id='resp2'>  <\p>
+                    <p id='resp2'> <\p>
                     <br>
                    
                  `,
@@ -866,18 +860,18 @@ function handleError(error) {
                     title: `Novo Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
                  html: `
                     <label id='label_NPW_email'>Email de Recuperação<br>
-                        <input id='inputPW_email' type='email' placeHolder='Email'><i id='plimp'>X</i>
+                        <input id='inputPW_email' type='email' placeHolder='Email'><i id='plimp'> X</i>
                     </label>
                     
                     <br><br>
                     <label id='label_NPW'>Digite novo Password <br>
-                        <input id='inputPW_Novo' type='password' placeHolder='Password' <b><i id='visao' class="fa-solid fa-eye-low-vision"></i></b>
+                        <input id='inputPW_Novo' type='password' placeHolder='Password'><b><i id='visao' class="fa-solid fa-eye-low-vision"></i></b>
                     </label>
-                    <br><br>
+                    <br>    <br>
                     <p> Digite uma nova Senha acima no campo password!<\p>
                     <br><br>
                           <button id="btn_password_salve" title="">Salvar</button>
-                    <br><br><br>
+                    <br>
                  `,
                  showCancelButton: true,
                   showConfirmButton: false,
@@ -934,9 +928,6 @@ function handleError(error) {
                     Swal.close()
                     },2000)
                    }
-
-            
-               
            
              });
                  setTimeout(function(){
