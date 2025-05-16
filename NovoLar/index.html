@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOVO LAR</title>
-    <link rel="shortcut icon" href="src/logo novo lar 02 PNG.png" type="image/x-icon">
+    <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -24,8 +24,6 @@
         body{
             background-color: rgb(255, 255, 255);
             font-family: Arial, Helvetica, sans-serif;
-       
-           
         }
         #geral{
             margin: 0 auto;
@@ -180,7 +178,7 @@
                 }
                 @keyframes allEffect {
                   0% { transform: scale(0.9); }
-                  100% { transform: scale(1.8) ; }
+                  100% { transform: scale(1.5) ; }
                 }
                 #rotate_ img {
                   animation: allEffect 5s infinite alternate;
@@ -307,15 +305,21 @@
                  margin-bottom: 0px;
 
                }
-           @media (min-width: 400px) {
-            .swiper-wrapper label{
-            float: left;
-            margin-left: 10px;
-            font-weight: bold;
-            color: rgb(255, 255, 255);
-            margin-right: 10px;
-            font-size: 13px;
-            font-family: Arial, Helvetica, sans-serif;
+                @media (min-width: 400px) {
+                  #rotate_ {
+                 margin: 0 auto;
+                 width: 99%;
+                 text-align: center;
+                 margin-top: 45%;
+             }
+                .swiper-wrapper label{
+                float: left;
+                margin-left: 10px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                margin-right: 10px;
+                font-size: 13px;
+                font-family: Arial, Helvetica, sans-serif;
             }
                 #geral #Cont_final{
                 background-color: aqua;
@@ -431,6 +435,12 @@
            }
         }
         @media (min-width: 470px) {
+            #rotate_ {
+             margin: 0 auto;
+             width: 99%;
+             text-align: center;
+             margin-top: 38%;
+          }
              .mySwiper{
              width: 90%;  
          
@@ -443,6 +453,12 @@
              }
         }
         @media (min-width: 850px) {
+             #rotate_ {
+             margin: 0 auto;
+             width: 99%;
+            text-align: center;
+            margin-top: 28%;
+        }
               .mySwiper{
              width: 820px;  
          
@@ -464,6 +480,12 @@
                }
             }
              @media (min-width: 1150px) {
+                  #rotate_ {
+                    margin: 0 auto;
+                    width: 99%;
+                    text-align: center;
+                    margin-top: 20%;
+                }
             .swiper-wrapper label{
             float: left;
             margin-left: 10px;
@@ -591,19 +613,28 @@
                     padding: 3px;
                     border-radius: 10px;
                     border: 0cap;
-          }
+           }
            .my-custom_resultpesquisa ul:hover img{
                       background-color: rgb(15, 112, 112);
            }
             #imgemoji{
                font-size: 50px;
                display: none;
-          }
+           }
             #ppemoji{
              font-size: 14px;
              margin-top: 10px;  
-         }
-      
+           }
+            #visao{
+             margin-left: 5px;
+             font-size: 14px;
+             color: aliceblue;
+             cursor: pointer;
+           }
+            #visao:hover{
+             color: red;
+           }
+
      
     </style>
 
@@ -611,12 +642,11 @@
 <body>
     <div id="rotate_">
         <h1>Click</h1>
-        <img onclick="logoPrincipalClick()" src="src/Logo novo lar 01.png" alt="">
+        <img onclick="logoPrincipalClick()" src="src/LogoNovoLarPNG.png" alt="">
         <h4>Novo Lar Imóveis</h4>
         </div>
     <div id="geral">
         <div id="heade"> <div id="head_a"> <a href="#mostruario"><i class="fa-solid fa-house"></i> Inicio</a> <a href="#Cont_final"> <i class="fa-solid fa-table-list"></i> Conteúdo</a> <a href="#" onclick="Menu_head()" >Menu <i class="fa-solid fa-bars"></i></a></div> </div>
- 
   
             <h1 id="mostruario">Mostruário </h1>
             <div class="swiper mySwiper" id="cont">
@@ -654,7 +684,6 @@
                     <div class="swiper-button-next" id="BTN_swiper"></div>
                     <div class="swiper-button-prev" id="BTN_swiper"></div>
                 </div>
-        
                 <br><h1 id="mostruario5">Diversos</h1><br>
                 <div class="swiper mySwiper" id="cont">
                     <div class="swiper-wrapper" id="lista_apresentação">
@@ -666,16 +695,17 @@
                 </div>
              <div id="Cont_final">
                 <div id="paragrafo_inicial">
-                    
+                      <img src="../src/LogoNovoLarPNG.png" alt="" width="100">
                     <p id="paragrafo_inf_cont"><h2>🏡 Novo Lar – Soluções  Residenciais 🏡  </h2><br>
                       <b>  "A Novo Lar é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
                       </b>
                     </p>
                     <label id="lbl_contact" for="">
                         📞 Telefone: (11) 99550-1463 📧 E-mail: www.carlosgat@gmail.com 📍 Litoral Sul de São Paulo</label>
+                        
                     </div>
+                  
                 </div>
-                
             <div id="footer">
                 <div id="sociais_contatos">
                     <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
@@ -686,7 +716,7 @@
 
   <script> // result pesquisa
 
-          sessionStorage.setItem('Pesquisa',``)
+         sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
             Swal.fire({
              title: `Resultado da Pesquisa...`,
@@ -696,16 +726,15 @@
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
                <br><br>
                  `,
-                  showCancelButton: true,
-                  showConfirmButton: false,
-                  customClass: {
-                  popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
-                }
-                 });
-               var set= setTimeout(function(){
-                 document.getElementById('imgemoji').style.display='block'
-                 },1000);
-
+               showCancelButton: true,
+               showConfirmButton: false,
+               customClass: {
+               popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
+            }
+        });
+             var set= setTimeout(function(){
+         document.getElementById('imgemoji').style.display='block'
+     },1000);
        var pesquisa= sessionStorage.getItem('Pesquisa')
        const firebaseConfigure = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -753,8 +782,8 @@
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
         })
-    })
-            }
+      })
+    }
   </script>
  <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -835,12 +864,12 @@
        measurementId: "G-K17DLDBYGR"
      };
       firebase.initializeApp(firebaseConfig);  
-    const db2 = firebase.firestore();
-    var produtosRef = db2.collection('Lista Mostruario 2');
-    // Limpar a lista antes de preencher
-    var lista2 = document.getElementById('lista_conteudo');
-    lista2.innerHTML = '';
-    produtosRef.get().then((querySnapshot) => {
+      const db2 = firebase.firestore();
+      var produtosRef = db2.collection('Lista Mostruario 2');
+      // Limpar a lista antes de preencher
+      var lista2 = document.getElementById('lista_conteudo');
+      lista2.innerHTML = '';
+      produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
             // Criar slide para Swiper
@@ -1203,7 +1232,7 @@
                  html: `
                     <br>
                     <label>Digite Password:<br>
-                     <input id='inputSwalAdimin' type='password' placeholder='Password'>
+                     <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
                     <br><br>  <br><br> 
                     <button id="Swalmenu11" title="">Start </button>
                     <br><br>
@@ -1214,6 +1243,18 @@
                   popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
                 }
                  });
+                   document.getElementById('visao').addEventListener('click', function() {
+                  var visao_= document.getElementById('inputSwalAdimin');
+                  var classe= document.getElementById('visao');
+                    if(visao_.type=='password'){
+                        visao_.type='text'
+                        classe.className='fa-solid fa-eye-low-vision'
+                    } else{
+                          visao_.type='password'
+                           classe.className='fa-solid fa-eye'
+
+                    }
+                })
                  document.getElementById('Swalmenu11').addEventListener('click', function() {
                  var password_master= sessionStorage.getItem('Password_Master');
                 var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
@@ -1223,13 +1264,12 @@
                 } else{
                    
                    if(password_master== resp|| password_novoLarAPP== resp){
-                     swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                    // swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
                        setTimeout(function(){
                         window.open('Administração/Admin.html','blank_')
-                        swal.close()
+                       // swal.close()
                          Swal.close()
-
-                    },3000)
+                    },1000)
                         } else{
                          Swal.fire('','Senha não confere!','error')         
                       }

@@ -22,11 +22,7 @@
         }
         body{
             background-color: rgb(255, 255, 255);
-            background-image: url('../src/Logo novo lar 01 PNG.png');
-            background-size: 200px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-position-y: 37vh;
+
             font-family: Georgia, 'Times New Roman', Times, serif;
 
         }
@@ -231,15 +227,17 @@
         }
         #novocad input{
             width: 95%;
-            padding: 10px;  
+            padding: 12px;  
             cursor: pointer; 
             background-color: rgba(255, 255, 255, 0);
             border: 0cap;
             border: 1px solid bisque;
-            border-bottom: 3px solid bisque;
-            border-radius: 10px;
+            border-bottom: 2px solid bisque;
+            border-radius: 5px;
             margin-bottom: 10px;
             color: aliceblue;
+            margin-top: 3px;
+            font-size: 15px;
          }
          #novocad input:hover{
             background-color: aqua;
@@ -466,6 +464,87 @@
                   #visao:hover, #plimp:hover{
                     color: red;
                   }
+                  #btns{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 800px ;
+                    min-width: 380px;
+                    padding: 10px;
+                    margin-top: 12%;
+                  }
+                     @media (min-width: 400px) {
+                    #btns{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 800px ;
+                    min-width: 380px;
+                    padding: 10px;
+                    margin-top: 30%;
+                  }
+          
+                 }
+                  @media (min-width: 500px) {
+                    #btns{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 800px ;
+                    min-width: 380px;
+                    padding: 10px;
+                    margin-top: 25%;
+                  }
+          
+                   @media (min-width: 700px) {
+                    #btns{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 800px ;
+                    min-width: 380px;
+                    padding: 10px;
+                    margin-top: 15%;
+                  }
+          
+                 }
+                 }
+                 @media (min-width: 900px) {
+                    #btns{
+                    margin: 0 auto;
+                    width: 80%;
+                    max-width: 800px ;
+                    min-width: 380px;
+                    padding: 10px;
+                    margin-top: 12%;
+                  }
+          
+                 }
+                 
+                   #btns h2{
+                    margin-bottom: 25px;
+                    color: rgb(107, 105, 105);
+                    font-weight: bolder;
+                    font-size: 30px;
+                   }
+                    #btns button{
+                    width: 90%;
+                    min-width: 380px;
+                    padding: 16px;
+                    border: 2px solid rgb(187, 190, 161);
+                    margin-bottom: 16px;
+                    font-size: 16px;
+                    font-weight: bolder;
+                    background-color: rgb(92, 2, 104);
+                    color: rgb(255, 255, 255);
+                    border-radius: 12px;
+                    cursor: pointer;
+                }
+                 #btns button:hover{
+                    background-color: rgb(181, 1, 187);
+                     
+                 }
+                #post_list_inicial{
+                    margin: 0 auto;
+                    width: 100%;
+                    text-align: center;
+                }
 
     </style>
 </head>
@@ -534,6 +613,20 @@
                     <br><br><br>
                 </div>
             </div>
+             <div id="post_list_inicial">
+       
+                <div id="btns">
+                             <h2>Mostruários para edição</h2>
+                    <button id="btn_mt1" for=""  onclick="MT01()">Mostruario 01<br></button>
+                     <button id="btn_mt1" for=""  onclick="MT02()">Mostruario 02<br></button>
+                      <button id="btn_mt1" for=""  onclick="MT03()">Mostruario 03<br></button>
+                       <button id="btn_mt1" for=""  onclick="MT04()">Mostruario 04<br></button>
+                        <button id="btn_mt1" for=""  onclick="MT05()">Divérsos<br></button>
+                </div>
+                <br>
+                <img src="../src/LogoNovoLarPNG.png" alt="" width="250">
+
+             </div>
         </div>
 
      </div>
@@ -554,11 +647,12 @@
         }
        </script>
      <script>
-
         function sair(){
              document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='block'
         }
         function Cadastros(){
+            document.getElementById('post_list_inicial').style.display='none'
              var hora = sessionStorage.getItem('hora');
              var num= hora.split(':')
              var n0= num[0];
@@ -572,7 +666,6 @@
           document.getElementById('codigo').value= codigo+n1+n2
           Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
           document.getElementById('novocad').style.display='block'
-          
         }
        // function NovoCad(){
      sessionStorage.setItem('IMG', '');
@@ -635,7 +728,7 @@
          document.getElementById('myProgress').style.display = 'block';
          var i = 0;
 
-if (i == 0) {
+    if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
     var width = 1;
@@ -704,28 +797,27 @@ if (i == 0) {
                 document.getElementById('myProgress').style.display = 'none';
                 window.location.reload()
             }, 5000);
-        } else {
+         } else {
             width++;
             elem.style.width = width + "%";
             elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+          }
         }
+      }
+      })
+      })
+      }
+          }
+      
+      function updateProgress(snapshot) {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const bar = document.getElementById('myBar');
+          bar.style.width = progress + '%';
+          bar.innerHTML = Math.round(progress) + '%';
+      }
+      function handleError(error) {
+          console.error('Erro ao enviar arquivo:', error);
     }
-}
-})
-})
-}
-    }
-
-function updateProgress(snapshot) {
-    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    const bar = document.getElementById('myBar');
-    bar.style.width = progress + '%';
-    bar.innerHTML = Math.round(progress) + '%';
-}
-
-function handleError(error) {
-    console.error('Erro ao enviar arquivo:', error);
-}
      </script>
      <script>
          function Menu(){
@@ -733,7 +825,6 @@ function handleError(error) {
                     title: `<labe id="label_titleSwal"> Menu <i class="fa-solid fa-bars"></i></labei>`,
                  html: `
                     <br><br>
-                
                     <label id='lbl_lbl'>Veja produtos cadastrados abaixo. <br>Selecione a lista desejada!</label>
                     <br>
                     <select id="select_listas_sw">
@@ -743,7 +834,7 @@ function handleError(error) {
                     <option id='opt03' value="Lista Mostruario 3">Mostruário 03</option>
                     <option id='opt04' value="Lista Mostruario 4">Mostruário 04</option>
                     <option id='opt05' value="Lista Diversos">Itens Divérsos</option>
-                </select>
+                   </select>
                    <br><br>
                      <button id="btn_swal_PW" title="">Alterar password <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
                    <br><br>
@@ -756,18 +847,15 @@ function handleError(error) {
                   popup: 'my-custom_menu' // Aplica a classe CSS personalizada
                 }
                  });
-    
                     var setI= setInterval(function(){
                     var resp = document.getElementById('select_listas_sw').value;
                     if(!resp|resp==''){
-
                     } else{
                         if(resp == 'Lista Mostruario 1') {
                         sair('click')
                         alert('Lista Mostruario 1')
                         clearInterval(setI)
-                          Swal.close()
-                         
+                          Swal.close() 
                         } 
                         else if(resp=='Lista Mostruario 2'){
                          sair('click')
@@ -865,7 +953,7 @@ function handleError(error) {
                     
                     <br><br>
                     <label id='label_NPW'>Digite novo Password <br>
-                        <input id='inputPW_Novo' type='password' placeHolder='Password'><b><i id='visao' class="fa-solid fa-eye-low-vision"></i></b>
+                        <input id='inputPW_Novo' type='password' placeHolder='Password'><b><i id='visao' class="fa-solid fa-eye"></i></b>
                     </label>
                     <br>    <br>
                     <p> Digite uma nova Senha acima no campo password!<\p>
@@ -880,13 +968,15 @@ function handleError(error) {
                 }
                  });
                    document.getElementById('visao').addEventListener('click', function(){
-                   
                     var visao_= document.getElementById('inputPW_Novo');
+                
+                  var classe= document.getElementById('visao');
                     if(visao_.type=='password'){
                         visao_.type='text'
+                        classe.className='fa-solid fa-eye-low-vision'
                     } else{
                           visao_.type='password'
-
+                           classe.className='fa-solid fa-eye'
                     }
                  })
                   document.getElementById('plimp').addEventListener('click', function(){
