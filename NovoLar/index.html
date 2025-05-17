@@ -1176,6 +1176,8 @@
                  });
              document.getElementById('Swalpesq').addEventListener('click', function() {
                 var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
               if(!respPesq|| respPesq==''){
                 Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
                  setTimeout(function(){

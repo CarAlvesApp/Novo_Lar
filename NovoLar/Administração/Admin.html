@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administração Novo Lar Imóveis</title>
-    <link rel="shortcut icon" href="../src/logo novo lar 02 PNG.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../src/NovoLar.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -114,7 +114,6 @@
        .my-custom_lista1 label{
         font-size: 13px;
         margin-bottom: 10px;
-       
        }
        .my-custom_lista1 input, .my-custom_lista1 textarea{
         width: 91%;
@@ -134,7 +133,6 @@
         background-color: rgba(0, 0, 0, 0.582);
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 13px;
-
        }
        .my-custom_lista1 input:hover, .my-custom_lista1 textarea:hover{
         background-color: aqua;
@@ -689,10 +687,14 @@
     var lista = document.getElementById('select_listas').value;
     var descrição = document.getElementById('obs').value;
     var bairro= document.getElementById('bairro').value;
+    var input= document.getElementById('bairro');
+    var bairro= input.value.trim();
     var valor= document.getElementById('valor').value;
     var end= document.getElementById('endereço').value;
     var desconto= document.getElementById('desconto').value;
     var cidade= document.getElementById('cidade').value;
+    var input2= document.getElementById('cidade');
+    var cidade = input2.value.trim();
     var codigo= document.getElementById('codigo').value;
     if(!codigo|| codigo==''){
         Cadastros('click')
