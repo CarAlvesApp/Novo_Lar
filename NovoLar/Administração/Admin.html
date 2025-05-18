@@ -26,6 +26,34 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
 
         }
+              ::-webkit-scrollbar {
+            width: 10px;
+            margin-left: 15px;
+            /* Largura da barra de rolagem */
+            cursor: pointer;   
+        }        
+         ::-webkit-scrollbar-thumb {
+            margin-left: 15px;
+            background-color: rgba(3, 95, 3, 0.993);
+            /* Cor do polegar da barra de rolagem */
+            margin-top: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+                
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(27, 211, 3);         
+        }       
+         ::-webkit-scrollbar-track {
+            /* Cor da trilha da barra de rolagem */
+            margin-left: 15px;    
+            background-color: rgba(105, 2, 88, 0.993);
+            border-radius: 7px;
+            cursor: pointer;
+            margin-bottom: 82px;
+            margin-top: 82px;
+           
+         }
         #geral{
             margin: 0 auto;
             width: 100%;
@@ -543,7 +571,196 @@
                     width: 100%;
                     text-align: center;
                 }
+                #idList{
+                    width: 100%;
+                    display: none;
+                    background-color: rgba(0, 255, 255, 0);
+                    margin-top: 110px;
+                    text-align: center;
+                  
+                }
+                #listaid{
+                    width: 80%;
+                    margin: 0 auto;
+                    min-width: 390px;
+                    max-width: 1000px;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+                    border-bottom: 3px solid rgba(126, 125, 125, 0.363);
+                   
+                }
+                #h2Lista{ 
+                    color: black;
+                    margin-bottom: 20px;
+                }
+                #imgList {
+                  max-width: 100px;
+                  max-height: 200px;
+                  margin-bottom: 10px;
+                  border-radius: 20px;
+                }
+                #listaid label{
+                    margin-left: 10px;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                  #divList{
+                width: 98%;
+                 
+            }
+            #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+              #listaid  button:hover{
+                color: rgb(150, 2, 142);
 
+              }
+               #listaid  #lbllist3{
+                font-size: 12px;
+                margin-top: 20px;
+            }
+
+                 @media (min-width: 400px) {
+                    #listaid  #lbllist3{
+                 font-size: 12px;
+                 margin-top: 20px;
+            }
+                   #listaid label{
+                    margin-left: 10px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                   #imgList {
+                  max-width: 100px;
+                  max-height: 200px;
+                 border-radius: 7px;
+                } #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 18px;
+            }
+                 }
+
+
+                  @media (min-width: 500px) {
+                    #listaid  #lbllist3{
+                font-size: 13px;
+                margin-top: 20px;
+            }
+                   #listaid label{
+                    margin-left: 10px;
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                 #imgList {
+                  max-width: 150px;
+                  max-height: 300px;
+                  
+                }
+                 #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 19px;
+            }
+          
+                 }
+                  @media (min-width: 700px) {
+                    #listaid  #lbllist3{
+                font-size: 14px;
+                margin-top: 20px;
+            }
+                   #listaid label{
+                    margin-left: 10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                 #imgList {
+                  max-width: 200px;
+                  max-height: 400px;
+                   border-radius: 12px;
+                }
+                 #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 22px;
+            }
+          
+                 }
+                  @media (min-width: 800px) {
+                    #listaid  #lbllist3{
+                font-size: 16px;
+                margin-top: 20px;
+            }
+                   #listaid label{
+                    margin-left: 10px;
+                    font-size: 19px;
+                    font-weight: bold;
+                }
+                 #imgList {
+                  max-width: 250px;
+                  max-height: 500px;
+                   border-radius: 15px;
+                }
+                 #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 22px;
+            }
+          
+                 }
+                  @media (min-width: 900px) {
+                    #listaid  #lbllist3{
+                font-size: 17px;
+                margin-top: 20px;
+            }
+                   #listaid label{
+                    margin-left: 24px;
+                    font-size: 22px;
+                    font-weight: bold;
+                }
+                 #imgList {
+                  max-width: 250px;
+                  max-height: 500px;
+                   border-radius: 16px;
+                }
+                 #listaid  button{
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 28px;
+            }
+          
+            }
+             
+     
+          
     </style>
 </head>
 <body>
@@ -553,7 +770,9 @@
             <button onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>
              <button id="menu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
         </div>
+       
         <div id="body">
+           
             <div id="novocad">
                 <i id="sair" class="fa-solid fa-delete-left" onclick="sair()"></i>
                 <label id="lbl_codigo" for=""> Código:<br>
@@ -616,18 +835,139 @@
                 <div id="btns">
                              <h2>Mostruários para edição</h2>
                     <button id="btn_mt1" for=""  onclick="MT01()">Mostruario 01<br></button>
-                     <button id="btn_mt1" for=""  onclick="MT02()">Mostruario 02<br></button>
-                      <button id="btn_mt1" for=""  onclick="MT03()">Mostruario 03<br></button>
-                       <button id="btn_mt1" for=""  onclick="MT04()">Mostruario 04<br></button>
-                        <button id="btn_mt1" for=""  onclick="MT05()">Divérsos<br></button>
+                     <button id="btn_mt2" for=""  onclick="MT02()">Mostruario 02<br></button>
+                      <button id="btn_mt3" for=""  onclick="MT03()">Mostruario 03<br></button>
+                       <button id="btn_mt4" for=""  onclick="MT04()">Mostruario 04<br></button>
+                        <button id="btn_mt5" for=""  onclick="MT05()">Diversos<br></button>
                 </div>
                 <br>
                 <img src="../src/LogoNovoLarPNG.png" alt="" width="250">
 
              </div>
-        </div>
+             
+             </div>
+             <div id="idList">
+                   <h2 id="h2Lista">Lista</h2>
+                   <div id="listas">
 
+                   </div>
+                
+        </div>
+            
      </div>
+     <script>
+         sessionStorage.setItem('LIsta',``)
+         function MT01(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='none'      
+             var list= 'Lista Mostruario 1'
+             sessionStorage.setItem('LIsta',`${list}`)
+              startList('click')   
+         }
+         function MT02(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='none'
+             var list= 'Lista Mostruario 2'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+         }
+          function MT03(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='none'
+             var list= 'Lista Mostruario 3'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+         }
+          function MT04(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='none'
+             var list= 'Lista Mostruario 4'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+         }
+          function MT05(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('post_list_inicial').style.display='none'
+             var list= 'Lista Divérsos'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+         }
+       
+       
+       
+       
+         function startList(){
+            document.getElementById('idList').style.display='block'
+           var respList = sessionStorage.getItem('LIsta')
+            
+         var h2li= document.getElementById('h2Lista');
+           h2li.innerText=`${respList}`
+     
+           //   alert(respList)
+           const firebaseConfig = {
+           apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+           authDomain: "game-dbv.firebaseapp.com",
+           projectId: "game-dbv",
+           storageBucket: "game-dbv.appspot.com",
+           messagingSenderId: "118219151865",
+           appId: "1:118219151865:web:b6414d5255233264268528",
+           measurementId: "G-K17DLDBYGR"
+           };
+            firebase.initializeApp(firebaseConfig);  
+          const db = firebase.firestore();
+          var produtosRef = db.collection(`${respList}`);
+          // Limpar a lista antes de preencher
+          var lista = document.getElementById('listas');
+          lista.innerHTML = '';
+          produtosRef.get().then((querySnapshot) => {
+              querySnapshot.forEach(doc => {
+                  var doc = doc.data();
+            // alert(doc.Titulo)
+                  var maylist= document.createElement('div');
+                  var div = document.createElement('div');
+                  var img=  document.createElement('img');
+                  var label = document.createElement('label');
+                  var label2 = document.createElement('label');
+                   var label3 = document.createElement('label');
+                  var btn= document.createElement('button');
+                  var br=document.createElement('br');
+                  var br2=document.createElement('br');
+                  var br3=document.createElement('br');
+                  var br4=document.createElement('br');
+                  var br5=document.createElement('br');
+                  maylist.id='listaid'
+                  div.id='divList'
+                  img.id='imgList';
+                  img.src=`${doc.IMG}`;
+                  label.id='lblList';
+                  btn.id='btnList'
+                  label.textContent=`${doc.Titulo } `;
+                  label2.id='lbllist2';
+                  label2.textContent=`${doc.Bairro} em ${doc.Cidade} `;
+                  label3.id='lbllist3';
+                  label3.textContent=`Código: ${doc.Código}`;
+                  btn.className='fa-solid fa-pen-to-square'
+                
+                  maylist.appendChild(img)
+                  div.appendChild(label);
+                  div.appendChild(br2)
+                  div.appendChild(label2);
+                   div.appendChild(br3)
+                   div.appendChild(br4)
+                 div.appendChild(label3);
+                 maylist.appendChild(div)
+                   maylist.appendChild(br)
+                  maylist.appendChild(btn)
+                
+
+                  lista.appendChild(maylist)
+
+        })
+    })
+
+        };
+
+     </script>
        <script>
         function limpar(){
                    
@@ -648,9 +988,17 @@
         function sair(){
              document.getElementById('novocad').style.display='none'
             document.getElementById('post_list_inicial').style.display='block'
+           // document.getElementById('idList').style.display='none'
         }
         function Cadastros(){
+            var llat= document.getElementById('post_list_inicial');
+            if(llat.style.display=='none'){
+               document.getElementById('post_list_inicial').style.display='block'
+                document.getElementById('idList').style.display='none'
+            } else {
+
             document.getElementById('post_list_inicial').style.display='none'
+            document.getElementById('idList').style.display='none'
              var hora = sessionStorage.getItem('hora');
              var num= hora.split(':')
              var n0= num[0];
@@ -810,6 +1158,7 @@
       })
       }
           }
+        }
       
       function updateProgress(snapshot) {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -829,14 +1178,6 @@
                     <br><br>
                     <label id='lbl_lbl'>Veja produtos cadastrados abaixo. <br>Selecione a lista desejada!</label>
                     <br>
-                    <select id="select_listas_sw">
-                    <option id='opt00' value="">Selecione uma lista</option>
-                    <option id='opt01' value="Lista Mostruario 1">Mostruário 01</option>
-                    <option id='opt02' value="Lista Mostruario 2">Mostruário 02</option>
-                    <option id='opt03' value="Lista Mostruario 3">Mostruário 03</option>
-                    <option id='opt04' value="Lista Mostruario 4">Mostruário 04</option>
-                    <option id='opt05' value="Lista Diversos">Itens Divérsos</option>
-                   </select>
                    <br><br>
                      <button id="btn_swal_PW" title="">Alterar password <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
                    <br><br>
@@ -849,46 +1190,7 @@
                   popup: 'my-custom_menu' // Aplica a classe CSS personalizada
                 }
                  });
-                    var setI= setInterval(function(){
-                    var resp = document.getElementById('select_listas_sw').value;
-                    if(!resp|resp==''){
-                    } else{
-                        if(resp == 'Lista Mostruario 1') {
-                        sair('click')
-                        alert('Lista Mostruario 1')
-                        clearInterval(setI)
-                          Swal.close() 
-                        } 
-                        else if(resp=='Lista Mostruario 2'){
-                         sair('click')
-                         alert('Lista Mostruario 2')
-                         clearInterval(setI)
-                         Swal.close()
-                        }
-                        else if(resp=='Lista Mostruario 3'){
-                        sair('click')
-                        alert('Lista Mostruario 3')
-                        clearInterval(setI)
-                        Swal.close()
-                            
-                        }
-                         else if(resp=='Lista Mostruario 4'){
-                        sair('click')
-                        alert('Lista Mostruario 4')
-                        clearInterval(setI)
-                          Swal.close()
-                            
-                        }
-                         else if(resp=='Lista Diversos'){
-                       sair('click')
-                       alert('Lista Diversos')
-                       clearInterval(setI)
-                         Swal.close()
-                            
-                        }
-                    }
-
-                },511)
+      
                 
              document.getElementById('btn_swal_at').addEventListener('click', function() {
                 const firebaseConfig = {
@@ -902,7 +1204,7 @@
                  };
                  firebase.initializeApp(firebaseConfig); 
             
-                 clearInterval(setI)
+                 //clearInterval(setI)
                   Swal.fire({
                     title: `Password Atual <i class="fa-sharp-duotone fa-solid fa-unlock"></i>`,
                  html: `
@@ -943,7 +1245,7 @@
             
              });
               document.getElementById('btn_swal_PW').addEventListener('click', function() {
-                 clearInterval(setI)
+                 //clearInterval(setI)
                 
                 
                   Swal.fire({
