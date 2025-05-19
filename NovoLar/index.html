@@ -22,8 +22,9 @@
             padding: 0;
         }
         body{
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
         }
         #geral{
             margin: 0 auto;
@@ -164,13 +165,14 @@
                    max-width: 210px ;
                    max-height: 210px;
                    padding: 5px;
-                   border: 5px solid rgba(255, 255, 255, 0);
-                  background-color: rgba(255, 255, 255, 0.315);
+                   border: 5px solid rgb(126, 125, 126);
+                  background-color: rgb(255, 255, 255);
+                   border-radius: 20px;
                    cursor: pointer;
                 }
                 #rotate_ img:hover {
                     background-color: rgb(255, 255, 255);
-                    border: 5px solid rgb(208, 212, 208);
+                    border: 5px solid rgb(187, 2, 172);
                     border-radius: 20px;
                     
                 }
@@ -245,7 +247,6 @@
                     border: 5px solid rgb(255, 255, 255);
                     background-color: rgb(69, 3, 95);
                     border-radius: 20px;
-
                 }
                 .my-custom_login_Swl label{
                     font-size: 14px;
@@ -266,7 +267,6 @@
                     background-color: aqua;
                     color: rgb(148, 0, 0);
                 }
-    
                   #paragrafo_inicial p{
                   margin: 0 auto;
                   width: 85%;
@@ -279,15 +279,13 @@
                 margin-top: 70px;
                 text-align: center;
                 bottom: 30px;
-             
                }
                #paragrafo_inicial p{
-                color: rgb(36, 2, 100);
+                color: rgb(255, 255, 255);
                 background-color: rgba(3, 7, 7, 0);
                 font-weight: bold;
                 font-size: 18px;
                }
-         
                 #mostruario{
                 width: 85%;
                 text-align: center;
@@ -333,6 +331,7 @@
                  margin-top: 30px;
                  text-align: center;
                  margin-bottom: 10px;
+                 color: #ffffff;
             }
                 #geral h1{
                  text-align: center;
@@ -583,8 +582,8 @@
             }
             .my-custom_resultpesquisa #divPesq{
                     width: 96%;
-                    margin-top: 20px;
-                    padding: 10px;
+                    margin-bottom: 20px;
+                    padding: 15px;
                     border: 0cap;
                     cursor: pointer;
                     background-color: rgb(85, 1, 81);
@@ -606,7 +605,7 @@
                     border: 0cap;
            }
            .my-custom_resultpesquisa ul:hover img{
-                      background-color: rgb(15, 112, 112);
+                background-color: rgb(15, 112, 112);
            }
             #imgemoji{
                font-size: 50px;
@@ -625,7 +624,22 @@
             #visao:hover{
              color: red;
            }
+           #paragrafo_inicial img{
+            background-color: #ffffff;
+            border: 3px solid #979696;
+            border-radius:10px ;
+           }
+          #geral h2{
+            color: #02c7ce;
+            text-decoration: 3px solid rgb(255, 255, 255);
+          }
+           #geral h1{
+            color: #ce02bd;
+             margin-bottom: 20px;
+            text-decoration: underline 3px solid rgba(173, 173, 173, 0.568);
+           
 
+          }
      
     </style>
 
@@ -712,6 +726,7 @@
             Swal.fire({
              title: `Resultado da Pesquisa...`,
              html: `
+              
                <br>
                <div id='lista_pesquisa'></div>        
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
@@ -745,6 +760,7 @@
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
+            var itens= querySnapshot.size
             var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label')
