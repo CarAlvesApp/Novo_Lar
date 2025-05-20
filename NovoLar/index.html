@@ -22,9 +22,16 @@
             padding: 0;
         }
         body{
-            background-color: rgb(255, 255, 255);
-            font-family: Arial, Helvetica, sans-serif;
-            color: #5f5f5f;
+           background-color: rgb(255, 255, 255);
+           font-family: Arial, Helvetica, sans-serif;
+           color: #5f5f5f;
+           background-image: url('src/LogoNovoLarPNG.png');
+           background-repeat: no-repeat;
+           background-size: 120px;
+           background-position-y: 7%;
+           background-position-x: 8%;
+         
+
         }
         #geral{
             margin: 0 auto;
@@ -271,20 +278,18 @@
                   margin: 0 auto;
                   width: 85%;
                   margin-top: 30px;
-                  font-size: 18px;     
+                  font-size: 18px;   
+                background-color: rgba(3, 7, 7, 0);
+                font-weight: bold;  
              } 
               #geral #paragrafo_inicial{
                 margin: 0 auto;
                 width: 85%;
+               max-height: 70vh;
                 margin-top: 70px;
                 text-align: center;
                 bottom: 30px;
-               }
-               #paragrafo_inicial p{
-                color: rgb(255, 255, 255);
-                background-color: rgba(3, 7, 7, 0);
-                font-weight: bold;
-                font-size: 18px;
+                
                }
                 #mostruario{
                 width: 85%;
@@ -302,8 +307,32 @@
                  font-size: 22px;
                  margin-top: 0px;
                  margin-bottom: 0px;
-
                }
+                #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height: 50vh;
+                padding-top: 20px;
+             } 
+             #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height: 80vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+                margin-top: 70px;
+          }
+            @media (max-width: 1200px) {
+               body{
+           background-color: rgb(255, 255, 255);
+           font-family: Arial, Helvetica, sans-serif;
+           color: #5f5f5f;
+           background-image: url('');
+           background-repeat: repeat-y;
+           background-size: 10px;
+           image-orientation: flip;
+           background-position-y: 0%;
+
+        }
+            }
                 @media (min-width: 400px) {
                   #rotate_ {
                  margin: 0 auto;
@@ -322,7 +351,7 @@
             }
                 #geral #Cont_final{
                 background-color: aqua;
-                height: 100vh;
+                height: 80vh;
                 padding-top: 20px;
             }
                  #paragrafo_inicial p{
@@ -349,19 +378,8 @@
                 text-align: center;  
                };
             }
-                #geral #Cont_final{
-                background-color: rgba(0, 255, 255, 0);
-                height: 50vh;
-                padding-top: 20px;
-            }
-              
-                @media (max-width: 850px) {
-                    #geral #Cont_final{
-                background-color: rgba(0, 255, 255, 0);
-                height: 90vh;
-                padding-top: 20px;
-            }
-        }
+       
+       
        .swiper-wrapper button{
             font-size: 18px;
             font-weight: bold;
@@ -400,11 +418,17 @@
             font-size: 15px;
         }
            .mySwiper{
-          width: 820px;  
+          width: 640px;  
           margin-top: 0px;
           margin-bottom: 0px;
          }
         @media (min-width: 400px) {
+            #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height: 85vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+          }
             .mySwiper{
              width: 97%;
             }
@@ -425,6 +449,12 @@
            }
         }
         @media (min-width: 470px) {
+            #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height: 95vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+          }
             #rotate_ {
              margin: 0 auto;
              width: 99%;
@@ -442,7 +472,25 @@
                display: none;
              }
         }
+        @media (min-width: 630px) {
+          #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height: 85vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+          }
+           .mySwiper{
+             width: 600px;  
+         
+           }
+        }
         @media (min-width: 850px) {
+            #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height:77vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+          }
              #rotate_ {
              margin: 0 auto;
              width: 99%;
@@ -450,7 +498,7 @@
             margin-top: 28%;
         }
               .mySwiper{
-             width: 820px;  
+             width: 640px;  
          
            }
             .swiper-wrapper label{
@@ -470,6 +518,16 @@
                }
             }
              @media (min-width: 1150px) {
+                 .mySwiper{
+             width: 640px;  
+         
+           }
+                 #geral #Cont_final{
+                background-color: rgba(0, 255, 255, 0);
+                height:70vh;
+                padding-top: 20px;
+                margin-bottom: 3px;
+          }
                   #rotate_ {
                     margin: 0 auto;
                     width: 99%;
@@ -638,8 +696,10 @@
              margin-bottom: 20px;
             text-decoration: underline 3px solid rgb(170, 0, 147);
            
-
           }
+           
+        
+        
      
     </style>
 
@@ -651,7 +711,7 @@
         <h4>Novo Lar Imóveis</h4>
         </div>
     <div id="geral">
-        <div id="heade"> <div id="head_a"> <a href="#mostruario"><i class="fa-solid fa-house"></i> Inicio</a> <a href="#Cont_final"> <i class="fa-solid fa-table-list"></i> Conteúdo</a> <a href="#" onclick="Menu_head()" >Menu <i class="fa-solid fa-bars"></i></a></div> </div>
+        <div id="heade"> <div id="head_a"> <a href="#mostruario"><i class="fa-solid fa-house"></i> Inicio</a> <a onclick="toggleFullScreen()"> <i class="fa-solid fa-desktop"></i> Tela cheia</a> <a href="#" onclick="Menu_head()" >Menu <i class="fa-solid fa-bars"></i></a></div> </div>
   
             <h1 id="mostruario">Mostruário </h1>
             <div class="swiper mySwiper" id="cont">
@@ -1302,7 +1362,7 @@
             function logoPrincipalClick(){
               document.getElementById('rotate_').style.display='none'
               document.getElementById('geral').style.display='block'
-             // toggleFullScreen('click')
+             
            };
            function logoSegundarioClick(){
               document.getElementById('rotate_').style.display='block'    

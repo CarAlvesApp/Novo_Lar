@@ -22,8 +22,7 @@
         }
         body{
             background-color: rgb(255, 255, 255);
-
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Arial, Helvetica, sans-serif;
 
         }
               ::-webkit-scrollbar {
@@ -321,20 +320,19 @@
             background-color: aqua;
             color: red;
           }
-         @media (min-width: 400px) {
-            #novocad  #lbl_IMG{
-            font-size: 20px;
-            text-align: center;
-            margin-left: 5%;
-         }
+    
  
-        }
-         #novocad  #lbl_IMG{
+        
+         #novocad  #lbl_IMG, #novocad  #salve{
             font-size: 20px;
             text-align: center;
             margin-left: 5%;
             margin-bottom: 50px;
             padding-bottom: 30px;
+            cursor: pointer;
+         }
+         #novocad  #salve:hover{
+            color: rgb(32, 255, 3);
          }
          #lbl_codigo{
             float: right;
@@ -600,6 +598,8 @@
                   max-height: 200px;
                   margin-bottom: 10px;
                   border-radius: 20px;
+                  cursor: pointer;
+                 border: 3px solid rgba(0, 255, 255, 0);
                 }
                 #listaid label{
                     margin-left: 10px;
@@ -610,7 +610,13 @@
                 width: 98%;
                  
             }
-            #listaid  button{
+            #imgList:hover{
+                background-color: aqua;
+                border: 3px solid rgb(190, 2, 150);
+
+            }
+              #listaid  button, #divList button{
+              
                 float: right;
                 margin-right: 10px;
                 border: 0cap;
@@ -747,6 +753,7 @@
                   max-width: 210px;
                   max-height: 420px;
                    border-radius: 16px;
+
                 }
                  #listaid  button{
                 float: right;
@@ -767,7 +774,7 @@
 <body>
      <div id="geral">
         <div id="head">
-            <button onclick="Cadastros()">Novo Cadastros <i class="fa-solid fa-pen-to-square"></i></button>
+            <button id="clicks" onclick="Cadastros()">Novo Cadastros <i class="fa-solid fa-pen-to-square"></i></button>
             <button onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>
              <button id="menu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
         </div>
@@ -779,7 +786,7 @@
                 <label id="lbl_codigo" for=""> Código:<br>
                 <input type="text" id="codigo" placeholder="Código do Cadastro">
                 </label>
-                <h1>Novo Cadastro</h1>
+                <h1 id="h1_n_cad">Cadastro</h1>
                 <select id="select_listas">
                     <option value="">Selecione uma lista</option>
                     <option value="Lista Mostruario 1">Mostruário 01</option>
@@ -826,7 +833,8 @@
                     <br> </label>
                     <br><br>
                     
-                    <label id="lbl_IMG" onclick="handleUpload()">Salvar <i class="fa-solid fa-image"></i> Imagem</label>
+                    <label id="lbl_IMG" onclick="Start()"> Salvar <i class="fa-solid fa-image" onclick="Start()"></i></label>
+                    <label id="salve" for="" onclick="Salvarcad()">Salvar alterações</label>
                     <label id="lbl_limpar" for="" onclick="limpar()">Limpar Campos</label>
                     <br><br><br>
                 </div>
@@ -843,21 +851,62 @@
                 </div>
                 <br>
                 <img src="../src/LogoNovoLarPNG.png" alt="" width="250">
-
              </div>
-             
              </div>
              <div id="idList">
                    <h2 id="h2Lista">Lista </h2>
-
-                   
                    <div id="listas">
-
                    </div>
+    >
+     <script>
+             sessionStorage.setItem('IMG', '');
+             sessionStorage.setItem('Lista', '');
+             sessionStorage.setItem('dadosIMG', ``);
+
+             sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);      
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``);    
+             function sessionS(){
                 
-        </div>
-            
-     </div>
+                 sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);        
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);  
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``) ;   
+             }
+     </script>
      <script>
          sessionStorage.setItem('LIsta',``)
          function MT01(){
@@ -865,7 +914,8 @@
             document.getElementById('post_list_inicial').style.display='none'      
              var list= 'Lista Mostruario 1'
              sessionStorage.setItem('LIsta',`${list}`)
-              startList('click')   
+              startList('click')  
+               sessionS('click') 
          }
          function MT02(){
                document.getElementById('novocad').style.display='none'
@@ -873,6 +923,7 @@
              var list= 'Lista Mostruario 2'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
+              sessionS('click')
          }
           function MT03(){
                document.getElementById('novocad').style.display='none'
@@ -880,6 +931,7 @@
              var list= 'Lista Mostruario 3'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
+              sessionS('click')
          }
           function MT04(){
                document.getElementById('novocad').style.display='none'
@@ -887,18 +939,16 @@
              var list= 'Lista Mostruario 4'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
+              sessionS('click')
          }
           function MT05(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('post_list_inicial').style.display='none'
-             var list= 'Lista Divérsos'
+             var list= 'Lista Diversos'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
+              sessionS('click')
          }
-       
-       
-       
-       
          function startList(){
             sessionStorage.setItem('itens','')
             document.getElementById('idList').style.display='block'
@@ -936,7 +986,7 @@
                   var label = document.createElement('label');
                   var label2 = document.createElement('label');
                    var label3 = document.createElement('label');
-                  var btn= document.createElement('button');
+                  var button= document.createElement('button');
                   var br=document.createElement('br');
                   var br2=document.createElement('br');
                   var br3=document.createElement('br');
@@ -947,13 +997,14 @@
                   img.id='imgList';
                   img.src=`${doc.IMG}`;
                   label.id='lblList';
-                  btn.id='btnList'
+                  button.id='btnList'
                   label.textContent=`${doc.Titulo } `;
                   label2.id='lbllist2';
                   label2.textContent=`${doc.Bairro} em ${doc.Cidade} `;
                   label3.id='lbllist3';
                   label3.textContent=`Código: ${doc.Código}`;
-                  btn.className='fa-solid fa-pen-to-square'
+                  button.className=''
+                  button.textContent= 'Editar'
                 
                   maylist.appendChild(img)
                   div.appendChild(label);
@@ -964,36 +1015,86 @@
                   div.appendChild(label3);
                   maylist.appendChild(div)
                   maylist.appendChild(br)
-                  maylist.appendChild(btn)
+                  maylist.appendChild(button)
                   lista.appendChild(maylist)
-
-              
                 
                   Swal.fire(`${itens} Imóveis encontrados`,'','')
                   sessionStorage.setItem('itens',`${itens}`)
 
-        })
-    })
+                  img.addEventListener('click', function(){
+                    swal(`${doc.Titulo}`,``,`${doc.IMG}`)
+                  });
+                     button.addEventListener('click', function(){
+                        
+                        document.getElementById('lbl_IMG').style.display='none';
+                        document.getElementById('salve').style.display='block';
+                        document.getElementById('codigo').value= doc.Código;
+                        document.getElementById('titulo').value= doc.Titulo;
+                        document.getElementById('select_listas').value= doc.Lista;
+                        document.getElementById('obs').value= doc.OBS;
+                        document.getElementById('bairro').value= doc.Bairro;
+                        document.getElementById('valor').value= doc.Valor;
+                        document.getElementById('endereço').value= doc.End;
+                        document.getElementById('desconto').value=doc.Desconto;
+                        document.getElementById('cidade').value=doc.Cidade;
+                          sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
+                        sessionStorage.setItem('img2',`${doc.IMG_2}`)
+                        //document.getElementById('img2').value=doc.IMG_2;
+                         sessionStorage.setItem('img3',`${doc.IMG_3}`)
+                        //document.getElementById('img3').value=doc.IMG_3;
+                         sessionStorage.setItem('img4',`${doc.IMG_4}`)
+                      //  document.getElementById('img4').value=doc.IMG_4;
+                       sessionStorage.setItem('img5',`${doc.IMG_5}`)
+                        //document.getElementById('img5').value=doc.IMG_5;
+                         sessionStorage.setItem('img6',`${doc.IMG_6}`)
+                        //document.getElementById('img6').value=doc.IMG_6;
+                         sessionStorage.setItem('img7',`${doc.IMG_7}`)
+                      //  document.getElementById('img7').value=doc.IMG_7;
+                       sessionStorage.setItem('vd',`${doc.VD}`)
+                       // document.getElementById('vd').value=doc.VD;
+                       sessionStorage.setItem('vd2',`${doc.VD2}`)
+                        //document.getElementById('vd2').value=doc.VD2;
+                        sessionStorage.setItem('vd3',`${doc.VD3}`)
+                       //document.getElementById('vd3').value=doc.VD3;
+                       sessionStorage.setItem('id',`${doc.ID}`)
+                         //document.getElementById('id').value=doc.ID;
+                          sessionStorage.setItem('obs2',`${doc.OBS2}`)
+                         //document.getElementById('obs2').value=doc.OBS2;
+                         sessionStorage.setItem('obs3',`${doc.OBS3}`)
+                         //document.getElementById('obs3').value=doc.OBS3;
+                         sessionStorage.setItem('obs4',`${doc.OBS4}`)
+                         //document.getElementById('obs4').value=doc.OBS4;
+                         sessionStorage.setItem('obs5',`${doc.OBS5}`)
+                         //document.getElementById('obs5').value=doc.OBS5;
+                         sessionStorage.setItem('obs6',`${doc.OBS6}`)
+                         //document.getElementById('obs6').value=doc.OBS6;
+                         sessionStorage.setItem('obs7',`${doc.OBS7}`)
+                         //document.getElementById('obs7').value=doc.OBS7;
+                         sessionStorage.setItem('obs8',`${doc.OBS8}`)
+                         //document.getElementById('obs8').value=doc.OBS8;
+                         sessionStorage.setItem('obs9',`${doc.OBS9}`)
+                         //document.getElementById('obs9').value=doc.OBS9;
+                         sessionStorage.setItem('obs10',`${doc.OBS10}`)
+                         //document.getElementById('obs10').value=doc.OBS10;
+                         Cadastros2('click')
+                    Swal.fire(`Editar Cadastro!`,`${doc.Titulo}`,``)
+                  })
+           })
+       })
     function SetItens(){
       setTimeout(function(){
         var Itens_ = sessionStorage.getItem('itens')
         if(!Itens_|Itens_==''){
            Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
-        
         } else{
-
         }
         },1200)
     } 
         };
-
      </script>
        <script>
-        function limpar(){
-                   
-         sessionStorage.setItem('IMG', '');
-         sessionStorage.setItem('Lista', '');
-         sessionStorage.setItem('dadosIMG', ``);
+        function limpar(){  
+        
          document.getElementById('titulo').value='';
          document.getElementById('select_listas').value='';
          document.getElementById('obs').value='';
@@ -1002,6 +1103,7 @@
          document.getElementById('endereço').value='';
          document.getElementById('desconto').value='';
          document.getElementById('cidade').value='';
+         sessionS('click')
         }
        </script>
      <script>
@@ -1009,8 +1111,22 @@
              document.getElementById('novocad').style.display='none'
             document.getElementById('post_list_inicial').style.display='block'
            // document.getElementById('idList').style.display='none'
+             sessionS('click')
+               limpar()
         }
+        </script>
+        <script>
+        
         function Cadastros(){
+          
+            document.getElementById('codigo').value=''
+             var h1_notf= document.getElementById('h1_n_cad');
+            h1_notf.innerHTML='Novo Cadastro'
+
+            document.getElementById('lbl_IMG').style.display='block';
+            document.getElementById('salve').style.display='none';
+        
+            sessionStorage.setItem('códigoRetur','')
             var llat= document.getElementById('post_list_inicial');
             if(llat.style.display=='none'){
                document.getElementById('post_list_inicial').style.display='block'
@@ -1024,7 +1140,7 @@
              var n0= num[0];
              var n1= num[1];
              var n2= num[2];
-         const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let codigo = '';
             for (let i = 0; i < 8; i++) {
                 codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
@@ -1037,9 +1153,10 @@
      sessionStorage.setItem('IMG', '');
      sessionStorage.setItem('Lista', '');
      sessionStorage.setItem('dadosIMG', ``);
-     
-     function handleUpload() {
-        const firebaseConfig = {
+    }
+     function Start() {
+          
+        const firebaseConfigs = {
       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
       authDomain: "game-dbv.firebaseapp.com",
       projectId: "game-dbv",
@@ -1048,7 +1165,9 @@
       appId: "1:118219151865:web:b6414d5255233264268528",
       measurementId: "G-K17DLDBYGR"
     };  
-      firebase.initializeApp(firebaseConfig);  
+     firebase.initializeApp(firebaseConfigs); 
+    var CodRetur= sessionStorage.getItem('códigoRetur')
+    var cod= document.getElementById('codigo'); 
     var data = sessionStorage.getItem('data');
     var hora = sessionStorage.getItem('hora');
     var titulo = document.getElementById('titulo').value;
@@ -1064,6 +1183,12 @@
     var input2= document.getElementById('cidade');
     var cidade = input2.value.trim();
     var codigo= document.getElementById('codigo').value;
+
+   if(!CodRetur || CodRetur==''){
+         document.getElementById('codigo').style.display='block'
+   }else{
+       document.getElementById('codigo').style.display='none'
+   }
     if(!codigo|| codigo==''){
         Cadastros('click')
     }
@@ -1098,14 +1223,14 @@
          document.getElementById('myProgress').style.display = 'block';
          var i = 0;
 
-    if (i == 0) {
-    i = 1;
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 30);
-
-    function frame() {
-        if (width >= 100) {
+           if (i == 0) {
+           i = 1;
+           var elem = document.getElementById("myBar");
+           var width = 1;
+           var id = setInterval(frame, 30);
+       
+           function frame() {
+               if (width >= 100) {
             clearInterval(id);
             i = 0;                     
             sessionStorage.setItem('IMG', url_imagem);
@@ -1113,7 +1238,7 @@
             sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
             var db = firebase.firestore();
              db.collection(`${lista}`).doc(`${codigo}`).set({
-                Titulo: titulo,
+                  Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,
                 Valor: valor,
@@ -1121,24 +1246,34 @@
                 End: end,
                 Data: data,
                 Hora: hora,
-                Descrição: descrição,
                 IMG: url_imagem,
-                IMG_2:'',
-                IMG_3:'',
-                IMG_3:'',
-                IMG_5:'',
-                IMG_6:'',
-                IMG_7:'',
+                OBS: descrição,
+                IMG2:'',
+                OBS2:'',
+                IMG3:'',
+                OBS3:'',
+                IMG4:'',
+                OBS4:'',
+                IMG5:'',
+                OBS5:'',
+                IMG6:'',
+                OBS6:'',
+                IMG7:'',
+                OBS7:'',
                 VD:'',
+                OBS8:'',
                 VD2:'',
+                OBS9:'',
                 VD3:'',
+                OBS10:'',
                 Código: codigo,
                 Lista: lista,
                 ID: `${lista}/${codigo}`,
+              
             });
                  var dbd = firebase.firestore();
              dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
-                Titulo: titulo,
+               Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,
                 Valor: valor,
@@ -1146,21 +1281,31 @@
                 End: end,
                 Data: data,
                 Hora: hora,
-                Descrição: descrição,
                 IMG: url_imagem,
-                IMG_2:'',
-                IMG_3:'',
-                IMG_3:'',
-                IMG_5:'',
-                IMG_6:'',
-                IMG_7:'',
+                OBS: descrição,
+                IMG2:'',
+                OBS2:'',
+                IMG3:'',
+                OBS3:'',
+                IMG4:'',
+                OBS4:'',
+                IMG5:'',
+                OBS5:'',
+                IMG6:'',
+                OBS6:'',
+                IMG7:'',
+                OBS7:'',
                 VD:'',
+                OBS8:'',
                 VD2:'',
+                OBS9:'',
                 VD3:'',
+                OBS10:'',
                 Código: codigo,
                 Lista: lista,
                 ID: `${lista}/${codigo}`,
             });
+            
             
             swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, url_imagem);
             setTimeout(() => {
@@ -1178,9 +1323,7 @@
       })
       }
           }
-        }
-      
-      function updateProgress(snapshot) {
+           function updateProgress(snapshot) {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           const bar = document.getElementById('myBar');
           bar.style.width = progress + '%';
@@ -1188,7 +1331,196 @@
       }
       function handleError(error) {
           console.error('Erro ao enviar arquivo:', error);
+        }
+           function Cadastros2(){
+            var h1_notf= document.getElementById('h1_n_cad');
+            h1_notf.innerHTML='Edite esse cadastro!'
+          
+            document.getElementById('post_list_inicial').style.display='none'
+            document.getElementById('idList').style.display='none'
+             var hora = sessionStorage.getItem('hora');
+             var num= hora.split(':')
+             var n0= num[0];
+             var n1= num[1];
+             var n2= num[2];
+      
+           // var codigo= sessionStorage.getItem('códigoRetur');
+      
+        //  document.getElementById('codigo').value= codigo+n1+n2
+          Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
+          document.getElementById('novocad').style.display='block'
+        }
+       // function NovoCad(){
+          sessionStorage.setItem('IMG', '');
+          sessionStorage.setItem('Lista', '');
+          sessionStorage.setItem('dadosIMG', ``);
+          
+          function Salvarcad() {
+          
+             const firebaseConfigures = {
+           apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+           authDomain: "game-dbv.firebaseapp.com",
+           projectId: "game-dbv",
+           storageBucket: "game-dbv.appspot.com",
+           messagingSenderId: "118219151865",
+           appId: "1:118219151865:web:b6414d5255233264268528",
+           measurementId: "G-K17DLDBYGR"
+         };  
+       
+       //var cod= document.getElementById('codigo').
+         firebase.initializeApp(firebaseConfigures);  
+
+                var img= sessionStorage.getItem('Url_Imagem');
+                var img2= sessionStorage.getItem('img2');
+                var img3= sessionStorage.getItem('img3');
+                var img4= sessionStorage.getItem('img4');
+                var img5= sessionStorage.getItem('img5');
+                var img6= sessionStorage.getItem('img6');
+                var img7= sessionStorage.getItem('img7');
+                var vd=  sessionStorage.getItem('vd');
+                var vd2=  sessionStorage.getItem('vd2');
+                var vd3=  sessionStorage.getItem('vd3');
+                var id=  sessionStorage.getItem('id');
+                var obs2=  sessionStorage.getItem('obs2');
+                 var obs3=  sessionStorage.getItem('obs3');
+                  var obs4=  sessionStorage.getItem('obs4');
+                   var obs5=  sessionStorage.getItem('obs5');
+                    var obs6=  sessionStorage.getItem('obs6');
+                     var obs7=  sessionStorage.getItem('obs7');
+                      var obs8=  sessionStorage.getItem('obs8');
+                       var obs9=  sessionStorage.getItem('obs9');
+                        var obs10=  sessionStorage.getItem('obs10');
+          
+
+          var data = sessionStorage.getItem('data');
+          var hora = sessionStorage.getItem('hora');
+          var titulo = document.getElementById('titulo').value;
+          var lista = document.getElementById('select_listas').value;
+          var obs = document.getElementById('obs').value;
+          var bairro= document.getElementById('bairro').value;
+          var input= document.getElementById('bairro');
+          var bairro= input.value.trim();
+          var valor= document.getElementById('valor').value;
+          var end= document.getElementById('endereço').value;
+          var desconto= document.getElementById('desconto').value;
+          var cidade= document.getElementById('cidade').value;
+          var input2= document.getElementById('cidade');
+          var cidade = input2.value.trim();
+          var codigo= document.getElementById('codigo').value;
+
+
+        if (!titulo| titulo==''| !lista | !bairro | !valor| !cidade | cidade=='') {
+        
+        Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
+      
+        } else{
+
+            var db = firebase.firestore();
+             db.collection(`${lista}`).doc(`${codigo}`).set({
+                Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: img,
+                OBS: obs,
+                IMG2:img2,
+                OBS2:obs2,
+                IMG3:img3,
+                OBS3:obs3,
+                IMG4:img4,
+                OBS4:obs4,
+                IMG5:img5,
+                OBS5:obs5,
+                IMG6:img6,
+                OBS6:obs6,
+                IMG7:img7,
+                OBS7:obs7,
+                VD:vd,
+                OBS8:obs8,
+                VD2:vd2,
+                OBS9:obs9,
+                VD3:vd3,
+                OBS810:obs10,
+                Código: codigo,
+                Lista: lista,
+                ID: id,
+            });
+                 var dbd = firebase.firestore();
+             dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
+               Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: img,
+                OBS: obs,
+                IMG2:img2,
+                OBS2:obs2,
+                IMG3:img3,
+                OBS3:obs3,
+                IMG4:img4,
+                OBS4:obs4,
+                IMG5:img5,
+                OBS5:obs5,
+                IMG6:img6,
+                OBS6:obs6,
+                IMG7:img7,
+                OBS7:obs7,
+                VD:vd,
+                OBS8:obs8,
+                VD2:vd2,
+                OBS9:obs9,
+                VD3:vd3,
+                OBS810:obs10,
+                Código: codigo,
+                Lista: lista,
+                ID: id,
+            });
+               document.getElementById('myProgress').style.display = 'block';
+         var i = 0;
+
+    if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var idd = setInterval(frame, 30)
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(idd);
+            i = 0;                   
+
+         swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, img);
+              document.getElementById('myProgress').style.display = 'none';
+                     setTimeout(() => {
+                window.location.reload()
+             }, 4000);
+       
+        
+   } else {
+            width++;
+            elem.style.width = width + "%";
+            elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+          }
+        }
+    
     }
+
+      
+}}
+     
+      
+
+      
+     
+    
      </script>
      <script>
          function Menu(){
