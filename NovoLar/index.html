@@ -1190,6 +1190,8 @@
                     <button id="btn_swal_menu1" title="">Tela cheia </button>
                     <br><br>
                         <button id="btn_swal_menu2" title="">Descanso de Tala </button>
+                        <br><br>
+                        <button id="btn_swal_tela" title="">Nov Tela </button>
                     <br><br>
                     <a id="Swalmenu10" href="#footer"> Redes Sociais </a> 
                     <br><br>
@@ -1207,6 +1209,12 @@
              //  var name= document.getElementById('swal_lbl_nome');
               // name.innerHTML=nome;
              //  var tel_= document.getElementById('swal_lbl_tel');
+             document.getElementById('btn_swal_tela').addEventListener('click', function() {
+                window.open('pagina01.html','blank_')
+                 setTimeout(function(){
+                  Swal.close()
+                },200)
+             });
              document.getElementById('btn_swal_menu1').addEventListener('click', function() {
                 toggleFullScreen('click')
                  setTimeout(function(){

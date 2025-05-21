@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lar em Casa</title>
+     <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+          font-family: sans-serif;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: rgb(54, 70, 64);
+          background-color: rgb(240, 247, 255);
+          
+        }
+        #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(72, 126, 187, 0);
+            color: rgb(65, 64, 64);
+        }
+        
+        #divHeaad{
+            width: 100%;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgb(240, 247, 255);
+            position: fixed;
+            
+         
+        }
+        #heaad_apresent{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+             width: 100%;
+             padding-bottom: 10px;
+           background-color: rgb(78, 78, 78);
+            color: rgb(255, 255, 255);
+        }
+         
+         #heaad_apresent label{
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 16px;
+         }
+          #heaad_apresent #lbl1_heaad{
+            font-size: 18px;
+            font-weight: bold;
+          }
+          #heaad_apresent #lbl2_heaad, #heaad_apresent #lbl3_heaad{
+            font-size: 13px;
+            cursor: pointer;
+          }
+           #heaad_apresent #lbl2_heaad:hover, #heaad_apresent #lbl3_heaad:hover{
+            color: rgb(73, 255, 2);
+          }
+          #heaad_btns{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid rgb(175, 174, 174);
+          }
+          #heaad_btns button{
+            margin-right: 20px;
+            cursor: pointer;
+            border: 0cap;
+            background-color: rgba(240, 248, 255, 0);
+            color: rgb(44, 44, 44);
+            font-size: 15px;
+            font-weight: bold;
+          }
+          #heaad_btns button:hover{
+            color: rgb(122, 3, 122);
+
+        }
+          #heaad_btns img{
+            width: 40px;
+            margin-top: 7px;
+            margin-left: 20px;
+          }
+         #DivBody{
+            width: 100%;
+            min-height: 90vh;
+            background-color: rgba(240, 247, 255, 0);
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+         #h1_pesquisa{
+             position: fixed;
+            font-size: 18px;
+            padding: 5px;
+            border: 3px solid rgb(65, 64, 64);
+            background-color: rgba(255, 255, 255, 0.616);
+            border-radius: 10px;
+            cursor: pointer;
+            width: 200px;
+            margin-left: 20px;
+            text-align: center;
+            margin-top: 10px;
+             color: rgb(117, 1, 108);
+           
+           
+         }
+         #h1_pesquisa:hover{
+            background-color: rgb(124, 0, 118);
+            color: rgb(255, 255, 255);
+             border: 3px solid rgba(65, 64, 64, 0);
+         }
+         #body1{
+            width: 100%;
+            min-width: 400px;
+             background-color: rgba(240, 247, 255, 0);
+         }
+        #body1 #lista01{
+            margin: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+             flex-wrap: wrap;
+            align-items: center;
+         }
+          #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            max-height: 70vh;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 50px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            border-radius: 16px;
+            border: 3px solid rgb(75, 74, 74);
+            padding-top: 10px;
+       
+          }
+           #div2 label{
+            padding-bottom: 10px;
+            color: rgb(88, 88, 88);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+           }
+          #div1 img{
+            width: 400px;
+            height: 37vh;
+            border-radius: 10px;
+            margin-top: 5px;
+        
+          }
+          #label0{
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            background-color: rgb(78, 77, 78);
+            padding: 3px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+          }
+          #div4{
+            width:90%;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 2px solid rgb(133, 132, 132);
+            margin-top: 20px;
+
+          }
+            #div4 button{
+                background-color: rgb(73, 73, 73);
+                border-radius: 5px;
+                border: 1px solid rgb(201, 197, 197);
+                color: rgb(255, 255, 255);
+                width: 150px;
+                text-align: center;
+                padding: 10px;
+                margin-top: 20px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+             #div4 button:hover{
+                background-color:rgb(139, 0, 109);
+                color: rgb(255, 255, 255);
+             }
+            #h1_destaque{
+                 width: 100%;
+                text-align: center;
+                  
+             }
+          
+        #DivFooter{
+            width: 100%;
+            height: 64vh;
+            background-color: rgb(34, 34, 34);
+          }
+
+
+
+
+
+            @media (max-width: 1600px) {
+                     #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            padding-top: 10px;
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(175, 187, 72, 0);
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+             @media (max-width: 1400px) {
+                     #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            padding-top: 10px;
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(175, 187, 72, 0);
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+               @media (max-width: 1200px) {
+                  #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            padding-top: 10px;
+          }
+    
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(80, 72, 187, 0);
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+            @media (max-width: 900px) {
+                  #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            padding-top: 10px;
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(187, 72, 72, 0);
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+         @media (max-width: 800px) {
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:70vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 20px;
+            padding-top: 10px;
+          }
+           #h1_destaque{
+                 width: 72%;
+                text-align: right;
+                font-size: 18px;
+               
+             }
+    
+            }
+          @media (max-width: 600px) {
+              #h1_destaque{
+                 width: 90%;
+                text-align: right;
+                font-size: 18px;
+                  
+             }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:73vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 0px;
+            padding-top: 10px;
+        
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            background-color: rgba(255, 255, 255, 0);
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+              @media (max-width: 400px) {
+             #h1_destaque{
+             width: 97%;
+             text-align: right;
+              font-size: 18px;  
+            }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            height:73vh ;
+            background-color: rgba(165, 42, 42, 0);
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding: 7px;
+            margin-right: 0px;
+            padding-top: 10px;
+          }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="DivGeral">
+        <div id="divHeaad">
+        <div id="heaad_apresent">
+            <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for="">label 2</label> <label id="lbl3_heaad" for="">label 3</label>
+        </div>
+        <div id="heaad_btns">
+           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="btn2_heaad" title=""> Botão 02</button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+            <button id="btn4_heaad" title="">Menu</button>
+        </div>
+        </div>
+
+        <div id="DivBody">
+            <br>
+            <h1 id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </h1> 
+            <h1 id="h1_destaque">EM DESTAQUE</h1>
+            
+            <div id="body1">
+                
+                <div id="lista01"></div>
+                <div id="b2"></div>
+                <div id="b3"></div>
+                <div id="b4"></div>
+            
+            </div>
+            
+        </div>
+
+         <div id="DivFooter">
+
+
+         </div>
+    </div>
+
+    <script>
+       var list1= document.getElementById('lista01');
+       list1.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db = firebase.firestore();
+      var produtosRef = db.collection('Lista Mostruario 1');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+            var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var label4=document.createElement('label');
+            var label5=document.createElement('label');
+            var button1=document.createElement('button');
+            var button2=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            var br5=document.createElement('br');
+            var br6=document.createElement('br');
+            button1.id='butoon1';
+            button2.id='butoon2';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            label4.id='label4';
+            label5.id='label6';
+            button1.textContent='Ver, Prévia';
+            button2.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`
+             } else{
+                label.textContent=`${doc.Tipo_Venda}`
+             }
+            if(!doc.Valor || doc.Valor==''){
+                   label4.textContent=``
+                    label3.textContent=``
+            } else{
+                label4.textContent=`Valor para venda : ${doc.Valor}`
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            label5.textContent=``
+            } else{
+             
+               label5.textContent=`Valor para locação : ${doc.Valor_Loc}`
+            }
+            label1.textContent=`${doc.Titulo}`
+            label2.textContent=`${doc.Bairro} em ${doc.Cidade} - SP`
+            if(!doc.Desconto | doc.Desconto==''){
+
+            } else{
+               label3.textContent=`AVISTA ${doc.Desconto}% de desconto`
+            }
+            div1.appendChild(label);
+            div3.appendChild(img);
+            div2.appendChild(label1);
+            div2.appendChild(br2);
+            div2.appendChild(label2);
+            div2.appendChild(br3);
+            div2.appendChild(label4);
+            div2.appendChild(br4);
+            div2.appendChild(label3);
+            div2.appendChild(br5);
+            div2.appendChild(label5);
+            div1.appendChild(div3);
+            div1.appendChild(br1);
+            div1.appendChild(div2);
+            div4.appendChild(button1);
+            div4.appendChild(button2);
+            div1.appendChild(div4);
+            list1.appendChild(div1)
+
+        })
+    })
+    </script>
+    <script>
+              setInterval(function() {
+               const newDate = new Date()
+               var dia = String(newDate.getDate()).padStart(2, '0');
+               var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+               var ano = String(newDate.getFullYear()).padStart(2, '0')
+               var data = `${dia}/${mes}/${ano}`
+               const now = new Date();
+               const hours = now.getHours().toString().padStart(2, '0');
+               const minutes = now.getMinutes().toString().padStart(2, '0');
+               const seconds = now.getSeconds().toString().padStart(2, '0');
+               const timeString = `${hours}:${minutes}:${seconds}`;
+               // const lbl_data = document.getElementById('lbl-data');
+               // lbl_data.innerHTML = `${data}`
+               localStorage.setItem('data', data)
+               localStorage.setItem('hora', timeString)
+               //var Data = document.getElementById('lbl_data_head')
+               //Data.innerHTML= data;
+               }, 1000)
+     </script>
+     <script>
+             function toggleFullScreen() {
+           if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+            (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+            if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+           } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+           }
+      }
+    }
+</script>
+    
+</body>
+</html>
