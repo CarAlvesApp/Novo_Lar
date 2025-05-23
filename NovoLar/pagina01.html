@@ -26,7 +26,7 @@
           font-family: sans-serif;
           font-family: Arial, Helvetica, sans-serif;
           background-color: rgb(54, 70, 64);
-          background-color: rgb(240, 247, 255);
+          background-color: rgb(243, 254, 255);
           
         }
         #DivGeral{
@@ -135,18 +135,23 @@
             min-width: 400px;
              background-color: rgba(240, 247, 255, 0);
          }
-        #body1 #lista01{
+        #body1 #lista01,  #body1 #lista02{
             margin: auto;
             width: 100%;
             display: flex;
             justify-content: center;
              flex-wrap: wrap;
             align-items: center;
+            border-bottom: 40px solid rgb(73, 72, 72);
+            margin-bottom: 10px;
+            padding-bottom: 70px;
          }
-          #body1 #div1{
+           #body1 #div1{
+            display: flex;
+            flex-direction: column;
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
+            height:77vh;
             max-height: 70vh;
             background-color: rgb(255, 255, 255);
             margin-bottom: 50px;
@@ -154,61 +159,90 @@
             padding: 7px;
             margin-right: 20px;
             border-radius: 16px;
-            border: 3px solid rgb(75, 74, 74);
+            border: 4px solid rgb(160, 160, 160);
             padding-top: 10px;
        
           }
+           #body1 #div1:hover{
+            background-color: rgb(128, 0, 106);
+            border: 4px solid rgb(104, 3, 96);
+            
+           }
+        
+               #body1 #div1:hover button{
+              color: rgb(255, 255, 255);
+              background-color: rgba(92, 92, 92, 0);
+                border: 2px solid rgb(255, 255, 255);
+            }
+               #body1 #div1:hover #label0{
+              color: rgb(255, 255, 255);
+              background-color: rgba(92, 92, 92, 0);
+            }
+               #body1 #div1:hover label{
+              color: rgb(255, 255, 255);
+            
+            }
            #div2 label{
             padding-bottom: 10px;
-            color: rgb(88, 88, 88);
+            color: rgb(78, 78, 78);
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
-           }
-          #div1 img{
-            width: 400px;
-            height: 37vh;
-            border-radius: 10px;
-            margin-top: 5px;
-        
-          }
-          #label0{
             margin-left: 10px;
+           }
+  
+          #label0{
             font-size: 16px;
             font-weight: bold;
-            color: rgb(255, 255, 255);
-            background-color: rgb(78, 77, 78);
-            padding: 3px;
+            color: rgb(80, 80, 80);
+             background-color: rgb(242, 245, 253);
+            padding: 7px;
             padding-left: 20px;
             padding-right: 20px;
             border-radius: 4px;
             margin-bottom: 5px;
+            text-align: center;
+            border: 2px solid rgb(175, 175, 175);
+            cursor: pointer;
+            margin-top: 10px;
           }
-          #div4{
-            width:90%;
+             #div1 #div4{
+            width:95%;
+           height: 100%;
             padding: 10px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             border-top: 2px solid rgb(133, 132, 132);
-            margin-top: 20px;
+            margin-top: 10px;
+            bottom: 0;
+            background-color: rgba(255, 246, 246, 0);
+            border: 2px solid rgba(137, 43, 226, 0);
+            border-radius: 20px;
+            
 
           }
-            #div4 button{
-                background-color: rgb(73, 73, 73);
-                border-radius: 5px;
-                border: 1px solid rgb(201, 197, 197);
-                color: rgb(255, 255, 255);
-                width: 150px;
+          #div4 button{
+                 background-color: rgb(244, 247, 255);
+                border-radius: 7px;
+                border: 1px solid rgb(214, 214, 214);
+                color: rgb(99, 98, 98);
+                width: 160px;
                 text-align: center;
                 padding: 10px;
                 margin-top: 20px;
                 cursor: pointer;
                 font-size: 16px;
+                margin-bottom: 12px;
+                 border: 2px solid rgb(104, 104, 104);
+                
+                
             }
-             #div4 button:hover{
-                background-color:rgb(139, 0, 109);
-                color: rgb(255, 255, 255);
+         #div1 #div4 button:hover,#body1  #div1  #label0:hover{
+                background-color:aqua;
+                color: rgb(34, 1, 1);
+                border: 2px solid rgb(1, 148, 185);
              }
+     
             #h1_destaque{
                  width: 100%;
                 text-align: center;
@@ -217,20 +251,74 @@
           
         #DivFooter{
             width: 100%;
-            height: 64vh;
+            min-width: 400px;
+            height: 70vh;
             background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+            
           }
+          #paragrafo_inicial{
+            margin: auto;
+            width: 80%;
+            text-align: center;
+            color: rgba(255, 254, 235, 0.678);
+            margin-bottom: 50px;
+           
+          }
+            #paragrafo_inicial img{
+              width: 100px;
+              background-color: aliceblue;
+              border-radius: 10px;
+              margin-bottom: 20px;
+
+            }
+            #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 160px;
+              cursor: pointer;
+            }
+            #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 21px;
+            }
+             #sociais_contatos a:hover{
+              color: rgb(43, 255, 0);
+              text-decoration: underline 2px solid rgb(43, 255, 0); ;
+             }
 
 
 
 
 
             @media (max-width: 1600px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 20px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
                      #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
-            background-color: rgba(165, 42, 42, 0);
+             min-height:82vh ;
+ 
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -243,17 +331,34 @@
             min-height: 100vh;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgba(175, 187, 72, 0);
             color: rgb(65, 64, 64);
         }
                
             }
              @media (max-width: 1400px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 19px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
                      #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:82vh ;         
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -266,17 +371,34 @@
             min-height: 100vh;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgba(175, 187, 72, 0);
             color: rgb(65, 64, 64);
         }
                
             }
                @media (max-width: 1200px) {
+                 #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 19px;
+            }
+                  #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:82vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -290,17 +412,34 @@
             min-height: 100vh;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgba(80, 72, 187, 0);
             color: rgb(65, 64, 64);
         }
                
             }
             @media (max-width: 900px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 18px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:80vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -312,18 +451,35 @@
             width: 100%;
             min-height: 100vh;
             max-width: 1800px;
-            min-width: 400px;
-            background-color: rgba(187, 72, 72, 0);
+            min-width: 400px;;
             color: rgb(65, 64, 64);
         }
                
             }
          @media (max-width: 800px) {
+           #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 17px;
+            }
+            #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:70vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:80vh;
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -339,17 +495,34 @@
     
             }
           @media (max-width: 600px) {
-              #h1_destaque{
+             #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 16px;
+            }
+             #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+            #h1_destaque{
                  width: 90%;
                 text-align: right;
                 font-size: 18px;
-                  
              }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:73vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:80vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -363,12 +536,30 @@
             min-height: 100vh;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgba(255, 255, 255, 0);
             color: rgb(65, 64, 64);
         }
                
             }
               @media (max-width: 400px) {
+                 #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 16px;
+            }
+                 #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+            #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
              #h1_destaque{
              width: 97%;
              text-align: right;
@@ -377,8 +568,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            height:73vh ;
-            background-color: rgba(165, 42, 42, 0);
+            min-height:80vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             padding: 7px;
@@ -386,6 +576,15 @@
             padding-top: 10px;
           }
         }
+                #div1 img{
+           max-width: 400px;
+           min-width: 400px;
+            max-height: 34vh;
+            border-radius: 10px;
+            margin-top: 5px;
+        
+          }
+        
     </style>
 
 
@@ -395,11 +594,11 @@
     <div id="DivGeral">
         <div id="divHeaad">
         <div id="heaad_apresent">
-            <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for="">label 2</label> <label id="lbl3_heaad" for="">label 3</label>
+            <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
            <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="btn2_heaad" title=""> Botão 02</button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
-            <button id="btn4_heaad" title="">Menu</button>
+            <button id="btn4_heaad" title="" onclick="pagina()">Menu</button>
         </div>
         </div>
 
@@ -411,23 +610,39 @@
             <div id="body1">
                 
                 <div id="lista01"></div>
-                <div id="b2"></div>
+                <br><br> <h1 id="h1_destaque">CASAS NOVO LAR</h1>
+                <div id="lista02"></div>
                 <div id="b3"></div>
                 <div id="b4"></div>
             
             </div>
             
+            
         </div>
 
          <div id="DivFooter">
+           <div id="paragrafo_inicial">
+                      <img src="src/LogoNovoLarPNG.png" alt="" width="100">
+                    <p id="paragrafo_inf_cont"><h2>🏡 Novo Lar Imóveis – Soluções  Residenciais 🏡  </h2><br>
+                      <b>  "A Novo Lar é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                      </b>
+                    </p>
+                    <label id="lbl_contact" for="">
+                        📞 Telefone: (11) 99550-1463 📧 E-mail: www.carlosgat@gmail.com 📍 Litoral Sul de São Paulo</label>
+                        
+                    </div>
+                    <div id="sociais_contatos">
+                    <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
+                </div>
 
-
+        
          </div>
     </div>
-
-    <script>
+ 
+    <script>//Lista 01
+      function clicks(){
        var list1= document.getElementById('lista01');
-       list1.innerHTML='';
+       //list1.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -525,9 +740,144 @@
             div1.appendChild(div4);
             list1.appendChild(div1)
 
+            img.addEventListener('click',function(){
+              swal(``,``,`${doc.IMG}`)
+            });
+            label.addEventListener('click',function(){
+              Swal.fire(`Disponivel para ${doc.Tipo_Venda}`,``,`warning`)
+            });
+            button1.addEventListener('click',function(){
+               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade}\n\nValor: ${doc.Valor}\nValor para Locação: ${doc.Valor_Loc}`,`${doc.IMG}`)
+
+            })
+
         })
     })
+  }
     </script>
+    <script>//Lista 02
+     function clicks2(){
+       var list12= document.getElementById('lista02');
+       //list1.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db2 = firebase.firestore();
+      var produtosRef = db2.collection('Lista Mostruario 2');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+            var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var label4=document.createElement('label');
+            var label5=document.createElement('label');
+            var button1=document.createElement('button');
+            var button2=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            var br5=document.createElement('br');
+            var br6=document.createElement('br');
+            button1.id='butoon1';
+            button2.id='butoon2';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            label4.id='label4';
+            label5.id='label6';
+            button1.textContent='Ver, Prévia';
+            button2.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`
+             } else{
+                label.textContent=`${doc.Tipo_Venda}`
+             }
+            if(!doc.Valor || doc.Valor==''){
+                   label4.textContent=``
+                    label3.textContent=``
+            } else{
+                label4.textContent=`Valor para venda : ${doc.Valor}`
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            label5.textContent=``
+            } else{
+             
+               label5.textContent=`Valor para locação : ${doc.Valor_Loc}`
+            }
+            label1.textContent=`${doc.Titulo}`
+            label2.textContent=`${doc.Bairro} em ${doc.Cidade} - SP`
+            if(!doc.Desconto | doc.Desconto==''){
+
+            } else{
+               label3.textContent=`AVISTA ${doc.Desconto}% de desconto`
+            }
+            div1.appendChild(label);
+            div3.appendChild(img);
+            div2.appendChild(label1);
+            div2.appendChild(br2);
+            div2.appendChild(label2);
+            div2.appendChild(br3);
+            div2.appendChild(label4);
+            div2.appendChild(br4);
+            div2.appendChild(label3);
+            div2.appendChild(br5);
+            div2.appendChild(label5);
+            div1.appendChild(div3);
+            div1.appendChild(br1);
+            div1.appendChild(div2);
+            div4.appendChild(button1);
+            div4.appendChild(button2);
+            div1.appendChild(div4);
+            list12.appendChild(div1)
+
+        })
+    })
+  }
+    </script>
+    
+
+      <script> // redes sociais
+
+      function pagina(){
+   window.open('Administração/Cadastros.html','blank_')
+      }
+
+
+
+        function facebook(){
+           var url='https://www.facebook.com/carloseduardoAlvedeoliveira'
+           window.open(url,'_blank')
+        }
+        </script>
+
+
+
     <script>
               setInterval(function() {
                const newDate = new Date()
@@ -569,6 +919,7 @@
            }
       }
     }
+  
 </script>
     
 </body>

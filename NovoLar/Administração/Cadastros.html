@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração Novo Lar Imóveis</title>
+    <link rel="shortcut icon" href="../src/NovoLar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #Geral{
+            margin:0 auto;
+            width: 100%;
+            max-width: 1600px;
+            min-height: 100vh;
+            min-width:400px;
+            background-color: rgb(240, 244, 255);
+            display: flex;
+            flex-direction: column;
+            
+        }
+         #heaad{
+           width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            margin-bottom: 30px;
+            background-color: rgb(240, 244, 255);
+         
+        }
+         #heaad_button{
+            width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 244, 255);
+            border-bottom:5px solid rgb(189, 188, 188);
+            padding-top: 10px;
+            padding-bottom:10px;
+        }
+        #h1_body_div1{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        #div_menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            
+        }
+         #div_menu button{
+            width: 90%;
+            max-width: 700px;
+            min-width: 300px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border: 2px solid rgb(129, 129, 129);
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(107, 106, 106);
+         }
+         #div_menu button:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(155, 154, 154);
+         }
+          #div_menu img{
+            border-radius: 10px;
+            margin-top: 77px;
+            margin-bottom: 70px;
+          }
+          #heaad_button button{
+            border: 0cap;
+            background-color: rgba(240, 248, 255, 0);
+            color: rgb(94, 93, 93);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+          }
+           #heaad_button button:hover{
+            color: rgb(117, 2, 117);
+           }
+   
+   
+
+    </style> 
+
+</head>
+<body>
+    <div id="Geral">
+        <div id="heaad">
+            <div id="heaad_button">
+            <img src="../src/LogoNovoLarPNG.png" alt="" width="50">      <button title="Novo Cadastro" onclick="NovoCad()">NOVO CADASTRO</button>  <button title="Tela cheia /F11"  onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>   <button onclick="tela()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="body">
+            <div id="body_div1">
+
+                <h1 id="h1_body_div1">Cadastros Novo lar</h1>
+                <div id="div_menu">
+                  <button>Lista de Destaques</button><button>Lista de Casas</button><button>Lista de Apartamentos</button><button>Lista Chacáras / Sítios</button><button>Breve!</button> <img src="../src/LogoNovoLarPNG.png" alt="" width="200"> 
+
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+     <script>
+        function tela(){
+            window.open('../pagina01.html','blank')
+        }
+     </script>
+
+     <script>
+            setInterval(function() {
+                   
+                   const newDate = new Date()
+                   var dia = String(newDate.getDate()).padStart(2, '0');
+                   var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+                   var ano = String(newDate.getFullYear()).padStart(2, '0')
+                   var data = `${dia}/${mes}/${ano}`
+                   const now = new Date();
+                   const hours = now.getHours().toString().padStart(2, '0');
+                   const minutes = now.getMinutes().toString().padStart(2, '0');
+                   const seconds = now.getSeconds().toString().padStart(2, '0');
+                   const timeString = `${hours}:${minutes}:${seconds}`;
+                   // const lbl_data = document.getElementById('lbl-data');
+                   
+                   // lbl_data.innerHTML = `${data}`
+                   
+                   sessionStorage.setItem('data', data)
+                   sessionStorage.setItem('hora', timeString)
+                   
+                   //var Data = document.getElementById('lbl_data_head')
+                   //Data.innerHTML= data;
+                   
+                   }, 1000)
+      </script>
+
+        <script>
+          function toggleFullScreen() {
+        if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+            (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+            if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+        } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+           }
+      }
+    }
+</script>
+
+</body>
+</html>
