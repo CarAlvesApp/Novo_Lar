@@ -25,7 +25,7 @@
         body{
           font-family: sans-serif;
           font-family: Arial, Helvetica, sans-serif;
-         background-color: rgb(41, 60, 63);
+         background-color: rgb(16, 24, 18);
           
         }
         #DivGeral{
@@ -34,7 +34,7 @@
             min-height: 100vh;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(238, 241, 255);
             color: rgb(65, 64, 64);
         }
         
@@ -42,7 +42,7 @@
             width: 100%;
             max-width: 1800px;
             min-width: 400px;
-            background-color: rgb(240, 247, 255);
+             background-color: rgb(238, 241, 255);
             position: fixed;
             
          
@@ -52,11 +52,43 @@
             justify-content: space-between;
             align-items: center;
              width: 100%;
-             padding-bottom: 10px;
+             padding-top: 5px;
+             padding-bottom: 5px;
            background-color: rgb(78, 78, 78);
             color: rgb(255, 255, 255);
         }
-         
+          ::-webkit-scrollbar {
+                   width: 15px;
+                   margin-left: 15px;
+                   /* Largura da barra de rolagem */
+                   cursor: pointer;   
+                   margin: 0px;
+               }        
+                ::-webkit-scrollbar-thumb {
+                   margin-left: 15px;
+                   background-color: rgba(99, 1, 70, 0.993);
+                   /* Cor do polegar da barra de rolagem */
+                   margin-top: 1px;
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin: 0px;
+                     min-height: 37vh; 
+               }
+               ::-webkit-scrollbar-thumb:hover {
+                   background-color: rgb(158, 1, 150); 
+                   margin: 0px; 
+                   min-height: 37vh;       
+               }       
+                ::-webkit-scrollbar-track {
+                   /* Cor da trilha da barra de rolagem */
+                   margin-left: 15px;    
+                   background-color: rgb(85, 85, 85);
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin-bottom: 2px;
+                   margin-top: 2px;
+                   margin: 0px;
+                }
          #heaad_apresent label{
             margin-left: 10px;
             margin-right: 10px;
@@ -112,7 +144,7 @@
              position: fixed;
             font-size: 18px;
             padding: 5px;
-            border: 3px solid rgb(65, 64, 64);
+            border: 2px solid rgb(129, 129, 129);
             background-color: rgba(255, 255, 255, 0.616);
             border-radius: 10px;
             cursor: pointer;
@@ -121,13 +153,11 @@
             text-align: center;
             margin-top: 10px;
              color: rgb(117, 1, 108);
-           
-           
          }
          #h1_pesquisa:hover{
-            background-color: rgb(124, 0, 118);
-            color: rgb(255, 255, 255);
-             border: 3px solid rgba(65, 64, 64, 0);
+            background-color: rgb(1, 238, 255);
+            color: rgb(128, 2, 100);
+             border: 2px solid rgb(94, 1, 1);
          }
          #body1{
             width: 100%;
@@ -146,85 +176,72 @@
             padding-bottom: 70px;
          }
            #body1 #div1{
+            margin: 0%;
             display: flex;
             flex-direction: column;
             max-width: 400px;
             min-width: 400px;
-            height:77vh;
+            height:70vh;
             max-height: 70vh;
-            background-color: rgb(255, 255, 255);
             margin-bottom: 50px;
-            margin-top: 30px;
-            padding: 7px;
+            margin-top: 50px;
+            padding-bottom:20px;
             margin-right: 20px;
             border-radius: 16px;
-            border: 4px solid rgb(160, 160, 160);
-            padding-top: 10px;
+            background-color: rgb(128, 0, 106);
+            border: 4px solid rgb(255, 255, 255);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
        
           }
+          #div2 {
+            width: 100%;
+          }
            #body1 #div1:hover{
-            background-color: rgb(128, 0, 106);
+            background-color: rgb(255, 255, 255);
             border: 4px solid rgb(104, 3, 96);
             
            }
-        
-               #body1 #div1:hover button{
-              color: rgb(255, 255, 255);
+               #body1 #div1:hover button, #body1 #div1:hover #label0{
+              color: rgb(87, 86, 86);
               background-color: rgba(92, 92, 92, 0);
-                border: 2px solid rgb(255, 255, 255);
-            }
-               #body1 #div1:hover #label0{
-              color: rgb(255, 255, 255);
-              background-color: rgba(92, 92, 92, 0);
+                border: 1px solid rgb(192, 192, 192);
             }
                #body1 #div1:hover label{
-              color: rgb(255, 255, 255);
+              color: rgb(63, 63, 63);
             
             }
            #div2 label{
             padding-bottom: 10px;
-            color: rgb(78, 78, 78);
+            color: rgb(255, 254, 254);
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
             margin-left: 10px;
            }
   
-          #label0{
-            font-size: 16px;
-            font-weight: bold;
-            color: rgb(80, 80, 80);
-             background-color: rgb(242, 245, 253);
-            padding: 7px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border-radius: 4px;
-            margin-bottom: 5px;
-            text-align: center;
-            border: 2px solid rgb(175, 175, 175);
-            cursor: pointer;
-            margin-top: 10px;
-          }
+          
+              #body1 #div1:hover #label0{
+              color: rgb(68, 68, 68);
+              background-color: rgba(92, 92, 92, 0);
+            }
              #div1 #div4{
             width:95%;
-           height: 100%;
             padding: 10px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             border-top: 2px solid rgb(133, 132, 132);
-            margin-top: 10px;
             bottom: 0;
             background-color: rgba(255, 246, 246, 0);
             border: 2px solid rgba(137, 43, 226, 0);
             border-radius: 20px;
-            
 
           }
           #div4 button{
-                 background-color: rgb(244, 247, 255);
+                 background-color: rgba(244, 247, 255, 0);
                 border-radius: 7px;
                 border: 1px solid rgb(214, 214, 214);
-                color: rgb(99, 98, 98);
+                color: rgb(255, 255, 255);
                 width: 160px;
                 text-align: center;
                 padding: 10px;
@@ -232,14 +249,12 @@
                 cursor: pointer;
                 font-size: 16px;
                 margin-bottom: 12px;
-                 border: 2px solid rgb(104, 104, 104);
-                
-                
+                 border: 2px solid rgb(255, 255, 255);
             }
-         #div1 #div4 button:hover,#body1  #div1  #label0:hover{
-                background-color:aqua;
-                color: rgb(34, 1, 1);
-                border: 2px solid rgb(1, 148, 185);
+         #div1 #div4 button:hover,#body1 #div2 #label0:hover{
+                background-color:rgb(122, 3, 97);
+                color: rgb(255, 255, 255);
+                border: 2px solid rgb(83, 1, 79);
              }
      
             #h1_destaque{
@@ -288,6 +303,43 @@
               color: rgb(43, 255, 0);
               text-decoration: underline 2px solid rgb(43, 255, 0); ;
              }
+             #body1 #div4{
+              width: 100%;
+              padding: 0%;
+              margin: 0%;
+              background-color: rgba(165, 42, 42, 0);
+              margin-top: 30px;
+
+
+             }
+               #body1 #div1 img{
+                width: 100%;
+               max-height: 37vh;
+               min-height: 37vh;
+               border-radius: 10px;
+                margin: 0%;
+                
+               }
+           #body1 #div2  #label0{
+             width: 390px;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+             background-color: rgba(0, 0, 0, 0);
+            padding: 7px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            text-align: center;
+            border: 2px solid rgb(255, 255, 255);
+            cursor: pointer;
+            margin-top: 10px;
+          
+          }
+          #body1 #div1 #div3{
+            padding: 0%;
+            margin: 0%;
+          }
+              
 
 
 
@@ -313,16 +365,14 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-                     #body1 #div1{
+             #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-             min-height:80vh ;
- 
+             min-height:75vh;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 20px;
-            padding-top: 10px;
+           
           }
              #DivGeral{
             margin: auto;
@@ -357,12 +407,11 @@
                      #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:82vh ;         
+            min-height:75vh ;         
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 20px;
-            padding-top: 10px;
+           
           }
              #DivGeral{
             margin: auto;
@@ -397,12 +446,11 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:82vh ;
+            min-height:75vh ;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 20px;
-            padding-top: 10px;
+            
           }
     
              #DivGeral{
@@ -438,12 +486,11 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:80vh ;
+            min-height:75vh ;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 20px;
-            padding-top: 10px;
+           
           }
              #DivGeral{
             margin: auto;
@@ -478,12 +525,11 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:80vh;
+            min-height:75vh;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 20px;
-            padding-top: 10px;
+         
           }
            #h1_destaque{
                  width: 72%;
@@ -521,12 +567,11 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:80vh ;
+            min-height:78vh ;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 0px;
-            padding-top: 10px;
+         
         
           }
              #DivGeral{
@@ -570,19 +615,11 @@
             min-height:80vh ;
             margin-bottom: 20px;
             margin-top: 30px;
-            padding: 7px;
             margin-right: 0px;
-            padding-top: 10px;
+          
           }
         }
-                #div1 img{
-           max-width: 400px;
-           min-width: 400px;
-            max-height: 34vh;
-            border-radius: 10px;
-            margin-top: 5px;
-        
-          }
+       
         
     </style>
 
@@ -680,6 +717,7 @@
             var br4=document.createElement('br');
             var br5=document.createElement('br');
             var br6=document.createElement('br');
+             var br7=document.createElement('br');
             button1.id='butoon1';
             button2.id='butoon2';
             div1.id='div1';
@@ -720,8 +758,11 @@
             } else{
                label3.textContent=`AVISTA ${doc.Desconto}% de desconto`
             }
-            div1.appendChild(label);
+          
             div3.appendChild(img);
+            div2.appendChild(label);
+            div2.appendChild(br6);
+            div2.appendChild(br7);
             div2.appendChild(label1);
             div2.appendChild(br2);
             div2.appendChild(label2);
@@ -756,7 +797,7 @@
     </script>
     <script>//Lista 02
      function clicks2(){
-       var list12= document.getElementById('lista02');
+       var list2= document.getElementById('lista02');
        //list1.innerHTML='';
 
          var firebaseConfig = {
@@ -776,7 +817,7 @@
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-            var itens= querySnapshot.size;
+             var itens= querySnapshot.size;
             var div1=document.createElement('div');
             var div2=document.createElement('div');
             var div3=document.createElement('div');
@@ -796,6 +837,7 @@
             var br4=document.createElement('br');
             var br5=document.createElement('br');
             var br6=document.createElement('br');
+             var br7=document.createElement('br');
             button1.id='butoon1';
             button2.id='butoon2';
             div1.id='div1';
@@ -836,8 +878,11 @@
             } else{
                label3.textContent=`AVISTA ${doc.Desconto}% de desconto`
             }
-            div1.appendChild(label);
+          
             div3.appendChild(img);
+            div2.appendChild(label);
+            div2.appendChild(br6);
+            div2.appendChild(br7);
             div2.appendChild(label1);
             div2.appendChild(br2);
             div2.appendChild(label2);
@@ -853,7 +898,18 @@
             div4.appendChild(button1);
             div4.appendChild(button2);
             div1.appendChild(div4);
-            list12.appendChild(div1)
+            list2.appendChild(div1)
+
+            img.addEventListener('click',function(){
+              swal(``,``,`${doc.IMG}`)
+            });
+            label.addEventListener('click',function(){
+              Swal.fire(`Disponivel para ${doc.Tipo_Venda}`,``,`warning`)
+            });
+            button1.addEventListener('click',function(){
+               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade}\n\nValor: ${doc.Valor}\nValor para Locação: ${doc.Valor_Loc}`,`${doc.IMG}`)
+
+            })
 
         })
     })
