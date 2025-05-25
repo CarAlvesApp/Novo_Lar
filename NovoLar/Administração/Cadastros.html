@@ -88,6 +88,9 @@
         #body_div1{
             display: block;
         }
+           #body_div2{
+            display: none;
+        }
         #h1_body_div1{
             width: 100%;
             text-align: center;
@@ -148,7 +151,6 @@
             flex-direction: column;
             justify-content: space-between;
             margin:0 auto;
-              display: none;
             width: 75%;
             max-width: 900px;
             min-width: 400px;
@@ -289,52 +291,65 @@
          #novocad  #sair:hover{
                 color: rgb(107, 1, 121);
              }
-        
-        
-        
-
+             
 
                #divList{
+                    margin: auto;
                     width: 100%;
+                    max-width: 1000px;
                     display: none;
+                    min-width: 400px;
                     background-color: rgba(0, 255, 255, 0);
-                    margin-top: 90px;
-                    text-align: center;
+                    margin-top: 10px;
+                   
                   
                 }
+                 #divList  #sair{
+                 font-size: 20px;
+                 margin-bottom: 30px;
+                 margin-left: 30px;
+                 cursor: pointer;
+             
+               }
+              #divList  #sair:hover{
+                color: rgb(107, 1, 121);
+               }
+        
                 #listaid{
-                    width: 80%;
+                    width: 95%;
                     margin: 0 auto;
                     min-width: 390px;
-                    max-width: 900px; 
+                    max-width: 970px; 
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
-                    margin-top: 16px;
+                    margin-top: 5px;
                     border-bottom: 3px solid rgba(126, 125, 125, 0.363);
                    
                 }
                #divList h2{ 
+                   width: 95%;
                     color: black;
                     margin-bottom: 35px;
+                    text-align: center;
                     text-decoration: underline 3px solid rgb(196, 1, 202);
                 }
                 #imgList_ {
-                  max-width: 150px;
-                  max-height: 150px;
-                  margin-bottom: 10px;
-                  border-radius: 20px;
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+                  margin-bottom: 5px;
+                  border-radius: 7px;
                   cursor: pointer;
                  border: 3px solid rgba(0, 255, 255, 0);
                 }
                 #listaid label{
                     margin-left: 10px;
                     font-size: 20px;
-                    font-weight: bold;
+                   
                 }
-                  #divList_{
-                width: 98%;
-                 
-            }
+           
             #imgList:hover{
                 background-color: aqua;
                 border: 3px solid rgb(190, 2, 150);
@@ -350,6 +365,7 @@
                 cursor: pointer;
                 font-size: 20px;
                 margin-left: 10px;
+                font-weight: bold;
             }
               #listaid  button:hover{
                 color: rgb(150, 2, 142);
@@ -365,6 +381,28 @@
       
          
           @media(max-width: 1600px){
+             #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 18px;
+                margin-left: 10px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 20px;
+                    
+                }
+          #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -376,6 +414,28 @@
              }
         }
          @media(max-width: 1400px){
+           #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 18px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 19px;
+                   
+                }
+            #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -387,6 +447,28 @@
              }
         }
          @media(max-width: 1200px){
+           #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 17px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 18px;
+                 
+                }
+              #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -398,6 +480,28 @@
              }
         }
           @media(max-width: 1000px){
+            #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 16px;
+                margin-left: 5px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 17px;
+                  
+                }
+             #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -409,6 +513,28 @@
              }
         }
          @media(max-width: 800px){
+          #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 15px;
+                margin-left: 5px;
+            }
+              #listaid label{
+                    margin-left: 10px;
+                    font-size: 16px;
+                  
+                }
+                 #imgList_ {
+                   max-width: 145px;
+                  min-width: 145px;
+                  max-height: 110px;
+                  min-height: 110px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -420,6 +546,28 @@
              }
         }
            @media(max-width: 600px){
+            #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 14px;
+                  
+                }
+              #imgList_ {
+                   max-width: 130px;
+                  min-width: 130px;
+                  max-height: 100px;
+                  min-height: 100px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -448,6 +596,28 @@
         }
 
         @media(max-width: 400px){
+          #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 13px;
+                   
+                }
+            #imgList_ {
+                  max-width: 130px;
+                  min-width: 130px;
+                  max-height: 100px;
+                  min-height: 100px;
+             }
            #novocad  #lbl_limpar{
                 margin-right: 10px;
                 font-size: 14px;
@@ -460,7 +630,13 @@
         }
      
      
-     
+     #h1_n_cad{
+      width: 95%;
+      text-align: center;
+      margin-top: 0%;
+      margin-bottom: 10px;
+      font-size: 22px;
+     }
      
 
     </style> 
@@ -488,7 +664,7 @@
                 <br>
                 <h1 id="h1_n_cad">Cadastro</h1>
                 <br>
-                 <label id="lbl_codigo" for=""> <p>Atenção! O Código é o indentificador principal do cadastro. Só o alterar em caso de exceção!</p><br>Código:<br>
+                 <label id="lbl_codigo" for=""> <p>Atenção! O Código é o indentificador principal do cadastro. Só o alterar em caso de exceção!</p><br>Código:<br>
                     
                 <input  type="text" id="codigo" placeholder="Código do Cadastro">
                 
@@ -566,6 +742,7 @@
             </div>
         </div>
           <div id="divList">
+                      <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
                    <h2 id="h2Lista">Lista </h2>
                    <div id="listas">
                    </div>
@@ -837,10 +1014,21 @@
         function sair(){
              document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='block'
+               document.getElementById('body_div2').style.display='none'
+                document.getElementById('divList').style.display='none'
              sessionStorage.setItem('EdtTela','')
-           // document.getElementById('idList').style.display='none'
+           
              sessionS('click')
                limpar()
+        };
+
+        function sairlista(){
+          document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='block'
+            document.getElementById('body_div2').style.display='none'
+           document.getElementById('divList').style.display='none'
+
+
         }
         </script>
 
@@ -897,12 +1085,15 @@
           
         
             sessionStorage.setItem('códigoRetur','')
-            var llat= document.getElementById('body_div2');
-            if(llat.style.display=='none'){
+            var tela= document.getElementById('body_div1');
+            if(tela.style.display=='none'){
                document.getElementById('body_div1').style.display='block'
                 document.getElementById('divList').style.display='none'
+                 document.getElementById('body_div2').style.display=''
+                    document.getElementById('novocad').style.display='block'
             } else {
              document.getElementById('body_div2').style.display='block'
+                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
             document.getElementById('divList').style.display='none'
              var hora = sessionStorage.getItem('hora');
@@ -1121,10 +1312,12 @@
             var h1_notf= document.getElementById('h1_n_cad');
             h1_notf.innerHTML='Edite esse cadastro!'
           
+             document.getElementById('body_div2').style.display='block'
             document.getElementById('body_div1').style.display='none'
-            //document.getElementById('body_div2').style.display='none'
             document.getElementById('divList').style.display='none'
+               document.getElementById('novocad').style.display='block'
              var hora = sessionStorage.getItem('hora');
+         
              var num= hora.split(':')
              var n0= num[0];
              var n1= num[1];
@@ -1134,7 +1327,7 @@
       
         //  document.getElementById('codigo').value= codigo+n1+n2
           Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
-          document.getElementById('novocad').style.display='block'
+          document.getElementById('body_div2').style.display='block'
         }
        // function NovoCad(){
           sessionStorage.setItem('IMG', '');
