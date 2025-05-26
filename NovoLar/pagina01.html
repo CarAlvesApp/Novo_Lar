@@ -32,7 +32,7 @@
             margin: auto;
             width: 100%;
             min-height: 100vh;
-            max-width: 1800px;
+            max-width: 19200px;
             min-width: 400px;
             background-color: rgba(238, 241, 255, 0);
             color: rgb(65, 64, 64);
@@ -40,10 +40,11 @@
         
         #divHeaad{
             width: 100%;
-            max-width: 1800px;
+            max-width: 1920px;
             min-width: 400px;
-               background-color: rgb(228, 227, 255);
+             background-color: rgb(228, 227, 255);
             position: fixed;
+            z-index: 9999;
             
          
         }
@@ -56,6 +57,7 @@
              padding-bottom: 5px;
            background-color: rgb(78, 78, 78);
             color: rgb(255, 255, 255);
+            
         }
           ::-webkit-scrollbar {
                    width: 15px;
@@ -135,7 +137,7 @@
             width: 100%;
             min-height: 90vh;
             background-color: rgba(240, 247, 255, 0);
-            padding-top: 100px;
+            padding-top: 95px;
             display: flex;
             flex-direction: column;
             align-items: stretch;
@@ -151,8 +153,9 @@
             width: 200px;
             margin-left: 20px;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
              color: rgb(117, 1, 108);
+               z-index: 9999;
          }
          #h1_pesquisa:hover{
             background-color: rgb(167, 2, 167);
@@ -171,7 +174,7 @@
             justify-content: center;
              flex-wrap: wrap;
             align-items: center;
-            border-bottom: 40px solid rgb(73, 72, 72);
+            border-bottom: 10px solid rgb(73, 72, 72);
             margin-bottom: 10px;
             padding-bottom: 70px;
          }
@@ -181,15 +184,15 @@
             flex-direction: column;
             max-width: 410px;
             min-width: 400px;
-            height:64vh;
-            max-height: 73vh;
+            height:61vh;
+            max-height: 61vh;
             margin-bottom: 50px;
             margin-top: 50px;
             padding-bottom:20px;
-            margin-right: 20px;
-            border-radius: 16px;
+            margin-right: 100px;
+            border-radius: 5px;
             background-color: rgb(255, 255, 255);
-            border: 4px solid rgb(104, 3, 96);
+            border: 4px solid rgb(61, 61, 61);
             color: rgb(95, 95, 95);
             overflow: hidden;
             overflow: auto;
@@ -204,38 +207,22 @@
             color: rgb(255, 255, 255);
           
            }
-               #body1 #div1:hover button, #body1 #div1:hover #label0{
+               #body1 #div1:hover button{
               color: rgb(255, 255, 255);
               background-color: rgba(99, 1, 74, 0);
                 border: 1px solid rgb(255, 255, 255);
             }
+            #body1 #div1:hover #label0{
+                 color: rgb(255, 255, 255);
+            }
              
-           #div2 label{
-            padding-bottom: 10px;
-            color: rgb(58, 58, 58);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            margin-left: 10px;
-           }
-              #body1 #div1:hover label{
-              color: rgb(255, 255, 255);
-            
-            }
+         
           
-              #body1 #div1:hover #label0{
-              color: rgb(255, 255, 255);
-              background-color: rgba(92, 92, 92, 0);
-            }
              #div1 #div4{
             max-width:64%;
             padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-           
-
-            bottom: 0;
             background-color: rgba(255, 246, 246, 0);
+         
            
 
           }
@@ -251,10 +238,11 @@
                 cursor: pointer;
                 font-size: 15px;
                 margin-bottom: 3px;
+                margin-left: 20px;
                  border: 2px solid rgb(160, 160, 160);
                  min-width: 70%;
             }
-         #div1 #div4 button:hover,#body1 #div2 #label0:hover{
+         #div1 #div4 button:hover{
                 background-color:rgb(39, 0, 36);
                 color: rgb(255, 255, 255);
                 border: 1px solid rgba(80, 2, 74, 0);
@@ -311,43 +299,57 @@
               padding: 0%;
               margin: 0%;
               background-color: rgba(165, 42, 42, 0);
-              margin-top: 30px;
-
-
+              margin-top: 10px;
              }
-        
                #body1 #div1 img{
                 width: 100%;
-               max-height: 37vh;
-               min-height: 37vh;
-               border-radius: 10px;
-                margin: 0%;
+               max-height: 35vh;
+               min-height: 35vh;
+               border-radius: 1px;
+              margin-bottom: 16px;
                 
                }
+       
            #body1 #div2  #label0{
              width: 390px;
             font-size: 16px;
-            font-weight: bold;
             color: rgb(54, 54, 54);
              background-color: rgba(0, 0, 0, 0);
-            padding: 7px;
-            border-radius: 4px;
             margin-bottom: 5px;
             text-align: center;
-            border: 2px solid rgb(138, 138, 138);
-            cursor: pointer;
-            margin-top: 10px;
+            margin-left: 20px;
+          
           
           }
           #body1 #div1 #div3{
+            text-align: center;
+            font-weight: bold;
+            color: rgb(44, 44, 44);
             padding: 0%;
             margin: 0%;
           }
-              
-
-
-
-
+             #body1 #div1 #div3 label{
+             font-size: 19px;
+             padding-left:5px;
+        
+         
+            
+             }
+          #banner{
+            margin:auto ;
+            width: 100%;
+            max-width: 1500px;
+            min-width: 390px;
+            margin-bottom: 70px;
+      
+          }
+       
+              #body1 #div1:hover label{
+              color: rgb(255, 255, 255);
+            
+            }
+          
+            
 
             @media (max-width: 1600px) {
                #sociais_contatos a{
@@ -372,7 +374,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-             min-height:73vh;
+             min-height:62vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -411,7 +413,7 @@
                      #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh ;         
+            min-height:63vh ;         
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -450,7 +452,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh ;
+            min-height:63vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -490,7 +492,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh ;
+            min-height:63vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -529,21 +531,28 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh;
+            min-height:64vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
          
           }
-           #h1_destaque{
-                 width: 80%;
-                text-align: right;
-                font-size: 18px;
-               
+            #h1_destaque{
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
              }
     
             }
           @media (max-width: 600px) {
+            #banner{
+            margin:auto ;
+            width: 100%;
+            max-width: 1500px;
+            min-width: 390px;
+            margin-bottom: 30px;
+      
+          }
              #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -564,14 +573,14 @@
             padding-top: 75px;
           }
             #h1_destaque{
-                 width: 90%;
-                text-align: right;
-                font-size: 18px;
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
              }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh ;
+            min-height:64vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -609,14 +618,14 @@
             padding-top: 70px;
           }
              #h1_destaque{
-             width: 97%;
-             text-align: right;
-              font-size: 18px;  
-            }
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
+             }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:73vh ;
+            min-height:64vh ;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -645,6 +654,9 @@
         <div id="DivBody">
             <br>
             <h1 id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </h1> 
+            <div id="banner"> <video width="100%" height="100%" controls autoplay loop muted>
+              <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+            </video></div>
             <h1 id="h1_destaque">EM DESTAQUE</h1>
             
             <div id="body1">
@@ -741,7 +753,7 @@
              if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
                   label.textContent=`#Meu novo lar`
              } else{
-                label.textContent=`${doc.Tipo_Venda}`
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`
              }
             if(!doc.Valor || doc.Valor==''){
                     label4.textContent=``
@@ -760,24 +772,17 @@
             } else{
                label3.textContent=`Avista ${doc.Desconto}% de desconto`
             }
-          
-            div3.appendChild(img);
-            div2.appendChild(label);
-            div2.appendChild(br6);
-            div2.appendChild(br7);
-            div2.appendChild(label1);
-            div2.appendChild(br2);
-            div2.appendChild(label2);
+           
+              div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
             div2.appendChild(br3);
-            div2.appendChild(label4);
-            div2.appendChild(br4);
-            div2.appendChild(label3);
-            div2.appendChild(br5);
-            div2.appendChild(label5);
+            div2.appendChild(label);
             div1.appendChild(div3);
-            div1.appendChild(br1);
             div1.appendChild(div2);
-           // div4.appendChild(button1);
+             div1.appendChild(br4);
             div4.appendChild(button2);
             div1.appendChild(div4);
             list1.appendChild(div1)
@@ -862,7 +867,7 @@
              if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
                   label.textContent=`#Meu novo lar`
              } else{
-                label.textContent=`${doc.Tipo_Venda}`
+               label.textContent=`Disponivel para ${doc.Tipo_Venda}`
              }
             if(!doc.Valor || doc.Valor==''){
                    label4.textContent=``
@@ -883,24 +888,16 @@
             } else{
                label3.textContent=`AVISTA ${doc.Desconto}% de desconto`
             }
-          
-            div3.appendChild(img);
-            div2.appendChild(label);
-            div2.appendChild(br6);
-            div2.appendChild(br7);
-            div2.appendChild(label1);
-            div2.appendChild(br2);
-            div2.appendChild(label2);
+                 div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
             div2.appendChild(br3);
-            div2.appendChild(label4);
-            div2.appendChild(br4);
-            div2.appendChild(label3);
-            div2.appendChild(br5);
-            div2.appendChild(label5);
+            div2.appendChild(label);
             div1.appendChild(div3);
-            div1.appendChild(br1);
             div1.appendChild(div2);
-           // div4.appendChild(button1);
+             div1.appendChild(br4);
             div4.appendChild(button2);
             div1.appendChild(div4);
             list2.appendChild(div1)
