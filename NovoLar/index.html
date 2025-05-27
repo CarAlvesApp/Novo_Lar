@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lar em Casa</title>
+     <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+          font-family: sans-serif;
+          font-family: Arial, Helvetica, sans-serif;
+         background-color: rgb(228, 227, 255);
+          
+        }
+        #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1920px;
+            min-width: 400px;
+            background-color: rgba(238, 241, 255, 0);
+            color: rgb(65, 64, 64);
+        }
+        
+        #divHeaad{
+            width: 100%;
+            max-width: 1920px;
+            min-width: 400px;
+             background-color: rgb(228, 227, 255);
+            position: fixed;
+            z-index: 9999;
+            
+         
+        }
+        #heaad_apresent{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+             width: 100%;
+             padding-top: 5px;
+             padding-bottom: 5px;
+           background-color: rgb(78, 78, 78);
+            color: rgb(255, 255, 255);
+            
+        }
+          ::-webkit-scrollbar {
+                   width: 15px;
+                   margin-left: 15px;
+                   /* Largura da barra de rolagem */
+                   cursor: pointer;   
+                   margin: 0px;
+               }        
+                ::-webkit-scrollbar-thumb {
+                   margin-left: 15px;
+                   background-color: rgba(99, 1, 70, 0.993);
+                   /* Cor do polegar da barra de rolagem */
+                   margin-top: 1px;
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin: 0px;
+                     min-height: 37vh; 
+               }
+               ::-webkit-scrollbar-thumb:hover {
+                   background-color: rgb(158, 1, 150); 
+                   margin: 0px; 
+                   min-height: 37vh;       
+               }       
+                ::-webkit-scrollbar-track {
+                   /* Cor da trilha da barra de rolagem */
+                   margin-left: 15px;    
+                   background-color: rgb(85, 85, 85);
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin-bottom: 2px;
+                   margin-top: 2px;
+                   margin: 0px;
+                }
+         #heaad_apresent label{
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 16px;
+         }
+          #heaad_apresent #lbl1_heaad{
+            font-size: 18px;
+            font-weight: bold;
+          }
+          #heaad_apresent #lbl2_heaad, #heaad_apresent #lbl3_heaad{
+            font-size: 13px;
+            cursor: pointer;
+          }
+           #heaad_apresent #lbl2_heaad:hover, #heaad_apresent #lbl3_heaad:hover{
+            color: rgb(73, 255, 2);
+          }
+          #heaad_btns{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 3px solid rgb(175, 174, 174);
+          }
+          #heaad_btns button{
+            margin-right: 20px;
+            cursor: pointer;
+            border: 0cap;
+            background-color: rgba(240, 248, 255, 0);
+            color: rgb(44, 44, 44);
+            font-size: 15px;
+            font-weight: bold;
+          }
+          #heaad_btns button:hover{
+            color: rgb(122, 3, 122);
+
+        }
+          #heaad_btns img{
+            width: 40px;
+            margin-top: 7px;
+            margin-left: 20px;
+          }
+         #DivBody{
+            width: 100%;
+            min-height: 90vh;
+            background-color: rgba(240, 247, 255, 0);
+            padding-top: 95px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+         #h1_pesquisa{
+             position: fixed;
+            font-size: 18px;
+            padding: 5px;
+            border: 1px solid rgb(129, 129, 129);
+            background-color: rgba(255, 255, 255, 0.616);
+            border-radius: 10px;
+            cursor: pointer;
+            width: 200px;
+            margin-left: 20px;
+            text-align: center;
+            margin-top: 20px;
+             color: rgb(117, 1, 108);
+               z-index: 9999;
+         }
+         #h1_pesquisa:hover{
+            background-color: rgb(167, 2, 167);
+            color: rgb(255, 255, 255);
+             border: 1px solid rgb(255, 254, 255);
+         }
+         #body1{
+            width: 100%;
+            min-width: 400px;
+             background-color: rgba(240, 247, 255, 0);
+         }
+        #body1 #lista01, #body1 #lista02, #body1 #lista03, #body1 #lista04, #body1 #lista05{
+            margin: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+             flex-wrap: wrap;
+            align-items: center;
+            border-bottom: 50px solid rgb(73, 72, 72);
+            margin-bottom: 10px;
+            padding-bottom: 70px;
+        }
+           #body1 #div1{
+         
+            display: flex;
+            flex-direction: column;
+            max-width: 410px;
+            min-width: 400px;
+            height:63vh;
+            max-height: 63vh;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            padding-bottom:20px;
+            margin-right: 40px;
+            border-radius: 7px;
+            background-color: rgb(255, 255, 255);
+           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: rgb(95, 95, 95);
+            overflow: hidden;
+          }
+          #div2 {
+            width: 100%;
+          }
+           #body1 #div1:hover{
+             background-color: rgb(128, 0, 106);
+        
+            color: rgb(255, 255, 255);
+          
+           }
+               #body1 #div1:hover button{
+              color: rgb(255, 255, 255);
+              background-color: rgba(99, 1, 74, 0);
+                border: 1px solid rgb(255, 255, 255);
+            }
+            #body1 #div1:hover #label0{
+                 color: rgb(255, 255, 255);
+            }
+             #div1 #div4{
+            max-width:64%;
+            padding: 10px;
+            background-color: rgba(255, 246, 246, 0);
+          }
+          #div4 button{
+                 background-color: rgba(244, 247, 255, 0);
+                border-radius: 4px;
+                color: rgb(75, 75, 75);
+                width: 160px;
+                text-align: center;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 14px;
+                margin-bottom: 3px;
+                margin-left: 15px;
+                 border: 1px solid rgb(160, 160, 160);
+                 min-width: 370px;
+            }
+         #div1 #div4 button:hover{
+                background-color:rgb(226, 229, 255);
+                color: rgb(102, 0, 85);
+                border: 1px solid rgb(49, 49, 49);
+                font-weight: bold;
+             }
+            #h1_destaque{
+                 width: 100%;
+                 font-size: 25px;
+                text-align: center;
+                cursor: pointer;
+             }
+        #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 70vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+          #paragrafo_inicial{
+            margin: auto;
+            width: 80%;
+            text-align: center;
+            color: rgba(255, 254, 235, 0.678);
+            margin-bottom: 50px;
+          }
+            #paragrafo_inicial img{
+              width: 100px;
+              background-color: aliceblue;
+              border-radius: 10px;
+              margin-bottom: 20px;
+            }
+            #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 160px;
+              cursor: pointer;
+            }
+            #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 21px;
+            }
+             #sociais_contatos a:hover{
+              color: rgb(43, 255, 0);
+              text-decoration: underline 2px solid rgb(43, 255, 0); ;
+             }
+             #body1 #div4{
+              width: 100%;
+              padding: 0%;
+              margin: 0%;
+              background-color: rgba(165, 42, 42, 0);
+              margin-top: 10px;
+             }
+            #body1 #div1 img{
+                width: 100%;
+               max-height: 35vh;
+               min-height: 35vh;
+               border-radius: 1px;
+               margin-bottom: 20px;
+               cursor: pointer;
+               transition: transform 0.7s ease-in-out;
+               }
+             #body1 #div1 img:hover {
+             transform: scale(1.1); /* Ajusta o nível de zoom */
+             }
+       
+            #body1 #div2  #label0{
+              width: 390px;
+             font-size: 15px;
+             color: rgb(54, 54, 54);
+             background-color: rgba(0, 0, 0, 0);
+             margin-bottom: 5px;
+             text-align: center;
+             margin-left: 20px;
+          
+          
+            }
+          #body1 #div1 #div3{
+            
+            font-weight: bold;
+            color: rgb(44, 44, 44);
+            padding: 0%;
+            margin: 0%;
+          }
+             #body1 #div1 #div3 label{
+             font-size: 17px;
+             padding-left:15px;
+            
+             }
+          #banner{
+            margin:auto ;
+            width: 100%;
+            min-width: 390px;
+            margin-bottom: 70px;
+      
+          }
+              #body1 #div1:hover label{
+              color: rgb(255, 255, 255);
+            }
+            #visionList{
+              cursor: pointer;
+            }
+             #h1_destaque:hover{
+              color: rgb(113, 1, 117);
+              text-decoration: underline 2px solid rebeccapurple;
+            }
+
+
+
+
+
+            @media (max-width: 1600px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 20px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+             min-height:65vh;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 20px;
+           
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+             @media (max-width: 1400px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 19px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+                     #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:65vh ;         
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 20px;
+           
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+               @media (max-width: 1200px) {
+                 #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 19px;
+            }
+                  #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+                  #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:65vh ;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 20px;
+            
+          }
+    
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+            @media (max-width: 900px) {
+               #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 18px;
+            }
+                #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 70vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+                  #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:65vh ;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 20px;
+           
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;;
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+         @media (max-width: 800px) {
+           #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 17px;
+            }
+            #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:67vh;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 20px;
+         
+          }
+            #h1_destaque{
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
+             }
+    
+            }
+          @media (max-width: 600px) {
+            #banner{
+            margin:auto ;
+            width: 100%;
+            max-width: 1500px;
+            min-width: 390px;
+            margin-bottom: 30px;
+      
+          }
+             #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 16px;
+            }
+             #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+             #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 75px;
+          }
+            #h1_destaque{
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
+             }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:67vh ;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 0px;
+         
+        
+          }
+             #DivGeral{
+            margin: auto;
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1800px;
+            min-width: 400px;
+            color: rgb(65, 64, 64);
+        }
+               
+            }
+              @media (max-width: 400px) {
+                 #sociais_contatos a{
+              text-decoration: none;
+              color: blueviolet;
+              font-weight: bold;
+              font-size: 16px;
+            }
+                 #sociais_contatos{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 100px;
+            }
+            #DivFooter{
+            width: 100%;
+            min-width: 400px;
+            height: 85vh;
+            background-color: rgb(34, 34, 34);
+            padding-top: 70px;
+          }
+             #h1_destaque{
+                 width: 100%;
+                text-align: center;
+                font-size: 22px;
+             }
+             #body1 #div1{
+            max-width: 400px;
+            min-width: 400px;
+            min-height:67vh ;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-right: 0px;
+          
+          }
+        }
+       #iten01, #iten02, #iten03, #iten04, #iten05{
+          font-size: 14px;
+          font-weight: bold;
+          background-color: rgba(240, 248, 255, 0);
+          border: 0cap;
+          padding: 0px;
+          border: 50%;
+          cursor: pointer;
+        }
+       #iten01:hover, #iten02:hover, #iten03:hover, #iten04:hover, #iten05:hover{
+            color: rgb(194, 0, 178);
+            font-weight: bold;
+          }
+
+       
+        
+    </style>
+
+
+</head>
+
+<body>
+    <div id="DivGeral">
+        <div id="divHeaad">
+        <div id="heaad_apresent">
+            <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
+        </div>
+        <div id="heaad_btns">
+           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="btn2_heaad" title=""> Botão 02</button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+            <button id="btn4_heaad" title="" onclick="pagina()">Menu</button>
+        </div>
+        </div>
+
+        <div id="DivBody">
+            <br>
+            <h1 id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </h1> 
+            <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
+              <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+            </video></div>
+            <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
+            
+            <div id="body1">
+                <div id="lista01"></div>
+                <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS NOVO LAR <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
+                <div id="lista02"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision3()">APARTAMENTOS NOVO LAR <i id="visionList3" class="fa-solid fa-eye">  <button title="itens" id="iten03" ></button></i></h1>
+                <div id="lista03"></div>
+                <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS/SÍTIOS NOVO LAR <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
+                <div id="lista04"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
+                <div id="lista05"></div>
+           
+           
+            
+            </div>
+            
+            
+        </div>
+
+         <div id="DivFooter">
+           <div id="paragrafo_inicial">
+                      <img src="src/LogoNovoLarPNG.png" alt="" width="100">
+                    <p id="paragrafo_inf_cont"><h2>🏡 Novo Lar Imóveis – Soluções  Residenciais 🏡  </h2><br>
+                      <b>  "A Novo Lar é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                      </b>
+                    </p>
+                    <label id="lbl_contact" for="">
+                        📞 Telefone: (11) 99550-1463 📧 E-mail: www.carlosgat@gmail.com 📍 Litoral Sul de São Paulo</label>
+                        
+                    </div>
+                    <div id="sociais_contatos">
+                    <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
+                </div>
+
+        
+         </div>
+         <script> //visions
+            sessionStorage.setItem('teglist','')
+         function timeList(){
+          
+        var timelist= setTimeout(function(){
+             sessionStorage.setItem('teglist','')
+        Swal.close()
+        clearTimeout(timelist)
+        },4000)
+         }
+         function mostrarAlerta() {
+          var tegList= sessionStorage.getItem('teglist')
+            Swal.fire({
+                title: `Lista de ${tegList}  `,
+                text: `Aguarde carregando...`,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+         function vision1(){
+            sessionStorage.setItem('teglist','Destaques')
+            var lista01_= document.getElementById('visionList1');
+           if(lista01_.className=='fa-solid fa-eye'){
+              lista01_.className='fa-solid fa-eye-low-vision';
+               clicks('click')  
+                 mostrarAlerta('click')
+                 timeList('click')
+           } else if(lista01_.className=='fa-solid fa-eye-low-vision'){
+              lista01_.className='fa-solid fa-eye'
+               var list1= document.getElementById('lista01');
+               list1.innerHTML='';
+              var iten1= document.getElementById('iten01');
+              iten1.innerHTML=''
+           }
+         };
+          function vision2(){
+               sessionStorage.setItem('teglist','Casas')
+             var lista02_= document.getElementById('visionList2');
+           if(lista02_.className=='fa-solid fa-eye'){
+              lista02_.className='fa-solid fa-eye-low-vision';
+               clicks2('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista02_.className=='fa-solid fa-eye-low-vision'){
+              lista02_.className='fa-solid fa-eye'
+               var list2= document.getElementById('lista02');
+               list2.innerHTML='';
+                 var iten2= document.getElementById('iten02');
+              iten2.innerHTML=''
+           }
+         };
+          function vision3(){
+               sessionStorage.setItem('teglist','Apertamentos')
+               var lista03_= document.getElementById('visionList3');
+           if(lista03_.className=='fa-solid fa-eye'){
+              lista03_.className='fa-solid fa-eye-low-vision';
+               clicks3('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista03_.className=='fa-solid fa-eye-low-vision'){
+              lista03_.className='fa-solid fa-eye'
+               var list3= document.getElementById('lista03');
+               list3.innerHTML='';
+                 var iten3= document.getElementById('iten03');
+              iten3.innerHTML=''
+           }
+         };
+          function vision4(){
+               sessionStorage.setItem('teglist','Chácaras / Sítios')
+              var lista04_= document.getElementById('visionList4');
+           if(lista04_.className=='fa-solid fa-eye'){
+              lista04_.className='fa-solid fa-eye-low-vision';
+               clicks4('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista04_.className=='fa-solid fa-eye-low-vision'){
+              lista04_.className='fa-solid fa-eye'
+               var list4= document.getElementById('lista04');
+               list4.innerHTML='';
+                 var iten4= document.getElementById('iten04');
+              iten4.innerHTML=''
+           }
+         };
+        /*  function vision5(){
+              var lista05_= document.getElementById('visionList5');
+           if(lista05_.className=='fa-solid fa-eye'){
+              lista05_.className='fa-solid fa-eye-low-vision';
+               clicks5('click') 
+                 mostrarAlerta('click') 
+                  timeList('click')
+           } else if(lista05_.className=='fa-solid fa-eye-low-vision'){
+              lista04_.className='fa-solid fa-eye'
+               var list5= document.getElementById('lista05');
+               list5.innerHTML='';
+                 var iten5= document.getElementById('iten05');
+              iten5.innerHTML=''
+           }
+
+         };*/
+
+         </script>
+    </div>
+    
+ 
+    <script>//Lista 01 Destaques
+      function clicks(){
+        
+          sessionStorage.setItem('itens','');
+         SetItens('click')
+        sessionStorage.setItem('list01','')
+       var list1= document.getElementById('lista01');
+       //list1.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db = firebase.firestore();
+      var produtosRef = db.collection('Lista Mostruario 1');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+            var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+       
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list1.appendChild(div1)
+              sessionStorage.setItem('list01',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten01');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens',`${itens}`)
+           
+            img.addEventListener('click',function(){
+               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+            
+        })
+    })
+  }
+  clicks('click')
+  function SetItens(){
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+        } else{
+        }
+        },1200)
+    } 
+    </script>
+    <script>//Lista 02
+     function clicks2(){
+        sessionStorage.setItem('itens','');
+       SetItens('click')
+        sessionStorage.setItem('list02','')
+    
+    
+       var list2= document.getElementById('lista02');
+       //list2.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db2 = firebase.firestore();
+      var produtosRef = db2.collection('Lista Mostruario 2');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+          var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+       
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list2.appendChild(div1)
+            sessionStorage.setItem('list02',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten02');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+  function SetItens(){
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+        } else{
+        }
+        },1200)
+    } 
+    </script>
+    
+     <script>//Lista 03
+     function clicks3(){
+         sessionStorage.setItem('itens','');
+       SetItens('click')
+        sessionStorage.setItem('list03','')
+       var list3= document.getElementById('lista03');
+       //list3.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db3 = firebase.firestore();
+      var produtosRef = db3.collection('Lista Mostruario 3');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+       
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list3.appendChild(div1)
+             sessionStorage.setItem('list03',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten03');
+             iten1.innerHTML=itens
+             sessionStorage.setItem('itens',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+  function SetItens(){
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+        } else{
+        }
+        },1200)
+    } 
+    </script>
+     <script>//Lista 04
+     function clicks4(){
+         sessionStorage.setItem('itens','');
+        sessionStorage.setItem('list04','')
+       var list4= document.getElementById('lista04');
+       //list4.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db4 = firebase.firestore();
+      var produtosRef = db4.collection('Lista Mostruario 4');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+       
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list4.appendChild(div1)
+            sessionStorage.setItem('list04',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten04');
+            sessionStorage.setItem('itens',`${itens}`)
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+  function SetItens(){
+    
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+        } else{
+        }
+        },1200)
+    } 
+    </script>
+  
+    <script>//Lista 05
+    /*
+     function clicks5(){
+        sessionStorage.setItem('itens','');
+      SetItens('click')
+        sessionStorage.setItem('list05','')
+       var list5= document.getElementById('lista05');
+       //list5.innerHTML='';
+
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db5 = firebase.firestore();
+      var produtosRef = db5.collection('Lista Mostruario 5');
+      // Limpar a lista antes de preencher
+   
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+       
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list5.appendChild(div1)
+            sessionStorage.setItem('list04',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten05');
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+            swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }*/
+    </script>
+
+
+      <script> // redes sociais
+
+      function pagina(){
+   window.open('Administração/Cadastros.html','blank_')
+      }
+        function facebook(){
+           var url='https://www.facebook.com/carloseduardoAlvedeoliveira'
+           window.open(url,'_blank')
+        }
+        </script>
+
+    <script>
+              setInterval(function() {
+               const newDate = new Date()
+               var dia = String(newDate.getDate()).padStart(2, '0');
+               var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+               var ano = String(newDate.getFullYear()).padStart(2, '0')
+               var data = `${dia}/${mes}/${ano}`
+               const now = new Date();
+               const hours = now.getHours().toString().padStart(2, '0');
+               const minutes = now.getMinutes().toString().padStart(2, '0');
+               const seconds = now.getSeconds().toString().padStart(2, '0');
+               const timeString = `${hours}:${minutes}:${seconds}`;
+               // const lbl_data = document.getElementById('lbl-data');
+               // lbl_data.innerHTML = `${data}`
+               localStorage.setItem('data', data)
+               localStorage.setItem('hora', timeString)
+               //var Data = document.getElementById('lbl_data_head')
+               //Data.innerHTML= data;
+               }, 1000)
+     </script>
+     <script>
+             function toggleFullScreen() {
+           if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+            (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+            if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+           } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+           }
+      }
+    }
+  
+</script>
+    
+</body>
+</html>
