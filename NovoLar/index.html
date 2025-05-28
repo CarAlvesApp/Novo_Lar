@@ -115,7 +115,7 @@
             padding-bottom: 10px;
             border-bottom: 3px solid rgb(175, 174, 174);
           }
-          #heaad_btns button{
+          #heaad_btns button, #heaad_btns a{
             margin-right: 20px;
             cursor: pointer;
             border: 0cap;
@@ -123,8 +123,9 @@
             color: rgb(44, 44, 44);
             font-size: 15px;
             font-weight: bold;
+            text-decoration: none;
           }
-          #heaad_btns button:hover{
+          #heaad_btns button:hover, #heaad_btns a:hover{
             color: rgb(177, 0, 184);
             text-decoration: underline 2px solid rgb(37, 0, 29);
 
@@ -341,8 +342,158 @@
               background-color: rgb(150, 4, 150);
             }
 
+           .my-custom_login{
+            max-width: 400px;
+            border-radius: 20px;
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+             padding-bottom: 40px;
+             margin-top: 110px;
+           }
+            .my-custom_login label{
+              font-size: 13px;
+              color: rgb(58, 57, 57);
+            }
+            .my-custom_login button, .my-custom_login a  {
+               min-width: 280px;
+                text-decoration: none;
+                font-size: 16px;;
+                font-weight: bold;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                cursor: pointer;
+                color: rgb(63, 62, 62);
+                margin-top: 5px;
+              
+              
+              }
+               .my-custom_login button:hover, .my-custom_login a:hover {
+                background-color: rgb(71, 71, 71);
+                color: aliceblue;
 
+               }
+              .my-custom_login a {
+                padding-left: 70px;
+                padding-right: 70px;
+                margin-top: 20px;
+              }
 
+             .my-custom_resultpesquisa{
+                    max-width:400px ;
+                    max-height: 80vh;
+                    overflow: auto;
+                    background-color: rgb(255, 255, 255);
+                    border: 5px solid rgb(204, 203, 203);
+                    border-radius: 4px;
+                    color: rgb(56, 56, 56);
+                    margin-top: 110px;
+                    padding-bottom: 20px;
+            }
+            .my-custom_resultpesquisa h2{
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-top: 10px;
+            }
+            .my-custom_resultpesquisa label{
+                    font-size: 16px;
+                    color: rgb(255, 252, 252);
+            }
+            .my-custom_resultpesquisa #divPesq{
+                    width: 96%;
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    border: 0cap;
+                    cursor: pointer;
+                    background-color: rgb(85, 1, 81);
+                    border-radius: 7px;
+            }
+            .my-custom_resultpesquisa #divPesq:hover{
+                    background-color: rgb(139, 3, 133);
+                    color: red;
+            }
+            .my-custom_resultpesquisa #divPesq:hover label{
+      
+                    color: rgb(255, 254, 254);
+            }
+            .my-custom_resultpesquisa img{
+                    width: 270px;
+                    height: 190px;
+                    padding: 3px;
+                    border-radius: 10px;
+                    border: 0cap;
+           }
+           .my-custom_resultpesquisa ul:hover img{
+                background-color: rgb(15, 112, 112);
+           }
+              #imgemoji{
+               font-size: 50px;
+               display: none;
+           }
+            #ppemoji{
+             font-size: 14px;
+             margin-top: 10px;  
+           }
+            #visao{
+             margin-left: 5px;
+             font-size: 14px;
+             color: rgb(37, 37, 37);
+             cursor: pointer;
+           }
+            #visao:hover{
+             color: rgb(112, 0, 97);
+           }
+           #imjRPsq{
+               transition: transform 0.7s ease-in-out;
+               cursor: pointer;
+           }
+             #imjRPsq:hover{
+               transform: scale(1.1); /* Ajusta o nível de zoom */
+
+             }
+             .my-custom_login_Swl{
+              max-width: 400px;
+              border-radius: 10px;
+                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+             }
+               .my-custom_login_Swl label{
+                font-size: 13px;
+                color: rgb(37, 37, 37);
+              }
+               .my-custom_login_Swl input{
+               width: 80%;
+               padding: 10px;
+               border: 1px solid rgb(99, 98, 98);
+               border-bottom: 2px solid rgb(29, 29, 29);
+               cursor: pointer;
+            }
+            .my-custom_login_Swl #Swalmenu11,.my-custom_Pesq_Swl #Swalpesq{
+              width: 50%;
+              padding: 10px;
+              border:  1px solid rgb(59, 59, 59);
+              border-bottom: 2px solid rgb(41, 41, 41);
+              cursor: pointer;
+              background-color: rgba(240, 248, 255, 0);
+              border-radius: 7px;
+            }
+             .my-custom_login_Swl #Swalmenu11:hover,.my-custom_Pesq_Swl #Swalpesq:hover{
+              background-color: rgb(60, 16, 16);
+              color: aliceblue;
+             }
+             .my-custom_Pesq_Swl{
+              border: 20px;
+              font-size: 14px;
+              border-bottom: 2px solid rgb(29, 29, 29);
+             }
+             .my-custom_Pesq_Swl input{
+               width: 80%;
+               padding: 10px;
+               border: 1px solid rgb(99, 98, 98);
+               border-bottom: 2px solid rgb(29, 29, 29);
+               cursor: pointer;
+             }
+           
+
+             
+   
 
 
             @media (max-width: 1600px) {
@@ -664,8 +815,8 @@
             <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
-           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
-            <button id="btn4_heaad" title="" onclick="pagina()">Menu</button>
+           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <a href="#banner" id="btn1_heaad" title="Casa">Casa</a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+            <button id="btn4_heaad" title="" onclick="Menu_head()">Menu</button>
         </div>
         </div>
 
@@ -685,7 +836,7 @@
                 <div id="lista03"></div>
                 <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS/SÍTIOS NOVO LAR <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
                 <div id="lista04"></div>
-                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
+                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
                 <div id="lista05"></div>
            
            
@@ -712,6 +863,93 @@
 
         
          </div>
+         <script> // result pesquisa
+
+         sessionStorage.setItem('Pesquisa',``)
+         function ResutPesquisa() {
+            Swal.fire({
+             title: `Resultado da Pesquisa...`,
+             html: `
+              
+               <br>
+               <div id='lista_pesquisa'></div>        
+               <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
+               <br><br>
+                 `,
+               showCancelButton: true,
+               showConfirmButton: false,
+               customClass: {
+               popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
+            }
+        });
+             var set= setTimeout(function(){
+         document.getElementById('imgemoji').style.display='block'
+     },1000);
+       var pesquisa= sessionStorage.getItem('Pesquisa')
+       const firebaseConfigure = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfigure); 
+      const dbP = firebase.firestore();
+      var produtosRef = dbP.collection('Pesquisar');
+      // Limpar a lista antes de preencher
+      var listaP = document.getElementById('lista_pesquisa');
+      listaP.innerHTML = '';
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+            var itens= querySnapshot.size
+            var div= document.createElement('div')
+            var img = document.createElement('img');
+            var lbl= document.createElement('label')
+            var br = document.createElement('br')
+            if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
+                clearTimeout(set)
+             img.src = `${doc.IMG}`;
+             img.alt = doc.Titulo;
+             img.id='imjRPsq'
+             div.id='divPesq'
+              lbl.id='btnPesq'
+              lbl.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+              div.appendChild(img);   
+              div.appendChild(br)
+              div.appendChild(lbl)
+            listaP.appendChild(div);
+            document.getElementById('imgemoji').style.display='none'
+            } else{
+             img.src = ``;
+             img.alt = '';
+             img.style.width = ""; 
+             div.id='falso'
+              lbl.id='falso'
+              lbl.textContent=``
+            }
+           div.addEventListener('click',function(){
+            swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
+           })
+        })
+      })
+    }
+    function mostrarAlerta() {
+          var tegList= sessionStorage.getItem('teglist')
+            Swal.fire({
+                title: `Pesquisa <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i>  `,
+                text: `Aguarde carregando...`,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+  </script>
+
          <script> //visions
             sessionStorage.setItem('teglist','')
          function timeList(){
@@ -917,7 +1155,7 @@
             sessionStorage.setItem('itens',`${itens}`)
            
             img.addEventListener('click',function(){
-               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
 
             });
             button1.addEventListener('click',function(){
@@ -1037,7 +1275,7 @@
             iten1.innerHTML=itens
             sessionStorage.setItem('itens',`${itens}`)
              img.addEventListener('click',function(){
-             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
@@ -1145,7 +1383,7 @@
              iten1.innerHTML=itens
              sessionStorage.setItem('itens',`${itens}`)
              img.addEventListener('click',function(){
-             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
@@ -1251,7 +1489,7 @@
             sessionStorage.setItem('itens',`${itens}`)
             iten1.innerHTML=itens
              img.addEventListener('click',function(){
-               swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
@@ -1359,7 +1597,7 @@
             var iten1= document.getElementById('iten05');
             iten1.innerHTML=itens
              img.addEventListener('click',function(){
-            swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}`,`${doc.IMG}`);
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
@@ -1369,7 +1607,247 @@
     })
   }*/
     </script>
+    <script>
+      function Pesquisador(){
+       Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html: `
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                   <br>
+                   <label> Digite aqui: <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                   </label>
+                    <br><br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
 
+                 },3000)
+                } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                html:`
+                <label > Aguarde um momento <b> <p id="show"></p> </b></label>
+                `,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl_' // Aplica a classe CSS personalizada
+                },
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+               });
+                   var Num= 4
+                   var int=setInterval(function(){
+                     Num-=1
+                    if(Num == 0){
+                     clearInterval(int)
+                    }else{
+                    var show= document.getElementById('show');
+                     show.innerHTML=`(${Num})`;
+                    }
+                   },1000)
+                     setTimeout(function(){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },4000) 
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                    mostrarAlerta2()
+                    }
+               })
+            
+            }
+    </script>
+ <script>
+   function Menu_head(){
+        Swal.fire({
+                    title: `<labe id="label_titleSwal"> Menu <i class="fa-solid fa-bars"></i></labei>`,
+                 html: `
+                    <br>
+                    <a id="SwalmenuPesq" href="#"> Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </a> 
+                    <br><br>
+                    <button id="btn_swal_menu1" title="">Tela cheia </button>   
+                    <br><br>
+                    <a id="SwalmenuPes" href="#visionList2"> Casas </a> 
+                     <br><br>
+                    <a id="SwalmenuPe" href="#visionList3"> Apartamentos </a> 
+                    <br><br>
+                    <a id="SwalmenuP" href="#visionList4"> Chácaras e Sítios </a> 
+                       <br><br>
+                    <a id="Swalmenu" href="#visionList5">Em breve! </a> 
+                       <br><br>
+                    <a id="Swalmenu10" href="#footer"> Redes Sociais </a> 
+                    <br> <br> 
+                      <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
+                    <br> <br>
+                    <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
+                    <br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_login' // Aplica a classe CSS personalizada
+                }
+                 });
+             //  var name= document.getElementById('swal_lbl_nome');
+              // name.innerHTML=nome;
+             //  var tel_= document.getElementById('swal_lbl_tel');
+             
+             document.getElementById('btn_swal_menu1').addEventListener('click', function() {
+                toggleFullScreen('click')
+                 setTimeout(function(){
+                  Swal.close()
+                },200)
+             });
+             
+              
+             document.getElementById('Swalmenu10').addEventListener('click', function() {
+                setTimeout(function(){
+                    Swal.close()
+                },500)
+             });
+             document.getElementById('Swalmenu11').addEventListener('click', function() {
+                setTimeout(function(){
+                    Swal.close()
+                },500)
+             });
+              document.getElementById('SwalmenuPesq').addEventListener('click', function() {
+                 Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html: `
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                   <br>
+                   <label> Digite aqui: <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                   </label>
+                    <br><br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
+
+                 },3000)
+                } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                html:`
+                <label > Aguarde um momento <b> <p id="show"></p> </b></label>
+                `,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl_' // Aplica a classe CSS personalizada
+                },
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+               });
+                   var Num= 4
+                   var int=setInterval(function(){
+                     Num-=1
+                    if(Num == 0){
+                     clearInterval(int)
+                    }else{
+                    var show= document.getElementById('show');
+                     show.innerHTML=`(${Num})`;
+                    }
+                   },1000)
+                     setTimeout(function(){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },4000) 
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                    mostrarAlerta2()
+                    }
+               })
+              });
+                 document.getElementById('Swalmenu12').addEventListener('click', function() {
+                Swal.fire({
+                    title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+                 html: `
+                    <br>
+                    <label>Digite Password:<br>
+                     <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
+                    <br> <br>  
+                    <button id="Swalmenu11" title="">Start </button>
+                    <br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+                   document.getElementById('visao').addEventListener('click', function() {
+                  var visao_= document.getElementById('inputSwalAdimin');
+                  var classe= document.getElementById('visao');
+                    if(visao_.type=='password'){
+                        visao_.type='text'
+                        classe.className='fa-solid fa-eye-low-vision'
+                    } else{
+                          visao_.type='password'
+                           classe.className='fa-solid fa-eye'
+
+                    }
+                })
+                 document.getElementById('Swalmenu11').addEventListener('click', function() {
+                 var password_master= sessionStorage.getItem('Password_Master');
+                var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
+                 var resp= document.getElementById('inputSwalAdimin').value;
+                if(!resp||resp==''){
+                   Swal.fire('','Preencha o Campo password!','warning')
+                } else{
+                   
+                   if(password_master== resp|| password_novoLarAPP== resp){
+                    // swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                       setTimeout(function(){
+                        window.open('Administração/Cadastros.html','blank_')
+                       // swal.close()
+                         Swal.close()
+                    },1000)
+                        } else{
+                         Swal.fire('','Senha não confere!','error')         
+                      }
+                  }
+               })
+              //  window.open('Administração/Admin.html','_blank')
+                setTimeout(function(){
+                   // Swal.close()
+                },500)
+             });
+       // lista destaque 
+               };
+     </script>
 
       <script> // redes sociais
 
@@ -1381,6 +1859,31 @@
            window.open(url,'_blank')
         }
         </script>
+         <script>
+                const firebaseConfigu = {
+                apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                authDomain: "game-dbv.firebaseapp.com",
+                projectId: "game-dbv",
+                storageBucket: "game-dbv.appspot.com",
+                messagingSenderId: "118219151865",
+                appId: "1:118219151865:web:b6414d5255233264268528",
+                measurementId: "G-K17DLDBYGR"
+             };
+                 firebase.initializeApp(firebaseConfigu); 
+                 var db= firebase.firestore();
+                 db.collection('Password').doc('Master').get().then((doc) => {
+                    var doc= doc.data()
+                // Swal.fire(`${doc.Master}`,'Passwod do Administrador!','warnonig')
+                sessionStorage.setItem('Password_Master', `${doc.Master}`)
+                 }).catch((err) => {
+                 });
+                  db.collection('Password').doc('NovoLarPassword').get().then((doc) => {
+                    var doc= doc.data()
+                // Swal.fire(`${doc.NovoLarPassword}`,'Passwod do Desenvolvedor!','warnonig')
+                   sessionStorage.setItem('Password_NovoLarAPP', `${doc.NovoLarPassword}`)
+                 }).catch((err) => {
+                 });
+           </script>
 
     <script>
               setInterval(function() {
