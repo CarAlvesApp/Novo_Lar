@@ -125,7 +125,8 @@
             font-weight: bold;
           }
           #heaad_btns button:hover{
-            color: rgb(122, 3, 122);
+            color: rgb(177, 0, 184);
+            text-decoration: underline 2px solid rgb(37, 0, 29);
 
         }
           #heaad_btns img{
@@ -143,24 +144,17 @@
             align-items: stretch;
         }
          #h1_pesquisa{
-             position: fixed;
-            font-size: 18px;
-            padding: 5px;
-            border: 1px solid rgb(129, 129, 129);
-            background-color: rgba(255, 255, 255, 0.616);
-            border-radius: 10px;
+            font-size: 15px;
+            padding: 7px;
+            border-radius: 7px;
             cursor: pointer;
-            width: 200px;
-            margin-left: 20px;
             text-align: center;
-            margin-top: 20px;
-             color: rgb(117, 1, 108);
+             color: rgb(255, 255, 255);
                z-index: 9999;
          }
          #h1_pesquisa:hover{
-            background-color: rgb(167, 2, 167);
-            color: rgb(255, 255, 255);
-             border: 1px solid rgb(255, 254, 255);
+            color: rgb(26, 156, 0);
+            
          }
          #body1{
             width: 100%;
@@ -174,7 +168,7 @@
             justify-content: center;
              flex-wrap: wrap;
             align-items: center;
-            border-bottom: 50px solid rgb(73, 72, 72);
+            border-bottom: 10px solid rgba(73, 72, 72, 0);
             margin-bottom: 10px;
             padding-bottom: 70px;
         }
@@ -219,9 +213,9 @@
             background-color: rgba(255, 246, 246, 0);
           }
           #div4 button{
-                 background-color: rgba(244, 247, 255, 0);
+                background-color: rgb(121, 0, 115);
                 border-radius: 4px;
-                color: rgb(75, 75, 75);
+                color: rgb(255, 255, 255);
                 width: 160px;
                 text-align: center;
                 padding: 10px;
@@ -243,6 +237,10 @@
                  font-size: 25px;
                 text-align: center;
                 cursor: pointer;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                background-color: rgb(143, 3, 124);
+                color: rgb(255, 255, 255);
              }
         #DivFooter{
             width: 100%;
@@ -338,8 +336,9 @@
               cursor: pointer;
             }
              #h1_destaque:hover{
-              color: rgb(113, 1, 117);
-              text-decoration: underline 2px solid rebeccapurple;
+              color: rgb(60, 255, 0);
+              text-decoration: underline 2px solid rgb(8, 243, 0);
+              background-color: rgb(150, 4, 150);
             }
 
 
@@ -627,6 +626,12 @@
           
           }
         }
+        @media (max-width: 400px) {
+    .DivGeral {
+        width: 100%;
+        min-width: unset; /* Remove o mínimo em telas pequenas */
+    }
+}
        #iten01, #iten02, #iten03, #iten04, #iten05{
           font-size: 14px;
           font-weight: bold;
@@ -639,6 +644,9 @@
        #iten01:hover, #iten02:hover, #iten03:hover, #iten04:hover, #iten05:hover{
             color: rgb(194, 0, 178);
             font-weight: bold;
+          }
+          .Swal{
+            border-radius: 50px;
           }
 
        
@@ -655,14 +663,14 @@
             <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
-           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="btn2_heaad" title=""> Botão 02</button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <button id="btn1_heaad" title="Casa">Casa</button>   <button id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
             <button id="btn4_heaad" title="" onclick="pagina()">Menu</button>
         </div>
         </div>
 
         <div id="DivBody">
             <br>
-            <h1 id="h1_pesquisa">Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </h1> 
+           
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
             </video></div>
@@ -711,7 +719,7 @@
              sessionStorage.setItem('teglist','')
         Swal.close()
         clearTimeout(timelist)
-        },4000)
+        },5000)
          }
          function mostrarAlerta() {
           var tegList= sessionStorage.getItem('teglist')
@@ -924,10 +932,10 @@
       setTimeout(function(){
         var Itens_ = sessionStorage.getItem('itens')
         if(!Itens_|Itens_==''){
-           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+           Swal.fire(`Lista Vazia!`,'','warning')
         } else{
         }
-        },1200)
+        },3000)
     } 
     </script>
     <script>//Lista 02
@@ -1037,15 +1045,7 @@
         })
     })
   }
-  function SetItens(){
-      setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('itens')
-        if(!Itens_|Itens_==''){
-           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
-        } else{
-        }
-        },1200)
-    } 
+
     </script>
     
      <script>//Lista 03
@@ -1153,15 +1153,7 @@
         })
     })
   }
-  function SetItens(){
-      setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('itens')
-        if(!Itens_|Itens_==''){
-           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
-        } else{
-        }
-        },1200)
-    } 
+
     </script>
      <script>//Lista 04
      function clicks4(){
@@ -1267,16 +1259,7 @@
         })
     })
   }
-  function SetItens(){
-    
-      setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('itens')
-        if(!Itens_|Itens_==''){
-           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
-        } else{
-        }
-        },1200)
-    } 
+
     </script>
   
     <script>//Lista 05
