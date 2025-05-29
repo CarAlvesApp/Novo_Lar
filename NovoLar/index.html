@@ -196,7 +196,7 @@
             align-items: center;
             border-bottom: 10px solid rgba(73, 72, 72, 0);
             margin-bottom: 10px;
-            padding-bottom: 70px;
+          
         }
            #body1 #div1{
          
@@ -205,11 +205,10 @@
             width: 400px;
             max-width: 400px;
             min-width: 400px;
-            height:63vh;
-            max-height: 63vh;
+            min-height: 55vh;
             margin-bottom: 20px;
             margin-top: 50px;
-            padding-bottom:20px;
+            padding-bottom:50px;
             margin-right: 40px;
             border-radius: 7px;
             background-color: rgb(255, 255, 255);
@@ -271,11 +270,11 @@
     
             #h1_destaque{
                  width: 100%;
-                 font-size: 25px;
+                 font-size: 20px;
                 text-align: center;
                 cursor: pointer;
-                padding-top: 20px;
-                padding-bottom: 20px;
+                padding-top: 15px;
+                padding-bottom: 15px;
                 background-color: rgb(143, 3, 124);
                 color: rgb(255, 255, 255);
              }
@@ -370,7 +369,6 @@
             }
              #h1_destaque:hover{
               color: rgb(60, 255, 0);
-              text-decoration: underline 2px solid rgb(8, 243, 0);
               background-color: rgb(150, 4, 150);
             }
 
@@ -522,8 +520,43 @@
                border-bottom: 2px solid rgb(29, 29, 29);
                cursor: pointer;
              }
+            #divListaPesquisa{
+              display: none;
+            
            
-
+            }
+            #divListaPesquisa  #listaPesquisa div{
+              margin: auto;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              width: 600px;
+              min-width: 400px;
+              background-color: rgb(255, 255, 255);
+              margin-bottom: 50px;
+              margin-top: 30px;
+              padding: 20px;
+             
+              overflow: hidden;
+               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+               border-radius: 20px;
+            }
+              #divListaPesquisa  #listaPesquisa img{
+              width: 600px;
+              min-width: 400px;
+              margin-bottom: 20px;
+              border-radius: 10px;
+              max-height: 60vh;
+              cursor: pointer;
+             }
+             #listaPesquisa div label{
+              font-size: 18px;
+              font-weight: bold;
+             }
+                  #divListaPesquisa h2{
+                    width: 100%;
+                    text-align: center;
+                  }
              
    
 
@@ -551,7 +584,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-             min-height:65vh;
+      
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -590,7 +623,6 @@
                      #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:65vh ;         
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -629,7 +661,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:65vh ;
+       
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -669,7 +701,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:65vh ;
+         
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -708,7 +740,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:67vh;
+          
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -717,11 +749,27 @@
             #h1_destaque{
                  width: 100%;
                 text-align: center;
-                font-size: 22px;
+                font-size: 20px;
              }
     
             }
           @media (max-width: 600px) {
+             #divListaPesquisa  #listaPesquisa div{
+              margin: auto;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              width: 400px;
+              min-width: 400px;
+              background-color: rgba(0, 255, 255, 0);
+              margin-bottom: 50px;
+              margin-top: 30px;
+              padding: 20px;
+            }
+              #divListaPesquisa  #listaPesquisa img{
+              width: 400px;
+              min-width: 400px;
+             }
             #banner{
             margin:auto ;
             width: 100%;
@@ -752,12 +800,12 @@
             #h1_destaque{
                  width: 100%;
                 text-align: center;
-                font-size: 22px;
+                font-size: 18px;
              }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:67vh ;
+         
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -797,12 +845,12 @@
              #h1_destaque{
                  width: 100%;
                 text-align: center;
-                font-size: 22px;
+                font-size: 18px;
              }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height:67vh ;
+       
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -816,7 +864,7 @@
     }
 }
        #iten01, #iten02, #iten03, #iten04, #iten05{
-          font-size: 14px;
+          font-size: 15px;
           font-weight: bold;
           background-color: rgba(240, 248, 255, 0);
           border: 0cap;
@@ -847,7 +895,7 @@
             <label id="lbl1_heaad" for="">Novo Lar Imóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
-           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <a href="#banner" id="btn1_heaad" title="Casa">Casa</a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+           <div id="logoHeaad"> <img src="src/LogoNovoLarPNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa</a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
             <button id="btn4_heaad" title="" onclick="Menu_head()">Menu</button>
         </div>
         </div>
@@ -858,9 +906,10 @@
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
             </video></div>
-            <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
+           
             
             <div id="body1">
+               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
                 <div id="lista01"></div>
                 <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS NOVO LAR <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
                 <div id="lista02"></div>
@@ -870,9 +919,12 @@
                 <div id="lista04"></div>
                  <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
                 <div id="lista05"></div>
-           
-           
             
+            </div>
+            <div id="divListaPesquisa">
+              <h2 id="RRListP">Resutado:</h2>
+              <a id="alist" href="#listaPesquisa"></a>
+              <div id="listaPesquisa"></div>
             </div>
             
             
@@ -895,6 +947,7 @@
 
         
          </div>
+
          <script> // result pesquisa
 
          sessionStorage.setItem('Pesquisa',``)
@@ -931,7 +984,7 @@
       const dbP = firebase.firestore();
       var produtosRef = dbP.collection('Pesquisar');
       // Limpar a lista antes de preencher
-      var listaP = document.getElementById('lista_pesquisa');
+      var listaP = document.getElementById('listaPesquisa');
       listaP.innerHTML = '';
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
@@ -939,21 +992,37 @@
             var itens= querySnapshot.size
             var div= document.createElement('div')
             var img = document.createElement('img');
-            var lbl= document.createElement('label')
+            var lbl= document.createElement('label');
+            var lbl2= document.createElement('label');
+            var lbl3= document.createElement('label');
             var br = document.createElement('br')
+            var br2 = document.createElement('br')
+            var br3 = document.createElement('br')
             if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
                 clearTimeout(set)
-             img.src = `${doc.IMG}`;
-             img.alt = doc.Titulo;
-             img.id='imjRPsq'
-             div.id='divPesq'
-              lbl.id='btnPesq'
-              lbl.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
-              div.appendChild(img);   
-              div.appendChild(br)
+              img.src = `${doc.IMG}`;
+              img.alt = doc.Titulo;
+              img.id='imjRPsq';
+              div.id='divPesq';
+              lbl.id='btnPesq';
+              lbl2.id='btnPesq';
+              lbl3.id='btnPesq';
+              lbl.textContent=`${doc.Código}`
+              lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+              lbl3.textContent=`${doc.Titulo}`
+           
+              div.appendChild(img); 
+              div.appendChild(br)  
+              div.appendChild(lbl3)
+              div.appendChild(br2)
+              div.appendChild(lbl2)
+              div.appendChild(br3)
               div.appendChild(lbl)
-            listaP.appendChild(div);
-            document.getElementById('imgemoji').style.display='none'
+              listaP.appendChild(div);
+              document.getElementById('imgemoji').style.display='none'
+               document.getElementById('body1').style.display='none'
+               document.getElementById('divListaPesquisa').style.display='block'
+               document.getElementById('alist').click()
             } else{
              img.src = ``;
              img.alt = '';
@@ -979,6 +1048,13 @@
                     Swal.showLoading();
                 }
             });
+        }
+        function casa(){
+                var listaP = document.getElementById('listaPesquisa');
+              listaP.innerHTML = '';
+              document.getElementById('body1').style.display='block'
+              document.getElementById('divListaPesquisa').style.display='none'
+
         }
   </script>
 
