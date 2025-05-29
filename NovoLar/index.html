@@ -114,7 +114,11 @@
             align-items: center;
             padding-bottom: 10px;
             border-bottom: 3px solid rgb(175, 174, 174);
-          }
+            color: rgb(177, 0, 184);
+        
+
+        }
+          
           #heaad_btns button, #heaad_btns a{
             margin-right: 20px;
             cursor: pointer;
@@ -125,11 +129,34 @@
             font-weight: bold;
             text-decoration: none;
           }
-          #heaad_btns button:hover, #heaad_btns a:hover{
-            color: rgb(177, 0, 184);
-            text-decoration: underline 2px solid rgb(37, 0, 29);
-
+               #heaad_btns button, #heaad_btns a{
+            position: relative;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
         }
+        
+         #heaad_btns button::after , #heaad_btns a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: #770067; /* Cor da linha */
+            transition: width 0.5s ease-in-out;
+        }
+        
+      #heaad_btns button:hover:after , #heaad_btns a:hover:after{
+            width: 100%;
+        }
+          #heaad_btns button:hover , #heaad_btns a:hover{
+            color:  #880088;
+
+          }
+
+         
           #heaad_btns img{
             width: 40px;
             margin-top: 7px;
@@ -191,23 +218,37 @@
             color: rgb(95, 95, 95);
             overflow: hidden;
           }
+            #body1 #div1 {
+             position: relative;
+             padding: 5px 10px;
+             border: none;
+             font-size: 16px;
+             cursor: pointer;
+             overflow: hidden;
+         }
+         
+           #body1 #div1::after {
+             content: "";
+             position: absolute;
+             width: 0%;
+             height: 7px;
+             bottom: 0;
+             left: 0;
+             background: #6b0154; /* Cor da linha */
+             transition: width 0.4s ease-in-out;
+               color: rgb(95, 95, 95);
+         }
+           #body1 #div1:hover::after {
+             width: 100%
+         }
+        
+
           #div2 {
             width: 100%;
+            color: rgb(53, 52, 52);
           }
-           #body1 #div1:hover{
-             background-color: rgb(128, 0, 106);
-        
-            color: rgb(255, 255, 255);
-          
-           }
-               #body1 #div1:hover button{
-              color: rgb(255, 255, 255);
-              background-color: rgba(99, 1, 74, 0);
-                border: 1px solid rgb(255, 255, 255);
-            }
-            #body1 #div1:hover #label0{
-                 color: rgb(255, 255, 255);
-            }
+       
+      
              #div1 #div4{
             max-width:64%;
             padding: 10px;
@@ -227,12 +268,7 @@
                  border: 1px solid rgb(160, 160, 160);
                  min-width: 370px;
             }
-         #div1 #div4 button:hover{
-                background-color:rgb(226, 229, 255);
-                color: rgb(102, 0, 85);
-                border: 1px solid rgb(49, 49, 49);
-                font-weight: bold;
-             }
+    
             #h1_destaque{
                  width: 100%;
                  font-size: 25px;
@@ -299,7 +335,11 @@
              #body1 #div1 img:hover {
              transform: scale(1.1); /* Ajusta o nível de zoom */
              }
+               #body1 #div1:hover::after #body1 #div1 img {
        
+            transform: scale(1.1); 
+
+         }
             #body1 #div2  #label0{
               width: 390px;
              font-size: 15px;
@@ -331,7 +371,7 @@
       
           }
               #body1 #div1:hover label{
-              color: rgb(255, 255, 255);
+              color: rgb(77, 77, 77);
             }
             #visionList{
               cursor: pointer;
