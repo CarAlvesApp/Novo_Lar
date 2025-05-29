@@ -205,10 +205,10 @@
             width: 400px;
             max-width: 400px;
             min-width: 400px;
-            min-height: 55vh;
+            min-height: 57vh;
             margin-bottom: 20px;
             margin-top: 50px;
-            padding-bottom:50px;
+            padding-bottom:61px;
             margin-right: 40px;
             border-radius: 7px;
             background-color: rgb(255, 255, 255);
@@ -391,14 +391,39 @@
                 border: 0cap;
                 background-color: rgba(240, 248, 255, 0);
                 cursor: pointer;
-                color: rgb(63, 62, 62);
+                color: rgb(58, 58, 58);
                 margin-top: 5px;
               
               
               }
+                 .my-custom_login button, .my-custom_login a   {
+                position: relative;
+                color: rgb(43, 42, 42);
+                padding: 10px 20px;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            
+             .my-custom_login button::after , .my-custom_login a::after {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 3px;
+                bottom: 0;
+                left: 0;
+                background: #4e0137; /* Cor da linha */
+                transition: width 0.4s ease-in-out;
+            }
+            
+             .my-custom_login button:hover::after , .my-custom_login a:hover::after {
+                width: 100%;
+            }
+              
                .my-custom_login button:hover, .my-custom_login a:hover {
-                background-color: rgb(71, 71, 71);
-                color: aliceblue;
+                background-color: rgba(71, 71, 71, 0);
+                color: rgb(95, 0, 79);
 
                }
               .my-custom_login a {
@@ -412,8 +437,8 @@
                     max-height: 80vh;
                     overflow: auto;
                     background-color: rgb(255, 255, 255);
-                    border: 5px solid rgb(204, 203, 203);
-                    border-radius: 4px;
+                     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
                     color: rgb(56, 56, 56);
                     margin-top: 110px;
                     padding-bottom: 20px;
@@ -481,8 +506,14 @@
              }
              .my-custom_login_Swl{
               max-width: 400px;
-              border-radius: 10px;
-                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+              border-radius: 15px;
+               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+             }
+             #my-custom_Pesq_Swl {
+               max-width: 400px;
+              border-radius: 15px;
+               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+               background-color: #ad04a5;
              }
                .my-custom_login_Swl label{
                 font-size: 13px;
@@ -495,6 +526,16 @@
                border-bottom: 2px solid rgb(29, 29, 29);
                cursor: pointer;
             }
+               .my-custom_Pesq_Swl{
+              border: 20px;
+              font-size: 14px;
+              border-bottom: 2px solid rgb(29, 29, 29);
+              background-color: #ffffff;
+              color: #333232;
+              border-radius: 10px;
+             
+             }
+      
             .my-custom_login_Swl #Swalmenu11,.my-custom_Pesq_Swl #Swalpesq{
               width: 50%;
               padding: 10px;
@@ -502,28 +543,29 @@
               border-bottom: 2px solid rgb(41, 41, 41);
               cursor: pointer;
               background-color: rgba(240, 248, 255, 0);
-              border-radius: 7px;
+              border-radius: 10px;
             }
              .my-custom_login_Swl #Swalmenu11:hover,.my-custom_Pesq_Swl #Swalpesq:hover{
-              background-color: rgb(60, 16, 16);
+              background-color: rgb(100, 0, 84);
               color: aliceblue;
              }
-             .my-custom_Pesq_Swl{
-              border: 20px;
-              font-size: 14px;
-              border-bottom: 2px solid rgb(29, 29, 29);
-             }
+    
+    
              .my-custom_Pesq_Swl input{
                width: 80%;
                padding: 10px;
-               border: 1px solid rgb(99, 98, 98);
-               border-bottom: 2px solid rgb(29, 29, 29);
+               border: 1px solid rgb(255, 255, 255);
+               border-bottom: 2px solid rgb(255, 255, 255);
+               background-color: #2c002a;
+               color: #ffffff;
                cursor: pointer;
+             }
+             .my-custom_Pesq_Swl input:hover{
+              color: #ffffff;
              }
             #divListaPesquisa{
               display: none;
             
-           
             }
             #divListaPesquisa  #listaPesquisa div{
               margin: auto;
@@ -1023,6 +1065,7 @@
                document.getElementById('body1').style.display='none'
                document.getElementById('divListaPesquisa').style.display='block'
                document.getElementById('alist').click()
+               Swal.close()
             } else{
              img.src = ``;
              img.alt = '';
@@ -1144,7 +1187,8 @@
               iten4.innerHTML=''
            }
          };
-        /*  function vision5(){
+         function vision5(){
+           sessionStorage.setItem('teglist','Imóveis')
               var lista05_= document.getElementById('visionList5');
            if(lista05_.className=='fa-solid fa-eye'){
               lista05_.className='fa-solid fa-eye-low-vision';
@@ -1152,14 +1196,14 @@
                  mostrarAlerta('click') 
                   timeList('click')
            } else if(lista05_.className=='fa-solid fa-eye-low-vision'){
-              lista04_.className='fa-solid fa-eye'
+              lista05_.className='fa-solid fa-eye'
                var list5= document.getElementById('lista05');
                list5.innerHTML='';
                  var iten5= document.getElementById('iten05');
               iten5.innerHTML=''
            }
 
-         };*/
+         };
 
          </script>
     </div>
@@ -1172,7 +1216,7 @@
          SetItens('click')
         sessionStorage.setItem('list01','')
        var list1= document.getElementById('lista01');
-       //list1.innerHTML='';
+       list1.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1293,7 +1337,7 @@
     
     
        var list2= document.getElementById('lista02');
-       //list2.innerHTML='';
+       list2.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1401,7 +1445,7 @@
        SetItens('click')
         sessionStorage.setItem('list03','')
        var list3= document.getElementById('lista03');
-       //list3.innerHTML='';
+       list3.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1507,7 +1551,7 @@
          sessionStorage.setItem('itens','');
         sessionStorage.setItem('list04','')
        var list4= document.getElementById('lista04');
-       //list4.innerHTML='';
+       list4.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1608,15 +1652,22 @@
   }
 
     </script>
+    <script>
+      setTimeout(function(){
+         vision2('click'); vision3('click'); vision4('click'); vision5('click')
+           //Swal.close()
+      },300)
+     
+    </script>
   
     <script>//Lista 05
-    /*
+    
      function clicks5(){
         sessionStorage.setItem('itens','');
       SetItens('click')
         sessionStorage.setItem('list05','')
        var list5= document.getElementById('lista05');
-       //list5.innerHTML='';
+       list5.innerHTML='';
 
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1701,7 +1752,7 @@
             div4.appendChild(button1);
             div1.appendChild(div4);
             list5.appendChild(div1)
-            sessionStorage.setItem('list04',`${doc.Titulo}`)
+            sessionStorage.setItem('list05',`Imóveis`)
             var iten1= document.getElementById('iten05');
             iten1.innerHTML=itens
              img.addEventListener('click',function(){
@@ -1713,7 +1764,7 @@
             });
         })
     })
-  }*/
+  }
     </script>
     <script>
       function Pesquisador(){
