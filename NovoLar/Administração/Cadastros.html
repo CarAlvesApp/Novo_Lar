@@ -151,23 +151,22 @@
             flex-direction: column;
             justify-content: space-between;
             margin:0 auto;
-            width: 75%;
+            width: 85%;
             max-width: 900px;
             min-width: 400px;
             min-height: 50vh;
             padding-bottom: 400px;
             background-color: rgba(214, 220, 255, 0);
            
-            
-         
+
            }
            #novocad label{
             font-size: 13px;
 
            }
-        
+
              #novocad input{
-            width: 85%;
+            width: 95%;
             min-width: 350px;
             padding: 10px;
             padding-top: 15px;
@@ -248,7 +247,7 @@
            #lbl_codigo{
             color: rgb(119, 1, 103);
            }
-             #novocad  #input_UF, #novocad  #desconto{
+           #novocad  #input_UF, #novocad  #desconto{
            max-width:40px ;
            min-width:40px ;
            font-size: 18px;
@@ -258,9 +257,10 @@
             font-size: 22px;
             width: 10px;
            }
+        
                 
           #myProgress {
-            width: 80%;
+            width: 70%;
             background-color:rgb(134, 130, 130);
             display: none;
             border-radius: 7px;
@@ -271,12 +271,12 @@
             width: 1%;
             /* Começa com 1% */
             height: 20px;
-            background-color:rgb(125, 255, 4);
+            background-color:rgb(123, 2, 87);
             text-align: center;
             /* Centraliza horizontalmente */
             line-height: 15px;
             /* Centraliza verticalmente */
-            color: rgb(68, 6, 6);
+            color: rgb(255, 255, 255);
             border-radius: 5px;
             font-weight: bold;
         }
@@ -635,6 +635,11 @@
       margin-bottom: 10px;
       font-size: 22px;
      }
+        #novocad  #valor , #novocad  #valorLoc {
+            width: 90%;
+            max-width: 160px;
+            min-width: 160px;
+           }
      
 
     </style> 
@@ -723,7 +728,7 @@
                     <label for="">Descrição do Imóvel (resumida!):<br>
                         <textarea name="" id="obs" placeholder="Mensagem..."></textarea>
                     </label>
-                    <br>
+                    <br> <br>
                     <div id="myProgress" style="display:none">
                         <div id="myBar">10%</div>
                     </div>
@@ -737,18 +742,18 @@
                     <label id="lbl_limpar" for="" onclick="limpar()">Limpar Campos</label>
                     <br><br><br>
                
-            </div>
-        </div>
-          <div id="divList">
+                 </div>
+                </div>
+              <div id="divList">
                       <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
                    <h2 id="h2Lista">Lista </h2>
                    <div id="listas">
-                   </div>
-    </div>
-     <script>
-        function tela(){
-            window.open('../index.html','blank')
-        }
+                     </div>
+             </div>
+              <script>
+                 function tela(){
+                     window.open('../index.html','blank')
+                 }
      </script>
       <script>
              sessionStorage.setItem('IMG', '');
@@ -777,7 +782,7 @@
              sessionStorage.setItem('obs10',``);    
              function sessionS(){
                 
-                 sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('Url_Imagem','');
              sessionStorage.setItem('img2','');
              sessionStorage.setItem('img3','');
              sessionStorage.setItem('img4','');
@@ -974,6 +979,21 @@
                          //document.getElementById('obs9').value=doc.OBS9;
                          sessionStorage.setItem('obs10',`${doc.OBS10}`)
                          //document.getElementById('obs10').value=doc.OBS10;
+
+                           sessionStorage.setItem('Quarto',`${doc.Quarto}`)
+                           sessionStorage.setItem('Banheiro',`${doc.Banheiro}`)
+                           sessionStorage.setItem('Quintal',`${doc.Quintal}`)
+                           sessionStorage.setItem(' Piscina',`${doc.Piscina}`)
+                           sessionStorage.setItem('Garagem',`${doc.Garagem}`)
+                           sessionStorage.setItem('Comod1',`${doc.Comod1}`)
+                           sessionStorage.setItem('Comod2',`${doc.Comod2}`)
+                           sessionStorage.setItem('Comod3',`${doc.Comod3}`)
+                           sessionStorage.setItem('Comod4',`${doc.Comod4}`)
+                           sessionStorage.setItem('Comod5',`${doc.Comod5}`)
+                           sessionStorage.setItem('Comod6',`${doc.Comod6}`)
+                           sessionStorage.setItem('Comod7',`${doc.Comod7}`)
+                            sessionStorage.setItem('IPTU',`${doc.IPTU}`)
+                             sessionStorage.setItem('Cond',`${doc.Cond}`)
                          Cadastros2('click')
                     Swal.fire(`Editar Cadastro!`,`${doc.Titulo}`,``)
                   })
@@ -1052,6 +1072,8 @@
               var codigo= document.getElementById('codigo').value;
               var uf= document.getElementById('input_UF').value;
               var tipo_Venda= document.getElementById('select_venda').value;
+
+            
 
               var tipo_Venda= document.getElementById('select_venda').value;
             if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
@@ -1145,6 +1167,7 @@
     var uf= document.getElementById('input_UF').value;
     var tipo_Venda= document.getElementById('select_venda').value;
 
+
    if(!CodRetur || CodRetur==''){
          document.getElementById('codigo').style.display='block'
    }else{
@@ -1233,6 +1256,21 @@
                 Código: codigo,
                 Lista: lista,
                 ID: `${lista}/${codigo}`,
+                Quarto:'',
+                Banheiro:'',
+                Quintal:'',
+                Garagem:'',
+                Piscina:'',
+                Comod1:'',
+                Comod2:'',
+                Comod3:'',
+                Comod4:'',
+                Comod5:'',
+                Comod6:'',
+                Comod7:'',
+                IPTU: '',
+                Cond:"",
+
               
             });
                  var dbd = firebase.firestore();
@@ -1271,6 +1309,20 @@
                 Código: codigo,
                 Lista: lista,
                 ID: `${lista}/${codigo}`,
+                Quarto:'',
+                Banheiro:'',
+                Quintal:'',
+                Garagem:'',
+                Piscina:'',
+                Comod1:'',
+                Comod2:'',
+                Comod3:'',
+                Comod4:'',
+                Comod5:'',
+                Comod6:'',
+                Comod7:'',
+                IPTU: '',
+                Cond:"",
             });
             
             
@@ -1367,7 +1419,21 @@
                       var obs8=  sessionStorage.getItem('obs8');
                        var obs9=  sessionStorage.getItem('obs9');
                         var obs10=  sessionStorage.getItem('obs10');
-          
+                            var quarto_= sessionStorage.getItem('Quarto')
+                            var banheiro_= sessionStorage.getItem('Banheiro')
+                            var quintal_= sessionStorage.getItem('Quintal')
+                            var piscina=  sessionStorage.getItem(' Piscina')
+                            var garagem= sessionStorage.getItem('Garagem')
+                            var comad1_= sessionStorage.getItem('Comod1')
+                            var comad2_= sessionStorage.getItem('Comod2')
+                            var comad3_= sessionStorage.getItem('Comod3')
+                            var comad4_= sessionStorage.getItem('Comod4')
+                            var comad5_= sessionStorage.getItem('Comod5')
+                            var comad6_= sessionStorage.getItem('Comod6')
+                            var comad7_= sessionStorage.getItem('Comod7')
+                            var iptu_= sessionStorage.getItem('IPTU')
+                            var cond_= sessionStorage.getItem('Cond')
+                                  
 
           var data = sessionStorage.getItem('data');
           var hora = sessionStorage.getItem('hora');
@@ -1431,6 +1497,20 @@
                 Código: codigo,
                 Lista: lista,
                 ID: id,
+                 Quarto: quarto_,
+                Banheiro:  banheiro_,
+                Quintal: quintal_,
+                Garagem: garagem,
+                Piscina: piscina,
+                Comod1:comad1_,
+                Comod2:comad2_,
+                Comod3:comad3_,
+                Comod4:comad4_,
+                Comod5:comad5_,
+                Comod6:comad6_,
+                Comod7:comad7_,
+                IPTU: iptu_,
+                Cond:cond_,
             });
                  var dbd = firebase.firestore();
              dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
@@ -1468,6 +1548,21 @@
                 Código: codigo,
                 Lista: lista,
                 ID: id,
+                Quarto: quarto_,
+                Banheiro:  banheiro_,
+                Quintal: quintal_,
+                Garagem: garagem,
+                Piscina: piscina,
+                Comod1:comad1_,
+                Comod2:comad2_,
+                Comod3:comad3_,
+                Comod4:comad4_,
+                Comod5:comad5_,
+                Comod6:comad6_,
+                Comod7:comad7_,
+                IPTU: iptu_,
+                Cond:cond_,
+               
             });
                document.getElementById('myProgress').style.display = 'block';
          var i = 0;
