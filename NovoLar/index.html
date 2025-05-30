@@ -379,7 +379,7 @@
               font-size: 13px;
               color: rgb(58, 57, 57);
             }
-            .my-custom_login button, .my-custom_login a  {
+            .my-custom_login button, .my-custom_login a ,.my-custom_oqueProcura a {
                min-width: 280px;
                 text-decoration: none;
                 font-size: 16px;;
@@ -392,7 +392,7 @@
               
               
               }
-                 .my-custom_login button, .my-custom_login a   {
+                 .my-custom_login button, .my-custom_login a ,.my-custom_oqueProcura a {
                 position: relative;
                 color: rgb(43, 42, 42);
                 padding: 10px 20px;
@@ -402,7 +402,7 @@
                 overflow: hidden;
             }
             
-             .my-custom_login button::after , .my-custom_login a::after {
+             .my-custom_login button::after , .my-custom_login a::after,.my-custom_oqueProcura a::after {
                 content: "";
                 position: absolute;
                 width: 0%;
@@ -413,7 +413,7 @@
                 transition: width 0.4s ease-in-out;
             }
             
-             .my-custom_login button:hover::after , .my-custom_login a:hover::after {
+             .my-custom_login button:hover::after , .my-custom_login a:hover::after,.my-custom_oqueProcura a:hover::after  {
                 width: 100%;
             }
               
@@ -500,11 +500,12 @@
                transform: scale(1.1); /* Ajusta o nível de zoom */
 
              }
-             .my-custom_login_Swl{
+             .my-custom_login_Swl,.my-custom_oqueProcura{
               max-width: 400px;
               border-radius: 15px;
                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
              }
+      
              #my-custom_Pesq_Swl {
                max-width: 400px;
               border-radius: 15px;
@@ -930,11 +931,11 @@
     <div id="DivGeral">
         <div id="divHeaad">
         <div id="heaad_apresent">
-            <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='clicks()'>label 2</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
+            <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
-           <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa</a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
-            <button id="btn4_heaad" title="" onclick="Menu_head()">Menu</button>
+           <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+            <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
         </div>
         </div>
 
@@ -985,7 +986,71 @@
 
         
          </div>
+          <script>
+            function procura(){
+               Swal.fire({
+             title: `Oque você procura?`,
+             html: `
+               <br>
+               <a id='Casas' href="#lista02">Casas </a>
+               <br><br>
+               <a id='aps'href="#lista03">Apartamentos </a>
+               <br><br>
+               <a id='Chacara' href="#lista04">Chácaras </a>
+               <br><br>
+               <a id='sitio'  href="#lista04">Sítios</a>
+               <br><br>
+                <a id='breve'  href="#lista05">Bréve!</a>
+               <br><br>
+               <a id='aluguel'>Imóvel para aluguar </a>
+               <br><br>
+               <a id='Compra'>Imóvel para comprar </a>
+               <br><br>
+                 `,
+               showCancelButton: true,
+               showConfirmButton: false,
+               customClass: {
+               popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
+            }
+        });
+        document.getElementById('Casas').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('aps').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('Chacara').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('sitio').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('breve').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('aluguel').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },1000)
+        });
+        document.getElementById('Compra').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
 
+            }
+          </script>
          <script> // result pesquisa
 
          sessionStorage.setItem('Pesquisa',``)
@@ -999,8 +1064,8 @@
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
                <br><br>
                  `,
-               showCancelButton: true,
-               showConfirmButton: false,
+               showCancelButton: false,
+               showConfirmButton: true,
                customClass: {
                popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
             }
