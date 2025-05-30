@@ -275,17 +275,22 @@
                 color: rgb(255, 255, 255);
              }
         #DivFooter{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
             width: 100%;
+            height: 100%;
             min-width: 400px;
-            height: 70vh;
+           min-height: 70vh;
             background-color: rgb(34, 34, 34);
-            padding-top: 70px;
+            padding-bottom: 200px;
+              color: blueviolet;
           }
           #paragrafo_inicial{
             margin: auto;
             width: 80%;
             text-align: center;
-            color: rgba(255, 254, 235, 0.678);
+            color: rgba(255, 254, 244, 0.778);
             margin-bottom: 50px;
           }
             #paragrafo_inicial img{
@@ -299,11 +304,12 @@
               justify-content: space-around;
               align-items: center;
               margin-top: 160px;
+               color: blueviolet;
               cursor: pointer;
             }
             #sociais_contatos a{
               text-decoration: none;
-              color: blueviolet;
+               color: blueviolet;
               font-weight: bold;
               font-size: 21px;
             }
@@ -950,11 +956,11 @@
             <div id="body1">
                <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
                 <div id="lista01"></div>
-                <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS NOVO LAR <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
+                <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS  <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
                 <div id="lista02"></div>
-                 <br><br> <h1 id="h1_destaque" onclick="vision3()">APARTAMENTOS NOVO LAR <i id="visionList3" class="fa-solid fa-eye">  <button title="itens" id="iten03" ></button></i></h1>
+                 <br><br> <h1 id="h1_destaque" onclick="vision3()">APARTAMENTOS  <i id="visionList3" class="fa-solid fa-eye">  <button title="itens" id="iten03" ></button></i></h1>
                 <div id="lista03"></div>
-                <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS/SÍTIOS NOVO LAR <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
+                <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS / SÍTIOS  <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
                 <div id="lista04"></div>
                  <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
                 <div id="lista05"></div>
@@ -972,12 +978,12 @@
          <div id="DivFooter">
            <div id="paragrafo_inicial">
                       <img src="src/LogoNovoLarPNG.png" alt="" width="100">
-                    <p id="paragrafo_inf_cont"><h2>🏡 Novo Lar Imóveis – Soluções  Residenciais 🏡  </h2><br>
-                      <b>  "A Novo Lar é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                    <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
+                      <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
                       </b>
                     </p>
                     <label id="lbl_contact" for="">
-                        📞 Telefone: (11) 99550-1463 📧 E-mail: www.carlosgat@gmail.com 📍 Litoral Sul de São Paulo</label>
+                        📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>
                         
                     </div>
                     <div id="sociais_contatos">
@@ -1055,21 +1061,27 @@
 
          sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
+          var itens=   sessionStorage.getItem('itens_')
+        
             Swal.fire({
              title: `Resultado da Pesquisa...`,
              html: `
               
                <br>
                <div id='lista_pesquisa'></div>        
-               <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me!</p></i>
-               <br><br>
+               <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me! <br> <br>  ( 0 ) Encontrados</p></i>
+               <br>
+             
+               <br>
                  `,
                showCancelButton: false,
                showConfirmButton: true,
                customClass: {
                popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
             }
+          
         });
+          
              var set= setTimeout(function(){
          document.getElementById('imgemoji').style.display='block'
      },1000);
@@ -1133,6 +1145,7 @@
                 var valorP=document.getElementById('RRListP');
                 valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
+               sessionStorage.setItem('itens_',itens)
 
                 div.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
@@ -1908,18 +1921,24 @@
                     <br><br>
                     <button id="btn_swal_menu1" title="">Tela cheia </button>   
                     <br><br>
-                    <a id="SwalmenuPes" href="#visionList2"> Casas </a> 
-                     <br><br>
-                    <a id="SwalmenuPe" href="#visionList3"> Apartamentos </a> 
+                      <a id='Casas' href="#lista02">Casas </a>
                     <br><br>
-                    <a id="SwalmenuP" href="#visionList4"> Chácaras e Sítios </a> 
-                       <br><br>
-                    <a id="Swalmenu" href="#visionList5">Em breve! </a> 
-                       <br><br>
-                    <a id="Swalmenu10" href="#footer"> Redes Sociais </a> 
-                    <br> <br> 
+                    <a id='aps'href="#lista03">Apartamentos </a>
+                    <br><br>
+                    <a id='Chacara' href="#lista04">Chácaras </a>
+                    <br><br>
+                    <a id='sitio'  href="#lista04">Sítios</a>
+                    <br><br>
+                     <a id='breve'  href="#lista05">Bréve!</a>
+                    <br><br>
+                    <a id='aluguel'>Imóvel para aluguar </a>
+                    <br><br>
+                    <a id='Compra'>Imóvel para comprar </a>
+                    <br><br>
+                    <a id="Swalmenu10" href="#sociais_contatos"> Redes Sociais </a> 
+                    <br><br> 
                       <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
-                    <br> <br>
+                    <br><br>
                     <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
                     <br><br>
                  `,
@@ -1932,7 +1951,42 @@
              //  var name= document.getElementById('swal_lbl_nome');
               // name.innerHTML=nome;
              //  var tel_= document.getElementById('swal_lbl_tel');
-             
+                  document.getElementById('Casas').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aps').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('Chacara').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('sitio').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('breve').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aluguel').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },1000)
+              });
+              document.getElementById('Compra').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+                   
              document.getElementById('btn_swal_menu1').addEventListener('click', function() {
                 toggleFullScreen('click')
                  setTimeout(function(){
