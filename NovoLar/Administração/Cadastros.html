@@ -675,11 +675,11 @@
                 <br>
                 <select id="select_listas">
                     <option value="">Selecione uma lista</option>
-                    <option value="Lista Mostruario 1">Lista de Destaques</option>
-                    <option value="Lista Mostruario 2">Lista de Casas</option>
-                    <option value="Lista Mostruario 3">Lista de Apartamentos</option>
-                    <option value="Lista Mostruario 4">Lista de Chácaras/Sítios</option>
-                    <option value="Lista Diversos">Breve!</option>
+                    <option value="Lista Destaques">Lista de Destaques</option>
+                    <option value="Lista Casas">Lista de Casas</option>
+                    <option value="Lista Apartamentos">Lista de Apartamentos</option>
+                    <option value="Lista Chácaras e Sítios">Lista de Chácaras/Sítios</option>
+                    <option value="Lista Imóveis">Imóveis!</option>
                 </select>
                 <br>
                 <input id="input_img" type="file" accept="image/*" hidden>
@@ -809,7 +809,7 @@
          function MT01(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'      
-             var list= 'Lista Mostruario 1'
+             var list= 'Lista Destaques'
              sessionStorage.setItem('LIsta',`${list}`)
               startList('click')  
                sessionS('click') 
@@ -817,7 +817,7 @@
          function MT02(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
-             var list= 'Lista Mostruario 2'
+             var list= 'Lista Casas'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
               sessionS('click')
@@ -825,7 +825,7 @@
           function MT03(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
-             var list= 'Lista Mostruario 3'
+             var list= 'Lista Apartamentos'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
               sessionS('click')
@@ -833,7 +833,7 @@
           function MT04(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
-             var list= 'Lista Mostruario 4'
+             var list= 'Lista Chácaras e Sítios'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
               sessionS('click')
@@ -841,7 +841,7 @@
           function MT05(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
-             var list= 'Lista Diversos'
+             var list= 'Lista Imóveis!'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
               sessionS('click')
