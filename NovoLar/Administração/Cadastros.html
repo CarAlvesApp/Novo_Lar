@@ -152,7 +152,7 @@
             justify-content: space-between;
             margin:0 auto;
             width: 85%;
-            max-width: 900px;
+            max-width: 730px;
             min-width: 400px;
             min-height: 50vh;
             padding-bottom: 400px;
@@ -232,7 +232,7 @@
                 cursor: pointer;
                 padding-top: 60px;
                 font-weight: bold;
-               margin-left: 600px;
+               margin-left: 500px;
                 
              }
                 #novocad #lbl_codigo #codigo{
@@ -938,9 +938,10 @@
                         document.getElementById('input_UF').value= doc.UF;
                         document.getElementById('select_venda').value=doc.Tipo_Venda;
 
-
-
-                          sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
+                     
+                        sessionStorage.setItem('data_',`${doc.Data}`)
+                        sessionStorage.setItem('hora_',`${doc.Hora}`)
+                         sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
                         sessionStorage.setItem('img2',`${doc.IMG_2}`)
                         //document.getElementById('img2').value=doc.IMG_2;
                          sessionStorage.setItem('img3',`${doc.IMG_3}`)
@@ -1435,8 +1436,8 @@
                             var cond_= sessionStorage.getItem('Cond')
                                   
 
-          var data = sessionStorage.getItem('data');
-          var hora = sessionStorage.getItem('hora');
+          var data = sessionStorage.getItem('data_');
+          var hora = sessionStorage.getItem('hora_');
           var titulo = document.getElementById('titulo').value;
           var lista = document.getElementById('select_listas').value;
           var obs = document.getElementById('obs').value;
