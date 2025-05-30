@@ -961,7 +961,7 @@
             
             </div>
             <div id="divListaPesquisa">
-              <h2 id="RRListP">Resutado:</h2>
+              <h2 id="RRListP">Resultado da pesquisa:</h2>
               <a id="alist" href="#listaPesquisa"></a>
               <div id="listaPesquisa"></div>
             </div>
@@ -1073,6 +1073,7 @@
              var set= setTimeout(function(){
          document.getElementById('imgemoji').style.display='block'
      },1000);
+          var itens= 0
        var pesquisa= sessionStorage.getItem('Pesquisa')
        const firebaseConfigure = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1092,8 +1093,12 @@
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-            var itens= querySnapshot.size
-            var div= document.createElement('div')
+           
+        
+         
+            if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
+                 itens+=1
+                    var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label');
             var lbl2= document.createElement('label');
@@ -1101,7 +1106,6 @@
             var br = document.createElement('br')
             var br2 = document.createElement('br')
             var br3 = document.createElement('br')
-            if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
                 clearTimeout(set)
               img.src = `${doc.IMG}`;
               img.alt = doc.Titulo;
@@ -1126,18 +1130,18 @@
                document.getElementById('body1').style.display='none'
                document.getElementById('divListaPesquisa').style.display='block'
                document.getElementById('alist').click()
+                var valorP=document.getElementById('RRListP');
+                valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
-            } else{
-             img.src = ``;
-             img.alt = '';
-             img.style.width = ""; 
-             div.id='falso'
-              lbl.id='falso'
-              lbl.textContent=``
-            }
-           div.addEventListener('click',function(){
+
+                div.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
+
+            } else{
+         
+            }
+          
         })
       })
     }
