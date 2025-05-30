@@ -1002,7 +1002,7 @@
                 <div id="lista03"></div>
                 <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS / SÍTIOS  <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
                 <div id="lista04"></div>
-                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Breve! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
+                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Imóveis! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
                 <div id="lista05"></div>
             
             </div>
@@ -1331,7 +1331,7 @@
       function clicks(){
         
           sessionStorage.setItem('itens','');
-         SetItens('click')
+         SetItens1('click')
         sessionStorage.setItem('list01','')
        var list1= document.getElementById('lista01');
        list1.innerHTML='';
@@ -1422,7 +1422,7 @@
               sessionStorage.setItem('list01',`${doc.Titulo}`)
             var iten1= document.getElementById('iten01');
             iten1.innerHTML=itens
-            sessionStorage.setItem('itens',`${itens}`)
+            sessionStorage.setItem('itens1',`${itens}`)
            
             img.addEventListener('click',function(){
           swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
@@ -1437,26 +1437,26 @@
     })
   }
   clicks('click')
-  function SetItens(){
+  function SetItens1(){
       setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('itens')
+        var Itens_ = sessionStorage.getItem('itens1')
         if(!Itens_|Itens_==''){
            Swal.fire(`Lista Vazia!`,'','warning')
+             var lista01_= document.getElementById('visionList1');
+          lista01_.className='fa-solid fa-eye'
         } else{
         }
+          
         },3000)
     } 
     </script>
     <script>//Lista 02
      function clicks2(){
         sessionStorage.setItem('itens','');
-       SetItens('click')
+       SetItens2('click')
         sessionStorage.setItem('list02','')
-    
-    
        var list2= document.getElementById('lista02');
        list2.innerHTML='';
-
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
@@ -1470,7 +1470,6 @@
       var db2 = firebase.firestore();
       var produtosRef = db2.collection('Lista Casas');
       // Limpar a lista antes de preencher
-   
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
@@ -1506,11 +1505,9 @@
              } else{
                 label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
              }
-       
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
-
              if(!doc.Valor || doc.Valor==''){
                  var valorCompra='';
             } else{
@@ -1543,7 +1540,7 @@
             sessionStorage.setItem('list02',`${doc.Titulo}`)
              var iten1= document.getElementById('iten02');
             iten1.innerHTML=itens
-            sessionStorage.setItem('itens',`${itens}`)
+            sessionStorage.setItem('itens2',`${itens}`)
              img.addEventListener('click',function(){
              swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
@@ -1554,17 +1551,27 @@
         })
     })
   }
+      function SetItens2(){
+      setTimeout(function(){
+        var Itens_2 = sessionStorage.getItem('itens2')
+        if(!Itens_2|Itens_2==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista02_= document.getElementById('visionList2');
+          lista02_.className='fa-solid fa-eye';
+        } else{
+        }
+     
+        },3000)
+    } 
 
     </script>
-    
      <script>//Lista 03
      function clicks3(){
          sessionStorage.setItem('itens','');
-       SetItens('click')
+       SetItens3('click')
         sessionStorage.setItem('list03','')
        var list3= document.getElementById('lista03');
        list3.innerHTML='';
-
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
@@ -1578,7 +1585,6 @@
       var db3 = firebase.firestore();
       var produtosRef = db3.collection('Lista Apartamentos');
       // Limpar a lista antes de preencher
-   
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
@@ -1613,8 +1619,7 @@
                   label.textContent=`#Meu novo lar`;
              } else{
                 label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
-             }
-       
+             }  
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
@@ -1651,18 +1656,27 @@
              sessionStorage.setItem('list03',`${doc.Titulo}`)
              var iten1= document.getElementById('iten03');
              iten1.innerHTML=itens
-             sessionStorage.setItem('itens',`${itens}`)
+             sessionStorage.setItem('itens3',`${itens}`)
              img.addEventListener('click',function(){
              swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
-
             });
         })
     })
   }
-
+    function SetItens3(){
+      setTimeout(function(){
+        var Itens_3 = sessionStorage.getItem('itens3')
+        if(!Itens_3|Itens_3==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista03_= document.getElementById('visionList3');
+          lista03_.className='fa-solid fa-eye';
+        } else{
+        }
+        },3000)
+    } 
     </script>
      <script>//Lista 04
      function clicks4(){
@@ -1670,7 +1684,7 @@
         sessionStorage.setItem('list04','')
        var list4= document.getElementById('lista04');
        list4.innerHTML='';
-
+           SetItens4('click')
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
@@ -1684,8 +1698,7 @@
       var db4 = firebase.firestore();
       var produtosRef = db4.collection('Lista Chácaras e Sítios');
       // Limpar a lista antes de preencher
-   
-      produtosRef.get().then((querySnapshot) => {
+        produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
              var itens= querySnapshot.size;
@@ -1719,12 +1732,10 @@
                   label.textContent=`#Meu novo lar`;
              } else{
                 label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
-             }
-       
+             }     
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
-
              if(!doc.Valor || doc.Valor==''){
                  var valorCompra='';
             } else{
@@ -1756,7 +1767,7 @@
             list4.appendChild(div1)
             sessionStorage.setItem('list04',`${doc.Titulo}`)
             var iten1= document.getElementById('iten04');
-            sessionStorage.setItem('itens',`${itens}`)
+            sessionStorage.setItem('itens4',`${itens}`)
             iten1.innerHTML=itens
              img.addEventListener('click',function(){
              swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
@@ -1768,7 +1779,21 @@
         })
     })
   }
-
+  function SetItens4(){
+      setTimeout(function(){
+        var Itens_4 = sessionStorage.getItem('itens4')
+        if(!Itens_4|Itens_4==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista04_= document.getElementById('visionList4');
+          lista04_.className='fa-solid fa-eye';
+          setTimeout(function(){
+            Swal.close()
+          },1000)
+         
+        } else{
+        }
+        },3000)
+    } 
     </script>
     <script>
       setTimeout(function(){
@@ -1777,16 +1802,13 @@
       },300)
      
     </script>
-  
     <script>//Lista 05
-    
      function clicks5(){
         sessionStorage.setItem('itens','');
-      SetItens('click')
+      SetItens5('click')
         sessionStorage.setItem('list05','')
        var list5= document.getElementById('lista05');
        list5.innerHTML='';
-
          var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
@@ -1800,7 +1822,6 @@
       var db5 = firebase.firestore();
       var produtosRef = db5.collection('Lista Imóveis');
       // Limpar a lista antes de preencher
-   
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
@@ -1836,7 +1857,6 @@
              } else{
                 label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
              }
-       
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
@@ -1872,17 +1892,30 @@
             list5.appendChild(div1)
             sessionStorage.setItem('list05',`Imóveis`)
             var iten1= document.getElementById('iten05');
+            sessionStorage.setItem('itens5',`${itens}`)
             iten1.innerHTML=itens
              img.addEventListener('click',function(){
           swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
-
             });
         })
     })
   }
+  function SetItens5(){
+      setTimeout(function(){
+        var Itens_5 = sessionStorage.getItem('itens5')
+        if(!Itens_5|Itens_5==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+           var lista05_= document.getElementById('visionList5');
+          lista05_.className='fa-solid fa-eye';
+         
+        } else{
+        }
+          mostrarAlerta('click') 
+        },3000)
+    } 
     </script>
     <script>
       function Pesquisador(){
@@ -1948,7 +1981,6 @@
                     mostrarAlerta2()
                     }
                })
-            
             }
     </script>
  <script>
