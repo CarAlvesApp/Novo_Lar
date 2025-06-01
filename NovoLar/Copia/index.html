@@ -187,16 +187,15 @@
             min-width: 400px;
              background-color: rgba(240, 247, 255, 0);
          }
-        #body1 #lista01{
+        #body1 #lista01, #body1 #lista02, #body1 #lista03, #body1 #lista04, #body1 #lista05{
             margin: auto;
             width: 100%;
             display: flex;
             justify-content: center;
              flex-wrap: wrap;
             align-items: center;
-            border-bottom: 50px solid rgba(116, 0, 93, 0.999);
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            border-bottom: 10px solid rgba(73, 72, 72, 0);
+            margin-bottom: 10px;
           
         }
            #body1 #div1{
@@ -265,7 +264,16 @@
               background-color: #ad04a5;
               color: #ffffff;
              }
-         
+            #h1_destaque{
+                 width: 100%;
+                 font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                background-color: rgb(143, 3, 124);
+                color: rgb(255, 255, 255);
+             }
         #DivFooter{
           display: flex;
           flex-direction: column;
@@ -355,7 +363,6 @@
             width: 100%;
             min-width: 390px;
             margin-bottom: 70px;
-            border-bottom: 50px solid #880088;
       
           }
 
@@ -604,80 +611,9 @@
               font-size: 18px;
               color: rgb(58, 57, 57);
             }
-           #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            padding-top: 10px;
-           }
-            #Procura select{
-              width: 360px;
-              min-width: 300px;
-              padding-top: 15px;
-              padding-bottom: 15px;
-              background-color: #ffffff;
-              color: #171717;
-              cursor: pointer;
-              border:  2px solid rgb(131, 2, 112);
-              border-radius: 5px;
-              font-size: 18px;
-              margin-left: 20px;
-              margin-bottom: 15px;
-              padding-left: 10px;
-            }
-               #Procura h1{
-                width: 300px;
-                margin-left: 30px;
-                margin-bottom: 10px;
-               }
-               #Procura button{
-                width: 150px;
-                background-color: #efe9ff;
-                 box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
-                cursor: pointer;
-                color: #171717;
-                padding: 5px;
-                font-size: 16px;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                font-weight: bold;
-                border-radius: 10px;
-                border: 1px solid rgb(119, 2, 98);
-                margin-left: 25px;
-                
-               }
-               #Procura button:hover{
-                background-color: #ad04a5;
-                color: #efe9ff;
-               }
-             #h1_destaque{
-                max-width: 700px;
-               padding: 10px;
-                padding-left: 50px;
-                padding-right: 50px;
-                border-radius: 10px;
-                text-align: center;
-                font-size: 43px;
-                margin-bottom: 20px;
-                margin-left: 30px;
-             }
-        
+
 
             @media (max-width: 1600px) {
-              #h1_destaque{
-          
-                text-align: center;
-                font-size: 40;
-             }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -717,23 +653,6 @@
                
             }
              @media (max-width: 1400px) {
-              #h1_destaque{
-              
-                text-align: center;
-                font-size: 37px;
-             }
-               #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 900px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -773,23 +692,6 @@
                
             }
                @media (max-width: 1200px) {
-                #h1_destaque{
-                margin-left: 10px;
-                text-align: center;
-                font-size: 34px;
-             }
-                 #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 800px;   
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                  #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -812,6 +714,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
+       
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -829,22 +732,6 @@
                
             }
             @media (max-width: 900px) {
-              #h1_destaque{
-                text-align: center;
-                font-size: 32px;
-             }
-               #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 800px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -884,18 +771,6 @@
                
             }
          @media (max-width: 800px) {
-           #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 600px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
            #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
@@ -941,25 +816,13 @@
          
           }
             #h1_destaque{
+                 width: 100%;
                 text-align: center;
-                font-size:30px;
-                margin-left: 5px;
+                font-size: 20px;
              }
     
             }
           @media (max-width: 600px) {
-             #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 400px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 10px;
-            padding-bottom: 20px;
-            padding-top: 20px;
-           }
              #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
@@ -1004,11 +867,9 @@
             padding-top: 75px;
           }
             #h1_destaque{
-
+                 width: 100%;
                 text-align: center;
-                font-size: 28px;
-                margin-bottom: 28px;
-                margin-left: 0px;
+                font-size: 18px;
              }
              #body1 #div1{
             max-width: 400px;
@@ -1067,9 +928,9 @@
             padding-top: 70px;
           }
              #h1_destaque{
-
+                 width: 100%;
                 text-align: center;
-                font-size: 28px;
+                font-size: 18px;
              }
              #body1 #div1{
             max-width: 400px;
@@ -1103,18 +964,7 @@
           .Swal{
             border-radius: 50px;
           }
-          #itens_{
-            display: flex;
-            float: right;
-            margin-right: 10%;
-            border: 0cap;
-            font-size: 16px;
-            font-weight: bold;
-            background-color: #efe9ff00;
-          }
-             #a_click{
-              display: none;
-             }
+        
 
        
         
@@ -1141,43 +991,24 @@
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
             </video></div>
-            <div id="Procura">
-              <h1>Busque aqui</h1>
-              <div id="selector1">
-                <select name=""title='Oque procura?' id="select_lista1">
-                 <option value="Lista Destaques">Oque você procura? </option>
-                  <option value="Lista Destaques"> Destaques</option>
-                    <option value="Lista Casas"> Casas </option>
-                     <option value="Lista Sobrados"> Sobrados</option>
-                    <option value="Lista Apartamentos"> Apartamentos</option>
-                    <option value="Lista Galpões"> Galpões</option>
-                     <option value="Lista Terrenos"> Terrenos</option>
-                     <option value="Lista loja"> Loja</option>
-                    <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
-                </select>
-
-                 <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
-                 <option value="">Comprar ou Alugar? </option>
-                    <option value="Compra"> Comprar</option>
-                    <option value="Locação"> Alugar</option>
-                </select>
-
-                <button onclick="buscaragora()">Buscar</button>
-                 
-              </div>
-            </div>
            
             
             <div id="body1">
-               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
-               <button title="itens" id="itens_" > </button>
+               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
                 <div id="lista01"></div>
-          
+                <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS  <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
+                <div id="lista02"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision3()">APARTAMENTOS  <i id="visionList3" class="fa-solid fa-eye">  <button title="itens" id="iten03" ></button></i></h1>
+                <div id="lista03"></div>
+                <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS / SÍTIOS  <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
+                <div id="lista04"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Imóveis! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
+                <div id="lista05"></div>
             
             </div>
             <div id="divListaPesquisa">
               <h2 id="RRListP">Resultado da pesquisa:</h2>
-              <a id="alist" href="#select_comprar_alugar"></a>
+              <a id="alist" href="#listaPesquisa"></a>
               <div id="listaPesquisa"></div>
             </div>
             
@@ -1201,26 +1032,23 @@
 
         
          </div>
-         <a id="a_click" title="a" href="#h1_destaque"> </a>
           <script>
             function procura(){
                Swal.fire({
              title: `Oque você procura?`,
              html: `
                <br>
-                <a id='destaque' href="#">Destaques </a> 
+                <a id='destaque' href="#lista01">Destaques </a> 
                  <br><br>
-               <a id='Casas' href="#">Casas </a>
-              <br><br>
-               <a id='Sob' href="#">Sobrados </a>
+               <a id='Casas' href="#lista02">Casas </a>
                <br><br>
-               <a id='aps'href="#">Apartamentos </a>
+               <a id='aps'href="#lista03">Apartamentos </a>
                <br><br>
-               <a id='Chacara' href="#">Chácaras </a>
+               <a id='Chacara' href="#lista04">Chácaras </a>
                <br><br>
-               <a id='galpão'  href="#">Galpões</a>
+               <a id='sitio'  href="#lista04">Sítios</a>
                <br><br>
-                <a id='breve'  href="#">Bréve!</a>
+                <a id='breve'  href="#lista05">Bréve!</a>
                <br><br>
                <a id='aluguel'>Imóvel para aluguar </a>
                <br><br>
@@ -1233,56 +1061,28 @@
                popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
             }
          });
-        
          document.getElementById('destaque').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Destaques'
-          buscaragora('click')
           setTimeout(function(){
-             document.getElementById('alist').click()
             Swal.close()
          },700)
          });
         document.getElementById('Casas').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Casas'
-          buscaragora('click')
         setTimeout(function(){
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-         document.getElementById('Sob').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Sobrados'
-        
-          buscaragora('click')
-          setTimeout(function(){
-           
-            document.getElementById('alist').click()
-            Swal.close()
-         },700)
-         });
         document.getElementById('aps').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Apartamentos'
-          buscaragora('click')
         setTimeout(function(){
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
         document.getElementById('Chacara').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Chácaras e Sítios'
-          buscaragora('click')
         setTimeout(function(){
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-        document.getElementById('galpão').addEventListener('click',function(){
-           document.getElementById('select_lista1').value='Lista Galpões'
-          buscaragora('click')
-          
+        document.getElementById('sitio').addEventListener('click',function(){
         setTimeout(function(){
-          
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
@@ -1301,17 +1101,19 @@
           Swal.close()
         },700)
         });
-        
 
             }
           </script>
          <script> // result pesquisa
+
          sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
-          var itens=   sessionStorage.getItem('itens_')     
+          var itens=   sessionStorage.getItem('itens_')
+        
             Swal.fire({
              title: `Resultado da Pesquisa...`,
-             html: `          
+             html: `
+              
                <br>
                <div id='lista_pesquisa'></div>        
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me! <br> <br>  ( 0 ) Encontrados</p></i>
@@ -1324,11 +1126,13 @@
                customClass: {
                popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
             }
+          
         });
-      var set= setTimeout(function(){
-       document.getElementById('imgemoji').style.display='block'
+          
+             var set= setTimeout(function(){
+         document.getElementById('imgemoji').style.display='block'
      },1000);
-       var itens= 0
+          var itens= 0
        var pesquisa= sessionStorage.getItem('Pesquisa')
        const firebaseConfigure = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1347,10 +1151,13 @@
       listaP.innerHTML = '';
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
-            var doc = doc.data();   
+            var doc = doc.data();
+           
+        
+         
             if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
                  itens+=1
-            var div= document.createElement('div')
+                    var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label');
             var lbl2= document.createElement('label');
@@ -1368,7 +1175,8 @@
               lbl3.id='btnPesq';
               lbl.textContent=`${doc.Código}`
               lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
-              lbl3.textContent=`${doc.Titulo}`   
+              lbl3.textContent=`${doc.Titulo}`
+           
               div.appendChild(img); 
               div.appendChild(br)  
               div.appendChild(lbl3)
@@ -1396,9 +1204,19 @@
           
         })
       })
-      SetItensZ()
     }
-    
+    function mostrarAlerta() {
+          var tegList= sessionStorage.getItem('teglist')
+            Swal.fire({
+                title: `Pesquisa <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i>  `,
+                text: `Aguarde carregando...`,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
         function casa(){
                 var listaP = document.getElementById('listaPesquisa');
               listaP.innerHTML = '';
@@ -1409,11 +1227,19 @@
   </script>
 
          <script> //visions
-       sessionStorage.setItem('teglist','')
+            sessionStorage.setItem('teglist','')
+         function timeList(){
+          
+        var timelist= setTimeout(function(){
+             sessionStorage.setItem('teglist','')
+        Swal.close()
+        clearTimeout(timelist)
+        },5000)
+         }
          function mostrarAlerta() {
-         
+          var tegList= sessionStorage.getItem('teglist')
             Swal.fire({
-                title: `Procurando lista... `,
+                title: `Lista de ${tegList}  `,
                 text: `Aguarde carregando...`,
                 allowOutsideClick: false,
                 showConfirmButton: false,
@@ -1421,44 +1247,103 @@
                     Swal.showLoading();
                 }
             });
-            setTimeout(function(){
-             Swal.close()
-            },3000)
         }
-      
-        
+         function vision1(){
+            sessionStorage.setItem('teglist','Destaques')
+            var lista01_= document.getElementById('visionList1');
+           if(lista01_.className=='fa-solid fa-eye'){
+              lista01_.className='fa-solid fa-eye-low-vision';
+               clicks('click')  
+                 mostrarAlerta('click')
+                 timeList('click')
+           } else if(lista01_.className=='fa-solid fa-eye-low-vision'){
+              lista01_.className='fa-solid fa-eye'
+               var list1= document.getElementById('lista01');
+               list1.innerHTML='';
+              var iten1= document.getElementById('iten01');
+              iten1.innerHTML=''
+           }
+         };
+          function vision2(){
+               sessionStorage.setItem('teglist','Casas')
+             var lista02_= document.getElementById('visionList2');
+           if(lista02_.className=='fa-solid fa-eye'){
+              lista02_.className='fa-solid fa-eye-low-vision';
+               clicks2('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista02_.className=='fa-solid fa-eye-low-vision'){
+              lista02_.className='fa-solid fa-eye'
+               var list2= document.getElementById('lista02');
+               list2.innerHTML='';
+                 var iten2= document.getElementById('iten02');
+              iten2.innerHTML=''
+           }
+         };
+          function vision3(){
+               sessionStorage.setItem('teglist','Apertamentos')
+               var lista03_= document.getElementById('visionList3');
+           if(lista03_.className=='fa-solid fa-eye'){
+              lista03_.className='fa-solid fa-eye-low-vision';
+               clicks3('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista03_.className=='fa-solid fa-eye-low-vision'){
+              lista03_.className='fa-solid fa-eye'
+               var list3= document.getElementById('lista03');
+               list3.innerHTML='';
+                 var iten3= document.getElementById('iten03');
+              iten3.innerHTML=''
+           }
+         };
+          function vision4(){
+               sessionStorage.setItem('teglist','Chácaras / Sítios')
+              var lista04_= document.getElementById('visionList4');
+           if(lista04_.className=='fa-solid fa-eye'){
+              lista04_.className='fa-solid fa-eye-low-vision';
+               clicks4('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista04_.className=='fa-solid fa-eye-low-vision'){
+              lista04_.className='fa-solid fa-eye'
+               var list4= document.getElementById('lista04');
+               list4.innerHTML='';
+                 var iten4= document.getElementById('iten04');
+              iten4.innerHTML=''
+           }
+         };
+         function vision5(){
+           sessionStorage.setItem('teglist','Imóveis')
+              var lista05_= document.getElementById('visionList5');
+           if(lista05_.className=='fa-solid fa-eye'){
+              lista05_.className='fa-solid fa-eye-low-vision';
+               clicks5('click') 
+                 mostrarAlerta('click') 
+                  timeList('click')
+           } else if(lista05_.className=='fa-solid fa-eye-low-vision'){
+              lista05_.className='fa-solid fa-eye'
+               var list5= document.getElementById('lista05');
+               list5.innerHTML='';
+                 var iten5= document.getElementById('iten05');
+              iten5.innerHTML=''
+           }
+
+         };
+
          </script>
     </div>
     
  
     <script>//Lista 01 Destaques
-     document.getElementById('select_lista1').value='Lista Destaques'
-     document.getElementById('select_comprar_alugar').value=''
-
-      function buscaragora(){
-        mostrarAlerta('click')
-          var list1= document.getElementById('lista01');
-       list1.innerHTML='';
-        document.getElementById('body1').style.display='block'
-        document.getElementById('divListaPesquisa').style.display='none'
-        var itens= 0
-        sessionStorage.setItem('iten',``)
-        var list= document.getElementById('select_lista1').value;
-        var comp_alug= document.getElementById('select_comprar_alugar').value;
-      
-        if(!list || list==''){
-          Swal.fire('Oque você Procura?','Preencha os campos!','warning')
-        } else{
-           
+      function clicks(){
         
-         sessionStorage.setItem('teglist',``)
           sessionStorage.setItem('itens','');
-        
+         SetItens1('click')
         sessionStorage.setItem('list01','')
        var list1= document.getElementById('lista01');
        list1.innerHTML='';
-       var itens= 0
-       var firebaseConfig = {
+
+         var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
        projectId: "game-dbv",
@@ -1467,20 +1352,15 @@
        appId: "1:118219151865:web:b6414d5255233264268528",
        measurementId: "G-K17DLDBYGR"
      };
-   
       firebase.initializeApp(firebaseConfig); 
       var db = firebase.firestore();
-      var produtosRef = db.collection(`${list}`);
+      var produtosRef = db.collection('Lista Destaques');
       // Limpar a lista antes de preencher
    
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-             var resp1= doc.Tipo_Venda
-   
-         if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
-        
-               itens+=1
+            var itens= querySnapshot.size;
             var div1=document.createElement('div');
             var div2=document.createElement('div');
             var div3=document.createElement('div');
@@ -1510,7 +1390,7 @@
              if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
                   label.textContent=`#Meu novo lar`;
              } else{
-                label.textContent=`Disponivel para ${resp1}`;
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
              }
        
             label1.textContent=`${doc.Titulo}`;
@@ -1546,46 +1426,502 @@
             div4.appendChild(button1);
             div1.appendChild(div4);
             list1.appendChild(div1)
-              sessionStorage.setItem('teglist',doc.Titulo)
-           // document.getElementById('a_click').click()
-             var nomeL= document.getElementById('h1_destaque')
-            nomeL.innerHTML=`${doc.ID}`
-            var iten1= document.getElementById('itens_');
-            iten1.innerHTML= `Total de imóveis ( ${itens} )`
-            sessionStorage.setItem('iten',`${itens}`)
+              sessionStorage.setItem('list01',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten01');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens1',`${itens}`)
+           
             img.addEventListener('click',function(){
-           swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
 
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
 
             });
-             } else{
-
-             }
-          
+            
         })
     })
   }
-    SetItensZ('click')
-  }
- 
-  buscaragora('click')
-
-  function SetItensZ(){
+  clicks('click')
+  function SetItens1(){
       setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('iten')
-        if(!Itens_|Itens_==0 | Itens_==''){
+        var Itens_ = sessionStorage.getItem('itens1')
+        if(!Itens_|Itens_==''){
            Swal.fire(`Lista Vazia!`,'','warning')
-          var nomeL= document.getElementById('h1_destaque')
-            nomeL.innerHTML=`Lista Vazia!`
-            var itenZ= document.getElementById('itens_');
-            itenZ.innerHTML= `Total de ( 0 ) encontrados`
-              // document.getElementById('a_click').click()
+             var lista01_= document.getElementById('visionList1');
+          lista01_.className='fa-solid fa-eye'
         } else{
         }
-        },2000)
+          
+        },3000)
+    } 
+    </script>
+    <script>//Lista 02
+     function clicks2(){
+        sessionStorage.setItem('itens','');
+       SetItens2('click')
+        sessionStorage.setItem('list02','')
+       var list2= document.getElementById('lista02');
+       list2.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db2 = firebase.firestore();
+      var produtosRef = db2.collection('Lista Casas');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+          var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list2.appendChild(div1)
+            sessionStorage.setItem('list02',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten02');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens2',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+      function SetItens2(){
+      setTimeout(function(){
+        var Itens_2 = sessionStorage.getItem('itens2')
+        if(!Itens_2|Itens_2==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista02_= document.getElementById('visionList2');
+          lista02_.className='fa-solid fa-eye';
+        } else{
+        }
+     
+        },3000)
+    } 
+
+    </script>
+     <script>//Lista 03
+     function clicks3(){
+         sessionStorage.setItem('itens','');
+       SetItens3('click')
+        sessionStorage.setItem('list03','')
+       var list3= document.getElementById('lista03');
+       list3.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db3 = firebase.firestore();
+      var produtosRef = db3.collection('Lista Apartamentos');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }  
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list3.appendChild(div1)
+             sessionStorage.setItem('list03',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten03');
+             iten1.innerHTML=itens
+             sessionStorage.setItem('itens3',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+            });
+        })
+    })
+  }
+    function SetItens3(){
+      setTimeout(function(){
+        var Itens_3 = sessionStorage.getItem('itens3')
+        if(!Itens_3|Itens_3==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista03_= document.getElementById('visionList3');
+          lista03_.className='fa-solid fa-eye';
+        } else{
+        }
+        },3000)
+    } 
+    </script>
+     <script>//Lista 04
+     function clicks4(){
+         sessionStorage.setItem('itens','');
+        sessionStorage.setItem('list04','')
+       var list4= document.getElementById('lista04');
+       list4.innerHTML='';
+           SetItens4('click')
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db4 = firebase.firestore();
+      var produtosRef = db4.collection('Lista Chácaras e Sítios');
+      // Limpar a lista antes de preencher
+        produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }     
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list4.appendChild(div1)
+            sessionStorage.setItem('list04',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten04');
+            sessionStorage.setItem('itens4',`${itens}`)
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+  function SetItens4(){
+      setTimeout(function(){
+        var Itens_4 = sessionStorage.getItem('itens4')
+        if(!Itens_4|Itens_4==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista04_= document.getElementById('visionList4');
+          lista04_.className='fa-solid fa-eye';
+          setTimeout(function(){
+            Swal.close()
+          },1000)
+         
+        } else{
+        }
+        },3000)
+    } 
+    </script>
+    <script>
+      setTimeout(function(){
+         vision2('click'); vision3('click'); vision4('click'); vision5('click')
+           //Swal.close()
+      },300)
+     
+    </script>
+    <script>//Lista 05
+     function clicks5(){
+        sessionStorage.setItem('itens','');
+      SetItens5('click')
+        sessionStorage.setItem('list05','')
+       var list5= document.getElementById('lista05');
+       list5.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db5 = firebase.firestore();
+      var produtosRef = db5.collection('Lista Imóveis');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list5.appendChild(div1)
+            sessionStorage.setItem('list05',`Imóveis`)
+            var iten1= document.getElementById('iten05');
+            sessionStorage.setItem('itens5',`${itens}`)
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+            });
+        })
+    })
+  }
+  function SetItens5(){
+      setTimeout(function(){
+        var Itens_5 = sessionStorage.getItem('itens5')
+        if(!Itens_5|Itens_5==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+           var lista05_= document.getElementById('visionList5');
+          lista05_.className='fa-solid fa-eye';
+         
+        } else{
+        }
+          mostrarAlerta('click') 
+        },3000)
     } 
     </script>
     <script>
@@ -1664,6 +2000,22 @@
                     <br><br>
                     <button id="btn_swal_menu1" title="">Tela cheia </button>  
                      <br><br>
+                      <a id='destaque' href="#lista01">Destaques </a> 
+                    <br><br>
+                      <a id='Casas' href="#lista02">Casas </a>
+                    <br><br>
+                    <a id='aps'href="#lista03">Apartamentos </a>
+                    <br><br>
+                    <a id='Chacara' href="#lista04">Chácaras </a>
+                    <br><br>
+                    <a id='sitio'  href="#lista04">Sítios</a>
+                    <br><br>
+                     <a id='breve'  href="#lista05">Bréve!</a>
+                    <br><br>
+                    <a id='aluguel'>Imóvel para aluguar </a>
+                    <br><br>
+                    <a id='Compra'>Imóvel para comprar </a>
+                    <br><br>
                     <a id="Swalmenu10" href="#sociais_contatos"> Redes Sociais </a> 
                     <br><br> 
                       <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
@@ -1680,14 +2032,54 @@
              //  var name= document.getElementById('swal_lbl_nome');
               // name.innerHTML=nome;
              //  var tel_= document.getElementById('swal_lbl_tel');
-            
-     
+             document.getElementById('destaque').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+                  document.getElementById('Casas').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aps').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('Chacara').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('sitio').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('breve').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aluguel').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },1000)
+              });
+              document.getElementById('Compra').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+                   
              document.getElementById('btn_swal_menu1').addEventListener('click', function() {
                 toggleFullScreen('click')
                  setTimeout(function(){
                   Swal.close()
                 },200)
              });
+             
               
              document.getElementById('Swalmenu10').addEventListener('click', function() {
                 setTimeout(function(){
@@ -1700,11 +2092,69 @@
                 },500)
              });
               document.getElementById('SwalmenuPesq').addEventListener('click', function() {
-                 procura()
-                
-        
-             })
-              
+                 Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html: `
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                   <br>
+                   <label> Digite aqui: <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                   </label>
+                    <br><br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
+
+                 },3000)
+                } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                html:`
+                <label > Aguarde um momento <b> <p id="show"></p> </b></label>
+                `,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl_' // Aplica a classe CSS personalizada
+                },
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+               });
+                   var Num= 4
+                   var int=setInterval(function(){
+                     Num-=1
+                    if(Num == 0){
+                     clearInterval(int)
+                    }else{
+                    var show= document.getElementById('show');
+                     show.innerHTML=`(${Num})`;
+                    }
+                   },1000)
+                     setTimeout(function(){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },4000) 
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                    mostrarAlerta2()
+                    }
+               })
+              });
                  document.getElementById('Swalmenu12').addEventListener('click', function() {
                 Swal.fire({
                     title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
