@@ -363,8 +363,8 @@
               cursor: pointer;
             }
              #h1_destaque:hover{
-              color: rgb(60, 255, 0);
-              background-color: rgb(150, 4, 150);
+              color: rgb(127, 3, 130);
+              background-color: rgba(150, 4, 150, 0);
             }
 
            .my-custom_login{
@@ -373,7 +373,19 @@
               box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
              padding-bottom: 40px;
              margin-top: 110px;
+                transform: translatex(100%);
+              animation: slide-pop 1.5s forwards;
            }
+           @keyframes slide-pop {
+            from {
+                transform: translateY(120%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
             .my-custom_login label, .my-custom_login a{
               font-size: 18px;
               color: rgb(58, 57, 57);
@@ -438,6 +450,7 @@
                     margin-top: 110px;
                     padding-bottom: 20px;
             }
+    
             .my-custom_resultpesquisa h2{
                     font-size: 22px;
                     font-weight: bold;
@@ -504,6 +517,19 @@
               border-radius: 15px;
                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
                margin-top: 100px;
+             transform: translateY(100%);
+             animation: slide-pop 01.5s forwards;
+             }
+             #sair_{
+              padding: 7px;
+              border: 1px solid rgb(92, 92, 93);
+              border-radius: 5px;
+              cursor: pointer;
+             }
+             #sair_:hover{
+              background-color: rgb(119, 2, 98);
+              color: aliceblue;
+              cursor: pointer;
              }
       
              #my-custom_Pesq_Swl {
@@ -531,9 +557,20 @@
               background-color: #ffffff;
               color: #333232;
               border-radius: 10px;
+                transform: translateY(100%);
+              animation: slide-up 2.5s forwards;
              
              }
-      
+             @keyframes slide-up {
+             from {
+                transform: translateY(50%);
+                opacity: 0;
+              }
+             to {
+                transform: translateY(0);
+                 opacity: 1;
+            }
+           }
             .my-custom_login_Swl #Swalmenu11,.my-custom_Pesq_Swl #Swalpesq{
               width: 50%;
               padding: 10px;
@@ -578,7 +615,6 @@
               margin-bottom: 50px;
               margin-top: 30px;
               padding: 20px;
-             
               overflow: hidden;
                 box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
                border-radius: 20px;
@@ -616,7 +652,9 @@
             margin-bottom: 50px;
             padding-bottom: 30px;
             padding-top: 10px;
+       
            }
+
             #Procura select{
               width: 360px;
               min-width: 300px;
@@ -662,8 +700,6 @@
              #h1_destaque{
                 max-width: 700px;
                padding: 10px;
-                padding-left: 50px;
-                padding-right: 50px;
                 border-radius: 10px;
                 text-align: center;
                 font-size: 43px;
@@ -948,6 +984,14 @@
     
             }
           @media (max-width: 600px) {
+              .my-custom_login_Swl,.my-custom_oqueProcura{
+              width: 100%;
+              border-radius: 15px;
+               box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
+               margin-top: 100px;
+             transform: translateY(100%);
+             animation: slide-pop 01.5s forwards;
+             }
              #Procura{
             margin: auto;
              display: flex;
@@ -1152,7 +1196,7 @@
                     <option value="Lista Apartamentos"> Apartamentos</option>
                     <option value="Lista Galpões"> Galpões</option>
                      <option value="Lista Terrenos"> Terrenos</option>
-                     <option value="Lista loja"> Loja</option>
+                     <option value="Lista Lojas"> Loja</option>
                     <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
                 </select>
 
@@ -1216,24 +1260,25 @@
                <br><br>
                <a id='aps'href="#">Apartamentos </a>
                <br><br>
-               <a id='Chacara' href="#">Chácaras </a>
-               <br><br>
                <a id='galpão'  href="#">Galpões</a>
                <br><br>
-                <a id='breve'  href="#">Bréve!</a>
+               <a id='terrenos'  href="#">Terrenos</a>
                <br><br>
-               <a id='aluguel'>Imóvel para aluguar </a>
-               <br><br>
-               <a id='Compra'>Imóvel para comprar </a>
-               <br><br>
+                <a id='lojas'  href="#">Lojas!</a>
+                <br><br>
+                <a id='Chacara' href="#">Chácaras e Sítios </a>
+                <br><br><br><button id='sair_'>Sair,Cancelar</button>
                  `,
-               showCancelButton: true,
+               showCancelButton: false,
                showConfirmButton: false,
                customClass: {
                popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
             }
          });
-        
+          document.getElementById('sair_').addEventListener('click', function() {
+                    Swal.fire('Cancelado!')
+                        Swal.close()            
+         });
          document.getElementById('destaque').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Destaques'
           buscaragora('click')
@@ -1252,10 +1297,8 @@
         });
          document.getElementById('Sob').addEventListener('click',function(){
           document.getElementById('select_lista1').value='Lista Sobrados'
-        
           buscaragora('click')
           setTimeout(function(){
-           
             document.getElementById('alist').click()
             Swal.close()
          },700)
@@ -1268,36 +1311,36 @@
           Swal.close()
         },700)
         });
-        document.getElementById('Chacara').addEventListener('click',function(){
+        document.getElementById('galpão').addEventListener('click',function(){
+           document.getElementById('select_lista1').value='Lista Galpões'
+          buscaragora('click')  
+           setTimeout(function(){   
+           document.getElementById('alist').click()
+          Swal.close()
+        },700)
+        });
+        
+        document.getElementById('terrenos').addEventListener('click',function(){
+          document.getElementById('select_lista1').value='Lista Terrenos'
+           buscaragora('click')  
+        setTimeout(function(){
+         document.getElementById('alist').click()
+          Swal.close()
+        },1000)
+        });
+        document.getElementById('lojas').addEventListener('click',function(){
+          document.getElementById('select_lista1').value='Lista Lojas'
+           buscaragora('click')  
+        setTimeout(function(){
+          document.getElementById('alist').click()
+          Swal.close()
+        },700)
+        });
+         document.getElementById('Chacara').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Chácaras e Sítios'
           buscaragora('click')
         setTimeout(function(){
            document.getElementById('alist').click()
-          Swal.close()
-        },700)
-        });
-        document.getElementById('galpão').addEventListener('click',function(){
-           document.getElementById('select_lista1').value='Lista Galpões'
-          buscaragora('click')
-          
-        setTimeout(function(){
-          
-           document.getElementById('alist').click()
-          Swal.close()
-        },700)
-        });
-        document.getElementById('breve').addEventListener('click',function(){
-        setTimeout(function(){
-          Swal.close()
-        },700)
-        });
-        document.getElementById('aluguel').addEventListener('click',function(){
-        setTimeout(function(){
-          Swal.close()
-        },1000)
-        });
-        document.getElementById('Compra').addEventListener('click',function(){
-        setTimeout(function(){
           Swal.close()
         },700)
         });
@@ -1521,6 +1564,7 @@
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
+              // label.textContent=`Disponivel para Locação #Compra`;
             }
             if(!doc.Valor_Loc|| doc.Valor_Loc==''){
             var valorLocação='';
@@ -1547,7 +1591,9 @@
             div1.appendChild(div4);
             list1.appendChild(div1)
               sessionStorage.setItem('teglist',doc.Titulo)
-           // document.getElementById('a_click').click()
+              if(list!='Lista Destaques'){
+                  document.getElementById('alist').click()
+              }
              var nomeL= document.getElementById('h1_destaque')
             nomeL.innerHTML=`${doc.ID}`
             var iten1= document.getElementById('itens_');
@@ -1582,7 +1628,7 @@
             nomeL.innerHTML=`Lista Vazia!`
             var itenZ= document.getElementById('itens_');
             itenZ.innerHTML= `Total de ( 0 ) encontrados`
-              // document.getElementById('a_click').click()
+              //document.getElementById('a_click').click()
         } else{
         }
         },2000)
@@ -1592,7 +1638,7 @@
       function Pesquisador(){
        Swal.fire({
                     title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
-                 html: `
+                 html:` <div  class="menu-container">
                     <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
                    <br>
                    <label> Digite aqui: <br>
@@ -1600,20 +1646,26 @@
                    </label>
                     <br><br><br>
                     <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
-                    <br>
+                    <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                    </div>
                  `,
-                 showCancelButton: true,
+                 showCancelButton: false,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
                 }
                  });
-             document.getElementById('Swalpesq').addEventListener('click', function() {
+                     document.getElementById('sair_').addEventListener('click', function() {
+                    Swal.fire('Cancelado!')
+                        Swal.close()
+                      
+                 });
+                document.getElementById('Swalpesq').addEventListener('click', function() {
                 var respPesq= document.getElementById('inputSwal').value;
                 var input= document.getElementById('inputSwal');
                 var respPesq = input.value.trim();
               if(!respPesq|| respPesq==''){
-                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                Swal.fire('Atenção','<b>Preencha o campo de pesquisa!</b>','warning')
                  setTimeout(function(){
                  Swal.close()
                   Menu_head('click')
@@ -1669,9 +1721,10 @@
                       <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
                     <br><br>
                     <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
-                    <br><br>
+                    <br><br><button id='sair_'>Sair,Cancelar</button>
+
                  `,
-                 showCancelButton: true,
+                 showCancelButton: false,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_login' // Aplica a classe CSS personalizada
@@ -1680,31 +1733,34 @@
              //  var name= document.getElementById('swal_lbl_nome');
               // name.innerHTML=nome;
              //  var tel_= document.getElementById('swal_lbl_tel');
-            
-     
+              document.getElementById('sair_').addEventListener('click', function() {
+                    Swal.fire('Cancelado!')
+                        Swal.close() 
+              })
              document.getElementById('btn_swal_menu1').addEventListener('click', function() {
+               Swal.fire('Tela Cheia')
                 toggleFullScreen('click')
                  setTimeout(function(){
                   Swal.close()
-                },200)
+                },500)
              });
               
              document.getElementById('Swalmenu10').addEventListener('click', function() {
+               Swal.fire('Redes Sociais')
                 setTimeout(function(){
                     Swal.close()
-                },500)
+                },1000)
              });
              document.getElementById('Swalmenu11').addEventListener('click', function() {
+               Swal.fire('Contatos')
                 setTimeout(function(){
                     Swal.close()
-                },500)
+                },1000)
              });
               document.getElementById('SwalmenuPesq').addEventListener('click', function() {
+             
                  procura()
-                
-        
              })
-              
                  document.getElementById('Swalmenu12').addEventListener('click', function() {
                 Swal.fire({
                     title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
@@ -1714,9 +1770,9 @@
                      <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
                     <br> <br>  
                     <button id="Swalmenu11" title="">Start </button>
-                    <br><br>
+                     <br><br><br><button id='sair_'>Sair,Cancelar</button>
                  `,
-                 showCancelButton: true,
+                 showCancelButton: false,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
@@ -1734,6 +1790,11 @@
 
                     }
                 })
+                document.getElementById('sair_').addEventListener('click', function() {
+                    Swal.fire('Cancelado!')
+                        Swal.close()
+                      
+                     });
                  document.getElementById('Swalmenu11').addEventListener('click', function() {
                  var password_master= sessionStorage.getItem('Password_Master');
                 var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
