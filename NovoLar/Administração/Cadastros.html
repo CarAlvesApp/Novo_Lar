@@ -232,7 +232,7 @@
                 margin-bottom: 50px;
                 
               }
-              #novocad #lbl_IMG:hover, #novocad  #salve_alt:hover,  #novocad  #lbl_limpar:hover{
+              #novocad #lbl_IMG:hover, #novocad  #salve_alt:hover{
                 color: rgb(255, 255, 255);
                 background-color: rgb(171, 1, 117);
               }
@@ -703,7 +703,7 @@
            #body{
             margin-top: 100px;
            }
-           #novocad #Quint_metragen, #novocad #Quint_quant,#novocad  #Quarto_metragen, #novocad #Quarto_quant,#novocad  #suite_metragen, #novocad #suite_quant,#novocad  #banheiro_metragen, #novocad #banheiro_quant, #novocad #andar_quant, #novocad #varanda_quant, #novocad  #varanda_metragen{
+           #novocad #Quint_metragen, #novocad #Quint_quant,#novocad  #Quarto_metragen, #novocad #Quarto_quant,#novocad  #suite_metragen, #novocad #suite_quant,#novocad  #banheiro_metragen, #novocad #banheiro_quant, #novocad #andar_quant, #novocad #varanda_quant, #novocad  #varanda_metragen,#novocad #piscinas_quant, #novocad #piscinas_metragen{
             width: 90%;
             max-width: 70px;
             min-width: 70px;
@@ -713,7 +713,7 @@
                 border: 1px solid rgba(109, 108, 108, 0.372);
                 border-radius: 5px;
               }
-          #novocad #duplex{
+          #novocad #duplex, #novocad #vagas_quant{
              width: 90%;
             max-width: 70px;
             min-width: 70px;
@@ -722,6 +722,10 @@
             color: rgb(39, 39, 39);
             margin-top: 3px;
 
+              }
+           #novocad  #lbl_limpar:hover{
+                background-color: rgba(240, 248, 255, 0);
+                color: brown;
               }
      
 
@@ -740,7 +744,10 @@
 
                 <h1 id="h1_body_div1">Cadastros Novo lar</h1>
                 <div id="div_menu">
-                  <button onclick=" MT01()">Lista de Destaques</button> <button  onclick=" MT02()">Lista de Casas</button> <button  onclick=" MT03()">Lista de Apartamentos</button ><button  onclick=" MT04()">Lista Chacáras / Sítios</button> <button  onclick=" MT05()">Breve!</button> <img src="../src/LogoNovoLarPNG.png" alt="" width="200"> 
+                  <button onclick=" MT01()">Lista de Destaques</button> <button  onclick=" MT02()">Lista de Casas</button> <button  onclick=" MT05()">Lista de Sobrados</button> <button  onclick=" MT03()">Lista de Apartamentos</button >
+                     <button  onclick=" MT06()">Lista de Galpões</button>      <button  onclick=" MT07()">Lista de Terrenos</button>    <button  onclick=" MT08()">Lista de Lojas</button>
+                  <button  onclick=" MT04()">Lista Chacáras / Sítios</button>
+                    <img src="../src/LogoNovoLarPNG.png" alt="" width="200"> 
 
                 </div>
             </div>
@@ -849,8 +856,16 @@
                      <input id="banheiro_quant" type="number" placeholder="Quantidade"> / <input id="banheiro_metragen" type="number" placeholder="0"><label id="p_desc">m²</label>
                     </label>
                      <br>
+                     <label for="">Piscinas - Quantidade / Metragem <br>
+                     <input id="piscinas_quant" type="number" placeholder="Quantidade"> / <input id="piscinas_metragen" type="number" placeholder="0"><label id="p_desc">m²</label>
+                    </label>
+                     <br>
                     <label for="">Andares<br>
                      <input id="andar_quant" type="number" placeholder="Quantidade"> 
+                    </label>
+                      <br>
+                    <label for="">Vagas / Garagemr><br>
+                     <input id="vagas_quant" type="number" placeholder="Quantidade"> 
                     </label>
                      <br>
                     <label for="">Duplex ?<br>
@@ -902,6 +917,7 @@
                  }
      </script>
       <script>
+              sessionStorage.setItem('DataHora','')
              sessionStorage.setItem('IMG', '');
              sessionStorage.setItem('Lista', '');
              sessionStorage.setItem('dadosIMG', ``);
@@ -987,7 +1003,31 @@
           function MT05(){
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
-             var list= 'Lista Imóveis!'
+             var list= 'Lista Sobrados'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+          function MT06(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Galpões'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+         function MT07(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Terrenos'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+         function MT08(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Lojas'
              sessionStorage.setItem('LIsta',`${list}`)
              startList('click')
               sessionS('click')
@@ -996,6 +1036,7 @@
             sessionStorage.setItem('itens','')
             document.getElementById('divList').style.display='block'
            var respList = sessionStorage.getItem('LIsta')
+       
             SetItens('click')
          var h2li= document.getElementById('h2Lista');
          var pItens= document.getElementById('itens');
@@ -1084,7 +1125,33 @@
                         document.getElementById('input_UF').value= doc.UF;
                         document.getElementById('select_venda').value=doc.Tipo_Venda;
 
-                     
+                       document.getElementById('rua').value= doc.Rua;
+                       document.getElementById('numero').value=doc.Numero;
+                       document.getElementById('valorCond').value= doc.Cond;
+                       document.getElementById('valorIPTU').value= doc.IPTU;
+                       document.getElementById('Quint_quant').value=doc.QuintalQ;
+                      document.getElementById('Quint_metragen').value= doc.QuintalM;
+                       document.getElementById('Quarto_quant').value=doc.QuartoQ;
+                      document.getElementById('Quarto_metragen').value=doc.QuartoM;
+                      document.getElementById('suite_quant').value=doc.SuiteQ;
+                       document.getElementById('suite_metragen').value=doc.SuiteM;
+                      document.getElementById('input_cep').value= doc.CEP
+                      document.getElementById('banheiro_quant').value= doc.BanheiroQ;
+                       document.getElementById('banheiro_metragen').value=doc.BanheiroM;
+                       document.getElementById('varanda_quant').value=doc.VarandaQ;
+                      document.getElementById('varanda_metragen').value=doc.VarandaM;
+                       document.getElementById('andar_quant').value= doc.Andar;
+                       document.getElementById('duplex').value=doc.Duplex;
+                      document.getElementById('piscinas_quant').value= doc.PiscinaM;
+                      document.getElementById('piscinas_metragen').value= doc.PiscinaM;
+                      document.getElementById('vagas_quant').value=  doc.Garagem;
+                  
+                     document.getElementById('nome_proprietario').value= doc.Proprietário;
+                     document.getElementById('Tel_proprietario').value= doc.TelP;
+                    document.getElementById('cpf_proprietario').value=doc.CPFP;
+                  
+
+                        sessionStorage.setItem('DataHora',`${doc.DataHoraInit}`)
                         sessionStorage.setItem('data_',`${doc.Data}`)
                         sessionStorage.setItem('hora_',`${doc.Hora}`)
                          sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
@@ -1127,20 +1194,7 @@
                          sessionStorage.setItem('obs10',`${doc.OBS10}`)
                          //document.getElementById('obs10').value=doc.OBS10;
 
-                           sessionStorage.setItem('Quarto',`${doc.Quarto}`)
-                           sessionStorage.setItem('Banheiro',`${doc.Banheiro}`)
-                           sessionStorage.setItem('Quintal',`${doc.Quintal}`)
-                           sessionStorage.setItem(' Piscina',`${doc.Piscina}`)
-                           sessionStorage.setItem('Garagem',`${doc.Garagem}`)
-                           sessionStorage.setItem('Comod1',`${doc.Comod1}`)
-                           sessionStorage.setItem('Comod2',`${doc.Comod2}`)
-                           sessionStorage.setItem('Comod3',`${doc.Comod3}`)
-                           sessionStorage.setItem('Comod4',`${doc.Comod4}`)
-                           sessionStorage.setItem('Comod5',`${doc.Comod5}`)
-                           sessionStorage.setItem('Comod6',`${doc.Comod6}`)
-                           sessionStorage.setItem('Comod7',`${doc.Comod7}`)
-                            sessionStorage.setItem('IPTU',`${doc.IPTU}`)
-                             sessionStorage.setItem('Cond',`${doc.Cond}`)
+                          
                          Cadastros2('click')
                     Swal.fire(`Editar Cadastro!`,`${doc.Titulo}`,``)
                   })
@@ -1172,6 +1226,31 @@
         // document.getElementById('codigo').value='';
          document.getElementById('input_UF').value=''
          document.getElementById('select_venda').value=''
+        document.getElementById('rua').value=''
+        document.getElementById('numero').value=''
+        document.getElementById('valorCond').value=''
+        document.getElementById('valorIPTU').value=''
+        document.getElementById('Quint_quant').value=''
+       document.getElementById('Quint_metragen').value=''
+        document.getElementById('Quarto_quant').value=''
+        document.getElementById('Quarto_metragen').value=''
+        document.getElementById('suite_quant').value=''
+        document.getElementById('suite_metragen').value=''
+        document.getElementById('input_cep').value=''
+        document.getElementById('banheiro_quant').value=''
+        document.getElementById('banheiro_metragen').value=''
+        document.getElementById('varanda_quant').value=''
+        document.getElementById('varanda_metragen').value=''
+        document.getElementById('andar_quant').value=''
+        document.getElementById('piscinas_quant').value=''
+        document.getElementById('piscinas_metragen').value=''
+
+      document.getElementById('vagas_quant').value=''
+      document.getElementById('nome_proprietario').value=''
+      document.getElementById('Tel_proprietario').value=''
+      document.getElementById('cpf_proprietario').value=''
+
+
          sessionS('click')
         }
        </script>
@@ -1219,11 +1298,35 @@
               var codigo= document.getElementById('codigo').value;
               var uf= document.getElementById('input_UF').value;
               var tipo_Venda= document.getElementById('select_venda').value;
-
+              
+              var rua= document.getElementById('rua').value;
+               var numero= document.getElementById('numero').value;
+               var valorCond= document.getElementById('valorCond').value;
+               var valorIPTU= document.getElementById('valorIPTU').value;
+               var Quint_quant= document.getElementById('Quint_quant').value;
+               var Quint_metragen= document.getElementById('Quint_metragen').value;
+               var Quarto_quant= document.getElementById('Quarto_quant').value
+               var Quarto_metragen= document.getElementById('Quarto_metragen').value;
+               var suite_quant= document.getElementById('suite_quant').value;
+               var suite_metragen= document.getElementById('suite_metragen').value;
+               var input_cep= document.getElementById('input_cep').value;
+               var banheiro_quant= document.getElementById('banheiro_quant').value;
+               var banheiro_metragen= document.getElementById('banheiro_metragen').value;
+               var varanda_quant= document.getElementById('varanda_quant').value;
+               var varanda_metragen= document.getElementById('varanda_metragen').value;
+               var andar_quant= document.getElementById('andar_quant').value;
+               var duplex= document.getElementById('duplex').value;
+               var piscinas_quant= document.getElementById('piscinas_quant').value;
+               var piscinas_metragen= document.getElementById('piscinas_metragen').value;
+               var vagas_quant= document.getElementById('vagas_quant').value;
+               var nome_proprietario= document.getElementById('nome_proprietario').value;
+               var Tel_proprietario= document.getElementById('Tel_proprietario').value;
+               var cpf_proprietario= document.getElementById('cpf_proprietario').value;
+           
             
 
               var tipo_Venda= document.getElementById('select_venda').value;
-            if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
+            if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda==''| !nome_proprietario| nome_proprietario==''| !Tel_proprietario| Tel_proprietario=='') {
             document.getElementById('lbl_IMG').style.display='none';
             document.getElementById('salve_alt').style.display='none';
             } else{
@@ -1284,7 +1387,7 @@
     }
      function Start() {
           
-        const firebaseConfigs = {
+        var firebaseConfigs = {
       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
       authDomain: "game-dbv.firebaseapp.com",
       projectId: "game-dbv",
@@ -1303,6 +1406,33 @@
     var bairro= document.getElementById('bairro').value;
     var input= document.getElementById('bairro');
     var bairro= input.value.trim();
+
+    var rua= document.getElementById('rua').value;
+    var numero= document.getElementById('numero').value;
+    var valorCond= document.getElementById('valorCond').value;
+    var valorIPTU= document.getElementById('valorIPTU').value;
+    var Quint_quant= document.getElementById('Quint_quant').value;
+    var Quint_metragen= document.getElementById('Quint_metragen').value;
+    var Quarto_quant= document.getElementById('Quarto_quant').value
+    var Quarto_metragen= document.getElementById('Quarto_metragen').value;
+    var suite_quant= document.getElementById('suite_quant').value;
+    var suite_metragen= document.getElementById('suite_metragen').value;
+    var input_cep= document.getElementById('input_cep').value;
+    var banheiro_quant= document.getElementById('banheiro_quant').value;
+    var banheiro_metragen= document.getElementById('banheiro_metragen').value;
+    var varanda_quant= document.getElementById('varanda_quant').value;
+    var varanda_metragen= document.getElementById('varanda_metragen').value;
+    var andar_quant= document.getElementById('andar_quant').value;
+    var duplex= document.getElementById('duplex').value;
+    var piscinas_quant= document.getElementById('piscinas_quant').value;
+    var piscinas_metragen= document.getElementById('piscinas_metragen').value;
+    var vagas_quant= document.getElementById('vagas_quant').value;
+
+     var nome_proprietario= document.getElementById('nome_proprietario').value;
+     var Tel_proprietario= document.getElementById('Tel_proprietario').value;
+      var cpf_proprietario= document.getElementById('cpf_proprietario').value;
+
+
     var valor= document.getElementById('valor').value;
     var valor_loc= document.getElementById('valorLoc').value;
     var end= document.getElementById('endereço').value;
@@ -1324,7 +1454,7 @@
         Cadastros('click')
     }
 
-    if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
+    if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda==''| !nome_proprietario| nome_proprietario==''| !Tel_proprietario| Tel_proprietario=='') {
         
         Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
       
@@ -1368,6 +1498,7 @@
             sessionStorage.setItem('Lista', lista);
             sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
             var db = firebase.firestore();
+         
              db.collection(`${lista}`).doc(`${codigo}`).set({
                 Titulo: titulo,
                 Bairro: bairro,
@@ -1402,21 +1533,31 @@
                 OBS10:'',
                 Código: codigo,
                 Lista: lista,
-                ID: `${lista}`,
-                Quarto:'',
-                Banheiro:'',
-                Quintal:'',
-                Garagem:'',
-                Piscina:'',
-                Comod1:'',
-                Comod2:'',
-                Comod3:'',
-                Comod4:'',
-                Comod5:'',
-                Comod6:'',
-                Comod7:'',
-                IPTU: '',
-                Cond:"",
+                ID: lista,
+                QuartoQ: Quarto_quant,
+                QuartoM: Quarto_metragen,
+                BanheiroQ:banheiro_quant,
+                BanheiroM:banheiro_metragen,
+                QuintalQ: Quint_quant,
+                QuintalM:Quint_metragen,
+                Garagem:vagas_quant,
+                PiscinaQ:piscinas_quant,
+                PiscinaM:piscinas_metragen,
+                Proprietário:nome_proprietario,
+                TelP:Tel_proprietario,
+                CPFP:cpf_proprietario,
+                Duplex:duplex,
+                VarandaQ:varanda_quant,
+                VarandaM:varanda_metragen,
+                Rua:rua,
+                Numero:numero,
+                SuiteQ:suite_quant,
+                SuiteM:suite_metragen,
+                CEP:input_cep,
+                IPTU: valorIPTU,
+                Cond:valorCond,
+                Andar:andar_quant,
+                DataHoraInit: `${data}__${hora}`,
 
               
             });
@@ -1455,21 +1596,32 @@
                 OBS10:'',
                 Código: codigo,
                 Lista: lista,
-                ID: `${lista}/${codigo}`,
-                Quarto:'',
-                Banheiro:'',
-                Quintal:'',
-                Garagem:'',
-                Piscina:'',
-                Comod1:'',
-                Comod2:'',
-                Comod3:'',
-                Comod4:'',
-                Comod5:'',
-                Comod6:'',
-                Comod7:'',
-                IPTU: '',
-                Cond:"",
+                ID: lista,
+                QuartoQ: Quarto_quant,
+                QuartoM: Quarto_metragen,
+                BanheiroQ:banheiro_quant,
+                BanheiroM:banheiro_metragen,
+                QuintalQ: Quint_quant,
+                QuintalM:Quint_metragen,
+                Garagem:vagas_quant,
+                PiscinaQ:piscinas_quant,
+                PiscinaM:piscinas_metragen,
+                Proprietário:nome_proprietario,
+                TelP:Tel_proprietario,
+                CPFP:cpf_proprietario,
+                Duplex:duplex,
+                VarandaQ:varanda_quant,
+                VarandaM:varanda_metragen,
+                Rua:rua,
+                Numero:numero,
+                SuiteQ:suite_quant,
+                SuiteM:suite_metragen,
+                CEP:input_cep,
+                IPTU: valorIPTU,
+                Cond:valorCond,
+                Andar:andar_quant,
+                DataHoraInit: `${data}__${hora}`,
+
             });
             
             
@@ -1533,7 +1685,7 @@
           
           function Salvarcad() {
           
-             const firebaseConfigures = {
+             var firebaseConfigures = {
            apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
            authDomain: "game-dbv.firebaseapp.com",
            projectId: "game-dbv",
@@ -1566,47 +1718,65 @@
                       var obs8=  sessionStorage.getItem('obs8');
                        var obs9=  sessionStorage.getItem('obs9');
                         var obs10=  sessionStorage.getItem('obs10');
-                            var quarto_= sessionStorage.getItem('Quarto')
-                            var banheiro_= sessionStorage.getItem('Banheiro')
-                            var quintal_= sessionStorage.getItem('Quintal')
-                            var piscina=  sessionStorage.getItem(' Piscina')
-                            var garagem= sessionStorage.getItem('Garagem')
-                            var comad1_= sessionStorage.getItem('Comod1')
-                            var comad2_= sessionStorage.getItem('Comod2')
-                            var comad3_= sessionStorage.getItem('Comod3')
-                            var comad4_= sessionStorage.getItem('Comod4')
-                            var comad5_= sessionStorage.getItem('Comod5')
-                            var comad6_= sessionStorage.getItem('Comod6')
-                            var comad7_= sessionStorage.getItem('Comod7')
-                            var iptu_= sessionStorage.getItem('IPTU')
-                            var cond_= sessionStorage.getItem('Cond')
+                         var DataHora= sessionStorage.getItem('DataHora')
+                           
                                   
 
-          var data = sessionStorage.getItem('data_');
-          var hora = sessionStorage.getItem('hora_');
-          var titulo = document.getElementById('titulo').value;
-          var lista = document.getElementById('select_listas').value;
-          var obs = document.getElementById('obs').value;
-          var bairro= document.getElementById('bairro').value;
-          var input= document.getElementById('bairro');
-          var bairro= input.value.trim();
-          var valor= document.getElementById('valor').value;
-        var valor_loc= document.getElementById('valorLoc').value;
-          var end= document.getElementById('endereço').value;
-          var desconto= document.getElementById('desconto').value;
-          var cidade= document.getElementById('cidade').value;
-          var input2= document.getElementById('cidade');
-          var cidade = input2.value.trim();
-          var codigo= document.getElementById('codigo').value;
-          var uf= document.getElementById('input_UF').value;
-          var tipo_Venda= document.getElementById('select_venda').value;
+        
+   var CodRetur= sessionStorage.getItem('códigoRetur')
+    var data = sessionStorage.getItem('data');
+    var hora = sessionStorage.getItem('hora');
+    var titulo = document.getElementById('titulo').value;
+    var lista = document.getElementById('select_listas').value;
+    var descrição = document.getElementById('obs').value;
+    var bairro= document.getElementById('bairro').value;
+    var input= document.getElementById('bairro');
+    var bairro= input.value.trim();
 
 
+    var rua= document.getElementById('rua').value;
+    var numero= document.getElementById('numero').value;
+    var valorCond= document.getElementById('valorCond').value;
+    var valorIPTU= document.getElementById('valorIPTU').value;
+    var Quint_quant= document.getElementById('Quint_quant').value;
+    var Quint_metragen= document.getElementById('Quint_metragen').value;
+    var Quarto_quant= document.getElementById('Quarto_quant').value
+    var Quarto_metragen= document.getElementById('Quarto_metragen').value;
+    var suite_quant= document.getElementById('suite_quant').value;
+    var suite_metragen= document.getElementById('suite_metragen').value;
+    var input_cep= document.getElementById('input_cep').value;
+    var banheiro_quant= document.getElementById('banheiro_quant').value;
+    var banheiro_metragen= document.getElementById('banheiro_metragen').value;
+    var varanda_quant= document.getElementById('varanda_quant').value;
+    var varanda_metragen= document.getElementById('varanda_metragen').value;
+    var andar_quant= document.getElementById('andar_quant').value;
+    var duplex= document.getElementById('duplex').value;
+    var piscinas_quant= document.getElementById('piscinas_quant').value;
+    var piscinas_metragen= document.getElementById('piscinas_metragen').value;
+     var vagas_quant= document.getElementById('vagas_quant').value;
+
+     var nome_proprietario= document.getElementById('nome_proprietario').value;
+     var Tel_proprietario= document.getElementById('Tel_proprietario').value;
+      var cpf_proprietario= document.getElementById('cpf_proprietario').value;
+
+
+    var valor= document.getElementById('valor').value;
+    var valor_loc= document.getElementById('valorLoc').value;
+    var end= document.getElementById('endereço').value;
+    var desconto= document.getElementById('desconto').value;
+    var cidade= document.getElementById('cidade').value;
+    var input2= document.getElementById('cidade');
+    var cidade = input2.value.trim();
+    var codigo= document.getElementById('codigo').value;
+    var uf= document.getElementById('input_UF').value;
+    var tipo_Venda= document.getElementById('select_venda').value;
+ 
        if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
         
         Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
       
         } else{
+        
 
             var db = firebase.firestore();
              db.collection(`${lista}`).doc(`${codigo}`).set({
@@ -1622,7 +1792,7 @@
                 Data: data,
                 Hora: hora,
                 IMG: img,
-                OBS: obs,
+                OBS: descrição,
                 IMG2:img2,
                 OBS2:obs2,
                 IMG3:img3,
@@ -1640,40 +1810,51 @@
                 VD2:vd2,
                 OBS9:obs9,
                 VD3:vd3,
-                OBS810:obs10,
+                OBS10:obs10,
                 Código: codigo,
                 Lista: lista,
                 ID: id,
-                 Quarto: quarto_,
-                Banheiro:  banheiro_,
-                Quintal: quintal_,
-                Garagem: garagem,
-                Piscina: piscina,
-                Comod1:comad1_,
-                Comod2:comad2_,
-                Comod3:comad3_,
-                Comod4:comad4_,
-                Comod5:comad5_,
-                Comod6:comad6_,
-                Comod7:comad7_,
-                IPTU: iptu_,
-                Cond:cond_,
+                QuartoQ: Quarto_quant,
+                QuartoM:  Quarto_metragen,
+                BanheiroQ: banheiro_quant,
+                BanheiroM: banheiro_metragen,
+                QuintalQ: Quint_quant,
+                QuintalM: Quint_metragen,
+                Garagem: vagas_quant,
+                PiscinaQ: piscinas_quant,
+                PiscinaM: piscinas_metragen,
+                Proprietário: nome_proprietario,
+                TelP: Tel_proprietario,
+                CPFP: cpf_proprietario,
+                Duplex: duplex,
+                VarandaQ: varanda_quant,
+                VarandaM: varanda_metragen,
+                Rua:rua,
+                Numero:numero,
+                SuiteQ:suite_quant,
+                SuiteM:suite_metragen,
+                CEP:input_cep,
+                IPTU: valorIPTU,
+                Cond:valorCond,
+                Andar:andar_quant,
+                DataHoraInit: DataHora,
+
             });
                  var dbd = firebase.firestore();
              dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
-               Titulo: titulo,
+              Titulo: titulo,
                 Bairro: bairro,
                 Cidade:cidade,
                 Valor: valor,
                 Desconto: desconto,
-                 UF: uf,
+                UF: uf,
                 Tipo_Venda:tipo_Venda,
                 Valor_Loc: valor_loc,
                 End: end,
                 Data: data,
                 Hora: hora,
                 IMG: img,
-                OBS: obs,
+                OBS: descrição,
                 IMG2:img2,
                 OBS2:obs2,
                 IMG3:img3,
@@ -1691,24 +1872,35 @@
                 VD2:vd2,
                 OBS9:obs9,
                 VD3:vd3,
-                OBS810:obs10,
+                OBS10:obs10,
                 Código: codigo,
                 Lista: lista,
                 ID: id,
-                Quarto: quarto_,
-                Banheiro:  banheiro_,
-                Quintal: quintal_,
-                Garagem: garagem,
-                Piscina: piscina,
-                Comod1:comad1_,
-                Comod2:comad2_,
-                Comod3:comad3_,
-                Comod4:comad4_,
-                Comod5:comad5_,
-                Comod6:comad6_,
-                Comod7:comad7_,
-                IPTU: iptu_,
-                Cond:cond_,
+                QuartoQ: Quarto_quant,
+                QuartoM: Quarto_metragen,
+                BanheiroQ:banheiro_quant,
+                BanheiroM:banheiro_metragen,
+                QuintalQ:Quint_quant,
+                QuintalM:Quint_metragen,
+                Garagem: vagas_quant,
+                PiscinaQ:piscinas_quant,
+                PiscinaM:piscinas_metragen,
+                Proprietário:nome_proprietario,
+                TelP:Tel_proprietario,
+                CPFP:cpf_proprietario,
+                Duplex:duplex,
+                VarandaQ:varanda_quant,
+                VarandaM:varanda_metragen,
+                Rua:rua,
+                Numero:numero,
+                SuiteQ:suite_quant,
+                SuiteM:suite_metragen,
+                CEP:input_cep,
+                IPTU: valorIPTU,
+                Cond:valorCond,
+                Andar:andar_quant,
+                DataHoraInit: DataHora,
+
                
             });
                document.getElementById('myProgress').style.display = 'block';
@@ -1803,7 +1995,7 @@
              sessionStorage.setItem('IMG', '');
              sessionStorage.setItem('Lista', '');
              sessionStorage.setItem('dadosIMG', ``);
-
+               sessionStorage.setItem('DataHora','')
              sessionStorage.setItem('Url_Imagem','');
              sessionStorage.setItem('img2','');
              sessionStorage.setItem('img3','');
