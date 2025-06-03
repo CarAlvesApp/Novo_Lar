@@ -1905,13 +1905,20 @@
       
       <script> // redes sociais
         //localStorage.setItem('URL_Intagran','')
+        //localStorage.setItem('URL_facebook','')
    
           function pagina(){
           window.open('Administração/Cadastros.html','blank_')
          };
           function facebook(){
-          var url='https://www.facebook.com/share/1YP8t9Q7uR/'
-           window.open(url,'_blank')
+             var url_face=localStorage.getItem('URL_facebook')
+             if(!url_face ||url_face==''){
+                  var URL_facebook='https://www.facebook.com/share/1YP8t9Q7uR/'
+             }else{
+              var URL_facebook= url_face
+             }
+        
+           window.open(URL_facebook,'_blank')
         }; 
           function instagran(){
               var URL_Intagran= localStorage.getItem('URL_Intagran')
@@ -1960,21 +1967,42 @@
                   });
                     document.getElementById('Swalmenu11').addEventListener('click',function(){
                        var resut= sessionStorage.getItem('resultTelWhats');
-                       var mensagem= document.getElementById('mens_whats').value;
-                       if(!resut || resut=='' || !mensagem||mensagem==''){
+                       var mensagem_= document.getElementById('mens_whats').value;
+                       if(!resut || resut=='' || !mensagem_||mensagem_==''){
                              Swal.fire(`Preencha os Campos`,'','error')
                        } else{
-                         // Swal.fire(`Sucesso!`,`___________ Mensagem enviada __________<br>`,'success')
-                       
-                      var numero = "55+11948865333"; // Substitua pelo número de destino, incluindo o código do país
-                      var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem}`
-                      var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-                      window.open(url, "_blank");
-        
+                        var data= localStorage.getItem('data')
+                        var hora = localStorage.getItem('hora')      
+                        var numero = "55+11948865333"; // Substitua pelo número de destino, incluindo o código do país
+                        var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem_}`
+                        var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                             window.open(url, "_blank");
+                              Swal.fire(`Sucesso!`,``,'success')
+                              setTimeout(function(){
+                                Swal.close()
+                              },2000)
+                              var firebaseConfigures = {
+                             apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+                             authDomain: "game-dbv.firebaseapp.com",
+                             projectId: "game-dbv",
+                             storageBucket: "game-dbv.appspot.com",
+                             messagingSenderId: "118219151865",
+                             appId: "1:118219151865:web:b6414d5255233264268528",
+                             measurementId: "G-K17DLDBYGR"
+                            };  
+                         
+                           //var cod= document.getElementById('codigo').
+                            firebase.initializeApp(firebaseConfigures);  
+                           var ddm= firebase.firestore();
+                           ddm.collection('Mensagens Contatos').doc(`${resut}-${hora}`).set({
+                              Data: data,
+                              Hora:hora,
+                              Tel:resut,
+                              Mensagem:mensagem_,
+
+                           })
                        }
                      
-                        
-                       
                     });
 
                     document.getElementById('sair_').addEventListener('click',function(){
