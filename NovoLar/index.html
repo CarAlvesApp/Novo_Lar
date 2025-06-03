@@ -206,7 +206,7 @@
             width: 400px;
             max-width: 400px;
             min-width: 400px;
-            min-height: 57vh;
+            min-height: 60vh;
             margin-bottom: 20px;
             margin-top: 50px;
             padding-bottom:61px;
@@ -827,7 +827,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 58vh;
+            min-height: 61vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -882,7 +882,7 @@
             max-width: 400px;
             min-width: 400px;
             margin-bottom: 20px;
-            min-height: 58vh;
+            min-height: 61vh;
             margin-top: 30px;
             margin-right: 20px;
            
@@ -938,7 +938,7 @@
             max-width: 400px;
             min-width: 400px;
             margin-bottom: 20px;
-            min-height: 58vh;
+            min-height: 61vh;
             margin-top: 30px;
             margin-right: 20px;
             
@@ -993,7 +993,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 61vh;
+            min-height: 62vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -1060,7 +1060,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 59vh;
+            min-height: 62vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -1147,7 +1147,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 59vh;
+            min-height: 62vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -1208,7 +1208,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 59vh;
+            min-height: 62vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -1249,15 +1249,18 @@
              #a_click{
               display: none;
           }
+          #p1_,#p2_{
+            margin-left: 20px;
+          }
            #label4, #label5{
               width: 100%;
-              color: #4c4c4c;
+              color: #570142;
               font-size: 16px;
               text-align: center;
-               font-family: 'Times New Roman', Times, serif;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
               font-weight: bolder;
-              margin-left: 150px;
-              margin-bottom: 10px;
+              margin-left: 5px;
+      
              }
 
        
@@ -1611,6 +1614,11 @@
             var br5=document.createElement('br');
             var br6=document.createElement('br');
             var br7=document.createElement('br');
+            var br8=document.createElement('br');
+            var p1=document.createElement('p')
+             var p2=document.createElement('p')
+             p1.id='p1_'
+             p2.id='p2_'
             button1.id='butoon1';
             div1.id='div1';
             div2.id='div2';
@@ -1637,7 +1645,8 @@
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
-                label4.textContent=`Compra: ${doc.Valor} R$`
+                p1.textContent='Compra: '
+                label4.textContent=` ${doc.Valor} R$`
            
               // label.textContent=`Disponivel para Locação #Compra`;
             }
@@ -1645,7 +1654,8 @@
             var valorLocação='';
             } else{
               var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
-               label5.textContent=`Locação: ${doc.Valor_Loc} R$`
+              p2.textContent='Locação: '
+               label5.textContent=`${doc.Valor_Loc} R$`
             }
             if(!doc.Desconto | doc.Desconto==''){
                 var desconto='';
@@ -1659,9 +1669,11 @@
             div3.appendChild(br2);
             div3.appendChild(label3);
             div3.appendChild(br3);
-            div3.appendChild(label5);
-            div3.appendChild(br6);
-           div3.appendChild(label4);
+            div3.appendChild(br8);
+             div3.appendChild(p2);
+            p2.appendChild(label5);
+             div3.appendChild(p1);
+           p1.appendChild(label4);
             div2.appendChild(br7);
             div2.appendChild(label);
             div1.appendChild(div3);
@@ -1890,23 +1902,29 @@
              });
            };
       </script>
+      
       <script> // redes sociais
+        //localStorage.setItem('URL_Intagran','')
+   
           function pagina(){
           window.open('Administração/Cadastros.html','blank_')
          };
           function facebook(){
-           var url='https://www.facebook.com/share/1YP8t9Q7uR/'
+          var url='https://www.facebook.com/share/1YP8t9Q7uR/'
            window.open(url,'_blank')
         }; 
           function instagran(){
+              var URL_Intagran= localStorage.getItem('URL_Intagran')
+     if(!URL_Intagran|| URL_Intagran==''){
+        var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
+       } else{
+         var url_Inst= URL_Intagran;
+     }
            Swal.fire('Instagran')
-           var url='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
-         window.open(url,'_blank')
+         window.open(url_Inst,'_blank')
         };
         function whatsapp(){
            sessionStorage.setItem('resultTelWhats','')
-            
-
            Swal.fire({
              title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
                 html: `
