@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
+   
      <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -293,7 +294,7 @@
               margin-bottom: 20px;
             }
             #sociais_contatos{
-             
+             background-color: #17171700;
               display: flex;
               justify-content: space-around;
               align-items: center;
@@ -395,6 +396,7 @@
              margin-top: 110px;
                 transform: translatex(100%);
               animation: slide-pop 1.5s forwards;
+              margin-top: 100px;
            }
            @keyframes slide-pop {
             from {
@@ -539,6 +541,7 @@
                margin-top: 100px;
              transform: translateY(100%);
              animation: slide-pop 01.5s forwards;
+             
              }
              #sair_{
               padding: 7px;
@@ -579,6 +582,7 @@
               border-radius: 10px;
                 transform: translateY(100%);
               animation: slide-up 1.5s forwards;
+              
              
              }
              @keyframes slide-up {
@@ -599,6 +603,7 @@
               cursor: pointer;
               background-color: rgba(240, 248, 255, 0);
               border-radius: 10px;
+            
             }
              .my-custom_login_Swl #Swalmenu11:hover,.my-custom_Pesq_Swl #Swalpesq:hover{
               background-color: rgb(100, 0, 84);
@@ -734,6 +739,63 @@
               color: #770171;
           
              }
+             #mens_whats{
+              width: 90%;
+              max-width: 90%;
+              height: 10vh;
+             min-height: 10vh;
+             max-height: 20vh;
+             padding: 10px;
+             background-color: #260124;
+             color: aliceblue;
+             border: 1px solid rgb(113, 112, 112);
+             border-radius: 10px;
+              cursor: pointer;
+               font-size: 15px;
+             }
+             #tel_whats{
+              width: 85%;
+              font-size: 16px;
+              background-color: rgb(99, 1, 96);
+              color: aliceblue;
+              cursor: pointer;
+              border-radius: 5px;
+              margin-left: 5px;
+             }
+               .my-custom_login_Swl{
+                margin-bottom: 150px;
+               }
+             .my-custom_login_Swl #i_whats{
+             color: #028b3b;
+             font-size: 37px;
+             font-weight: bold;
+             }
+             #imgWhats{
+              width: 50px;
+              height: 50px;
+              padding: 2px;
+              border: 1px solid rgb(56, 55, 55);
+              border-radius: 50%;
+              margin-right: 10px;
+             }
+             #divWhats{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+             }
+               #divWhats label{
+                font-size: 18px;
+                font-weight: bold;
+               }
+            .my-custom_login_Swl #i_whats_start{
+                 color: #028b3b;
+             font-size: 20px;
+             font-weight: bold;
+
+               }
+              .my-custom_login_Swl #Swalmenu11{
+                font-size: 18px;
+              }
             
              
         
@@ -1263,7 +1325,7 @@
                         
                     </div>
                     <div id="sociais_contatos">
-                    <a id="aa01" href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+                    <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
            </div>
          </div>
          <a id="a_click" title="a" href="#h1_destaque"> </a>
@@ -1296,6 +1358,7 @@
                popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
             }
          });
+         
           document.getElementById('sair_').addEventListener('click', function() {
                     Swal.fire('Cancelado!')
                         Swal.close()            
@@ -1671,7 +1734,9 @@
                   popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
                 }
                  });
+                  document.getElementById("inputSwal").blur();
                      document.getElementById('sair_').addEventListener('click', function() {
+                      document.getElementById("inputSwal").blur();
                     Swal.fire('Cancelado!')
                        Swal.close()    
                  });
@@ -1786,6 +1851,8 @@
                       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
                       }
                  });
+                  document.getElementById("inputSwalAdimin").blur();
+                 
                     document.getElementById('visao').addEventListener('click', function() {
                     var visao_= document.getElementById('inputSwalAdimin');
                     var classe= document.getElementById('visao');
@@ -1796,6 +1863,7 @@
                           visao_.type='password'
                            classe.className='fa-solid fa-eye'
                        }
+                       
                  })
                     document.getElementById('sair_').addEventListener('click', function() {
                      Swal.fire('Cancelado!')
@@ -1825,11 +1893,83 @@
       <script> // redes sociais
           function pagina(){
           window.open('Administração/Cadastros.html','blank_')
-         }
+         };
           function facebook(){
            var url='https://www.facebook.com/share/1YP8t9Q7uR/'
            window.open(url,'_blank')
-        }
+        }; 
+          function instagran(){
+           Swal.fire('Instagran')
+          // var url='https://www.facebook.com/share/1YP8t9Q7uR/'
+         //window.open(url,'_blank')
+        };
+        function whatsapp(){
+           sessionStorage.setItem('resultTelWhats','')
+            
+
+           Swal.fire({
+             title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
+                html: `
+                      <div id='divWhats'>
+                      <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label>
+                      </div>
+                      <br>
+                       <label>Tel /  Whats:<br>
+                      <input id='tel_whats' type='tel' placeholder='11 98888 8888'><i id='visao' class=""></i>
+                      <br> <br>  
+                      <label>Digite sua mensagem:<br>
+                      <textarea id='mens_whats'  placeholder='Mensagem...'></textarea>
+                      <br> <br>  
+                      <button id="Swalmenu11" title="">Enviar  <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>
+                      <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                      `,
+                      showCancelButton: false,
+                      showConfirmButton: false,
+                      customClass: {
+                      popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                      }
+                 });
+                 document.getElementById('tel_whats').addEventListener('input', function (e) {
+                      let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+                      
+                      if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+                  
+                      let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                                                .replace(/(\d{4})(\d{4})$/, '$1-$2');
+                  
+                      e.target.value = formattedValue;
+                       sessionStorage.setItem('resultTelWhats', formattedValue)
+                  });
+                    document.getElementById('Swalmenu11').addEventListener('click',function(){
+                       var resut= sessionStorage.getItem('resultTelWhats');
+                       var mensagem= document.getElementById('mens_whats').value;
+                       if(!resut || resut=='' || !mensagem||mensagem==''){
+                             Swal.fire(`Preencha os Campos`,'','error')
+                       } else{
+                         // Swal.fire(`Sucesso!`,`___________ Mensagem enviada __________<br>`,'success')
+                       
+                      var numero = "55+11948865333"; // Substitua pelo número de destino, incluindo o código do país
+                      var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem}`
+                      var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                      window.open(url, "_blank");
+        
+                       }
+                     
+                        
+                       
+                    });
+
+                    document.getElementById('sair_').addEventListener('click',function(){
+                         Swal.fire('Sair')
+                         Swal.close()
+                    });
+                     document.getElementById("tel_whats").blur();
+
+
+         //  Swal.fire('WhatsApp')
+          // var url='https://www.facebook.com/share/1YP8t9Q7uR/'
+         //window.open(url,'_blank')
+        };
      </script>
       <script>
                 const firebaseConfigu = {
