@@ -318,8 +318,8 @@
              }
             #body1 #div1 img{
                 width: 100%;
-               max-height: 35vh;
-               min-height: 35vh;
+               max-height: 33vh;
+               min-height: 33vh;
                border-radius: 1px;
                margin-bottom: 20px;
                cursor: pointer;
@@ -706,11 +706,20 @@
                 margin-bottom: 20px;
                 margin-left: 30px;
              }
+             #img1{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 25px;
+              color: #770171;
+          
+             }
+            
+             
         
 
             @media (max-width: 1600px) {
-              #h1_destaque{
-          
+              #h1_destaque{  
                 text-align: center;
                 font-size: 40;
              }
@@ -740,7 +749,6 @@
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
-           
           }
              #DivGeral{
             margin: auto;
@@ -753,8 +761,7 @@
                
             }
              @media (max-width: 1400px) {
-              #h1_destaque{
-              
+              #h1_destaque{         
                 text-align: center;
                 font-size: 37px;
              }
@@ -789,7 +796,7 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-                     #body1 #div1{
+            #body1 #div1{
             max-width: 400px;
             min-width: 400px;
             margin-bottom: 20px;
@@ -845,10 +852,11 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-                  #body1 #div1{
+           #body1 #div1{
             max-width: 400px;
             min-width: 400px;
             margin-bottom: 20px;
+            min-height: 58vh;
             margin-top: 30px;
             margin-right: 20px;
             
@@ -903,7 +911,7 @@
                   #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 59vh;
+            min-height: 61vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -970,7 +978,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 60vh;
+            min-height: 59vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
@@ -1118,7 +1126,7 @@
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 60vh;
+            min-height: 59vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
@@ -1158,15 +1166,22 @@
           }
              #a_click{
               display: none;
+          }
+           #label4, #label5{
+              width: 100%;
+              color: #4c4c4c;
+              font-size: 16px;
+              text-align: center;
+               font-family: 'Times New Roman', Times, serif;
+              font-weight: bolder;
+              margin-left: 150px;
+              margin-bottom: 10px;
              }
 
        
         
     </style>
-
-
 </head>
-
 <body>
     <div id="DivGeral">
         <div id="divHeaad">
@@ -1178,10 +1193,8 @@
             <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
         </div>
         </div>
-
         <div id="DivBody">
-            <br>
-           
+            <br>   
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
             </video></div>
@@ -1199,35 +1212,25 @@
                      <option value="Lista Lojas"> Loja</option>
                     <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
                 </select>
-
                  <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
                  <option value="">Comprar ou Alugar? </option>
                     <option value="Compra"> Comprar</option>
                     <option value="Locação"> Alugar</option>
                 </select>
-
-                <button onclick="buscaragora()">Buscar</button>
-                 
+                <button onclick="buscaragora()">Buscar</button>         
               </div>
-            </div>
-           
-            
+            </div>      
             <div id="body1">
                <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
                <button title="itens" id="itens_" > </button>
-                <div id="lista01"></div>
-          
-            
+                <div id="lista01"></div>     
             </div>
             <div id="divListaPesquisa">
               <h2 id="RRListP">Resultado da pesquisa:</h2>
               <a id="alist" href="#select_comprar_alugar"></a>
               <div id="listaPesquisa"></div>
-            </div>
-            
-            
+            </div>        
         </div>
-
          <div id="DivFooter">
            <div id="paragrafo_inicial">
                       <img src="src/LogoNovoLarPNG.png" alt="" width="100">
@@ -1241,9 +1244,7 @@
                     </div>
                     <div id="sociais_contatos">
                     <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
-                </div>
-
-        
+           </div>
          </div>
          <a id="a_click" title="a" href="#h1_destaque"> </a>
           <script>
@@ -1260,11 +1261,11 @@
                <br><br>
                <a id='aps'href="#">Apartamentos </a>
                <br><br>
-               <a id='galpão'  href="#">Galpões</a>
+               <a id='galpão_'href="#">Galpões</a>
                <br><br>
-               <a id='terrenos'  href="#">Terrenos</a>
+               <a id='terrenos'href="#">Terrenos</a>
                <br><br>
-                <a id='lojas'  href="#">Lojas!</a>
+                <a id='lojas'href="#">Lojas!</a>
                 <br><br>
                 <a id='Chacara' href="#">Chácaras e Sítios </a>
                 <br><br><br><button id='sair_'>Sair,Cancelar</button>
@@ -1281,6 +1282,7 @@
          });
          document.getElementById('destaque').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Destaques'
+            document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')
           setTimeout(function(){
              document.getElementById('alist').click()
@@ -1289,6 +1291,7 @@
          });
         document.getElementById('Casas').addEventListener('click',function(){
           document.getElementById('select_lista1').value='Lista Casas'
+            document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')
         setTimeout(function(){
            document.getElementById('alist').click()
@@ -1297,6 +1300,7 @@
         });
          document.getElementById('Sob').addEventListener('click',function(){
           document.getElementById('select_lista1').value='Lista Sobrados'
+            document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')
           setTimeout(function(){
             document.getElementById('alist').click()
@@ -1305,14 +1309,16 @@
          });
         document.getElementById('aps').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Apartamentos'
+              document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')
         setTimeout(function(){
            document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-        document.getElementById('galpão').addEventListener('click',function(){
+        document.getElementById('galpão_').addEventListener('click',function(){
            document.getElementById('select_lista1').value='Lista Galpões'
+             document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')  
            setTimeout(function(){   
            document.getElementById('alist').click()
@@ -1322,6 +1328,7 @@
         
         document.getElementById('terrenos').addEventListener('click',function(){
           document.getElementById('select_lista1').value='Lista Terrenos'
+            document.getElementById('select_comprar_alugar').value=''
            buscaragora('click')  
         setTimeout(function(){
          document.getElementById('alist').click()
@@ -1330,6 +1337,7 @@
         });
         document.getElementById('lojas').addEventListener('click',function(){
           document.getElementById('select_lista1').value='Lista Lojas'
+            document.getElementById('select_comprar_alugar').value=''
            buscaragora('click')  
         setTimeout(function(){
           document.getElementById('alist').click()
@@ -1338,14 +1346,13 @@
         });
          document.getElementById('Chacara').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Chácaras e Sítios'
+              document.getElementById('select_comprar_alugar').value=''
           buscaragora('click')
         setTimeout(function(){
            document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-        
-
             }
           </script>
          <script> // result pesquisa
@@ -1359,7 +1366,6 @@
                <div id='lista_pesquisa'></div>        
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me! <br> <br>  ( 0 ) Encontrados</p></i>
                <br>
-             
                <br>
                  `,
                showCancelButton: false,
@@ -1432,29 +1438,22 @@
                 div.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
-
             } else{
-         
             }
-          
         })
       })
       SetItensZ()
     }
-    
         function casa(){
                 var listaP = document.getElementById('listaPesquisa');
               listaP.innerHTML = '';
               document.getElementById('body1').style.display='block'
               document.getElementById('divListaPesquisa').style.display='none'
-
         }
   </script>
-
-         <script> //visions
+  <script> //visions
        sessionStorage.setItem('teglist','')
          function mostrarAlerta() {
-         
             Swal.fire({
                 title: `Procurando lista... `,
                 text: `Aguarde carregando...`,
@@ -1468,16 +1467,10 @@
              Swal.close()
             },3000)
         }
-      
-        
-         </script>
-    </div>
-    
- 
-    <script>//Lista 01 Destaques
+   </script>
+    <script>//Lista 01 
      document.getElementById('select_lista1').value='Lista Destaques'
      document.getElementById('select_comprar_alugar').value=''
-
       function buscaragora(){
         mostrarAlerta('click')
           var list1= document.getElementById('lista01');
@@ -1488,15 +1481,11 @@
         sessionStorage.setItem('iten',``)
         var list= document.getElementById('select_lista1').value;
         var comp_alug= document.getElementById('select_comprar_alugar').value;
-      
         if(!list || list==''){
           Swal.fire('Oque você Procura?','Preencha os campos!','warning')
         } else{
-           
-        
-         sessionStorage.setItem('teglist',``)
-          sessionStorage.setItem('itens','');
-        
+        sessionStorage.setItem('teglist',``)
+        sessionStorage.setItem('itens','');
         sessionStorage.setItem('list01','')
        var list1= document.getElementById('lista01');
        list1.innerHTML='';
@@ -1510,20 +1499,16 @@
        appId: "1:118219151865:web:b6414d5255233264268528",
        measurementId: "G-K17DLDBYGR"
      };
-   
       firebase.initializeApp(firebaseConfig); 
       var db = firebase.firestore();
       var produtosRef = db.collection(`${list}`);
       // Limpar a lista antes de preencher
-   
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
              var resp1= doc.Tipo_Venda
-   
-         if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
-        
-               itens+=1
+         if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){ 
+            itens+=1
             var div1=document.createElement('div');
             var div2=document.createElement('div');
             var div3=document.createElement('div');
@@ -1533,11 +1518,16 @@
             var label1=document.createElement('label');
             var label2=document.createElement('label');
             var label3=document.createElement('label');
+            var label4=document.createElement('label');
+            var label5=document.createElement('label');
             var button1=document.createElement('button');
             var br1=document.createElement('br');
             var br2=document.createElement('br');
             var br3=document.createElement('br');
             var br4=document.createElement('br');
+            var br5=document.createElement('br');
+            var br6=document.createElement('br');
+            var br7=document.createElement('br');
             button1.id='butoon1';
             div1.id='div1';
             div2.id='div2';
@@ -1548,6 +1538,8 @@
             label1.id='label1';
             label2.id='label2';
             label3.id='label3';
+            label4.id='label4';
+            label5.id='label5';
             button1.textContent='Ver, Mais';
             img.src=`${doc.IMG}`
              if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
@@ -1555,21 +1547,22 @@
              } else{
                 label.textContent=`Disponivel para ${resp1}`;
              }
-       
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
-
              if(!doc.Valor || doc.Valor==''){
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
+                label4.textContent=`Compra: ${doc.Valor} R$`
+           
               // label.textContent=`Disponivel para Locação #Compra`;
             }
             if(!doc.Valor_Loc|| doc.Valor_Loc==''){
             var valorLocação='';
             } else{
               var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+               label5.textContent=`Locação: ${doc.Valor_Loc} R$`
             }
             if(!doc.Desconto | doc.Desconto==''){
                 var desconto='';
@@ -1582,7 +1575,11 @@
             div3.appendChild(label2);
             div3.appendChild(br2);
             div3.appendChild(label3);
-            div2.appendChild(br3);
+            div3.appendChild(br3);
+            div3.appendChild(label5);
+            div3.appendChild(br6);
+           div3.appendChild(label4);
+            div2.appendChild(br7);
             div2.appendChild(label);
             div1.appendChild(div3);
             div1.appendChild(div2);
@@ -1595,43 +1592,42 @@
                   document.getElementById('alist').click()
               }
              var nomeL= document.getElementById('h1_destaque')
-            nomeL.innerHTML=`${doc.ID}`
+            nomeL.innerHTML=`${doc.Lista}`
             var iten1= document.getElementById('itens_');
             iten1.innerHTML= `Total de imóveis ( ${itens} )`
             sessionStorage.setItem('iten',`${itens}`)
             img.addEventListener('click',function(){
            swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
-
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
-
             });
              } else{
-
              }
-          
         })
     })
   }
     SetItensZ('click')
   }
- 
-  buscaragora('click')
-
-  function SetItensZ(){
-      setTimeout(function(){
-        var Itens_ = sessionStorage.getItem('iten')
-        if(!Itens_|Itens_==0 | Itens_==''){
-           Swal.fire(`Lista Vazia!`,'','warning')
-          var nomeL= document.getElementById('h1_destaque')
+    buscaragora('click')
+           function SetItensZ(){
+            setTimeout(function(){
+            var Itens_ = sessionStorage.getItem('iten')
+            if(!Itens_|Itens_==0 | Itens_==''){
+            Swal.fire(`Lista Vazia!`,'','warning')
+           var nomeL= document.getElementById('h1_destaque')
             nomeL.innerHTML=`Lista Vazia!`
             var itenZ= document.getElementById('itens_');
             itenZ.innerHTML= `Total de ( 0 ) encontrados`
+            setTimeout(function(){
+             //document.getElementById('select_lista1').value=''
+             //document.getElementById('select_comprar_alugar').value=''
+           //  SetItensZ('click')
+            },1500)
               //document.getElementById('a_click').click()
-        } else{
-        }
-        },2000)
+           } else{
+         }
+          },2000)
     } 
     </script>
     <script>
@@ -1657,19 +1653,17 @@
                  });
                      document.getElementById('sair_').addEventListener('click', function() {
                     Swal.fire('Cancelado!')
-                        Swal.close()
-                      
+                       Swal.close()    
                  });
-                document.getElementById('Swalpesq').addEventListener('click', function() {
-                var respPesq= document.getElementById('inputSwal').value;
-                var input= document.getElementById('inputSwal');
-                var respPesq = input.value.trim();
-              if(!respPesq|| respPesq==''){
-                Swal.fire('Atenção','<b>Preencha o campo de pesquisa!</b>','warning')
-                 setTimeout(function(){
-                 Swal.close()
-                  Menu_head('click')
-
+                   document.getElementById('Swalpesq').addEventListener('click', function() {
+                   var respPesq= document.getElementById('inputSwal').value;
+                   var input= document.getElementById('inputSwal');
+                   var respPesq = input.value.trim();
+                 if(!respPesq|| respPesq==''){
+                   Swal.fire('Atenção','<b>Preencha o campo de pesquisa!</b>','warning')
+                   setTimeout(function(){
+                   Swal.close()
+                    Menu_head('click')
                  },3000)
                 } else{
                          Swal.fire({
@@ -1685,7 +1679,7 @@
                 didOpen: () => {
                     Swal.showLoading();
                 }
-               });
+                });
                    var Num= 4
                    var int=setInterval(function(){
                      Num-=1
@@ -1722,7 +1716,6 @@
                     <br><br>
                     <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
                     <br><br><button id='sair_'>Sair,Cancelar</button>
-
                  `,
                  showCancelButton: false,
                   showConfirmButton: false,
@@ -1730,111 +1723,96 @@
                   popup: 'my-custom_login' // Aplica a classe CSS personalizada
                 }
                  });
-             //  var name= document.getElementById('swal_lbl_nome');
-              // name.innerHTML=nome;
-             //  var tel_= document.getElementById('swal_lbl_tel');
-              document.getElementById('sair_').addEventListener('click', function() {
+                   document.getElementById('sair_').addEventListener('click', function() {
                     Swal.fire('Cancelado!')
                         Swal.close() 
-              })
-             document.getElementById('btn_swal_menu1').addEventListener('click', function() {
-               Swal.fire('Tela Cheia')
-                toggleFullScreen('click')
-                 setTimeout(function(){
-                  Swal.close()
-                },500)
-             });
-              
-             document.getElementById('Swalmenu10').addEventListener('click', function() {
-               Swal.fire('Redes Sociais')
-                setTimeout(function(){
-                    Swal.close()
-                },1000)
-             });
-             document.getElementById('Swalmenu11').addEventListener('click', function() {
-               Swal.fire('Contatos')
-                setTimeout(function(){
-                    Swal.close()
-                },1000)
-             });
-              document.getElementById('SwalmenuPesq').addEventListener('click', function() {
-             
-                 procura()
-             })
-                 document.getElementById('Swalmenu12').addEventListener('click', function() {
-                Swal.fire({
-                    title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
-                 html: `
-                    <br>
-                    <label>Digite Password:<br>
-                     <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
-                    <br> <br>  
-                    <button id="Swalmenu11" title="">Start </button>
-                     <br><br><br><button id='sair_'>Sair,Cancelar</button>
-                 `,
-                 showCancelButton: false,
-                  showConfirmButton: false,
-                  customClass: {
-                  popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                }
                  });
-                   document.getElementById('visao').addEventListener('click', function() {
-                  var visao_= document.getElementById('inputSwalAdimin');
-                  var classe= document.getElementById('visao');
-                    if(visao_.type=='password'){
+                   document.getElementById('btn_swal_menu1').addEventListener('click', function() {
+                   Swal.fire('Tela Cheia')
+                   toggleFullScreen('click')
+                   setTimeout(function(){
+                    Swal.close()
+                    },500)
+                 });
+                    document.getElementById('Swalmenu10').addEventListener('click', function() {
+                    Swal.fire('Redes Sociais')
+                    setTimeout(function(){
+                    Swal.close()
+                    },1000)
+                 });
+                    document.getElementById('Swalmenu11').addEventListener('click', function() {
+                     Swal.fire('Contatos')
+                     setTimeout(function(){
+                      Swal.close()
+                     },1000)
+                  });
+                    document.getElementById('SwalmenuPesq').addEventListener('click', function() {          
+                       procura()
+                  });
+                    document.getElementById('Swalmenu12').addEventListener('click', function() {
+                    Swal.fire({
+                       title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+                       html: `
+                        <br>
+                        <label>Digite Password:<br>
+                        <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
+                        <br> <br>  
+                        <button id="Swalmenu11" title="">Start </button>
+                       <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                      `,
+                      showCancelButton: false,
+                      showConfirmButton: false,
+                      customClass: {
+                      popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                      }
+                 });
+                    document.getElementById('visao').addEventListener('click', function() {
+                    var visao_= document.getElementById('inputSwalAdimin');
+                    var classe= document.getElementById('visao');
+                       if(visao_.type=='password'){
                         visao_.type='text'
                         classe.className='fa-solid fa-eye-low-vision'
-                    } else{
+                       } else{
                           visao_.type='password'
                            classe.className='fa-solid fa-eye'
-
-                    }
-                })
-                document.getElementById('sair_').addEventListener('click', function() {
-                    Swal.fire('Cancelado!')
-                        Swal.close()
-                      
-                     });
-                 document.getElementById('Swalmenu11').addEventListener('click', function() {
-                 var password_master= sessionStorage.getItem('Password_Master');
-                var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
-                 var resp= document.getElementById('inputSwalAdimin').value;
-                if(!resp||resp==''){
-                   Swal.fire('','Preencha o Campo password!','warning')
-                } else{
-                   
-                   if(password_master== resp|| password_novoLarAPP== resp){
-                    // swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                       }
+                 })
+                    document.getElementById('sair_').addEventListener('click', function() {
+                     Swal.fire('Cancelado!')
+                        Swal.close()           
+                 });
+                    document.getElementById('Swalmenu11').addEventListener('click', function() {
+                    var password_master= sessionStorage.getItem('Password_Master');
+                    var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
+                    var resp= document.getElementById('inputSwalAdimin').value;
+                    if(!resp||resp==''){
+                      Swal.fire('','Preencha o Campo password!','warning')
+                     } else{      
+                       if(password_master== resp|| password_novoLarAPP== resp){
+                    swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
                        setTimeout(function(){
                         window.open('Administração/Cadastros.html','blank_')
                        // swal.close()
                          Swal.close()
-                    },1000)
+                    },1500)
                         } else{
                          Swal.fire('','Senha não confere!','error')         
-                      }
+                     }
                   }
                })
-              //  window.open('Administração/Admin.html','_blank')
-                setTimeout(function(){
-                   // Swal.close()
-                },500)
              });
-       // lista destaque 
-               };
-     </script>
-
+           };
+      </script>
       <script> // redes sociais
-
-      function pagina(){
-   window.open('Administração/Cadastros.html','blank_')
-      }
-        function facebook(){
+          function pagina(){
+          window.open('Administração/Cadastros.html','blank_')
+         }
+          function facebook(){
            var url='https://www.facebook.com/carloseduardoAlvedeoliveira'
            window.open(url,'_blank')
         }
-        </script>
-         <script>
+     </script>
+      <script>
                 const firebaseConfigu = {
                 apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
                 authDomain: "game-dbv.firebaseapp.com",
@@ -1858,9 +1836,8 @@
                    sessionStorage.setItem('Password_NovoLarAPP', `${doc.NovoLarPassword}`)
                  }).catch((err) => {
                  });
-           </script>
-
-    <script>
+     </script>
+     <script>
               setInterval(function() {
                const newDate = new Date()
                var dia = String(newDate.getDate()).padStart(2, '0');
@@ -1899,9 +1876,8 @@
             } else if (document.webkitCancelFullScreen) {
                 document.webkitCancelFullScreen();
            }
-      }
-    }
-  
+        }
+      } 
 </script>
     
 </body>
