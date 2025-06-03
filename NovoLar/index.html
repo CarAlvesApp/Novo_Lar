@@ -1789,12 +1789,11 @@
                       Swal.fire('','Preencha o Campo password!','warning')
                      } else{      
                        if(password_master== resp|| password_novoLarAPP== resp){
-                    swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
+                    Swal.fire('Sucesso!','Você será redirecionado para a tela de Administrador!','success')
                        setTimeout(function(){
                         window.open('Administração/Cadastros.html','blank_')
-                       // swal.close()
                          Swal.close()
-                    },1500)
+                    },2000)
                         } else{
                          Swal.fire('','Senha não confere!','error')         
                      }
