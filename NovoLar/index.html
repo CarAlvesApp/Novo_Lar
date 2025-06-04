@@ -1567,28 +1567,76 @@
             var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label');
+            var lbl1= document.createElement('label');
             var lbl2= document.createElement('label');
             var lbl3= document.createElement('label');
+            var lbl4= document.createElement('label');
+            var lbl5= document.createElement('label');
             var br = document.createElement('br')
             var br2 = document.createElement('br')
             var br3 = document.createElement('br')
+            var br4 = document.createElement('br')
+            var br5 = document.createElement('br')
+            var br6 = document.createElement('br')
+            var p1 = document.createElement('p')
+               var p2 = document.createElement('p')
                 clearTimeout(set)
               img.src = `${doc.IMG}`;
               img.alt = doc.Titulo;
               img.id='imjRPsq';
               div.id='divPesq';
               lbl.id='btnPesq';
+             lbl1.id='btnPesq';
               lbl2.id='btnPesq';
               lbl3.id='btnPesq';
+              lbl4.id='btnPesq'
+              lbl5.id='btnPesq'
               lbl.textContent=`${doc.Código}`
               lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
-              lbl3.textContent=`${doc.Titulo}`   
+              lbl3.textContent=`${doc.Titulo}`  
+              lbl4.textContent=`${doc.T}`
+                if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  lbl.textContent=`#Meu novo lar`;
+             } else{
+                lbl.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+            lbl1.textContent=`${doc.Titulo}`;
+            lbl2.textContent=`Bairro ${doc.Bairro}`;
+            lbl3.textContent=`${doc.Cidade} - ${doc.UF}`;
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+                   lbl4.textContent=`${valorCompra}`
+            } else{
+                var valorCompra=`Compra R$: ${doc.Valor}`;
+                p1.textContent='Compra R$:'
+                lbl4.textContent=`${valorCompra}`
+           
+              // label.textContent=`Disponivel para Locação #Compra`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+               lbl5.textContent=`${valorLocação}`
+            } else{
+              var valorLocação=`Locação R$: ${doc.Valor_Loc}`;
+              p2.textContent='Locação R$:'
+               lbl5.textContent=`${valorLocação}`
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;  
+            }
               div.appendChild(img); 
               div.appendChild(br)  
+              div.appendChild(lbl1)
+              div.appendChild(lbl4)
+              div.appendChild(lbl5)
+              div.appendChild(br5)
               div.appendChild(lbl3)
               div.appendChild(br2)
               div.appendChild(lbl2)
               div.appendChild(br3)
+              div.appendChild(br4)
               div.appendChild(lbl)
               listaP.appendChild(div);
               document.getElementById('imgemoji').style.display='none'
@@ -1985,6 +2033,7 @@
       <script> // redes sociais
         //localStorage.setItem('URL_Intagran','')
         //localStorage.setItem('URL_facebook','')
+       // localStorage.setItem('TelWhats','')
    
           function pagina(){
           window.open('Administração/Cadastros.html','blank_')
@@ -2010,6 +2059,12 @@
          window.open(url_Inst,'_blank')
         };
         function whatsapp(){
+       var Tel_whats= localStorage.getItem('TelWhats')
+       if(!Tel_whats ||Tel_whats==''){
+        var telWahts= "11948865333"
+       } else{
+         var telWahts= Tel_whats
+       }
            sessionStorage.setItem('resultTelWhats','')
            Swal.fire({
              title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
@@ -2052,7 +2107,7 @@
                        } else{
                         var data= localStorage.getItem('data')
                         var hora = localStorage.getItem('hora')      
-                        var numero = "55+11948865333"; // Substitua pelo número de destino, incluindo o código do país
+                        var numero = `55+${telWahts}`; // Substitua pelo número de destino, incluindo o código do país
                         var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem_}`
                         var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
                              window.open(url, "_blank");

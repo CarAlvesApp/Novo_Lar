@@ -798,7 +798,7 @@
                     </label>
                     <br>
                      <label for="">CEP <br>
-                       <input id="input_cep" type="text" value="" placeholder="CEP..."> 
+                       <input id="input_cep" type="text" oninput="aplicarMascaraCEP(event)"  value="" placeholder="CEP..."> 
                     </label>
                     <br>
                     <label for="">Complemento do imóvel (Referência):<br> 
@@ -834,7 +834,7 @@
                     </label>
                     <br> 
                      <label for="">Quintal/Area externa<br>
-                     <input id="Quint_quant" type="number" placeholder="Quantidade">/ <input id="Quint_metragen" type="number" placeholder="0"><label id="p_desc">m²</label>
+                     <input id="Quint_quant" type="number" placeholder="Quantidade">/ <input id="Quint_metragen" type="text" placeholder="0"><label id="p_desc">m²</label>
                     </label>
                     <br>
                     <label for="">Varandas <br>
@@ -895,7 +895,7 @@
                     </label>
                     <br>
                     <label for="">CPF do Proprietário<br>
-                     <input id="cpf_proprietario" type="tel" placeholder="000.000.000-00"> 
+                     <input id="cpf_proprietario"  oninput="aplicarMascaraCPF(event)" type="text" placeholder="000.000.000-00"> 
                     </label>
                      <br>
                     <br><br>
@@ -1200,13 +1200,11 @@
         } else{
         }
         },1200)
-    } 
-        };
-     </script>
+      } 
+         };
+       </script>
        <script>
-
-        function limpar(){  
-        
+        function limpar(){         
          document.getElementById('titulo').value='';
          document.getElementById('select_listas').value='';
          document.getElementById('obs').value='';
@@ -1243,8 +1241,7 @@
          sessionS('click')
         }
         limpar()
-
-       </script>
+     </script>
      <script>
         function sair(){
               document.getElementById('novocad').style.display='none'
@@ -1261,8 +1258,36 @@
             document.getElementById('body_div2').style.display='none'
             document.getElementById('divList').style.display='none'
         }
-        </script>
+         </script>
          <script> //Novo Cadastro
+             document.getElementById('Tel_proprietario').addEventListener('input', function (e) {
+             let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+             if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
+             let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
+                                       .replace(/(\d{4})(\d{4})$/, '$1-$2');
+             e.target.value = formattedValue;
+          });
+            function formatarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            return cpf;
+        }
+          function aplicarMascaraCPF(event) {
+            let input = event.target;
+            input.value = formatarCPF(input.value);
+        }; 
+         function formatarCEP(cep) {
+            cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
+            cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
+            return cep;
+        }
+
+        function aplicarMascaraCEP(event) {
+            event.target.value = formatarCEP(event.target.value);
+        };
+         
               var inter1= setInterval(function(){
               var data = sessionStorage.getItem('data');
               var hora = sessionStorage.getItem('hora');
@@ -1360,9 +1385,8 @@
           sessionStorage.setItem('Lista', '');
           sessionStorage.setItem('dadosIMG', ``);
          }
-      function Start() {
-          
-        var firebaseConfigs = {
+      function Start() {     
+     var firebaseConfigs = {
       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
       authDomain: "game-dbv.firebaseapp.com",
       projectId: "game-dbv",
@@ -1414,7 +1438,6 @@
     var codigo= document.getElementById('codigo').value;
     var uf= document.getElementById('input_UF').value;
     var tipo_Venda= document.getElementById('select_venda').value;
-
 
    if(!CodRetur || CodRetur==''){
          document.getElementById('codigo').style.display='block'
