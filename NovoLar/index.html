@@ -209,7 +209,6 @@
             min-height: 58vh;
             margin-bottom: 30px;
             margin-top: 50px;
-            padding-bottom:46px;
             margin-right: 40px;
             border-radius: 7px;
             background-color: rgb(255, 255, 255);
@@ -257,7 +256,7 @@
                 padding: 10px;
                 cursor: pointer;
                 font-size: 14px;
-                margin-bottom: 3px;
+                margin-bottom: 60px;
                 margin-left: 15px;
                  border: 1px solid rgb(160, 160, 160);
                  min-width: 370px;
@@ -339,8 +338,8 @@
              }
             #body1 #div1 img{
                 width: 100%;
-               max-height: 37vh;
-               min-height: 37vh;
+               max-height: 35vh;
+               min-height: 35vh;
                border-radius: 1px;
                margin-bottom: 20px;
                cursor: pointer;
@@ -365,6 +364,7 @@
             color: rgb(44, 44, 44);
             padding: 0%;
             margin: 0%;
+
           }
              #body1 #div1 #div3 label{
              font-size: 17px;
@@ -1249,19 +1249,19 @@
              #a_click{
               display: none;
           }
-          #p1_,#p2_{
-            margin-left: 20px;
-          }
-           #label4, #label5{
-              width: 100%;
-              color: #570142;
-              font-size: 16px;
+               #label4, #label5{  
+              color: #520037cb;
               text-align: center;
-               font-family: Verdana, Geneva, Tahoma, sans-serif;
               font-weight: bolder;
-              margin-left: 5px;
+         
       
              }
+          #p1_,#p2_{
+            margin-left: 15px;
+            margin-top: 3px;
+            font-size: 13px;
+          }
+   
 
        
         
@@ -1645,8 +1645,8 @@
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
-                p1.textContent='Compra: '
-                label4.textContent=` ${doc.Valor} R$`
+                p1.textContent='Compra:'
+                label4.textContent=`${doc.Valor} R$`
            
               // label.textContent=`Disponivel para Locação #Compra`;
             }
@@ -1654,7 +1654,7 @@
             var valorLocação='';
             } else{
               var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
-              p2.textContent='Locação: '
+              p2.textContent='Locação:'
                label5.textContent=`${doc.Valor_Loc} R$`
             }
             if(!doc.Desconto | doc.Desconto==''){
@@ -1669,11 +1669,10 @@
             div3.appendChild(br2);
             div3.appendChild(label3);
             div3.appendChild(br3);
-            div3.appendChild(br8);
              div3.appendChild(p2);
-            p2.appendChild(label5);
+             p2.appendChild(label5);
              div3.appendChild(p1);
-           p1.appendChild(label4);
+            p1.appendChild(label4);
             div2.appendChild(br7);
             div2.appendChild(label);
             div1.appendChild(div3);
