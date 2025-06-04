@@ -393,7 +393,7 @@
            }
            @keyframes slide-pop {
             from {
-                transform: translateY(120%);
+                transform: translateY(100%);
                 opacity: 0;
             }
             to {
@@ -528,12 +528,12 @@
 
              }
              .my-custom_login_Swl,.my-custom_oqueProcura{
-              max-width: 400px;
-              border-radius: 15px;
+               max-width: 400px;
+               border-radius: 15px;
                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
                margin-top: 100px;
-             transform: translateY(100%);
-             animation: slide-pop 01.5s forwards;
+              transform: translateY(100%);
+              animation: slide-pop 01.5s forwards;
              
              }
              #sair_{
@@ -627,7 +627,7 @@
               display: flex;
               flex-direction: column;
               width: 100%;
-              width: 600px;
+              width: 500px;
               min-width: 400px;
               background-color: rgb(255, 255, 255);
               margin-bottom: 50px;
@@ -638,7 +638,7 @@
                border-radius: 20px;
             }
               #divListaPesquisa  #listaPesquisa img{
-              width: 600px;
+              width: 500px;
               min-width: 400px;
               margin-bottom: 20px;
               border-radius: 10px;
@@ -757,7 +757,8 @@
               border: 1px solid rgb(130, 0, 130);
              }
                .my-custom_login_Swl{
-                margin-bottom: 150px;
+                margin-bottom: 10px;
+    
                }
              .my-custom_login_Swl #i_whats{
              color: #028b3b;
@@ -824,25 +825,22 @@
             font-weight: bold;
             background-color: #efe9ff00;
           }
-             #a_click{
-              display: none;
+           #a_click{
+             display: none;
           }
           #p1_,#p2_{
             margin-right: 30px;
-           float: right;
+            float: right;
             font-size: 14px;
             margin-bottom: 2px;
             margin-top: 10px;
-              word-spacing: 5px
-          
+            word-spacing: 5px         
           }
           #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
               color: #570142;    
                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
               font-weight: bolder;
               font-size: 16px;
-            
-      
              }
 
             
@@ -1602,7 +1600,7 @@
                Swal.close()
                sessionStorage.setItem('itens_',itens)
 
-                div.addEventListener('click',function(){
+                img.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
             } else{
