@@ -1714,8 +1714,8 @@
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
-                p1.textContent='Compra: '
-                label4.textContent=` ${doc.Valor} R$`
+                p1.textContent='Compra - R$'
+                label4.textContent=`${doc.Valor}`
            
               // label.textContent=`Disponivel para Locação #Compra`;
             }
@@ -1723,8 +1723,8 @@
             var valorLocação='';
             } else{
               var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
-              p2.textContent='Locação: '
-               label5.textContent=`${doc.Valor_Loc} R$`
+              p2.textContent='Locação - R$'
+               label5.textContent=`${doc.Valor_Loc}`
             }
             if(!doc.Desconto | doc.Desconto==''){
                 var desconto='';
