@@ -634,31 +634,37 @@
               background-color: rgb(255, 255, 255);
               margin-bottom: 50px;
               margin-top: 30px;
-              padding: 20px;
+              padding: 10px;
+              padding-bottom: 30px;
               overflow: hidden;
-                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
-               border-radius: 20px;
+              box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
+              border-radius: 20px;
+               font-family: Arial, Helvetica, sans-serif;
             }
               #divListaPesquisa  #listaPesquisa img{
               width: 500px;
               min-width: 400px;
-              margin-bottom: 20px;
+              margin-bottom: 30px;
               border-radius: 10px;
               max-height: 60vh;
               cursor: pointer;
              }
              #listaPesquisa div label{
-              font-size: 18px;
+              font-size: 17px;
               font-weight: bold;
              }
-                  #divListaPesquisa h2{
-                    width: 100%;
-                    text-align: center;
-                  }
-             
-                 .my-custom_login label, .my-custom_login a{
+              #divListaPesquisa h2{
+                width: 100%;
+                text-align: center;
+             }         
+            .my-custom_login label, .my-custom_login a{
               font-size: 18px;
               color: rgb(58, 57, 57);
+            }
+           #btn6Pesq {
+              margin-right: 20px;
+              color: #770067;
+
             }
            #Procura{
             margin: auto;
@@ -1112,11 +1118,10 @@
               flex-direction: column;
               width: 100%;
               width: 400px;
-              min-width: 400px;
-              background-color: rgba(0, 255, 255, 0);
+              min-width: 370px;
               margin-bottom: 50px;
               margin-top: 30px;
-              padding: 10px;
+          
             }
               #divListaPesquisa  #listaPesquisa img{
               width: 395px;
@@ -1186,17 +1191,15 @@
             padding-bottom: 20px;
             padding-top: 20px;
            }
-             #divListaPesquisa  #listaPesquisa div{
+            #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
               flex-direction: column;
               width: 100%;
-              width: 390px;
-              min-width: 390px;
-              background-color: rgba(0, 255, 255, 0);
+              width: 400px;
+              min-width: 370px;
               margin-bottom: 50px;
               margin-top: 30px;
-              padding: 10px;
             }
               #divListaPesquisa  #listaPesquisa img{
               width: 395px;
@@ -1261,7 +1264,6 @@
               width: 100%;
               width: 390px;
               min-width: 390px;
-              background-color: rgba(0, 255, 255, 0);
               margin-bottom: 50px;
               margin-top: 30px;
               padding: 10px;
@@ -1305,14 +1307,14 @@
         }
         @media (max-width: 300px) {
             #divListaPesquisa  #listaPesquisa div{
-              margin: auto;
+                 margin: auto;
               display: flex;
               flex-direction: column;
               width: 100%;
-              background-color: rgba(0, 255, 255, 0);
+              width: 350px;
+              min-width: 350px;
               margin-bottom: 50px;
               margin-top: 30px;
-              padding: 10px;
             }
             #DivFooter{
             width: 100%;
@@ -1344,6 +1346,7 @@
         min-width: unset; /* Remove o mínimo em telas pequenas */
     }
    }
+
 
         
     </style>
@@ -1584,6 +1587,7 @@
             var lbl3= document.createElement('label');
             var lbl4= document.createElement('label');
             var lbl5= document.createElement('label');
+            var lbl6= document.createElement('label');
             var br = document.createElement('br')
             var br2 = document.createElement('br')
             var br3 = document.createElement('br')
@@ -1598,31 +1602,31 @@
               img.id='imjRPsq';
               div.id='divPesq';
               lbl.id='btnPesq';
-             lbl1.id='btnPesq';
+              lbl1.id='btnPesq';
               lbl2.id='btnPesq';
               lbl3.id='btnPesq';
               lbl4.id='btnPesq'
               lbl5.id='btnPesq'
+              lbl6.id='btn6Pesq'
               lbl.textContent=`${doc.Código}`
               lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
               lbl3.textContent=`${doc.Titulo}`  
               lbl4.textContent=`${doc.T}`
                 if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
                   lbl.textContent=`#Meu novo lar`;
-             } else{
+              } else{
                 lbl.textContent=`Disponivel para ${doc.Tipo_Venda}`;
-             }
-            lbl1.textContent=`${doc.Titulo}`;
-            lbl2.textContent=`Bairro ${doc.Bairro}`;
-            lbl3.textContent=`${doc.Cidade} - ${doc.UF}`;
-             if(!doc.Valor || doc.Valor==''){
+              }
+              lbl1.textContent=`${doc.Titulo}`;
+              lbl2.textContent=`Bairro ${doc.Bairro}`;
+              lbl3.textContent=`${doc.Cidade} - ${doc.UF}`;
+              if(!doc.Valor || doc.Valor==''){
                  var valorCompra='';
-                   lbl4.textContent=`${valorCompra}`
-            } else{
+                 lbl4.textContent=`${valorCompra}`
+             } else{
                 var valorCompra=`Compra R$: ${doc.Valor}`;
                 p1.textContent='Compra R$:'
-                lbl4.textContent=`${valorCompra}`
-           
+                lbl4.textContent=`${valorCompra}`      
               // label.textContent=`Disponivel para Locação #Compra`;
             }
             if(!doc.Valor_Loc|| doc.Valor_Loc==''){
@@ -1638,25 +1642,24 @@
             } else{
                 var desconto=`Avista - ${doc.Desconto}% de desconto!`;  
             }
+              lbl6.textContent=`Código: ${doc.Código}`
               div.appendChild(img); 
-              div.appendChild(br)  
               div.appendChild(lbl1)
+              div.appendChild(lbl2)
+              div.appendChild(lbl3)
               div.appendChild(lbl4)
               div.appendChild(lbl5)
-              div.appendChild(br5)
-              div.appendChild(lbl3)
               div.appendChild(br2)
-              div.appendChild(lbl2)
-              div.appendChild(br3)
-              div.appendChild(br4)
               div.appendChild(lbl)
+              div.appendChild(br3)
+               div.appendChild(lbl6)
               listaP.appendChild(div);
-               sessionStorage.setItem('itens_',itens)
-               sessionStorage.setItem('iten',itens)
+              sessionStorage.setItem('itens_',itens)
+              sessionStorage.setItem('iten',itens)
               document.getElementById('imgemoji').style.display='none'
-               document.getElementById('body1').style.display='none'
-               document.getElementById('divListaPesquisa').style.display='block'
-               document.getElementById('alist').click()
+              document.getElementById('body1').style.display='none'
+              document.getElementById('divListaPesquisa').style.display='block'
+              document.getElementById('alist').click()
                 var valorP=document.getElementById('RRListP');
                 valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
