@@ -703,7 +703,7 @@
            #body{
             margin-top: 100px;
            }
-           #novocad #Quint_metragen, #novocad #Quint_quant,#novocad  #Quarto_metragen, #novocad #Quarto_quant,#novocad  #suite_metragen, #novocad #suite_quant,#novocad  #banheiro_metragen, #novocad #banheiro_quant, #novocad #andar_quant, #novocad #varanda_quant, #novocad  #varanda_metragen,#novocad #piscinas_quant, #novocad #piscinas_metragen, #novocad #playg_quant,#novocad #playg_metragen{
+          #novocad #Area_metragen, #novocad #Quint_metragen, #novocad #Quint_quant,#novocad  #Quarto_metragen, #novocad #Quarto_quant,#novocad  #suite_metragen, #novocad #suite_quant,#novocad  #banheiro_metragen, #novocad #banheiro_quant, #novocad #andar_quant, #novocad #varanda_quant, #novocad  #varanda_metragen,#novocad #piscinas_quant, #novocad #piscinas_metragen, #novocad #playg_quant,#novocad #playg_metragen{
             width: 90%;
             max-width: 70px;
             min-width: 70px;
@@ -832,6 +832,10 @@
                     <label for="">Valor do IPTU<br>
                         <input id="valorIPTU" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
                     </label>
+                      <br> 
+                     <label for="">Área Construída<br>
+                     <input id="Area_metragen" type="text" placeholder="0"><label id="p_desc">m²</label>
+                     </label>
                     <br> 
                      <label for="">Quintal/Area externa<br>
                      <input id="Quint_quant" type="number" placeholder="Quantidade">/ <input id="Quint_metragen" type="text" placeholder="0"><label id="p_desc">m²</label>
@@ -1110,6 +1114,7 @@
                   });
                      button.addEventListener('click', function(){
                        sessionStorage.setItem('EdtTela','tela')
+                        document.getElementById('Area_metragen').value= doc.AreaConst;
                         document.getElementById('codigo').value= doc.Código;
                         document.getElementById('titulo').value= doc.Titulo;
                         document.getElementById('select_listas').value= doc.Lista;
@@ -1204,7 +1209,8 @@
          };
        </script>
        <script>
-        function limpar(){         
+        function limpar(){ 
+         document.getElementById('Area_metragen').value='';        
          document.getElementById('titulo').value='';
          document.getElementById('select_listas').value='';
          document.getElementById('obs').value='';
@@ -1330,6 +1336,7 @@
                var playgrowd= document.getElementById('playg_quant').value;
                var playgrowdMetragem= document.getElementById('playg_metragen').value;
               var tipo_Venda= document.getElementById('select_venda').value;
+              var areaConst= document.getElementById('Area_metragen').value;
             if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda==''| !nome_proprietario| nome_proprietario==''| !Tel_proprietario| Tel_proprietario=='') {
             document.getElementById('lbl_IMG').style.display='none';
             document.getElementById('salve_alt').style.display='none';
@@ -1438,6 +1445,7 @@
     var codigo= document.getElementById('codigo').value;
     var uf= document.getElementById('input_UF').value;
     var tipo_Venda= document.getElementById('select_venda').value;
+    var areaConst= document.getElementById('Area_metragen').value;
 
    if(!CodRetur || CodRetur==''){
          document.getElementById('codigo').style.display='block'
@@ -1551,6 +1559,7 @@
                 Playgrowd:playgrowd,
                 PlaygrowdMetragem:playgrowdMetragem,
                 Triplex:triplex,
+                AreaConst:areaConst,
 
               
             });
@@ -1613,6 +1622,7 @@
                 Playgrowd:playgrowd,
                PlaygrowdMetragem:playgrowdMetragem,
                Triplex:triplex,
+              AreaConst:areaConst,
 
             });
             
@@ -1754,6 +1764,7 @@
           var codigo= document.getElementById('codigo').value;
           var uf= document.getElementById('input_UF').value;
           var tipo_Venda= document.getElementById('select_venda').value;
+          var areaConst= document.getElementById('Area_metragen').value;
       
        if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
         
@@ -1821,6 +1832,7 @@
                 Playgrowd:playgrowd,
                 PlaygrowdMetragem:playgrowdMetragem,
                 Triplex:triplex,
+                AreaConst:areaConst,
 
             });
                  var dbd = firebase.firestore();
@@ -1881,7 +1893,8 @@
                 DataHoraInit: DataHora,
                 Playgrowd:playgrowd,
                 PlaygrowdMetragem:playgrowdMetragem,
-               Triplex:triplex,
+                Triplex:triplex,
+                AreaConst:areaConst,
                
             });
                document.getElementById('myProgress').style.display = 'block';
