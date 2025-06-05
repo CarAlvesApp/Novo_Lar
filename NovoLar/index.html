@@ -1528,7 +1528,11 @@
          <script> // result pesquisa
          sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
-          var itens=   sessionStorage.getItem('itens_')     
+          var itens=   sessionStorage.getItem('itens_') 
+          document.getElementById('select_lista1').value='Lista Destaques'
+            document.getElementById('select_comprar_alugar').value=''  ;
+               var valorP=document.getElementById('RRListP');
+                valorP.innerHTML=`Total de (0) imóveis encontrados`  
             Swal.fire({
              title: `Resultado da Pesquisa...`,
              html: `          
@@ -1647,6 +1651,8 @@
               div.appendChild(br4)
               div.appendChild(lbl)
               listaP.appendChild(div);
+               sessionStorage.setItem('itens_',itens)
+               sessionStorage.setItem('iten',itens)
               document.getElementById('imgemoji').style.display='none'
                document.getElementById('body1').style.display='none'
                document.getElementById('divListaPesquisa').style.display='block'
@@ -1654,7 +1660,7 @@
                 var valorP=document.getElementById('RRListP');
                 valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
-               sessionStorage.setItem('itens_',itens)
+             
 
                 img.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
@@ -1859,7 +1865,7 @@
               //document.getElementById('a_click').click()
            } else{
          }
-          },2000)
+          },3000)
     } 
     </script>
     <script>
