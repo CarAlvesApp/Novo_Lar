@@ -27,6 +27,7 @@
 
          font-family: Georgia, 'Times New Roman', Times, serif;
          background-color: rgb(228, 227, 255);
+         padding: 0;
           
         }
         #DivGeral{
@@ -548,12 +549,6 @@
               cursor: pointer;
              }
       
-             #my-custom_Pesq_Swl {
-               max-width: 400px;
-              border-radius: 15px;
-                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
-               background-color: #ad04a5;
-             }
                .my-custom_login_Swl label{
                 font-size: 13px;
                 color: rgb(37, 37, 37);
@@ -567,14 +562,20 @@
                font-size: 16;
             }
                .my-custom_Pesq_Swl{
+               max-width: 400px;
+              border-radius: 15px;
+              box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
+              background-color: #ad04a5;
+              padding-right: 0;
               border: 20px;
               font-size: 14px;
               border-bottom: 2px solid rgb(29, 29, 29);
               background-color: #ffffff;
               color: #333232;
               border-radius: 10px;
-                transform: translateY(100%);
+               transform: translateY(100%);
               animation: slide-up 1.5s forwards;
+               padding-right: 0;
               
              
              }
@@ -758,6 +759,7 @@
              }
                .my-custom_login_Swl{
                 margin-bottom: 10px;
+                padding-right: 0;
     
                }
              .my-custom_login_Swl #i_whats{
@@ -1340,8 +1342,7 @@
         min-width: unset; /* Remove o mínimo em telas pequenas */
     }
    }
-     
-       
+
         
     </style>
 </head>
@@ -1438,12 +1439,14 @@
                showConfirmButton: false,
                customClass: {
                popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
-            }
+            },
+              didOpen: () => {
+                document.body.style.paddingRight = '0px';
+             }
          });
-         
           document.getElementById('sair_').addEventListener('click', function() {
-                    Swal.fire('Cancelado!')
-                        Swal.close()            
+              Swal.fire('Cancelado!')
+                Swal.close()            
          });
          document.getElementById('destaque').addEventListener('click',function(){
             document.getElementById('select_lista1').value='Lista Destaques'
@@ -1537,11 +1540,14 @@
                showConfirmButton: true,
                customClass: {
                popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
-            }
+            },
+             didOpen: () => {
+              document.body.style.paddingRight = '0px';
+             }
         });
-      var set= setTimeout(function(){
+       var set= setTimeout(function(){
        document.getElementById('imgemoji').style.display='block'
-     },1000);
+      },1000);
        var itens= 0
        var pesquisa= sessionStorage.getItem('Pesquisa')
        const firebaseConfigure = {
@@ -1674,6 +1680,8 @@
                 showConfirmButton: false,
                 didOpen: () => {
                     Swal.showLoading();
+                      document.body.style.paddingRight = '0px';
+                   
                 }
             });
             setTimeout(function(){
@@ -1871,7 +1879,10 @@
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
-                }
+                },
+                 didOpen: () => {
+                      document.body.style.paddingRight = '0px';
+                   }
                  });
                   document.getElementById("inputSwal").blur();
                      document.getElementById('sair_').addEventListener('click', function() {
@@ -1945,7 +1956,10 @@
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_login' // Aplica a classe CSS personalizada
-                }
+                },
+                  didOpen: () => {
+                      document.body.style.paddingRight = '0px';
+                   }
                  });
                    document.getElementById('sair_').addEventListener('click', function() {
                     Swal.fire('Cancelado!')
@@ -1988,9 +2002,12 @@
                       showConfirmButton: false,
                       customClass: {
                       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                      },
+                       didOpen: () => {
+                      document.body.style.paddingRight = '0px';
                       }
-                 });
-                  document.getElementById("inputSwalAdimin").blur();
+                   });
+                     document.getElementById("inputSwalAdimin").blur();
                  
                     document.getElementById('visao').addEventListener('click', function() {
                     var visao_= document.getElementById('inputSwalAdimin');
@@ -2086,9 +2103,12 @@
                       showConfirmButton: false,
                       customClass: {
                       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                      }
-                 });
-                 document.getElementById('tel_whats').addEventListener('input', function (e) {
+                    },
+                       didOpen: () => {
+                      document.body.style.paddingRight = '0px';
+                   }
+                     });
+                       document.getElementById('tel_whats').addEventListener('input', function (e) {
                       let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
                       
                       if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
