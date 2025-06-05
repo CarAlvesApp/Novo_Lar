@@ -727,6 +727,74 @@
                 background-color: rgba(240, 248, 255, 0);
                 color: brown;
               }
+         .my-custom_resultpesquisa_{
+          padding-left: 0;
+          padding-right: 0;
+          max-width: 400px;
+          min-width: 400px;
+          background-color: rgba(0, 0, 0, 0.654);
+          margin-top: 10px;
+          margin-bottom: 82px;    
+          padding-top: 20px;  
+         }
+          .my-custom_resultpesquisa_ h2 ,.my-custom_resultpesquisa_ i{
+            font-size: 22px;
+            color: aliceblue;
+                animation: slide-up 0.9s forwards;
+          }
+            @keyframes slide-up {
+             from {
+                transform: translateY(100%);
+                opacity: 0;
+              }
+             to {
+                transform: translateY(0);
+                 opacity: 1;
+            }
+           }
+           #lista_pesquisa{
+            display: flex;
+            flex-direction: column;
+        }
+        .my-custom_resultpesquisa_   #lista_pesquisa div{
+            width: 95%;
+             display: flex;
+             flex-direction: column;
+             padding: 10px;
+             border-radius: 10px;
+             background-color: rgb(239, 242, 255);
+             color: rgb(45, 45, 45);
+             margin-bottom: 50px;
+             box-shadow: 0 15px 25px rgba(156, 0, 148, 0.494)8;
+             padding-bottom: 30px;
+             cursor: pointer;
+        }
+        .my-custom_resultpesquisa_   #lista_pesquisa div:hover{
+         background-color: rgb(255, 255, 255);
+         
+        }
+           #lista_pesquisa div img{
+             width: 98%;
+             max-height: 33vh;
+             cursor: pointer;
+             border-radius:10px;
+             margin-bottom: 30px;
+             padding: 3px;
+            background-color: rgb(92, 1, 97);
+        }
+          #lista_pesquisa div label{
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 5px;
+          }
+       .my-custom_resultpesquisa_  #ppemoji{
+            font-size: 20px;
+            margin-top: 10px;
+          }
+           .my-custom_resultpesquisa_  i{
+            font-size: 70px;
+           }
+       
          
      
 
@@ -737,7 +805,7 @@
     <div id="Geral">
         <div id="heaad">
             <div id="heaad_button">
-            <img src="../src/Logo novo lar 01 PNG.png" alt="" width="50">      <button title="Novo Cadastro" onclick="NovoCad()">NOVO CADASTRO</button>  <button title="Tela cheia /F11"  onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>   <button onclick="tela()"><i class="fa-solid fa-bars"></i></button>
+            <img src="../src/Logo novo lar 01 PNG.png" alt="" width="50">      <button title="Novo Cadastro" onclick="NovoCad()">NOVO CADASTRO</button>  <button title="Tela cheia /F11"  onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>   <button onclick="Menu()"><i class="fa-solid fa-bars"></i></button>
             </div>
            </div>
            <div id="body">
@@ -923,10 +991,261 @@
                      </div>
              </div>
               <script>
-                 function tela(){
-                     window.open('../index.html','blank')
-                 }
+                 function Menu(){
+                    // window.open('../index.html','blank')
+                 
+                  Swal.fire({
+             title: `Menu de Edição`,
+             html: `          
+               <br>
+                 <label id='Pesquisar'>Pesquisar..</label>
+               <br>
+               <br>
+                 `,
+               showCancelButton: false,
+               showConfirmButton: true,
+               customClass: {
+               popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
+            },
+             didOpen: () => {
+              document.body.style.paddingRight = '0px';
+             }
+        });
+        document.getElementById('Pesquisar').addEventListener('click',function(){
+          Pesquisador('click')
+
+        });
+      }
      </script>
+     
+           <script> // result pesquisa
+         
+        //
+         sessionStorage.setItem('Pesquisa',``)
+         function ResutPesquisa() {
+          var itens=   sessionStorage.getItem('itens_') 
+       //   document.getElementById('select_lista1').value='Lista Destaques'
+          //  document.getElementById('select_comprar_alugar').value=''  ;
+          //     var valorP=document.getElementById('RRListP');
+              //  valorP.innerHTML=`Total de (0) imóveis encontrados`  
+            Swal.fire({
+             title: `Resultado da Pesquisa...`,
+             html: `          
+               <br>
+               <div id='lista_pesquisa'></div>        
+               <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me! <br> <br>  ( 0 ) Encontrados</p></i>
+               <br>
+               <br>
+                 `,
+               showCancelButton: false,
+               showConfirmButton: true,
+               customClass: {
+               popup: 'my-custom_resultpesquisa_' // Aplica a classe CSS personalizada
+            },
+             didOpen: () => {
+              document.body.style.paddingRight = '0px';
+             }
+        });
+       var set= setTimeout(function(){
+       document.getElementById('imgemoji').style.display='block'
+      },1000);
+       var itens= 0
+       var pesquisa= sessionStorage.getItem('Pesquisa')
+       const firebaseConfigure = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfigure); 
+      const dbP = firebase.firestore();
+      var produtosRef = dbP.collection('Pesquisar');
+      // Limpar a lista antes de preencher
+     var listaP = document.getElementById('lista_pesquisa');
+      listaP.innerHTML = '';
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();   
+            if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
+                 itens+=1
+            var div= document.createElement('div')
+            var img = document.createElement('img');
+            var lbl= document.createElement('label');
+            var lbl1= document.createElement('label');
+            var lbl2= document.createElement('label');
+            var lbl3= document.createElement('label');
+            var lbl4= document.createElement('label');
+            var lbl5= document.createElement('label');
+            var lbl6= document.createElement('label');
+            var br = document.createElement('br')
+            var br2 = document.createElement('br')
+            var br3 = document.createElement('br')
+            var br4 = document.createElement('br')
+            var br5 = document.createElement('br')
+            var br6 = document.createElement('br')
+            var p1 = document.createElement('p')
+               var p2 = document.createElement('p')
+                clearTimeout(set)
+              img.src = `${doc.IMG}`;
+              img.alt = doc.Titulo;
+              img.id='imjRPsq';
+              div.id='divPesq';
+              lbl.id='btnPesq';
+              lbl1.id='btnPesq';
+              lbl2.id='btnPesq';
+              lbl3.id='btnPesq';
+              lbl4.id='btnPesq'
+              lbl5.id='btnPesq'
+              lbl6.id='btn6Pesq'
+              lbl.textContent=`${doc.Código}`
+              lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+              lbl3.textContent=`${doc.Titulo}`  
+              lbl4.textContent=`${doc.T}`
+                if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  lbl.textContent=`#Meu novo lar`;
+              } else{
+                lbl.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+              }
+              lbl1.textContent=`${doc.Titulo}`;
+              lbl2.textContent=`Bairro ${doc.Bairro}`;
+              lbl3.textContent=`${doc.Cidade} - ${doc.UF}`;
+              if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+                 lbl4.textContent=`${valorCompra}`
+             } else{
+                var valorCompra=`Compra R$: ${doc.Valor}`;
+                p1.textContent='Compra R$:'
+                lbl4.textContent=`${valorCompra}`      
+              // label.textContent=`Disponivel para Locação #Compra`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+               lbl5.textContent=`${valorLocação}`
+            } else{
+              var valorLocação=`Locação R$: ${doc.Valor_Loc}`;
+              p2.textContent='Locação R$:'
+               lbl5.textContent=`${valorLocação}`
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;  
+            }
+              lbl6.textContent=`Código: ${doc.Código}`
+              div.appendChild(img); 
+              div.appendChild(lbl1)
+              div.appendChild(lbl2)
+              div.appendChild(lbl3)
+              div.appendChild(lbl4)
+              div.appendChild(lbl5)
+              div.appendChild(br2)
+              div.appendChild(lbl)
+              div.appendChild(br3)
+               div.appendChild(lbl6)
+              listaP.appendChild(div);
+              sessionStorage.setItem('itens_',itens)
+              sessionStorage.setItem('iten',itens)
+              document.getElementById('imgemoji').style.display='none'
+             // document.getElementById('body1').style.display='none'
+            //  document.getElementById('divListaPesquisa').style.display='block'
+             // document.getElementById('alist').click()
+              //  var valorP=document.getElementById('RRListP');
+              //  valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
+              // Swal.close()
+             
+
+                img.addEventListener('click',function(){
+            swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
+           })
+            } else{
+            }
+        })
+      })
+     // SetItensZ()
+    }
+        function casa(){
+                var listaP = document.getElementById('listaPesquisa');
+              listaP.innerHTML = '';
+              document.getElementById('body1').style.display='block'
+              document.getElementById('divListaPesquisa').style.display='none'
+        }
+  </script>
+   <script>
+      function Pesquisador(){
+       Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html:` <div  class="menu-container">
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                   <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                    <br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                    </div>
+                 `,
+                 showCancelButton: false,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                },
+                 didOpen: () => {
+                      document.body.style.paddingRight = '0px';
+                   }
+                 });
+                  document.getElementById("inputSwal").blur();
+                     document.getElementById('sair_').addEventListener('click', function() {
+                      document.getElementById("inputSwal").blur();
+                    Swal.fire('Cancelado!')
+                       Swal.close()    
+                 });
+                   document.getElementById('Swalpesq').addEventListener('click', function() {
+                   var respPesq= document.getElementById('inputSwal').value;
+                   var input= document.getElementById('inputSwal');
+                   var respPesq = input.value.trim();
+                 if(!respPesq|| respPesq==''){
+                   Swal.fire('Atenção','<b>Preencha o campo de pesquisa!</b>','warning')
+                   setTimeout(function(){
+                   Swal.close()
+                   // Menu('click')
+                 },3000)
+                } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                html:`
+                <label > Aguarde um momento <b> <p id="show"></p> </b></label>
+                `,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl_' // Aplica a classe CSS personalizada
+                },
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+                });
+                   var Num= 4
+                   var int=setInterval(function(){
+                     Num-=1
+                    if(Num == 0){
+                     clearInterval(int)
+                    }else{
+                    var show= document.getElementById('show');
+                     show.innerHTML=`(${Num})`;
+                    }
+                   },1000)
+                     setTimeout(function(){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },4000) 
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                    mostrarAlerta2()
+                    }
+               })
+            }
+    </script>
       <script>
               sessionStorage.setItem('DataHora','')
              sessionStorage.setItem('IMG', '');
