@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros Rutimóveis</title>
+    <link rel="shortcut icon" href="../src/NovoLar.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            background-color: rgb(27, 37, 32);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #Geral{
+            margin:0 auto;
+            width: 100%;
+            max-width: 1600px;
+            min-height: 100vh;
+            min-width:400px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            
+        }
+         #heaad{
+           width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            margin-bottom: 30px;
+            background-color: rgb(230, 236, 253);
+         
+        }
+         ::-webkit-scrollbar {
+                   width: 10px;
+                   margin-left: 15px;
+                   /* Largura da barra de rolagem */
+                   cursor: pointer;   
+                   margin: 0px;
+               }        
+                ::-webkit-scrollbar-thumb {
+                   margin-left: 15px;
+                   background-color: rgba(18, 7, 68, 0.993);
+                   /* Cor do polegar da barra de rolagem */
+                   margin-top: 1px;
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin: 0px;
+               }
+               ::-webkit-scrollbar-thumb:hover {
+                   background-color: rgb(106, 0, 177); 
+                   margin: 0px;        
+               }       
+                ::-webkit-scrollbar-track {
+                   /* Cor da trilha da barra de rolagem */
+                   margin-left: 15px;    
+                   background-color: rgb(15, 28, 31);
+                   border-radius: 7px;
+                   cursor: pointer;
+                   margin-bottom: 2px;
+                   margin-top: 2px;
+                   margin: 0px;
+                }
+         #heaad_button{
+            width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(240, 244, 255);
+            border-bottom:5px solid rgb(189, 188, 188);
+            padding-top: 10px;
+            padding-bottom:10px;
+        }
+        #body_div1{
+            display: block;
+        }
+           #body_div2{
+            display: none;
+        }
+        #h1_body_div1{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+          
+        }
+   
+        #div_menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1600px;
+            min-width:400px;
+            
+        }
+         #div_menu button{
+            width: 90%;
+            max-width: 700px;
+            min-width: 300px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border: 2px solid rgb(129, 129, 129);
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: rgb(255, 255, 255);
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(107, 106, 106);
+         }
+         #div_menu button:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(155, 154, 154);
+         }
+          #div_menu img{
+            border-radius: 10px;
+            margin-top: 77px;
+            margin-bottom: 70px;
+          }
+          #heaad_button button{
+            border: 0cap;
+            background-color: rgba(240, 248, 255, 0);
+            color: rgb(94, 93, 93);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+          }
+           #heaad_button button:hover{
+            color: rgb(117, 2, 117);
+           }
+           #novocad{
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin:0 auto;
+            width: 85%;
+            max-width: 730px;
+            min-width: 400px;
+            min-height: 50vh;
+            padding-bottom: 400px;
+            background-color: rgba(214, 220, 255, 0);
+           
+
+           }
+           #novocad label{
+            font-size: 13px;
+
+           }
+
+             #novocad input{
+            width: 95%;
+            min-width: 350px;
+            padding: 10px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 1px solid rgb(65, 64, 64);
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: rgb(232, 236, 255);
+            margin-top: 3px;
+            margin-bottom: 10px;
+
+           }
+        
+             #novocad select{
+                width: 300px;
+                padding: 10px;
+                background-color: rgb(232, 236, 255);
+                border: 1px solid rgb(65, 64, 64);
+                color: black;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-bottom: 15px;
+             }
+              #novocad textarea{
+                width: 85%;
+                min-width: 354px;
+                max-width: 85%;
+                min-height: 10vh;
+                max-height: 20vh;
+                border: 1px solid black;
+                padding: 10px;
+                cursor: pointer;
+                background-color: rgb(219, 224, 230);
+                font-size: 15px;
+                border-radius: 7px;
+                margin-top: 3px;
+                margin-bottom: 1px;
+
+              }
+              #novocad #lbl_IMG,  #novocad  #salve_alt{
+                width: 100%;
+                font-size: 25px;
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 30px;
+                display: none;
+                margin-bottom: 50px;
+                
+              }
+              #novocad #lbl_IMG:hover, #novocad  #salve_alt:hover,  #novocad  #lbl_limpar:hover{
+                color: rgb(153, 3, 167);
+              }
+              #novocad p{
+                width: 100%;
+                text-align: center;
+                font-size:14px;
+               
+              }
+             #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left: 500px;
+                
+             }
+                #novocad #lbl_codigo #codigo{
+                 width: 200px;
+                 min-width: 200px;
+                 background-color: rgba(74, 0, 77, 0.781);
+                 font-size: 16px;
+                 padding: 10px;
+                 border-radius: 7px;
+                 color: rgb(255, 255, 255);
+           }
+           #lbl_codigo{
+            color: rgb(119, 1, 103);
+           }
+           #novocad  #input_UF, #novocad  #desconto{
+           max-width:40px ;
+           min-width:40px ;
+           font-size: 18px;
+           padding: 10px;
+           }
+           #novocad  #p_desc{
+            font-size: 22px;
+            width: 10px;
+           }
+        
+                
+          #myProgress {
+            width: 70%;
+            background-color:rgb(134, 130, 130);
+            display: none;
+            border-radius: 7px;
+            margin-bottom: 3px;
+            margin-left: 10%;
+        }   
+        #myBar {
+            width: 1%;
+            /* Começa com 1% */
+            height: 20px;
+            background-color:rgb(123, 2, 87);
+            text-align: center;
+            /* Centraliza horizontalmente */
+            line-height: 15px;
+            /* Centraliza verticalmente */
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #divList{
+            display: none;
+        }
+         #novocad  #sair{
+            font-size: 20px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+         #novocad  #sair:hover{
+                color: rgb(107, 1, 121);
+      }
+
+     #divList{
+         margin: auto;
+         width: 100%;
+         max-width: 1000px;
+         display: none;
+         min-width: 400px;
+         background-color: rgba(0, 255, 255, 0);
+         margin-top: 10px;
+         margin-bottom: 30px;
+         padding-bottom: 40px;
+         
+       }
+       #divList  #sair{
+          font-size: 20px;
+          margin-bottom: 30px;
+          margin-left: 30px;
+          cursor: pointer;
+        }
+         #divList  #sair:hover{
+           color: rgb(107, 1, 121);
+        }
+        #listaid{
+          width: 95%;
+          margin: 0 auto;
+          min-width: 390px;
+          max-width: 970px; 
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 5px;
+          border-bottom: 3px solid rgba(126, 125, 125, 0.363);
+                   
+         }
+          #divList h2{ 
+            width: 95%;
+           color: black;
+            margin-bottom: 35px;
+            text-align: center;
+             text-decoration: underline 3px solid rgb(196, 1, 202);
+          }
+          #imgList_ {
+            max-width: 190px;
+            min-width: 190px;
+             max-height: 140px;
+            min-height: 140px;
+            margin-bottom: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+             border: 3px solid rgba(0, 255, 255, 0);
+                }
+                #listaid label{
+                    margin-left: 10px;
+                    font-size: 20px;
+                   
+                }
+           
+            #imgList:hover{
+                background-color: aqua;
+                border: 3px solid rgb(190, 2, 150);
+
+            }
+              #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 20px;
+                margin-left: 10px;
+                font-weight: bold;
+            }
+              #listaid  button:hover{
+                color: rgb(150, 2, 142);
+
+              }
+               #listaid  #lbllist3{
+                font-size: 12px;
+                margin-top: 20px;
+            }
+
+
+        
+      
+         
+          @media(max-width: 1600px){
+             #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 10px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 18px;
+                margin-left: 10px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 20px;
+                    
+                }
+          #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:480px;
+                
+             }
+        }
+         @media(max-width: 1400px){
+           #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 18px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 19px;
+                   
+                }
+            #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:480px;
+                
+             }
+        }
+         @media(max-width: 1200px){
+           #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 17px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 18px;
+                 
+                }
+              #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:460px;
+                
+             }
+        }
+          @media(max-width: 1000px){
+            #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 16px;
+                margin-left: 5px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 17px;
+                  
+                }
+             #imgList_ {
+                  max-width: 190px;
+                  min-width: 190px;
+                  max-height: 140px;
+                  min-height: 140px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:400px;
+                
+             }
+        }
+         @media(max-width: 800px){
+          #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 15px;
+                margin-left: 5px;
+            }
+              #listaid label{
+                    margin-left: 10px;
+                    font-size: 16px;
+                  
+                }
+                 #imgList_ {
+                   max-width: 145px;
+                  min-width: 145px;
+                  max-height: 110px;
+                  min-height: 110px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:350px;
+                
+             }
+        }
+           @media(max-width: 600px){
+            #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            #listaid label{
+                    margin-left: 10px;
+                    font-size: 14px;
+                  
+                }
+              #imgList_ {
+                   max-width: 130px;
+                  min-width: 130px;
+                  max-height: 100px;
+                  min-height: 100px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left:250px;
+                
+             }
+             #novocad textarea{
+                width: 85%;
+                min-width: 354px;
+                max-width: 85%;
+                min-height: 10vh;
+                max-height: 20vh;
+                border: 1px solid black;
+                padding: 10px;
+                cursor: pointer;
+                background-color: rgb(219, 224, 230);
+                font-size: 13px;
+                border-radius: 7px;
+                margin-top: 3px;
+                margin-bottom: 1px;
+
+              }
+        }
+
+        @media(max-width: 400px){
+          #listaid  button, #divList button{
+              
+                float: right;
+                margin-right: 5px;
+                border: 0cap;
+                background-color: rgba(240, 248, 255, 0);
+                color: rgb(61, 61, 61);
+                cursor: pointer;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+          #listaid label{
+                    margin-left: 10px;
+                    font-size: 13px;
+                   
+                }
+            #imgList_ {
+                  max-width: 130px;
+                  min-width: 130px;
+                  max-height: 100px;
+                  min-height: 100px;
+             }
+           #novocad  #lbl_limpar{
+                margin-right: 10px;
+                font-size: 14px;
+                cursor: pointer;
+                padding-top: 60px;
+                font-weight: bold;
+               margin-left: 250px;
+                
+             }
+        }
+     
+     
+     #h1_n_cad{
+      width: 95%;
+      text-align: center;
+      margin-top: 0%;
+      margin-bottom: 10px;
+      font-size: 22px;
+     }
+        #novocad  #valor , #novocad  #valorLoc {
+            width: 90%;
+            max-width: 160px;
+            min-width: 160px;
+           }
+     
+
+    </style> 
+
+</head>
+<body>
+    <div id="Geral">
+        <div id="heaad">
+            <div id="heaad_button">
+            <img src="../src/Logo novo lar 01 PNG.png" alt="" width="50">      <button title="Novo Cadastro" onclick="NovoCad()">NOVO CADASTRO</button>  <button title="Tela cheia /F11"  onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>   <button onclick="tela()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="body">
+            <div id="body_div1">
+
+                <h1 id="h1_body_div1">Cadastros Novo lar</h1>
+                <div id="div_menu">
+                  <button onclick=" MT01()">Lista de Destaques</button> <button  onclick=" MT02()">Lista de Casas</button> <button  onclick=" MT03()">Lista de Apartamentos</button ><button  onclick=" MT04()">Lista Chacáras / Sítios</button> <button  onclick=" MT05()">Breve!</button> <img src="../src/LogoNovoLarPNG.png" alt="" width="200"> 
+
+                </div>
+            </div>
+            <div id="body_div2">
+                 <div id="novocad">
+                <i id="sair" class="fa-solid fa-delete-left" onclick="sair()"></i>
+                <br>
+                <h1 id="h1_n_cad">Cadastro</h1>
+                <br>
+                 <label id="lbl_codigo" for=""> <p>Atenção! O Código é o indentificador principal do cadastro. Só o alterar em caso de exceção!</p><br>Código:<br>
+                    
+                <input  type="text" id="codigo" placeholder="Código do Cadastro">
+                
+                </label>
+                <br>
+                <select id="select_listas">
+                    <option value="">Selecione uma lista</option>
+                    <option value="Lista Destaques">Lista de Destaques</option>
+                    <option value="Lista Casas">Lista de Casas</option>
+                    <option value="Lista Apartamentos">Lista de Apartamentos</option>
+                    <option value="Lista Chácaras e Sítios">Lista de Chácaras/Sítios</option>
+                    <option value="Lista Imóveis">Imóveis!</option>
+                </select>
+                <br>
+                <input id="input_img" type="file" accept="image/*" hidden>
+             
+                    <label for="">Titulo:<br>
+                        <input id="titulo" type="text" placeholder="Titulo, Nome, Apelido...">
+                    </label>
+                    <br>
+                    <label for="">Bairro:<br>
+                        <input id="bairro" type="text" placeholder="Bairro...">
+                    </label>
+                    <br>
+                    <label for="">Cidade:<br>
+                        <input id="cidade" type="text" placeholder="Cidade...">
+                    </label>
+                    <br>
+                    <label for="">UF: 
+                       <input id="input_UF" type="text" value="SP" placeholder="UF">
+                    </label>
+                    <br>
+                    <label for="">Endereço completo do imóvel (Referência):<br> 
+                        <textarea name="" id="endereço" placeholder="Endereço completo"></textarea>
+                    </label>
+                    <br><br>
+                    <select name="" id="select_venda">
+                        <option value="">Imóvel disponivel para?</option>
+                        <option value="Venda">Venda</option>
+                        <option value="Locação">Locação</option>
+                        <option value="Venda ou Locação">Venda e Locação</option>
+                    </select>
+                    <br>
+                    <br><p>Prencha o valor para venda, locação ou "ambos"</p><br>
+                    <label for="">Valor para Venda<br>
+                        <input id="valor" type="text" placeholder="00,00"> R$
+                    </label>
+                     <br>
+                    <label for="">Valor para Locação<br>
+                        <input id="valorLoc" type="text" placeholder="00,00"> R$
+                    </label>
+                    <br>
+                    <label  for="">Desconto Avista de: 00%<br>
+                        <input id="desconto" type="number" placeholder="00"> <label id="p_desc"> %</label>
+                    </label>
+                    <br>
+
+                    <label for="">Descrição do Imóvel (resumida!):<br>
+                        <textarea name="" id="obs" placeholder="Mensagem..."></textarea>
+                    </label>
+                    <br> <br>
+                    <div id="myProgress" style="display:none">
+                        <div id="myBar">10%</div>
+                    </div>
+                    <br> 
+                    <br>
+                    <p>Adicione uma imagem da fachada do Imóvel para salvar o cadastro</p>
+                    <label id="lbl_IMG" onclick="Start()"> Salvar <i class="fa-solid fa-image" onclick="Start()"></i></label>
+
+                    <label id="salve_alt" for="" onclick="Salvarcad()">Salvar alterações</label>
+                    <br><br>
+                    <label id="lbl_limpar" for="" onclick="limpar()">Limpar Campos</label>
+                    <br><br><br>
+               
+                 </div>
+                </div>
+              <div id="divList">
+                      <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
+                   <h2 id="h2Lista">Lista </h2>
+                   <div id="listas">
+                     </div>
+             </div>
+              <script>
+                 function tela(){
+                     window.open('../index.html','blank')
+                 }
+     </script>
+      <script>
+             sessionStorage.setItem('IMG', '');
+             sessionStorage.setItem('Lista', '');
+             sessionStorage.setItem('dadosIMG', ``);
+              sessionStorage.setItem('EdtTela','')
+             sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);      
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``);    
+             function sessionS(){
+                
+             sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);        
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);  
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``) ;   
+             }
+     </script>
+     <script>
+         sessionStorage.setItem('LIsta',``)
+         function MT01(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'      
+             var list= 'Lista Destaques'
+             sessionStorage.setItem('LIsta',`${list}`)
+              startList('click')  
+               sessionS('click') 
+         }
+         function MT02(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Casas'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+          function MT03(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Apartamentos'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+          function MT04(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Chácaras e Sítios'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+          function MT05(){
+               document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+             var list= 'Lista Imóveis!'
+             sessionStorage.setItem('LIsta',`${list}`)
+             startList('click')
+              sessionS('click')
+         }
+         function startList(){
+            sessionStorage.setItem('itens','')
+            document.getElementById('divList').style.display='block'
+           var respList = sessionStorage.getItem('LIsta')
+            SetItens('click')
+         var h2li= document.getElementById('h2Lista');
+         var pItens= document.getElementById('itens');
+          h2li.innerText=`${respList}`
+     
+           //   alert(respList)
+           const firebaseConfig = {
+           apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+           authDomain: "game-dbv.firebaseapp.com",
+           projectId: "game-dbv",
+           storageBucket: "game-dbv.appspot.com",
+           messagingSenderId: "118219151865",
+           appId: "1:118219151865:web:b6414d5255233264268528",
+           measurementId: "G-K17DLDBYGR"
+           };
+            firebase.initializeApp(firebaseConfig);  
+          const db = firebase.firestore();
+          var produtosRef = db.collection(`${respList}`);
+          // Limpar a lista antes de preencher
+          var lista = document.getElementById('listas');
+          lista.innerHTML = '';
+          produtosRef.get().then((querySnapshot) => {
+              querySnapshot.forEach(doc => {
+                  var doc = doc.data();
+            // alert(doc.Titulo)
+              var itens= querySnapshot.size
+             
+                  var maylist= document.createElement('div');
+                  var div = document.createElement('div');
+                  var img=  document.createElement('img');
+                  var label = document.createElement('label');
+                  var label2 = document.createElement('label');
+                   var label3 = document.createElement('label');
+                  var button= document.createElement('button');
+                  var br=document.createElement('br');
+                  var br2=document.createElement('br');
+                  var br3=document.createElement('br');
+                  var br4=document.createElement('br');
+                  var br5=document.createElement('br');
+                  maylist.id='listaid'
+                  div.id='divList_'
+                  img.id='imgList_';
+                  img.src=`${doc.IMG}`;
+                  label.id='lblList';
+                  button.id='btnList'
+                  label.textContent=`${doc.Titulo } `;
+                  label2.id='lbllist2';
+                  label2.textContent=`${doc.Bairro} em ${doc.Cidade} `;
+                  label3.id='lbllist3';
+                  label3.textContent=`Código: ${doc.Código}`;
+                  button.className=''
+                  button.textContent= 'Editar'
+                
+                  maylist.appendChild(img)
+                  div.appendChild(label);
+                  div.appendChild(br2)
+                  div.appendChild(label2);
+                  div.appendChild(br3)
+                  div.appendChild(br4)
+                  div.appendChild(label3);
+                  maylist.appendChild(div)
+                  maylist.appendChild(br)
+                  maylist.appendChild(button)
+                  lista.appendChild(maylist)
+                
+                  Swal.fire(`${itens} Imóveis encontrados`,'','')
+                  sessionStorage.setItem('itens',`${itens}`)
+
+                  img.addEventListener('click', function(){
+                    swal(`${doc.Titulo}`,``,`${doc.IMG}`)
+                  });
+                     button.addEventListener('click', function(){
+                         sessionStorage.setItem('EdtTela','tela')
+                       // document.getElementById('lbl_IMG').style.display='none';
+                       // document.getElementById('salve_alt').style.display='block';
+                        document.getElementById('codigo').value= doc.Código;
+                        document.getElementById('titulo').value= doc.Titulo;
+                        document.getElementById('select_listas').value= doc.Lista;
+                        document.getElementById('obs').value= doc.OBS;
+                        document.getElementById('bairro').value= doc.Bairro;
+                        document.getElementById('valor').value= doc.Valor;
+                        document.getElementById('endereço').value= doc.End;
+                        document.getElementById('desconto').value=doc.Desconto;
+                        document.getElementById('cidade').value=doc.Cidade;
+                        document.getElementById('valorLoc').value= doc.Valor_Loc;
+                        document.getElementById('input_UF').value= doc.UF;
+                        document.getElementById('select_venda').value=doc.Tipo_Venda;
+
+                     
+                        sessionStorage.setItem('data_',`${doc.Data}`)
+                        sessionStorage.setItem('hora_',`${doc.Hora}`)
+                         sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
+                        sessionStorage.setItem('img2',`${doc.IMG_2}`)
+                        //document.getElementById('img2').value=doc.IMG_2;
+                         sessionStorage.setItem('img3',`${doc.IMG_3}`)
+                        //document.getElementById('img3').value=doc.IMG_3;
+                         sessionStorage.setItem('img4',`${doc.IMG_4}`)
+                      //  document.getElementById('img4').value=doc.IMG_4;
+                       sessionStorage.setItem('img5',`${doc.IMG_5}`)
+                        //document.getElementById('img5').value=doc.IMG_5;
+                         sessionStorage.setItem('img6',`${doc.IMG_6}`)
+                        //document.getElementById('img6').value=doc.IMG_6;
+                         sessionStorage.setItem('img7',`${doc.IMG_7}`)
+                      //  document.getElementById('img7').value=doc.IMG_7;
+                       sessionStorage.setItem('vd',`${doc.VD}`)
+                       // document.getElementById('vd').value=doc.VD;
+                       sessionStorage.setItem('vd2',`${doc.VD2}`)
+                        //document.getElementById('vd2').value=doc.VD2;
+                        sessionStorage.setItem('vd3',`${doc.VD3}`)
+                       //document.getElementById('vd3').value=doc.VD3;
+                       sessionStorage.setItem('id',`${doc.ID}`)
+                         //document.getElementById('id').value=doc.ID;
+                          sessionStorage.setItem('obs2',`${doc.OBS2}`)
+                         //document.getElementById('obs2').value=doc.OBS2;
+                         sessionStorage.setItem('obs3',`${doc.OBS3}`)
+                         //document.getElementById('obs3').value=doc.OBS3;
+                         sessionStorage.setItem('obs4',`${doc.OBS4}`)
+                         //document.getElementById('obs4').value=doc.OBS4;
+                         sessionStorage.setItem('obs5',`${doc.OBS5}`)
+                         //document.getElementById('obs5').value=doc.OBS5;
+                         sessionStorage.setItem('obs6',`${doc.OBS6}`)
+                         //document.getElementById('obs6').value=doc.OBS6;
+                         sessionStorage.setItem('obs7',`${doc.OBS7}`)
+                         //document.getElementById('obs7').value=doc.OBS7;
+                         sessionStorage.setItem('obs8',`${doc.OBS8}`)
+                         //document.getElementById('obs8').value=doc.OBS8;
+                         sessionStorage.setItem('obs9',`${doc.OBS9}`)
+                         //document.getElementById('obs9').value=doc.OBS9;
+                         sessionStorage.setItem('obs10',`${doc.OBS10}`)
+                         //document.getElementById('obs10').value=doc.OBS10;
+
+                           sessionStorage.setItem('Quarto',`${doc.Quarto}`)
+                           sessionStorage.setItem('Banheiro',`${doc.Banheiro}`)
+                           sessionStorage.setItem('Quintal',`${doc.Quintal}`)
+                           sessionStorage.setItem(' Piscina',`${doc.Piscina}`)
+                           sessionStorage.setItem('Garagem',`${doc.Garagem}`)
+                           sessionStorage.setItem('Comod1',`${doc.Comod1}`)
+                           sessionStorage.setItem('Comod2',`${doc.Comod2}`)
+                           sessionStorage.setItem('Comod3',`${doc.Comod3}`)
+                           sessionStorage.setItem('Comod4',`${doc.Comod4}`)
+                           sessionStorage.setItem('Comod5',`${doc.Comod5}`)
+                           sessionStorage.setItem('Comod6',`${doc.Comod6}`)
+                           sessionStorage.setItem('Comod7',`${doc.Comod7}`)
+                            sessionStorage.setItem('IPTU',`${doc.IPTU}`)
+                             sessionStorage.setItem('Cond',`${doc.Cond}`)
+                         Cadastros2('click')
+                    Swal.fire(`Editar Cadastro!`,`${doc.Titulo}`,``)
+                  })
+           })
+       })
+    function SetItens(){
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Não foram encontrados Imóveis na lista`,'','')
+        } else{
+        }
+        },1200)
+    } 
+        };
+     </script>
+       <script>
+        function limpar(){  
+        
+         document.getElementById('titulo').value='';
+         document.getElementById('select_listas').value='';
+         document.getElementById('obs').value='';
+         document.getElementById('bairro').value='';
+         document.getElementById('valor').value='';
+         document.getElementById('endereço').value='';
+         document.getElementById('desconto').value='';
+         document.getElementById('cidade').value='';
+         document.getElementById('valorLoc').value='';
+        // document.getElementById('codigo').value='';
+         document.getElementById('input_UF').value=''
+         document.getElementById('select_venda').value=''
+         sessionS('click')
+        }
+       </script>
+     <script>
+        function sair(){
+             document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='block'
+               document.getElementById('body_div2').style.display='none'
+                document.getElementById('divList').style.display='none'
+             sessionStorage.setItem('EdtTela','')
+           
+             sessionS('click')
+               limpar()
+        };
+
+        function sairlista(){
+          document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='block'
+            document.getElementById('body_div2').style.display='none'
+           document.getElementById('divList').style.display='none'
+
+
+        }
+        </script>
+
+     <script> //Novo Cadastro
+         var inter1= setInterval(function(){
+
+             
+              var data = sessionStorage.getItem('data');
+              var hora = sessionStorage.getItem('hora');
+              var titulo = document.getElementById('titulo').value;
+              var lista = document.getElementById('select_listas').value;
+              var descrição = document.getElementById('obs').value;
+              var bairro= document.getElementById('bairro').value;
+              var input= document.getElementById('bairro');
+              var bairro= input.value.trim();
+              var valor_loc= document.getElementById('valorLoc').value;
+              var valor= document.getElementById('valor').value;
+              var end= document.getElementById('endereço').value;
+              var desconto= document.getElementById('desconto').value;
+              var cidade= document.getElementById('cidade').value;
+              var input2= document.getElementById('cidade');
+              var cidade = input2.value.trim();
+              var codigo= document.getElementById('codigo').value;
+              var uf= document.getElementById('input_UF').value;
+              var tipo_Venda= document.getElementById('select_venda').value;
+
+            
+
+              var tipo_Venda= document.getElementById('select_venda').value;
+            if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
+            document.getElementById('lbl_IMG').style.display='none';
+            document.getElementById('salve_alt').style.display='none';
+            } else{
+                if( !valor && !valor_loc){
+                 document.getElementById('lbl_IMG').style.display='none';
+                document.getElementById('salve_alt').style.display='none';
+                } else {
+                var edtTela= sessionStorage.getItem('EdtTela')
+                if(!edtTela | edtTela==''){
+                  document.getElementById('lbl_IMG').style.display='block';
+                 document.getElementById('salve_alt').style.display='none';
+                } else{
+                     document.getElementById('lbl_IMG').style.display='none';
+                 document.getElementById('salve_alt').style.display='block';
+                }
+            }
+            }
+           },200)
+
+     function NovoCad(){
+             document.getElementById('input_UF').value='SP'
+            document.getElementById('codigo').value=''
+             var h1_notf= document.getElementById('h1_n_cad');
+            h1_notf.innerHTML='Novo Cadastro'
+       
+          
+        
+            sessionStorage.setItem('códigoRetur','')
+            var tela= document.getElementById('body_div1');
+            if(tela.style.display=='none'){
+               document.getElementById('body_div1').style.display='block'
+                document.getElementById('divList').style.display='none'
+                 document.getElementById('body_div2').style.display=''
+                    document.getElementById('novocad').style.display='block'
+            } else {
+             document.getElementById('body_div2').style.display='block'
+                document.getElementById('novocad').style.display='none'
+            document.getElementById('body_div1').style.display='none'
+            document.getElementById('divList').style.display='none'
+             var hora = sessionStorage.getItem('hora');
+             var num= hora.split(':')
+             var n0= num[0];
+             var n1= num[1];
+             var n2= num[2];
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let codigo = '';
+            for (let i = 0; i < 8; i++) {
+                codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+          document.getElementById('codigo').value= codigo+n1+n2
+          Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
+          document.getElementById('novocad').style.display='block'
+        }
+       // function NovoCad(){
+     sessionStorage.setItem('IMG', '');
+     sessionStorage.setItem('Lista', '');
+     sessionStorage.setItem('dadosIMG', ``);
+    }
+     function Start() {
+          
+        const firebaseConfigs = {
+      apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+      authDomain: "game-dbv.firebaseapp.com",
+      projectId: "game-dbv",
+      storageBucket: "game-dbv.appspot.com",
+      messagingSenderId: "118219151865",
+      appId: "1:118219151865:web:b6414d5255233264268528",
+      measurementId: "G-K17DLDBYGR"
+    };  
+     firebase.initializeApp(firebaseConfigs); 
+    var CodRetur= sessionStorage.getItem('códigoRetur')
+    var data = sessionStorage.getItem('data');
+    var hora = sessionStorage.getItem('hora');
+    var titulo = document.getElementById('titulo').value;
+    var lista = document.getElementById('select_listas').value;
+    var descrição = document.getElementById('obs').value;
+    var bairro= document.getElementById('bairro').value;
+    var input= document.getElementById('bairro');
+    var bairro= input.value.trim();
+    var valor= document.getElementById('valor').value;
+    var valor_loc= document.getElementById('valorLoc').value;
+    var end= document.getElementById('endereço').value;
+    var desconto= document.getElementById('desconto').value;
+    var cidade= document.getElementById('cidade').value;
+    var input2= document.getElementById('cidade');
+    var cidade = input2.value.trim();
+    var codigo= document.getElementById('codigo').value;
+    var uf= document.getElementById('input_UF').value;
+    var tipo_Venda= document.getElementById('select_venda').value;
+
+
+   if(!CodRetur || CodRetur==''){
+         document.getElementById('codigo').style.display='block'
+   }else{
+       document.getElementById('codigo').style.display='none'
+   }
+    if(!codigo|| codigo==''){
+        Cadastros('click')
+    }
+
+    if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
+        
+        Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
+      
+    } else{
+    document.getElementById('input_img').click();
+    document.getElementById('input_img').addEventListener('change', async function(e) {
+        function mostrarAlerta() {
+            Swal.fire({
+                title: 'Carregando Foto...',
+                text: 'Aguarde um momento',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+           mostrarAlerta('click')
+        const file = e.target.files[0];
+        const storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}`);
+        const task = storageRef.put(file);
+
+        task.on('state_changed', updateProgress, handleError, async () => {
+           
+        const url_imagem = await storageRef.getDownloadURL();
+         Swal.close()
+         document.getElementById('myProgress').style.display = 'block';
+         var i = 0;
+
+           if (i == 0) {
+           i = 1;
+           var elem = document.getElementById("myBar");
+           var width = 1;
+           var id = setInterval(frame, 30);
+       
+           function frame() {
+               if (width >= 100) {
+            clearInterval(id);
+            i = 0;                     
+            sessionStorage.setItem('IMG', url_imagem);
+            sessionStorage.setItem('Lista', lista);
+            sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
+            var db = firebase.firestore();
+             db.collection(`${lista}`).doc(`${codigo}`).set({
+                Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: url_imagem,
+                OBS: descrição,
+                UF: uf,
+                Tipo_Venda:tipo_Venda,
+                Valor_Loc: valor_loc,
+                IMG2:'',
+                OBS2:'',
+                IMG3:'',
+                OBS3:'',
+                IMG4:'',
+                OBS4:'',
+                IMG5:'',
+                OBS5:'',
+                IMG6:'',
+                OBS6:'',
+                IMG7:'',
+                OBS7:'',
+                VD:'',
+                OBS8:'',
+                VD2:'',
+                OBS9:'',
+                VD3:'',
+                OBS10:'',
+                Código: codigo,
+                Lista: lista,
+                ID: `${lista}/${codigo}`,
+                Quarto:'',
+                Banheiro:'',
+                Quintal:'',
+                Garagem:'',
+                Piscina:'',
+                Comod1:'',
+                Comod2:'',
+                Comod3:'',
+                Comod4:'',
+                Comod5:'',
+                Comod6:'',
+                Comod7:'',
+                IPTU: '',
+                Cond:"",
+
+              
+            });
+                 var dbd = firebase.firestore();
+             dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
+                 Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: url_imagem,
+                OBS: descrição,
+                UF: uf,
+                Tipo_Venda:tipo_Venda,
+                Valor_Loc: valor_loc,
+                IMG2:'',
+                OBS2:'',
+                IMG3:'',
+                OBS3:'',
+                IMG4:'',
+                OBS4:'',
+                IMG5:'',
+                OBS5:'',
+                IMG6:'',
+                OBS6:'',
+                IMG7:'',
+                OBS7:'',
+                VD:'',
+                OBS8:'',
+                VD2:'',
+                OBS9:'',
+                VD3:'',
+                OBS10:'',
+                Código: codigo,
+                Lista: lista,
+                ID: `${lista}/${codigo}`,
+                Quarto:'',
+                Banheiro:'',
+                Quintal:'',
+                Garagem:'',
+                Piscina:'',
+                Comod1:'',
+                Comod2:'',
+                Comod3:'',
+                Comod4:'',
+                Comod5:'',
+                Comod6:'',
+                Comod7:'',
+                IPTU: '',
+                Cond:"",
+            });
+            
+            
+            swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, url_imagem);
+            setTimeout(() => {
+                document.getElementById('myProgress').style.display = 'none';
+                window.location.reload()
+            }, 5000);
+         } else {
+            width++;
+            elem.style.width = width + "%";
+            elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+          }
+        }
+      }
+      })
+      })
+      }
+          }
+           function updateProgress(snapshot) {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const bar = document.getElementById('myBar');
+          bar.style.width = progress + '%';
+          bar.innerHTML = Math.round(progress) + '%';
+      }
+      function handleError(error) {
+          console.error('Erro ao enviar arquivo:', error);
+        }
+
+
+
+
+
+             //Editar cadastros
+
+  function Cadastros2(){
+            var h1_notf= document.getElementById('h1_n_cad');
+            h1_notf.innerHTML='Edite esse cadastro!'
+          
+             document.getElementById('body_div2').style.display='block'
+            document.getElementById('body_div1').style.display='none'
+            document.getElementById('divList').style.display='none'
+               document.getElementById('novocad').style.display='block'
+             var hora = sessionStorage.getItem('hora');
+         
+             var num= hora.split(':')
+             var n0= num[0];
+             var n1= num[1];
+             var n2= num[2];
+      
+           // var codigo= sessionStorage.getItem('códigoRetur');
+      
+        //  document.getElementById('codigo').value= codigo+n1+n2
+          Swal.fire(`${codigo+n1+n2}`,'Codígo Gerado automaticamente','success')
+          document.getElementById('body_div2').style.display='block'
+        }
+       // function NovoCad(){
+          sessionStorage.setItem('IMG', '');
+          sessionStorage.setItem('Lista', '');
+          sessionStorage.setItem('dadosIMG', ``);
+          
+          function Salvarcad() {
+          
+             const firebaseConfigures = {
+           apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+           authDomain: "game-dbv.firebaseapp.com",
+           projectId: "game-dbv",
+           storageBucket: "game-dbv.appspot.com",
+           messagingSenderId: "118219151865",
+           appId: "1:118219151865:web:b6414d5255233264268528",
+           measurementId: "G-K17DLDBYGR"
+         };  
+       
+       //var cod= document.getElementById('codigo').
+         firebase.initializeApp(firebaseConfigures);  
+
+                var img= sessionStorage.getItem('Url_Imagem');
+                var img2= sessionStorage.getItem('img2');
+                var img3= sessionStorage.getItem('img3');
+                var img4= sessionStorage.getItem('img4');
+                var img5= sessionStorage.getItem('img5');
+                var img6= sessionStorage.getItem('img6');
+                var img7= sessionStorage.getItem('img7');
+                var vd=  sessionStorage.getItem('vd');
+                var vd2=  sessionStorage.getItem('vd2');
+                var vd3=  sessionStorage.getItem('vd3');
+                var id=  sessionStorage.getItem('id');
+                var obs2=  sessionStorage.getItem('obs2');
+                 var obs3=  sessionStorage.getItem('obs3');
+                  var obs4=  sessionStorage.getItem('obs4');
+                   var obs5=  sessionStorage.getItem('obs5');
+                    var obs6=  sessionStorage.getItem('obs6');
+                     var obs7=  sessionStorage.getItem('obs7');
+                      var obs8=  sessionStorage.getItem('obs8');
+                       var obs9=  sessionStorage.getItem('obs9');
+                        var obs10=  sessionStorage.getItem('obs10');
+                            var quarto_= sessionStorage.getItem('Quarto')
+                            var banheiro_= sessionStorage.getItem('Banheiro')
+                            var quintal_= sessionStorage.getItem('Quintal')
+                            var piscina=  sessionStorage.getItem(' Piscina')
+                            var garagem= sessionStorage.getItem('Garagem')
+                            var comad1_= sessionStorage.getItem('Comod1')
+                            var comad2_= sessionStorage.getItem('Comod2')
+                            var comad3_= sessionStorage.getItem('Comod3')
+                            var comad4_= sessionStorage.getItem('Comod4')
+                            var comad5_= sessionStorage.getItem('Comod5')
+                            var comad6_= sessionStorage.getItem('Comod6')
+                            var comad7_= sessionStorage.getItem('Comod7')
+                            var iptu_= sessionStorage.getItem('IPTU')
+                            var cond_= sessionStorage.getItem('Cond')
+                                  
+
+          var data = sessionStorage.getItem('data_');
+          var hora = sessionStorage.getItem('hora_');
+          var titulo = document.getElementById('titulo').value;
+          var lista = document.getElementById('select_listas').value;
+          var obs = document.getElementById('obs').value;
+          var bairro= document.getElementById('bairro').value;
+          var input= document.getElementById('bairro');
+          var bairro= input.value.trim();
+          var valor= document.getElementById('valor').value;
+        var valor_loc= document.getElementById('valorLoc').value;
+          var end= document.getElementById('endereço').value;
+          var desconto= document.getElementById('desconto').value;
+          var cidade= document.getElementById('cidade').value;
+          var input2= document.getElementById('cidade');
+          var cidade = input2.value.trim();
+          var codigo= document.getElementById('codigo').value;
+          var uf= document.getElementById('input_UF').value;
+          var tipo_Venda= document.getElementById('select_venda').value;
+
+
+       if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {
+        
+        Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');
+      
+        } else{
+
+            var db = firebase.firestore();
+             db.collection(`${lista}`).doc(`${codigo}`).set({
+                Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                UF: uf,
+                Tipo_Venda:tipo_Venda,
+                Valor_Loc: valor_loc,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: img,
+                OBS: obs,
+                IMG2:img2,
+                OBS2:obs2,
+                IMG3:img3,
+                OBS3:obs3,
+                IMG4:img4,
+                OBS4:obs4,
+                IMG5:img5,
+                OBS5:obs5,
+                IMG6:img6,
+                OBS6:obs6,
+                IMG7:img7,
+                OBS7:obs7,
+                VD:vd,
+                OBS8:obs8,
+                VD2:vd2,
+                OBS9:obs9,
+                VD3:vd3,
+                OBS810:obs10,
+                Código: codigo,
+                Lista: lista,
+                ID: id,
+                 Quarto: quarto_,
+                Banheiro:  banheiro_,
+                Quintal: quintal_,
+                Garagem: garagem,
+                Piscina: piscina,
+                Comod1:comad1_,
+                Comod2:comad2_,
+                Comod3:comad3_,
+                Comod4:comad4_,
+                Comod5:comad5_,
+                Comod6:comad6_,
+                Comod7:comad7_,
+                IPTU: iptu_,
+                Cond:cond_,
+            });
+                 var dbd = firebase.firestore();
+             dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
+               Titulo: titulo,
+                Bairro: bairro,
+                Cidade:cidade,
+                Valor: valor,
+                Desconto: desconto,
+                 UF: uf,
+                Tipo_Venda:tipo_Venda,
+                Valor_Loc: valor_loc,
+                End: end,
+                Data: data,
+                Hora: hora,
+                IMG: img,
+                OBS: obs,
+                IMG2:img2,
+                OBS2:obs2,
+                IMG3:img3,
+                OBS3:obs3,
+                IMG4:img4,
+                OBS4:obs4,
+                IMG5:img5,
+                OBS5:obs5,
+                IMG6:img6,
+                OBS6:obs6,
+                IMG7:img7,
+                OBS7:obs7,
+                VD:vd,
+                OBS8:obs8,
+                VD2:vd2,
+                OBS9:obs9,
+                VD3:vd3,
+                OBS810:obs10,
+                Código: codigo,
+                Lista: lista,
+                ID: id,
+                Quarto: quarto_,
+                Banheiro:  banheiro_,
+                Quintal: quintal_,
+                Garagem: garagem,
+                Piscina: piscina,
+                Comod1:comad1_,
+                Comod2:comad2_,
+                Comod3:comad3_,
+                Comod4:comad4_,
+                Comod5:comad5_,
+                Comod6:comad6_,
+                Comod7:comad7_,
+                IPTU: iptu_,
+                Cond:cond_,
+               
+            });
+               document.getElementById('myProgress').style.display = 'block';
+         var i = 0;
+
+    if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var idd = setInterval(frame, 30)
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(idd);
+            i = 0;                   
+
+         swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, img);
+              document.getElementById('myProgress').style.display = 'none';
+                     setTimeout(() => {
+                window.location.reload()
+             }, 4000);
+       
+        
+   } else {
+            width++;
+            elem.style.width = width + "%";
+            elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+          }
+        }
+    
+    }
+
+      
+}}
+     
+      
+
+      
+     
+
+     </script>
+
+     <script>
+            setInterval(function() {
+                   
+                   const newDate = new Date()
+                   var dia = String(newDate.getDate()).padStart(2, '0');
+                   var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+                   var ano = String(newDate.getFullYear()).padStart(2, '0')
+                   var data = `${dia}/${mes}/${ano}`
+                   const now = new Date();
+                   const hours = now.getHours().toString().padStart(2, '0');
+                   const minutes = now.getMinutes().toString().padStart(2, '0');
+                   const seconds = now.getSeconds().toString().padStart(2, '0');
+                   const timeString = `${hours}:${minutes}:${seconds}`;
+                   // const lbl_data = document.getElementById('lbl-data');
+                   
+                   // lbl_data.innerHTML = `${data}`
+                   
+                   sessionStorage.setItem('data', data)
+                   sessionStorage.setItem('hora', timeString)
+                   
+                   //var Data = document.getElementById('lbl_data_head')
+                   //Data.innerHTML= data;
+                   
+                   }, 1000)
+      </script>
+
+        <script>
+          function toggleFullScreen() {
+        if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+            (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+            if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+        } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+           }
+      }
+    }
+</script>
+ <script>
+             sessionStorage.setItem('IMG', '');
+             sessionStorage.setItem('Lista', '');
+             sessionStorage.setItem('dadosIMG', ``);
+
+             sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);      
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``);    
+             function sessionS(){
+                
+                 sessionStorage.setItem('Url_Imagem','');
+             sessionStorage.setItem('img2','');
+             sessionStorage.setItem('img3','');
+             sessionStorage.setItem('img4','');
+             sessionStorage.setItem('img5','');
+             sessionStorage.setItem('img6','');
+             sessionStorage.setItem('img7','');
+             sessionStorage.setItem('vd','');
+             sessionStorage.setItem('vd2','');
+             sessionStorage.setItem('vd3','');
+             sessionStorage.setItem('id','');
+             sessionStorage.setItem('obs2',``);        
+             sessionStorage.setItem('obs3',``);
+             sessionStorage.setItem('obs4',``);  
+             sessionStorage.setItem('obs5',``);
+             sessionStorage.setItem('obs6',``);
+             sessionStorage.setItem('obs7',``);
+             sessionStorage.setItem('obs8',``);
+             sessionStorage.setItem('obs9',``);
+             sessionStorage.setItem('obs10',``) ;   
+             }
+     </script>
+
+</body>
+</html>

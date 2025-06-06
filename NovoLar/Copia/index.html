@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
-   
      <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -24,10 +23,9 @@
             padding: 0px;
         }
         body{
-
-         font-family: Georgia, 'Times New Roman', Times, serif;
+          font-family: sans-serif;
+          font-family: Arial, Helvetica, sans-serif;
          background-color: rgb(228, 227, 255);
-         padding: 0;
           
         }
         #DivGeral{
@@ -189,16 +187,15 @@
             min-width: 400px;
              background-color: rgba(240, 247, 255, 0);
          }
-        #body1 #lista01{
+        #body1 #lista01, #body1 #lista02, #body1 #lista03, #body1 #lista04, #body1 #lista05{
             margin: auto;
             width: 100%;
             display: flex;
             justify-content: center;
              flex-wrap: wrap;
             align-items: center;
-            border-bottom: 50px solid rgba(116, 0, 93, 0.999);
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            border-bottom: 10px solid rgba(73, 72, 72, 0);
+            margin-bottom: 10px;
           
         }
            #body1 #div1{
@@ -207,16 +204,16 @@
             width: 400px;
             max-width: 400px;
             min-width: 400px;
-            min-height: 58vh;
+            min-height: 57vh;
             margin-bottom: 20px;
             margin-top: 50px;
+            padding-bottom:61px;
             margin-right: 40px;
             border-radius: 7px;
             background-color: rgb(255, 255, 255);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
             color: rgb(95, 95, 95);
             overflow: hidden;
-             font-family: Arial, Helvetica, sans-serif;
           }
             #body1 #div1 {
              position: relative;
@@ -245,10 +242,8 @@
             color: rgb(53, 52, 52);
           }
              #div1 #div4{
-            width: 100%;
-            padding: 0%;
-            margin: 0%;
             max-width:64%;
+            padding: 10px;
             background-color: rgba(255, 246, 246, 0);
           }
           #div4 button{
@@ -260,30 +255,37 @@
                 padding: 10px;
                 cursor: pointer;
                 font-size: 14px;
-                margin-bottom: 55px;
+                margin-bottom: 3px;
                 margin-left: 15px;
                  border: 1px solid rgb(160, 160, 160);
                  min-width: 370px;
-                
             }
              #div4 button:hover{
               background-color: #ad04a5;
               color: #ffffff;
-         }
-         
-         #DivFooter{
-             display: flex;
-             flex-direction: column;
-             justify-content: space-around;
-             width: 100%;
-             height: 100%;
-             min-width: 400px;
-             min-height: 70vh;
-             background-color: rgb(34, 34, 34);
-             padding-bottom: 200px;
+             }
+            #h1_destaque{
+                 width: 100%;
+                 font-size: 20px;
+                text-align: center;
+                cursor: pointer;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                background-color: rgb(143, 3, 124);
+                color: rgb(255, 255, 255);
+             }
+        #DivFooter{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+            width: 100%;
+            height: 100%;
+            min-width: 400px;
+           min-height: 70vh;
+            background-color: rgb(34, 34, 34);
+            padding-bottom: 200px;
               color: blueviolet;
           }
-          
           #paragrafo_inicial{
             margin: auto;
             width: 80%;
@@ -298,7 +300,6 @@
               margin-bottom: 20px;
             }
             #sociais_contatos{
-             background-color: #17171700;
               display: flex;
               justify-content: space-around;
               align-items: center;
@@ -307,40 +308,31 @@
               cursor: pointer;
             }
             #sociais_contatos a{
-              position: relative;
               text-decoration: none;
                color: blueviolet;
               font-weight: bold;
               font-size: 21px;
-             overflow: hidden;
             }
-         
-       
-            #sociais_contatos #aa01::after,#sociais_contatos #aa02::after,#sociais_contatos #aa03::after  {
-            content: "";
-            position: absolute;
-            width: 0%;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background: blueviolet /* Cor da linha */;
-            transition: width 0.5s ease-in-out;
-          }    
-           #sociais_contatos #aa01:hover::after,#sociais_contatos #aa02:hover::after ,#sociais_contatos #aa03:hover::after   {
-            width: 100%;
-          }
-           #sociais_contatos a:hover{
-              color: rgb(43, 255, 0)        
-         }
+             #sociais_contatos a:hover{
+              color: rgb(43, 255, 0);
+              text-decoration: underline 2px solid rgb(43, 255, 0); ;
+             }
+             #body1 #div4{
+              width: 100%;
+              padding: 0%;
+              margin: 0%;
+              background-color: rgba(165, 42, 42, 0);
+              margin-top: 10px;
+             }
             #body1 #div1 img{
-             width: 100%;
-             max-height: 33vh;
-             min-height: 33vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
+                width: 100%;
+               max-height: 35vh;
+               min-height: 35vh;
+               border-radius: 1px;
+               margin-bottom: 20px;
+               cursor: pointer;
+               transition: transform 0.7s ease-in-out;
+               }
              #body1 #div1 img:hover {
              transform: scale(1.1); /* Ajusta o nível de zoom */
              }
@@ -348,7 +340,7 @@
             #body1 #div2  #label0{
               width: 390px;
              font-size: 15px;
-             color: rgb(63, 63, 63);
+             color: rgb(54, 54, 54);
              background-color: rgba(0, 0, 0, 0);
              margin-bottom: 5px;
              text-align: center;
@@ -357,7 +349,7 @@
           #body1 #div1 #div3{
             
             font-weight: bold;
-            color: rgb(59, 59, 59);
+            color: rgb(44, 44, 44);
             padding: 0%;
             margin: 0%;
           }
@@ -371,7 +363,6 @@
             width: 100%;
             min-width: 390px;
             margin-bottom: 70px;
-            border-bottom: 50px solid #880088;
       
           }
 
@@ -379,8 +370,8 @@
               cursor: pointer;
             }
              #h1_destaque:hover{
-              color: rgb(127, 3, 130);
-              background-color: rgba(150, 4, 150, 0);
+              color: rgb(60, 255, 0);
+              background-color: rgb(150, 4, 150);
             }
 
            .my-custom_login{
@@ -389,20 +380,7 @@
               box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
              padding-bottom: 40px;
              margin-top: 110px;
-                transform: translatex(100%);
-              animation: slide-pop 1.5s forwards;
-              margin-top: 100px;
            }
-           @keyframes slide-pop {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
             .my-custom_login label, .my-custom_login a{
               font-size: 18px;
               color: rgb(58, 57, 57);
@@ -467,7 +445,6 @@
                     margin-top: 110px;
                     padding-bottom: 20px;
             }
-    
             .my-custom_resultpesquisa h2{
                     font-size: 22px;
                     font-weight: bold;
@@ -530,26 +507,18 @@
 
              }
              .my-custom_login_Swl,.my-custom_oqueProcura{
-               max-width: 400px;
-               border-radius: 15px;
+              max-width: 400px;
+              border-radius: 15px;
                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
                margin-top: 100px;
-              transform: translateY(100%);
-              animation: slide-pop 01.5s forwards;
-             
-             }
-             #sair_{
-              padding: 7px;
-              border: 1px solid rgb(92, 92, 93);
-              border-radius: 5px;
-              cursor: pointer;
-             }
-             #sair_:hover{
-              background-color: rgb(119, 2, 98);
-              color: aliceblue;
-              cursor: pointer;
              }
       
+             #my-custom_Pesq_Swl {
+               max-width: 400px;
+              border-radius: 15px;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
+               background-color: #ad04a5;
+             }
                .my-custom_login_Swl label{
                 font-size: 13px;
                 color: rgb(37, 37, 37);
@@ -563,32 +532,15 @@
                font-size: 16;
             }
                .my-custom_Pesq_Swl{
-               max-width: 400px;
-              border-radius: 15px;
-              box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
-              background-color: #ad04a5;
-              padding-right: 0;
               border: 20px;
               font-size: 14px;
               border-bottom: 2px solid rgb(29, 29, 29);
               background-color: #ffffff;
               color: #333232;
               border-radius: 10px;
-               transform: translateY(100%);
-              animation: slide-up 1.5s forwards;
-               padding-right: 0;         
              
              }
-             @keyframes slide-up {
-             from {
-                transform: translateY(100%);
-                opacity: 0;
-              }
-             to {
-                transform: translateY(0);
-                 opacity: 1;
-            }
-           }
+      
             .my-custom_login_Swl #Swalmenu11,.my-custom_Pesq_Swl #Swalpesq{
               width: 50%;
               padding: 10px;
@@ -597,23 +549,23 @@
               cursor: pointer;
               background-color: rgba(240, 248, 255, 0);
               border-radius: 10px;
-            
             }
              .my-custom_login_Swl #Swalmenu11:hover,.my-custom_Pesq_Swl #Swalpesq:hover{
               background-color: rgb(100, 0, 84);
               color: aliceblue;
              }
             
+    
+    
              .my-custom_Pesq_Swl input{
-               width: 90%;
-               padding: 12px;
+               width: 80%;
+               padding: 10px;
                border: 1px solid rgb(255, 255, 255);
                border-bottom: 2px solid rgb(255, 255, 255);
-               background-color: #393839;
+               background-color: #2c002a;
                color: #ffffff;
                cursor: pointer;
                font-size: 16px;
-               border-radius: 7px;
              }
              .my-custom_Pesq_Swl input:hover{
               color: #ffffff;
@@ -627,259 +579,41 @@
               display: flex;
               flex-direction: column;
               width: 100%;
-              width: 500px;
+              width: 600px;
               min-width: 400px;
               background-color: rgb(255, 255, 255);
               margin-bottom: 50px;
               margin-top: 30px;
-              padding: 10px;
-              padding-bottom: 30px;
+              padding: 20px;
+             
               overflow: hidden;
-              box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
-              border-radius: 20px;
-               font-family: Arial, Helvetica, sans-serif;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
+               border-radius: 20px;
             }
               #divListaPesquisa  #listaPesquisa img{
-              width: 500px;
+              width: 600px;
               min-width: 400px;
-              margin-bottom: 30px;
+              margin-bottom: 20px;
               border-radius: 10px;
               max-height: 60vh;
               cursor: pointer;
              }
              #listaPesquisa div label{
-              font-size: 17px;
+              font-size: 18px;
               font-weight: bold;
              }
-              #divListaPesquisa h2{
-                width: 100%;
-                text-align: center;
-             }         
-            .my-custom_login label, .my-custom_login a{
+                  #divListaPesquisa h2{
+                    width: 100%;
+                    text-align: center;
+                  }
+             
+                 .my-custom_login label, .my-custom_login a{
               font-size: 18px;
               color: rgb(58, 57, 57);
             }
-           #btn6Pesq {
-              margin-right: 20px;
-              color: #770067;
 
-            }
-           #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 50px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-       
-           }
-
-            #Procura select{
-              width: 360px;
-              min-width: 300px;
-              padding-top: 15px;
-              padding-bottom: 15px;
-              background-color: #ffffff;
-              color: #171717;
-              cursor: pointer;
-              border:  2px solid rgb(131, 2, 112);
-              border-radius: 5px;
-              font-size: 18px;
-              margin-left: 20px;
-              margin-bottom: 15px;
-              padding-left: 10px;
-            }
-               #Procura h1{
-                width: 300px;
-                margin-left: 30px;
-                margin-bottom: 20px;
-               }
-               #Procura button{
-                width: 150px;
-                background-color: #efe9ff;
-                 box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
-                cursor: pointer;
-                color: #171717;
-                padding: 5px;
-                font-size: 16px;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin-top: 5px;
-                margin-bottom: 20px;
-                font-weight: bold;
-                border-radius: 10px;
-                border: 1px solid rgb(119, 2, 98);
-                margin-left: 25px;
-                
-               }
-               #Procura button:hover{
-                background-color: #ad04a5;
-                color: #efe9ff;
-               }
-             #h1_destaque{
-                max-width: 700px;
-               padding: 10px;
-                border-radius: 10px;
-                text-align: center;
-                font-size: 43px;
-                margin-bottom: 20px;
-                margin-left: 30px;
-             }
-             #img1{
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-size: 25px;
-              color: #770171;
-          
-             }
-             #mens_whats{
-              width: 90%;
-              max-width: 90%;
-              height: 7vh;
-              min-height: 8vh;
-              max-height: 15vh;
-              padding: 10px;
-              color: rgb(46, 46, 46);
-              border: 2px solid rgb(123, 0, 130);
-              border-radius: 10px;
-              cursor: pointer;
-              font-size: 15px;
-              font-family: Verdana, Geneva, Tahoma, sans-serif;
-               background-color:rgb(43, 43, 43)9;
-             }
-             #tel_whats{
-              width: 85%;
-              font-size: 16px;
-              background-color: #393839;
-              color: aliceblue;
-              cursor: pointer;
-              border-radius: 5px;
-              margin-left: 5px;
-              border: 1px solid rgb(130, 0, 130);
-             }
-               .my-custom_login_Swl{
-                margin-bottom: 10px;
-                padding-right: 0;
-    
-               }
-             .my-custom_login_Swl #i_whats{
-             color: #028b3b;
-             font-size: 37px;
-             font-weight: bold;
-             }
-             #imgWhats{
-              width: 50px;
-              height: 50px;
-              padding: 2px;
-              border: 1px solid rgb(56, 55, 55);
-              border-radius: 50%;
-              margin-right: 10px;
-             }
-             #divWhats{
-              display: flex;
-              justify-content: center;
-              align-items: center;
-             }
-               #divWhats label{
-                font-size: 18px;
-                font-weight: bold;
-               }
-            .my-custom_login_Swl #i_whats_start{
-                color: #028b3b;
-               font-size: 20px;
-               font-weight: bold;
-
-               }
-              .my-custom_login_Swl #Swalmenu11{
-                font-size: 18px;
-                border-radius: 7px;
-                padding: 7px;
-              }
-              .my-custom_login_Swl label{
-                font-size: 13px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: #393939;
-                font-weight: bold;
-              }
-                #iten01, #iten02, #iten03, #iten04, #iten05{
-              font-size: 15px;
-              font-weight: bold;
-              background-color: rgba(240, 248, 255, 0);
-              border: 0cap;
-              padding: 0px;
-              border: 50%;
-              cursor: pointer;
-              color:aliceblue;
-            }
-          #iten01:hover, #iten02:hover, #iten03:hover, #iten04:hover, #iten05:hover{
-            color: rgb(194, 0, 178);
-            font-weight: bold;
-          }
-          .Swal{
-            border-radius: 50px;
-          }
-          #itens_{
-            display: flex;
-            float: right;
-            margin-right: 10%;
-            border: 0cap;
-            font-size: 16px;
-            font-weight: bold;
-            background-color: #efe9ff00;
-          }
-           #a_click{
-             display: none;
-          }
-          #p1_,#p2_{
-            margin-right: 30px;
-            float: right;
-            font-size: 14px;
-            margin-bottom: 2px;
-            margin-top: 10px;
-            word-spacing: 5px         
-          }
-          #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
-              color: #570142;    
-               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              font-weight: bolder;
-              font-size: 16px;
-             }
-
-            
-             
-        
 
             @media (max-width: 1600px) {
-                #body1 #div1 img{
-             width: 100%;
-             max-height: 35vh;
-             min-height: 35vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-                #p1_,#p2_{
-            font-size: 14px;
-            margin-bottom: 2px;
-          
-          }
-         #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
-              color: #570142;    
-              font-weight: bolder;
-              font-size: 16px;
-      
-             }
-              #h1_destaque{  
-                text-align: center;
-                font-size: 40;
-             }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -906,6 +640,7 @@
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 20px;
+           
           }
              #DivGeral{
             margin: auto;
@@ -918,31 +653,6 @@
                
             }
              @media (max-width: 1400px) {
-                 #body1 #div1 img{
-             width: 100%;
-             max-height: 35vh;
-             min-height: 35vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-              #h1_destaque{         
-                text-align: center;
-                font-size: 37px;
-             }
-               #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 900px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -962,7 +672,7 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-            #body1 #div1{
+                     #body1 #div1{
             max-width: 400px;
             min-width: 400px;
             margin-bottom: 20px;
@@ -982,43 +692,6 @@
                
             }
                @media (max-width: 1200px) {
-             #body1 #div1 img{
-             width: 100%;
-             max-height: 35vh;
-             min-height: 35vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-                  #p1_,#p2_{
-            font-size: 14px;
-            margin-bottom: 2px;
-          
-          }
-          #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
-              color: #570142;    
-              font-weight: bolder;
-              font-size: 16px;
-      
-             }
-                #h1_destaque{
-                margin-left: 10px;
-                text-align: center;
-                font-size: 34px;
-             }
-                 #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 800px;   
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                  #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -1038,11 +711,11 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-           #body1 #div1{
+                  #body1 #div1{
             max-width: 400px;
             min-width: 400px;
+       
             margin-bottom: 20px;
-            min-height: 59vh;
             margin-top: 30px;
             margin-right: 20px;
             
@@ -1059,42 +732,6 @@
                
             }
             @media (max-width: 900px) {
-             #body1 #div1 img{
-             width: 100%;
-             max-height: 36vh;
-             min-height: 36vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-              #p1_,#p2_{
-            font-size: 15px;
-            margin-bottom: 2px;
-          
-          }
-          #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
-              color: #570142;    
-              font-weight: bolder;
-              font-size: 17px;
-      
-             }
-              #h1_destaque{
-                text-align: center;
-                font-size: 32px;
-             }
-               #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 800px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
                #sociais_contatos a{
               text-decoration: none;
               color: blueviolet;
@@ -1114,7 +751,7 @@
             background-color: rgb(34, 34, 34);
             padding-top: 70px;
           }
-             #body1 #div1{
+                  #body1 #div1{
             max-width: 400px;
             min-width: 400px;
             min-height: 59vh;
@@ -1134,37 +771,17 @@
                
             }
          @media (max-width: 800px) {
-           #body1 #div1 img{
-             width: 100%;
-             max-height: 36vh;
-             min-height: 36vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-           #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 600px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 70px;
-            padding-bottom: 70px;
-            padding-top: 40px;
-           }
            #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
               flex-direction: column;
               width: 100%;
               width: 400px;
-              min-width: 370px;
+              min-width: 400px;
+              background-color: rgba(0, 255, 255, 0);
               margin-bottom: 50px;
               margin-top: 30px;
-          
+              padding: 10px;
             }
               #divListaPesquisa  #listaPesquisa img{
               width: 395px;
@@ -1199,59 +816,24 @@
          
           }
             #h1_destaque{
+                 width: 100%;
                 text-align: center;
-                font-size:30px;
-                margin-left: 5px;
+                font-size: 20px;
              }
+    
             }
           @media (max-width: 600px) {
-             #body1 #div1 img{
-             width: 100%;
-             max-height: 36vh;
-             min-height: 36vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-              #p1_,#p2_{
-            font-size: 16px;
-            margin-bottom: 2px;
-          }     
-          #body1 #div1 #p1_ #label4, #body1 #div1 #p2_  #label5{
-              color: #570142;    
-              font-weight: bolder;
-              font-size: 18px;   
-             }
-              .my-custom_login_Swl,.my-custom_oqueProcura{
-              width: 100%;
-              border-radius: 15px;
-               box-shadow: 0 15px 25px rgba(0, 0, 0, 0.378);
-               margin-top: 100px;
-             transform: translateY(100%);
-             animation: slide-pop 01.5s forwards;
-             }
-             #Procura{
-            margin: auto;
-             display: flex;
-             flex-wrap: wrap;
-            width: 400px;
-            min-width: 380px;
-            padding: 10px;
-            border: 1px solid rgba(0, 255, 255, 0);
-            margin-bottom: 10px;
-            padding-bottom: 20px;
-            padding-top: 20px;
-           }
-            #divListaPesquisa  #listaPesquisa div{
+             #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
               flex-direction: column;
               width: 100%;
-              width: 400px;
-              min-width: 370px;
+              width: 390px;
+              min-width: 390px;
+              background-color: rgba(0, 255, 255, 0);
               margin-bottom: 50px;
               margin-top: 30px;
+              padding: 10px;
             }
               #divListaPesquisa  #listaPesquisa img{
               width: 395px;
@@ -1285,18 +867,19 @@
             padding-top: 75px;
           }
             #h1_destaque{
-            text-align: center;
-             font-size: 28px;
-             margin-bottom: 28px;
-             margin-left: 0px;
-           }
+                 width: 100%;
+                text-align: center;
+                font-size: 18px;
+             }
              #body1 #div1{
             max-width: 400px;
             min-width: 400px;
-            min-height: 60vh;
+            min-height: 59vh;
             margin-bottom: 20px;
             margin-top: 30px;
             margin-right: 0px;
+         
+        
           }
              #DivGeral{
             margin: auto;
@@ -1307,24 +890,16 @@
             color: rgb(65, 64, 64);
         }
                
-           }
+            }
               @media (max-width: 400px) {
-                #body1 #div1 img{
-             width: 100%;
-             max-height: 36vh;
-             min-height: 36vh;
-             border-radius: 1px;
-             margin-bottom: 20px;
-             cursor: pointer;
-             transition: transform 0.7s ease-in-out;
-         }
-             #divListaPesquisa  #listaPesquisa div{
+                  #divListaPesquisa  #listaPesquisa div{
               margin: auto;
               display: flex;
               flex-direction: column;
               width: 100%;
               width: 390px;
               min-width: 390px;
+              background-color: rgba(0, 255, 255, 0);
               margin-bottom: 50px;
               margin-top: 30px;
               padding: 10px;
@@ -1353,9 +928,9 @@
             padding-top: 70px;
           }
              #h1_destaque{
-
+                 width: 100%;
                 text-align: center;
-                font-size: 28px;
+                font-size: 18px;
              }
              #body1 #div1{
             max-width: 400px;
@@ -1366,107 +941,85 @@
             margin-right: 0px;
           }
         }
-        @media (max-width: 300px) {
-            #divListaPesquisa  #listaPesquisa div{
-                 margin: auto;
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              width: 350px;
-              min-width: 350px;
-              margin-bottom: 50px;
-              margin-top: 30px;
-            }
-            #DivFooter{
-            width: 100%;
-  
-            height: 85vh;
-            background-color: rgb(34, 34, 34);
-            padding-top: 70px;
-          }
-             #h1_destaque{
-
-                text-align: center;
-                font-size: 28px;
-             }
-             #body1 #div1{
-            width:99%;
-            min-height: 60vh;
-            margin-bottom: 20px;
-            margin-top: 30px;
-            margin-right: 0px;
-          }
+        @media (max-width: 400px) {
     .DivGeral {
         width: 100%;
         min-width: unset; /* Remove o mínimo em telas pequenas */
     }
    }
-     @media (max-width: 400px) {
-    .DivGeral {
-        width: 100%;
-        min-width: unset; /* Remove o mínimo em telas pequenas */
-    }
-   }
+       #iten01, #iten02, #iten03, #iten04, #iten05{
+          font-size: 15px;
+          font-weight: bold;
+          background-color: rgba(240, 248, 255, 0);
+          border: 0cap;
+          padding: 0px;
+          border: 50%;
+          cursor: pointer;
+          color:aliceblue;
+        }
+       #iten01:hover, #iten02:hover, #iten03:hover, #iten04:hover, #iten05:hover{
+            color: rgb(194, 0, 178);
+            font-weight: bold;
+          }
+          .Swal{
+            border-radius: 50px;
+          }
+        
 
-
+       
         
     </style>
+
+
 </head>
+
 <body>
     <div id="DivGeral">
         <div id="divHeaad">
         <div id="heaad_apresent">
-            <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='whatsapp()'>Whats <i id='i_whats' class="fa-brands fa-whatsapp"></i></label>
+            <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='clicks2()'>label 3</label>
         </div>
         <div id="heaad_btns">
            <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
             <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
         </div>
         </div>
+
         <div id="DivBody">
-            <br>   
+            <br>
+           
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
             </video></div>
-            <div id="Procura">
-              <h1>Busque aqui</h1>
-              <div id="selector1">
-                <select name=""title='Oque procura?' id="select_lista1">
-                 <option value="Lista Destaques">Oque você procura? </option>
-                  <option value="Lista Destaques"> Destaques</option>
-                    <option value="Lista Casas"> Casas </option>
-                     <option value="Lista Sobrados"> Sobrados</option>
-                    <option value="Lista Apartamentos"> Apartamentos</option>
-                    <option value="Lista Galpões"> Galpões</option>
-                     <option value="Lista Terrenos"> Terrenos</option>
-                     <option value="Lista Lojas"> Loja</option>
-                    <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
-                </select>
-                 <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
-                 <option value="">Comprar ou Alugar? </option>
-                    <option value="Compra"> Comprar</option>
-                    <option value="Locação"> Alugar</option>
-                </select>
-                <button onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
-              </div>
-            </div>      
+           
+            
             <div id="body1">
-               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
-               <button title="itens" id="itens_" > </button>
-                <div id="lista01"></div>     
+               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE  <i id="visionList1" class="fa-solid fa-eye-low-vision"> <button title="itens" id="iten01" ></button></i></h1>
+                <div id="lista01"></div>
+                <br><br> <h1 id="h1_destaque" onclick="vision2()">CASAS  <i id="visionList2" class="fa-solid fa-eye">  <button title="itens" id="iten02" ></button></i></h1>  
+                <div id="lista02"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision3()">APARTAMENTOS  <i id="visionList3" class="fa-solid fa-eye">  <button title="itens" id="iten03" ></button></i></h1>
+                <div id="lista03"></div>
+                <br><br> <h1 id="h1_destaque" onclick="vision4()">CHÁCARAS / SÍTIOS  <i id="visionList4" class="fa-solid fa-eye">  <button title="itens" id="iten04" ></button></i></h1>
+                <div id="lista04"></div>
+                 <br><br> <h1 id="h1_destaque" onclick="vision5()">Imóveis! <i id="visionList5" class="fa-solid fa-eye">  <button title="itens" id="iten05" ></button></i></h1>
+                <div id="lista05"></div>
+            
             </div>
             <div id="divListaPesquisa">
               <h2 id="RRListP">Resultado da pesquisa:</h2>
-              <a id="alist" href="#select_comprar_alugar"></a>
+              <a id="alist" href="#listaPesquisa"></a>
               <div id="listaPesquisa"></div>
-            </div>        
+            </div>
+            
+            
         </div>
+
          <div id="DivFooter">
            <div id="paragrafo_inicial">
                       <img src="src/LogoNovoLarPNG.png" alt="" width="100">
                     <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
-                      <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. <br>
-                      Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir.<br> Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                      <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir. Entre em contato e descubra como podemos transformar seu sonho em realidade!
                       </b>
                     </p>
                     <label id="lbl_contact" for="">
@@ -1474,151 +1027,112 @@
                         
                     </div>
                     <div id="sociais_contatos">
-                    <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
-           </div>
+                    <a href="" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a href="">Instagran <i class="fa-brands fa-instagram"></i></a></a> <a href="">WhatsApp <i class="fa-brands fa-whatsapp"></i></a></a>
+                </div>
+
+        
          </div>
-         <a id="a_click" title="a" href="#h1_destaque"> </a>
           <script>
             function procura(){
                Swal.fire({
              title: `Oque você procura?`,
              html: `
                <br>
-                <a id='destaque' href="#">Destaques </a> 
+                <a id='destaque' href="#lista01">Destaques </a> 
                  <br><br>
-               <a id='Casas' href="#">Casas </a>
-              <br><br>
-               <a id='Sob' href="#">Sobrados </a>
+               <a id='Casas' href="#lista02">Casas </a>
                <br><br>
-               <a id='aps'href="#">Apartamentos </a>
+               <a id='aps'href="#lista03">Apartamentos </a>
                <br><br>
-               <a id='galpão_'href="#">Galpões</a>
+               <a id='Chacara' href="#lista04">Chácaras </a>
                <br><br>
-               <a id='terrenos'href="#">Terrenos</a>
+               <a id='sitio'  href="#lista04">Sítios</a>
                <br><br>
-                <a id='lojas'href="#">Lojas!</a>
-                <br><br>
-                <a id='Chacara' href="#">Chácaras e Sítios </a>
-                <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                <a id='breve'  href="#lista05">Bréve!</a>
+               <br><br>
+               <a id='aluguel'>Imóvel para aluguar </a>
+               <br><br>
+               <a id='Compra'>Imóvel para comprar </a>
+               <br><br>
                  `,
-               showCancelButton: false,
+               showCancelButton: true,
                showConfirmButton: false,
                customClass: {
                popup: 'my-custom_oqueProcura' // Aplica a classe CSS personalizada
-            },
-              didOpen: () => {
-                document.body.style.paddingRight = '0px';
-             }
-         });
-          document.getElementById('sair_').addEventListener('click', function() {
-              Swal.fire('Cancelado!')
-                Swal.close()            
+            }
          });
          document.getElementById('destaque').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Destaques'
-            document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')
           setTimeout(function(){
-             document.getElementById('alist').click()
             Swal.close()
          },700)
          });
         document.getElementById('Casas').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Casas'
-            document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')
         setTimeout(function(){
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-         document.getElementById('Sob').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Sobrados'
-            document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')
-          setTimeout(function(){
-            document.getElementById('alist').click()
-            Swal.close()
-         },700)
-         });
         document.getElementById('aps').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Apartamentos'
-              document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')
         setTimeout(function(){
-           document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-        document.getElementById('galpão_').addEventListener('click',function(){
-           document.getElementById('select_lista1').value='Lista Galpões'
-             document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')  
-           setTimeout(function(){   
-           document.getElementById('alist').click()
+        document.getElementById('Chacara').addEventListener('click',function(){
+        setTimeout(function(){
           Swal.close()
         },700)
         });
-        
-        document.getElementById('terrenos').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Terrenos'
-            document.getElementById('select_comprar_alugar').value=''
-           buscaragora('click')  
+        document.getElementById('sitio').addEventListener('click',function(){
         setTimeout(function(){
-         document.getElementById('alist').click()
+          Swal.close()
+        },700)
+        });
+        document.getElementById('breve').addEventListener('click',function(){
+        setTimeout(function(){
+          Swal.close()
+        },700)
+        });
+        document.getElementById('aluguel').addEventListener('click',function(){
+        setTimeout(function(){
           Swal.close()
         },1000)
         });
-        document.getElementById('lojas').addEventListener('click',function(){
-          document.getElementById('select_lista1').value='Lista Lojas'
-            document.getElementById('select_comprar_alugar').value=''
-           buscaragora('click')  
+        document.getElementById('Compra').addEventListener('click',function(){
         setTimeout(function(){
-          document.getElementById('alist').click()
           Swal.close()
         },700)
         });
-         document.getElementById('Chacara').addEventListener('click',function(){
-            document.getElementById('select_lista1').value='Lista Chácaras e Sítios'
-              document.getElementById('select_comprar_alugar').value=''
-          buscaragora('click')
-        setTimeout(function(){
-           document.getElementById('alist').click()
-          Swal.close()
-        },700)
-        });
+
             }
           </script>
          <script> // result pesquisa
+
          sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
-          var itens=   sessionStorage.getItem('itens_') 
-          document.getElementById('select_lista1').value='Lista Destaques'
-            document.getElementById('select_comprar_alugar').value=''  ;
-               var valorP=document.getElementById('RRListP');
-                valorP.innerHTML=`Total de (0) imóveis encontrados`  
+          var itens=   sessionStorage.getItem('itens_')
+        
             Swal.fire({
              title: `Resultado da Pesquisa...`,
-             html: `          
+             html: `
+              
                <br>
                <div id='lista_pesquisa'></div>        
                <i id='imgemoji' class="fas fa-sad-tear"> <br> <p id='ppemoji'>Desculpe-me! <br> <br>  ( 0 ) Encontrados</p></i>
                <br>
+             
                <br>
                  `,
                showCancelButton: false,
                showConfirmButton: true,
                customClass: {
                popup: 'my-custom_resultpesquisa' // Aplica a classe CSS personalizada
-            },
-             didOpen: () => {
-              document.body.style.paddingRight = '0px';
-             }
+            }
+          
         });
-       var set= setTimeout(function(){
-       document.getElementById('imgemoji').style.display='block'
-      },1000);
-       var itens= 0
+          
+             var set= setTimeout(function(){
+         document.getElementById('imgemoji').style.display='block'
+     },1000);
+          var itens= 0
        var pesquisa= sessionStorage.getItem('Pesquisa')
        const firebaseConfigure = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -1637,153 +1151,199 @@
       listaP.innerHTML = '';
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
-            var doc = doc.data();   
+            var doc = doc.data();
+           
+        
+         
             if(pesquisa== doc.Cidade| pesquisa== doc.Bairro| pesquisa== doc.Código){
                  itens+=1
-            var div= document.createElement('div')
+                    var div= document.createElement('div')
             var img = document.createElement('img');
             var lbl= document.createElement('label');
-            var lbl1= document.createElement('label');
             var lbl2= document.createElement('label');
             var lbl3= document.createElement('label');
-            var lbl4= document.createElement('label');
-            var lbl5= document.createElement('label');
-            var lbl6= document.createElement('label');
             var br = document.createElement('br')
             var br2 = document.createElement('br')
             var br3 = document.createElement('br')
-            var br4 = document.createElement('br')
-            var br5 = document.createElement('br')
-            var br6 = document.createElement('br')
-            var p1 = document.createElement('p')
-               var p2 = document.createElement('p')
                 clearTimeout(set)
               img.src = `${doc.IMG}`;
               img.alt = doc.Titulo;
               img.id='imjRPsq';
               div.id='divPesq';
               lbl.id='btnPesq';
-              lbl1.id='btnPesq';
               lbl2.id='btnPesq';
               lbl3.id='btnPesq';
-              lbl4.id='btnPesq'
-              lbl5.id='btnPesq'
-              lbl6.id='btn6Pesq'
               lbl.textContent=`${doc.Código}`
               lbl2.textContent=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
-              lbl3.textContent=`${doc.Titulo}`  
-              lbl4.textContent=`${doc.T}`
-                if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
-                  lbl.textContent=`#Meu novo lar`;
-              } else{
-                lbl.textContent=`Disponivel para ${doc.Tipo_Venda}`;
-              }
-              lbl1.textContent=`${doc.Titulo}`;
-              lbl2.textContent=`Bairro ${doc.Bairro}`;
-              lbl3.textContent=`${doc.Cidade} - ${doc.UF}`;
-              if(!doc.Valor || doc.Valor==''){
-                 var valorCompra='';
-                 lbl4.textContent=`${valorCompra}`
-             } else{
-                var valorCompra=`Compra R$: ${doc.Valor}`;
-                p1.textContent='Compra R$:'
-                lbl4.textContent=`${valorCompra}`      
-              // label.textContent=`Disponivel para Locação #Compra`;
-            }
-            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
-            var valorLocação='';
-               lbl5.textContent=`${valorLocação}`
-            } else{
-              var valorLocação=`Locação R$: ${doc.Valor_Loc}`;
-              p2.textContent='Locação R$:'
-               lbl5.textContent=`${valorLocação}`
-            }
-            if(!doc.Desconto | doc.Desconto==''){
-                var desconto='';
-            } else{
-                var desconto=`Avista - ${doc.Desconto}% de desconto!`;  
-            }
-              lbl6.textContent=`Código: ${doc.Código}`
+              lbl3.textContent=`${doc.Titulo}`
+           
               div.appendChild(img); 
-              div.appendChild(lbl1)
-              div.appendChild(lbl2)
+              div.appendChild(br)  
               div.appendChild(lbl3)
-              div.appendChild(lbl4)
-              div.appendChild(lbl5)
               div.appendChild(br2)
-              div.appendChild(lbl)
+              div.appendChild(lbl2)
               div.appendChild(br3)
-               div.appendChild(lbl6)
+              div.appendChild(lbl)
               listaP.appendChild(div);
-              sessionStorage.setItem('itens_',itens)
-              sessionStorage.setItem('iten',itens)
               document.getElementById('imgemoji').style.display='none'
-              document.getElementById('body1').style.display='none'
-              document.getElementById('divListaPesquisa').style.display='block'
-              document.getElementById('alist').click()
+               document.getElementById('body1').style.display='none'
+               document.getElementById('divListaPesquisa').style.display='block'
+               document.getElementById('alist').click()
                 var valorP=document.getElementById('RRListP');
                 valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
-             
+               sessionStorage.setItem('itens_',itens)
 
-                img.addEventListener('click',function(){
+                div.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
+
             } else{
+         
             }
+          
         })
       })
-      SetItensZ()
     }
-        function casa(){
-                var listaP = document.getElementById('listaPesquisa');
-              listaP.innerHTML = '';
-              document.getElementById('body1').style.display='block'
-              document.getElementById('divListaPesquisa').style.display='none'
-        }
-  </script>
-  <script> //visions
-       sessionStorage.setItem('teglist','')
-         function mostrarAlerta() {
+    function mostrarAlerta() {
+          var tegList= sessionStorage.getItem('teglist')
             Swal.fire({
-                title: `Procurando lista... `,
+                title: `Pesquisa <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i>  `,
                 text: `Aguarde carregando...`,
                 allowOutsideClick: false,
                 showConfirmButton: false,
                 didOpen: () => {
                     Swal.showLoading();
-                      document.body.style.paddingRight = '0px';
-                   
                 }
             });
-            setTimeout(function(){
-             Swal.close()
-            },3000)
         }
-   </script>
-    <script>//Lista 01 
-     document.getElementById('select_lista1').value='Lista Destaques'
-     document.getElementById('select_comprar_alugar').value=''
-      function buscaragora(){
-        mostrarAlerta('click')
-          var list1= document.getElementById('lista01');
-       list1.innerHTML='';
-        document.getElementById('body1').style.display='block'
-        document.getElementById('divListaPesquisa').style.display='none'
-        var itens= 0
-        sessionStorage.setItem('iten',``)
-        var list= document.getElementById('select_lista1').value;
-        var comp_alug= document.getElementById('select_comprar_alugar').value;
-        if(!list || list==''){
-          Swal.fire('Oque você Procura?','Preencha os campos!','warning')
-        } else{
-        sessionStorage.setItem('teglist',``)
-        sessionStorage.setItem('itens','');
+        function casa(){
+                var listaP = document.getElementById('listaPesquisa');
+              listaP.innerHTML = '';
+              document.getElementById('body1').style.display='block'
+              document.getElementById('divListaPesquisa').style.display='none'
+
+        }
+  </script>
+
+         <script> //visions
+            sessionStorage.setItem('teglist','')
+         function timeList(){
+          
+        var timelist= setTimeout(function(){
+             sessionStorage.setItem('teglist','')
+        Swal.close()
+        clearTimeout(timelist)
+        },5000)
+         }
+         function mostrarAlerta() {
+          var tegList= sessionStorage.getItem('teglist')
+            Swal.fire({
+                title: `Lista de ${tegList}  `,
+                text: `Aguarde carregando...`,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }
+         function vision1(){
+            sessionStorage.setItem('teglist','Destaques')
+            var lista01_= document.getElementById('visionList1');
+           if(lista01_.className=='fa-solid fa-eye'){
+              lista01_.className='fa-solid fa-eye-low-vision';
+               clicks('click')  
+                 mostrarAlerta('click')
+                 timeList('click')
+           } else if(lista01_.className=='fa-solid fa-eye-low-vision'){
+              lista01_.className='fa-solid fa-eye'
+               var list1= document.getElementById('lista01');
+               list1.innerHTML='';
+              var iten1= document.getElementById('iten01');
+              iten1.innerHTML=''
+           }
+         };
+          function vision2(){
+               sessionStorage.setItem('teglist','Casas')
+             var lista02_= document.getElementById('visionList2');
+           if(lista02_.className=='fa-solid fa-eye'){
+              lista02_.className='fa-solid fa-eye-low-vision';
+               clicks2('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista02_.className=='fa-solid fa-eye-low-vision'){
+              lista02_.className='fa-solid fa-eye'
+               var list2= document.getElementById('lista02');
+               list2.innerHTML='';
+                 var iten2= document.getElementById('iten02');
+              iten2.innerHTML=''
+           }
+         };
+          function vision3(){
+               sessionStorage.setItem('teglist','Apertamentos')
+               var lista03_= document.getElementById('visionList3');
+           if(lista03_.className=='fa-solid fa-eye'){
+              lista03_.className='fa-solid fa-eye-low-vision';
+               clicks3('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista03_.className=='fa-solid fa-eye-low-vision'){
+              lista03_.className='fa-solid fa-eye'
+               var list3= document.getElementById('lista03');
+               list3.innerHTML='';
+                 var iten3= document.getElementById('iten03');
+              iten3.innerHTML=''
+           }
+         };
+          function vision4(){
+               sessionStorage.setItem('teglist','Chácaras / Sítios')
+              var lista04_= document.getElementById('visionList4');
+           if(lista04_.className=='fa-solid fa-eye'){
+              lista04_.className='fa-solid fa-eye-low-vision';
+               clicks4('click')  
+                 mostrarAlerta('click')
+                  timeList('click')
+           } else if(lista04_.className=='fa-solid fa-eye-low-vision'){
+              lista04_.className='fa-solid fa-eye'
+               var list4= document.getElementById('lista04');
+               list4.innerHTML='';
+                 var iten4= document.getElementById('iten04');
+              iten4.innerHTML=''
+           }
+         };
+         function vision5(){
+           sessionStorage.setItem('teglist','Imóveis')
+              var lista05_= document.getElementById('visionList5');
+           if(lista05_.className=='fa-solid fa-eye'){
+              lista05_.className='fa-solid fa-eye-low-vision';
+               clicks5('click') 
+                 mostrarAlerta('click') 
+                  timeList('click')
+           } else if(lista05_.className=='fa-solid fa-eye-low-vision'){
+              lista05_.className='fa-solid fa-eye'
+               var list5= document.getElementById('lista05');
+               list5.innerHTML='';
+                 var iten5= document.getElementById('iten05');
+              iten5.innerHTML=''
+           }
+
+         };
+
+         </script>
+    </div>
+    
+ 
+    <script>//Lista 01 Destaques
+      function clicks(){
+        
+          sessionStorage.setItem('itens','');
+         SetItens1('click')
         sessionStorage.setItem('list01','')
        var list1= document.getElementById('lista01');
        list1.innerHTML='';
-       var itens= 0
-       var firebaseConfig = {
+
+         var firebaseConfig = {
        apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
        authDomain: "game-dbv.firebaseapp.com",
        projectId: "game-dbv",
@@ -1794,14 +1354,13 @@
      };
       firebase.initializeApp(firebaseConfig); 
       var db = firebase.firestore();
-      var produtosRef = db.collection(`${list}`);
+      var produtosRef = db.collection('Lista Destaques');
       // Limpar a lista antes de preencher
+   
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();
-             var resp1= doc.Tipo_Venda
-         if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){ 
-            itens+=1
+            var itens= querySnapshot.size;
             var div1=document.createElement('div');
             var div2=document.createElement('div');
             var div3=document.createElement('div');
@@ -1811,21 +1370,11 @@
             var label1=document.createElement('label');
             var label2=document.createElement('label');
             var label3=document.createElement('label');
-            var label4=document.createElement('label');
-            var label5=document.createElement('label');
             var button1=document.createElement('button');
             var br1=document.createElement('br');
             var br2=document.createElement('br');
             var br3=document.createElement('br');
             var br4=document.createElement('br');
-            var br5=document.createElement('br');
-            var br6=document.createElement('br');
-            var br7=document.createElement('br');
-            var br8=document.createElement('br');
-            var p1=document.createElement('p')
-             var p2=document.createElement('p')
-             p1.id='p1_'
-             p2.id='p2_'
             button1.id='butoon1';
             div1.id='div1';
             div2.id='div2';
@@ -1836,33 +1385,27 @@
             label1.id='label1';
             label2.id='label2';
             label3.id='label3';
-            label4.id='label4';
-            label5.id='label5';
             button1.textContent='Ver, Mais';
             img.src=`${doc.IMG}`
              if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
                   label.textContent=`#Meu novo lar`;
              } else{
-                label.textContent=`Disponivel para ${resp1}`;
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
              }
+       
             label1.textContent=`${doc.Titulo}`;
             label2.textContent=`Bairro ${doc.Bairro}`;
             label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
              if(!doc.Valor || doc.Valor==''){
                  var valorCompra='';
             } else{
                 var valorCompra=`Valor para venda : ${doc.Valor}`;
-                p1.textContent='Compra R$:'
-                label4.textContent=`${doc.Valor}`
-           
-              // label.textContent=`Disponivel para Locação #Compra`;
             }
             if(!doc.Valor_Loc|| doc.Valor_Loc==''){
             var valorLocação='';
             } else{
               var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
-              p2.textContent='Locação R$:'
-               label5.textContent=`${doc.Valor_Loc}`
             }
             if(!doc.Desconto | doc.Desconto==''){
                 var desconto='';
@@ -1875,100 +1418,542 @@
             div3.appendChild(label2);
             div3.appendChild(br2);
             div3.appendChild(label3);
-            div3.appendChild(br3);        
-             div3.appendChild(p2);
-            p2.appendChild(label5);
-             div3.appendChild(p1);
-           p1.appendChild(label4);
-            div2.appendChild(br7);
+            div2.appendChild(br3);
             div2.appendChild(label);
             div1.appendChild(div3);
             div1.appendChild(div2);
-            div1.appendChild(br4);
-            div1.appendChild(br8);
+             div1.appendChild(br4);
             div4.appendChild(button1);
             div1.appendChild(div4);
             list1.appendChild(div1)
-              sessionStorage.setItem('teglist',doc.Titulo)
-              if(list!='Lista Destaques'){
-                  document.getElementById('alist').click()
-              }
-             var nomeL= document.getElementById('h1_destaque')
-            nomeL.innerHTML=`${doc.Lista}`
-            var iten1= document.getElementById('itens_');
-            iten1.innerHTML= `Total de imóveis ( ${itens} )`
-            sessionStorage.setItem('iten',`${itens}`)
+              sessionStorage.setItem('list01',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten01');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens1',`${itens}`)
+           
             img.addEventListener('click',function(){
-           swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+            
+        })
+    })
+  }
+  clicks('click')
+  function SetItens1(){
+      setTimeout(function(){
+        var Itens_ = sessionStorage.getItem('itens1')
+        if(!Itens_|Itens_==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista01_= document.getElementById('visionList1');
+          lista01_.className='fa-solid fa-eye'
+        } else{
+        }
+          
+        },3000)
+    } 
+    </script>
+    <script>//Lista 02
+     function clicks2(){
+        sessionStorage.setItem('itens','');
+       SetItens2('click')
+        sessionStorage.setItem('list02','')
+       var list2= document.getElementById('lista02');
+       list2.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db2 = firebase.firestore();
+      var produtosRef = db2.collection('Lista Casas');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+          var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list2.appendChild(div1)
+            sessionStorage.setItem('list02',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten02');
+            iten1.innerHTML=itens
+            sessionStorage.setItem('itens2',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
+  }
+      function SetItens2(){
+      setTimeout(function(){
+        var Itens_2 = sessionStorage.getItem('itens2')
+        if(!Itens_2|Itens_2==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista02_= document.getElementById('visionList2');
+          lista02_.className='fa-solid fa-eye';
+        } else{
+        }
+     
+        },3000)
+    } 
+
+    </script>
+     <script>//Lista 03
+     function clicks3(){
+         sessionStorage.setItem('itens','');
+       SetItens3('click')
+        sessionStorage.setItem('list03','')
+       var list3= document.getElementById('lista03');
+       list3.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db3 = firebase.firestore();
+      var produtosRef = db3.collection('Lista Apartamentos');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }  
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list3.appendChild(div1)
+             sessionStorage.setItem('list03',`${doc.Titulo}`)
+             var iten1= document.getElementById('iten03');
+             iten1.innerHTML=itens
+             sessionStorage.setItem('itens3',`${itens}`)
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
             });
-             } else{
-             }
         })
     })
   }
-    SetItensZ('click')
+    function SetItens3(){
+      setTimeout(function(){
+        var Itens_3 = sessionStorage.getItem('itens3')
+        if(!Itens_3|Itens_3==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista03_= document.getElementById('visionList3');
+          lista03_.className='fa-solid fa-eye';
+        } else{
+        }
+        },3000)
+    } 
+    </script>
+     <script>//Lista 04
+     function clicks4(){
+         sessionStorage.setItem('itens','');
+        sessionStorage.setItem('list04','')
+       var list4= document.getElementById('lista04');
+       list4.innerHTML='';
+           SetItens4('click')
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db4 = firebase.firestore();
+      var produtosRef = db4.collection('Lista Chácaras e Sítios');
+      // Limpar a lista antes de preencher
+        produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }     
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list4.appendChild(div1)
+            sessionStorage.setItem('list04',`${doc.Titulo}`)
+            var iten1= document.getElementById('iten04');
+            sessionStorage.setItem('itens4',`${itens}`)
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+             swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+
+            });
+        })
+    })
   }
-    buscaragora('click')
-           function SetItensZ(){
-            setTimeout(function(){
-            var Itens_ = sessionStorage.getItem('iten')
-            if(!Itens_|Itens_==0 | Itens_==''){
-            Swal.fire(`Lista Vazia!`,'','warning')
-           var nomeL= document.getElementById('h1_destaque')
-            nomeL.innerHTML=`Lista Vazia!`
-            var itenZ= document.getElementById('itens_');
-            itenZ.innerHTML= `Total de ( 0 ) encontrados`
-            setTimeout(function(){
-             //document.getElementById('select_lista1').value=''
-             //document.getElementById('select_comprar_alugar').value=''
-           //  SetItensZ('click')
-            },1500)
-              //document.getElementById('a_click').click()
-           } else{
-         }
-          },3000)
+  function SetItens4(){
+      setTimeout(function(){
+        var Itens_4 = sessionStorage.getItem('itens4')
+        if(!Itens_4|Itens_4==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+             var lista04_= document.getElementById('visionList4');
+          lista04_.className='fa-solid fa-eye';
+          setTimeout(function(){
+            Swal.close()
+          },1000)
+         
+        } else{
+        }
+        },3000)
+    } 
+    </script>
+    <script>
+      setTimeout(function(){
+         vision2('click'); vision3('click'); vision4('click'); vision5('click')
+           //Swal.close()
+      },300)
+     
+    </script>
+    <script>//Lista 05
+     function clicks5(){
+        sessionStorage.setItem('itens','');
+      SetItens5('click')
+        sessionStorage.setItem('list05','')
+       var list5= document.getElementById('lista05');
+       list5.innerHTML='';
+         var firebaseConfig = {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      var db5 = firebase.firestore();
+      var produtosRef = db5.collection('Lista Imóveis');
+      // Limpar a lista antes de preencher
+      produtosRef.get().then((querySnapshot) => {
+        querySnapshot.forEach(doc => {
+            var doc = doc.data();
+             var itens= querySnapshot.size;
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div4=document.createElement('div');
+            var img= document.createElement('img');
+            var label=document.createElement('label');
+            var label1=document.createElement('label');
+            var label2=document.createElement('label');
+            var label3=document.createElement('label');
+            var button1=document.createElement('button');
+            var br1=document.createElement('br');
+            var br2=document.createElement('br');
+            var br3=document.createElement('br');
+            var br4=document.createElement('br');
+            button1.id='butoon1';
+            div1.id='div1';
+            div2.id='div2';
+            div3.id='div3';
+            div4.id='div4';
+            img.id='img1'
+            label.id='label0';
+            label1.id='label1';
+            label2.id='label2';
+            label3.id='label3';
+            button1.textContent='Ver, Mais';
+            img.src=`${doc.IMG}`
+             if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+                  label.textContent=`#Meu novo lar`;
+             } else{
+                label.textContent=`Disponivel para ${doc.Tipo_Venda}`;
+             }
+            label1.textContent=`${doc.Titulo}`;
+            label2.textContent=`Bairro ${doc.Bairro}`;
+            label3.textContent=`${doc.Cidade} - ${doc.UF}`;
+
+             if(!doc.Valor || doc.Valor==''){
+                 var valorCompra='';
+            } else{
+                var valorCompra=`Valor para venda : ${doc.Valor}`;
+            }
+            if(!doc.Valor_Loc|| doc.Valor_Loc==''){
+            var valorLocação='';
+            } else{
+              var valorLocação=`Valor para locação : ${doc.Valor_Loc}`;
+            }
+            if(!doc.Desconto | doc.Desconto==''){
+                var desconto='';
+            } else{
+                var desconto=`Avista - ${doc.Desconto}% de desconto!`;
+            }
+            div3.appendChild(img);
+            div3.appendChild(label1);
+            div3.appendChild(br1);
+            div3.appendChild(label2);
+            div3.appendChild(br2);
+            div3.appendChild(label3);
+            div2.appendChild(br3);
+            div2.appendChild(label);
+            div1.appendChild(div3);
+            div1.appendChild(div2);
+             div1.appendChild(br4);
+            div4.appendChild(button1);
+            div1.appendChild(div4);
+            list5.appendChild(div1)
+            sessionStorage.setItem('list05',`Imóveis`)
+            var iten1= document.getElementById('iten05');
+            sessionStorage.setItem('itens5',`${itens}`)
+            iten1.innerHTML=itens
+             img.addEventListener('click',function(){
+          swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+            });
+            button1.addEventListener('click',function(){
+               swal(`Nova Tela`,` `,`#`);
+            });
+        })
+    })
+  }
+  function SetItens5(){
+      setTimeout(function(){
+        var Itens_5 = sessionStorage.getItem('itens5')
+        if(!Itens_5|Itens_5==''){
+           Swal.fire(`Lista Vazia!`,'','warning')
+           var lista05_= document.getElementById('visionList5');
+          lista05_.className='fa-solid fa-eye';
+         
+        } else{
+        }
+          mostrarAlerta('click') 
+        },3000)
     } 
     </script>
     <script>
       function Pesquisador(){
        Swal.fire({
                     title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
-                 html:` <div  class="menu-container">
+                 html: `
                     <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
                    <br>
+                   <label> Digite aqui: <br>
                    <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
-                    <br><br>
+                   </label>
+                    <br><br><br>
                     <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
-                    <br><br><br><button id='sair_'>Sair,Cancelar</button>
-                    </div>
+                    <br>
                  `,
-                 showCancelButton: false,
+                 showCancelButton: true,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
-                },
-                 didOpen: () => {
-                      document.body.style.paddingRight = '0px';
-                   }
+                }
                  });
-                  document.getElementById("inputSwal").blur();
-                     document.getElementById('sair_').addEventListener('click', function() {
-                      document.getElementById("inputSwal").blur();
-                    Swal.fire('Cancelado!')
-                       Swal.close()    
-                 });
-                   document.getElementById('Swalpesq').addEventListener('click', function() {
-                   var respPesq= document.getElementById('inputSwal').value;
-                   var input= document.getElementById('inputSwal');
-                   var respPesq = input.value.trim();
-                 if(!respPesq|| respPesq==''){
-                   Swal.fire('Atenção','<b>Preencha o campo de pesquisa!</b>','warning')
-                   setTimeout(function(){
-                   Swal.close()
-                    Menu_head('click')
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
+
                  },3000)
                 } else{
                          Swal.fire({
@@ -1984,7 +1969,7 @@
                 didOpen: () => {
                     Swal.showLoading();
                 }
-                });
+               });
                    var Num= 4
                    var int=setInterval(function(){
                      Num-=1
@@ -2015,233 +2000,230 @@
                     <br><br>
                     <button id="btn_swal_menu1" title="">Tela cheia </button>  
                      <br><br>
+                      <a id='destaque' href="#lista01">Destaques </a> 
+                    <br><br>
+                      <a id='Casas' href="#lista02">Casas </a>
+                    <br><br>
+                    <a id='aps'href="#lista03">Apartamentos </a>
+                    <br><br>
+                    <a id='Chacara' href="#lista04">Chácaras </a>
+                    <br><br>
+                    <a id='sitio'  href="#lista04">Sítios</a>
+                    <br><br>
+                     <a id='breve'  href="#lista05">Bréve!</a>
+                    <br><br>
+                    <a id='aluguel'>Imóvel para aluguar </a>
+                    <br><br>
+                    <a id='Compra'>Imóvel para comprar </a>
+                    <br><br>
                     <a id="Swalmenu10" href="#sociais_contatos"> Redes Sociais </a> 
                     <br><br> 
                       <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
                     <br><br>
                     <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
-                    <br><br><button id='sair_'>Sair,Cancelar</button>
+                    <br><br>
                  `,
-                 showCancelButton: false,
+                 showCancelButton: true,
                   showConfirmButton: false,
                   customClass: {
                   popup: 'my-custom_login' // Aplica a classe CSS personalizada
+                }
+                 });
+             //  var name= document.getElementById('swal_lbl_nome');
+              // name.innerHTML=nome;
+             //  var tel_= document.getElementById('swal_lbl_tel');
+             document.getElementById('destaque').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+                  document.getElementById('Casas').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aps').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('Chacara').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('sitio').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('breve').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+              document.getElementById('aluguel').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },1000)
+              });
+              document.getElementById('Compra').addEventListener('click',function(){
+              setTimeout(function(){
+                Swal.close()
+              },700)
+              });
+                   
+             document.getElementById('btn_swal_menu1').addEventListener('click', function() {
+                toggleFullScreen('click')
+                 setTimeout(function(){
+                  Swal.close()
+                },200)
+             });
+             
+              
+             document.getElementById('Swalmenu10').addEventListener('click', function() {
+                setTimeout(function(){
+                    Swal.close()
+                },500)
+             });
+             document.getElementById('Swalmenu11').addEventListener('click', function() {
+                setTimeout(function(){
+                    Swal.close()
+                },500)
+             });
+              document.getElementById('SwalmenuPesq').addEventListener('click', function() {
+                 Swal.fire({
+                    title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
+                 html: `
+                    <p>Pesquise por Cidade, Bairro ou Código do Imóvel!</p>
+                   <br>
+                   <label> Digite aqui: <br>
+                   <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
+                   </label>
+                    <br><br><br>
+                    <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
+                    <br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+             document.getElementById('Swalpesq').addEventListener('click', function() {
+                var respPesq= document.getElementById('inputSwal').value;
+                var input= document.getElementById('inputSwal');
+                var respPesq = input.value.trim();
+              if(!respPesq|| respPesq==''){
+                Swal.fire('Atenção','<b>Preencha os campos de seleção e pesquisa!</b>','warning')
+                 setTimeout(function(){
+                 Swal.close()
+                  Menu_head('click')
+
+                 },3000)
+                } else{
+                         Swal.fire({
+                title: 'Pesquisando...',
+                html:`
+                <label > Aguarde um momento <b> <p id="show"></p> </b></label>
+                `,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                   customClass: {
+                  popup: 'my-custom_Pesq_Swl_' // Aplica a classe CSS personalizada
                 },
-                  didOpen: () => {
-                      document.body.style.paddingRight = '0px';
-                   }
-                 });
-                   document.getElementById('sair_').addEventListener('click', function() {
-                    Swal.fire('Cancelado!')
-                        Swal.close() 
-                 });
-                   document.getElementById('btn_swal_menu1').addEventListener('click', function() {
-                   Swal.fire('Tela Cheia')
-                   toggleFullScreen('click')
-                   setTimeout(function(){
-                    Swal.close()
-                    },500)
-                 });
-                    document.getElementById('Swalmenu10').addEventListener('click', function() {
-                    Swal.fire('Redes Sociais')
-                    setTimeout(function(){
-                    Swal.close()
-                    },1000)
-                 });
-                    document.getElementById('Swalmenu11').addEventListener('click', function() {
-                     Swal.fire('Contatos')
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+               });
+                   var Num= 4
+                   var int=setInterval(function(){
+                     Num-=1
+                    if(Num == 0){
+                     clearInterval(int)
+                    }else{
+                    var show= document.getElementById('show');
+                     show.innerHTML=`(${Num})`;
+                    }
+                   },1000)
                      setTimeout(function(){
-                      Swal.close()
-                     },1000)
-                  });
-                    document.getElementById('SwalmenuPesq').addEventListener('click', function() {          
-                       procura()
-                  });
-                    document.getElementById('Swalmenu12').addEventListener('click', function() {
-                    Swal.fire({
-                       title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
-                       html: `
-                        <br>
-                        <label>Digite Password:<br>
-                        <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
-                        <br> <br>  
-                        <button id="Swalmenu11" title="">Start </button>
-                       <br><br><br><button id='sair_'>Sair,Cancelar</button>
-                      `,
-                      showCancelButton: false,
-                      showConfirmButton: false,
-                      customClass: {
-                      popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                      },
-                       didOpen: () => {
-                      document.body.style.paddingRight = '0px';
-                      }
-                   });
-                     document.getElementById("inputSwalAdimin").blur();
-                 
-                    document.getElementById('visao').addEventListener('click', function() {
-                    var visao_= document.getElementById('inputSwalAdimin');
-                    var classe= document.getElementById('visao');
-                       if(visao_.type=='password'){
+                     Swal.close()
+                     ResutPesquisa('click')
+                     },4000) 
+                    sessionStorage.setItem('Pesquisa',`${respPesq}`);
+                    mostrarAlerta2()
+                    }
+               })
+              });
+                 document.getElementById('Swalmenu12').addEventListener('click', function() {
+                Swal.fire({
+                    title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+                 html: `
+                    <br>
+                    <label>Digite Password:<br>
+                     <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
+                    <br> <br>  
+                    <button id="Swalmenu11" title="">Start </button>
+                    <br><br>
+                 `,
+                 showCancelButton: true,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                }
+                 });
+                   document.getElementById('visao').addEventListener('click', function() {
+                  var visao_= document.getElementById('inputSwalAdimin');
+                  var classe= document.getElementById('visao');
+                    if(visao_.type=='password'){
                         visao_.type='text'
                         classe.className='fa-solid fa-eye-low-vision'
-                       } else{
+                    } else{
                           visao_.type='password'
                            classe.className='fa-solid fa-eye'
-                       }
-                       
-                 })
-                    document.getElementById('sair_').addEventListener('click', function() {
-                     Swal.fire('Cancelado!')
-                        Swal.close()           
-                 });
-                    document.getElementById('Swalmenu11').addEventListener('click', function() {
-                    var password_master= sessionStorage.getItem('Password_Master');
-                    var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
-                    var resp= document.getElementById('inputSwalAdimin').value;
-                    if(!resp||resp==''){
-                      Swal.fire('','Preencha o Campo password!','warning')
-                     } else{      
-                       if(password_master== resp|| password_novoLarAPP== resp){
-                    Swal.fire('Sucesso!','Você será redirecionado para a tela de Administrador!','success')
+
+                    }
+                })
+                 document.getElementById('Swalmenu11').addEventListener('click', function() {
+                 var password_master= sessionStorage.getItem('Password_Master');
+                var password_novoLarAPP= sessionStorage.getItem('Password_NovoLarAPP');
+                 var resp= document.getElementById('inputSwalAdimin').value;
+                if(!resp||resp==''){
+                   Swal.fire('','Preencha o Campo password!','warning')
+                } else{
+                   
+                   if(password_master== resp|| password_novoLarAPP== resp){
+                    // swal('Sucesso!','Você será redirecionado para a tela de Administradores!','src/cadeadoP.png')
                        setTimeout(function(){
                         window.open('Administração/Cadastros.html','blank_')
+                       // swal.close()
                          Swal.close()
-                    },2000)
+                    },1000)
                         } else{
                          Swal.fire('','Senha não confere!','error')         
-                     }
+                      }
                   }
                })
+              //  window.open('Administração/Admin.html','_blank')
+                setTimeout(function(){
+                   // Swal.close()
+                },500)
              });
-           };
-      </script>
-      
-      <script> // redes sociais
-        //localStorage.setItem('URL_Intagran','')
-        //localStorage.setItem('URL_facebook','')
-       // localStorage.setItem('TelWhats','')
-   
-          function pagina(){
-          window.open('Administração/Cadastros.html','blank_')
-         };
-          function facebook(){
-             var url_face=localStorage.getItem('URL_facebook')
-             if(!url_face ||url_face==''){
-                  var URL_facebook='https://www.facebook.com/share/1YP8t9Q7uR/'
-             }else{
-              var URL_facebook= url_face
-             }
-        
-           window.open(URL_facebook,'_blank')
-        }; 
-          function instagran(){
-              var URL_Intagran= localStorage.getItem('URL_Intagran')
-     if(!URL_Intagran|| URL_Intagran==''){
-        var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
-       } else{
-         var url_Inst= URL_Intagran;
-     }
-           Swal.fire('Instagran')
-         window.open(url_Inst,'_blank')
-        };
-        function whatsapp(){
-       var Tel_whats= localStorage.getItem('TelWhats')
-       if(!Tel_whats ||Tel_whats==''){
-        var telWahts= "11948865333"
-       } else{
-         var telWahts= Tel_whats
-       }
-           sessionStorage.setItem('resultTelWhats','')
-           Swal.fire({
-             title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
-                html: `
-                      <div id='divWhats'>
-                      <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label>
-                      </div>
-                      <br>
-                       <label>Tel /  Whats:<br>
-                      <input id='tel_whats' type='tel' placeholder='11 98888 8888'><i id='visao' class=""></i>
-                      <br> <br>  
-                      <label>Digite sua mensagem:<br>
-                      <textarea id='mens_whats'  placeholder='Mensagem...'></textarea>
-                      <br> <br>  
-                      <button id="Swalmenu11" title="">Enviar  <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>
-                      <br><br><br><button id='sair_'>Sair,Cancelar</button>
-                      `,
-                      showCancelButton: false,
-                      showConfirmButton: false,
-                      customClass: {
-                      popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                    },
-                       didOpen: () => {
-                      document.body.style.paddingRight = '0px';
-                   }
-                     });
-                       document.getElementById('tel_whats').addEventListener('input', function (e) {
-                      let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-                      
-                      if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-                  
-                      let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
-                                                .replace(/(\d{4})(\d{4})$/, '$1-$2');
-                  
-                      e.target.value = formattedValue;
-                       sessionStorage.setItem('resultTelWhats', formattedValue)
-                  });
-                    document.getElementById('Swalmenu11').addEventListener('click',function(){
-                       var resut= sessionStorage.getItem('resultTelWhats');
-                       var mensagem_= document.getElementById('mens_whats').value;
-                       if(!resut || resut=='' || !mensagem_||mensagem_==''){
-                             Swal.fire(`Preencha os Campos`,'','error')
-                       } else{
-                        var data= localStorage.getItem('data')
-                        var hora = localStorage.getItem('hora')      
-                        var numero = `55+${telWahts}`; // Substitua pelo número de destino, incluindo o código do país
-                        var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem_}`
-                        var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-                             window.open(url, "_blank");
-                              Swal.fire(`Sucesso!`,``,'success')
-                              setTimeout(function(){
-                                Swal.close()
-                              },2000)
-                              var firebaseConfigures = {
-                             apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-                             authDomain: "game-dbv.firebaseapp.com",
-                             projectId: "game-dbv",
-                             storageBucket: "game-dbv.appspot.com",
-                             messagingSenderId: "118219151865",
-                             appId: "1:118219151865:web:b6414d5255233264268528",
-                             measurementId: "G-K17DLDBYGR"
-                            };  
-                         
-                           //var cod= document.getElementById('codigo').
-                            firebase.initializeApp(firebaseConfigures);  
-                           var ddm= firebase.firestore();
-                           ddm.collection('Mensagens Contatos').doc(`${resut}-${hora}`).set({
-                              Data: data,
-                              Hora:hora,
-                              Tel:resut,
-                              Mensagem:mensagem_,
-
-                           })
-                       }
-                     
-                    });
-
-                    document.getElementById('sair_').addEventListener('click',function(){
-                         Swal.fire('Sair')
-                         Swal.close()
-                    });
-                     document.getElementById("tel_whats").blur();
-
-
-         //  Swal.fire('WhatsApp')
-          // var url='https://www.facebook.com/share/1YP8t9Q7uR/'
-         //window.open(url,'_blank')
-        };
+       // lista destaque 
+               };
      </script>
-      <script>
+
+      <script> // redes sociais
+
+      function pagina(){
+   window.open('Administração/Cadastros.html','blank_')
+      }
+        function facebook(){
+           var url='https://www.facebook.com/carloseduardoAlvedeoliveira'
+           window.open(url,'_blank')
+        }
+        </script>
+         <script>
                 const firebaseConfigu = {
                 apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
                 authDomain: "game-dbv.firebaseapp.com",
@@ -2265,8 +2247,9 @@
                    sessionStorage.setItem('Password_NovoLarAPP', `${doc.NovoLarPassword}`)
                  }).catch((err) => {
                  });
-     </script>
-     <script>
+           </script>
+
+    <script>
               setInterval(function() {
                const newDate = new Date()
                var dia = String(newDate.getDate()).padStart(2, '0');
@@ -2305,8 +2288,9 @@
             } else if (document.webkitCancelFullScreen) {
                 document.webkitCancelFullScreen();
            }
-        }
-      } 
+      }
+    }
+  
 </script>
     
 </body>
