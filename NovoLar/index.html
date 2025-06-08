@@ -219,6 +219,7 @@
             color: rgb(95, 95, 95);
             overflow: auto;
              font-family: Arial, Helvetica, sans-serif;
+             z-index: 999;
           }
             #body1 #div1 {
              position: relative;
@@ -695,6 +696,7 @@
               margin-left: 20px;
               margin-bottom: 15px;
               padding-left: 10px;
+              
             }
                #Procura h1{
                 width: 300px;
@@ -853,6 +855,7 @@
          }        
            #img_whats img{
             width: 100px;
+            z-index: 999;
            }  
             @media (max-width: 1600px) {      
            #img_whats img{
@@ -1425,11 +1428,11 @@
            position: absolute;
            position:fixed;
            top: 333px;
-           z-index: 999;
+          
            text-align: right;
            cursor: pointer;
          }
-
+   
         
     </style>
 </head>
@@ -1469,7 +1472,7 @@
                     <option value="Compra"> Comprar</option>
                     <option value="Locação"> Alugar</option>
                 </select>
-                <button onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
+                <button id="buscas" onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
               </div>
             </div>      
             <div id="body1">
