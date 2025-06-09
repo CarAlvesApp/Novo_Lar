@@ -219,14 +219,12 @@
             color: rgb(95, 95, 95);
             overflow: auto;
              font-family: Arial, Helvetica, sans-serif;
-             z-index: 999;
           }
             #body1 #div1 {
              position: relative;
              border: none;
              font-size: 16px;
-             cursor: pointer;
-           
+             cursor: pointer; 
          }
          
            #body1 #div1::after {
@@ -851,15 +849,23 @@
            color: #570142;    
            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
            font-weight: bolder;
-          font-size: 16px;
+           font-size: 16px;
          }        
-           #img_whats img{
-            width: 100px;
-            z-index: 999;
+           #img_whats{
+           width: 100px;
+           position:fixed;
+           top: 333px;
+           cursor: pointer;
+           margin-left: 94%;
+           z-index:999;
+           overflow: hidden; 
+           background: #4d013900; /* Cor da linha */     
            }  
-            @media (max-width: 1600px) {      
-           #img_whats img{
+          
+          @media (max-width: 1600px) {      
+           #img_whats{
             width: 100px;
+             margin-left: 93%;
            }   
             #body1 #div1 img{
              width: 100%;
@@ -923,6 +929,10 @@
                
             }
              @media (max-width: 1400px) {
+              #img_whats{
+             width: 95px;
+             margin-left: 90%;
+           }   
                  #body1 #div1 img{
              width: 100%;
             max-height: 250px;
@@ -987,8 +997,9 @@
                
             }
                @media (max-width: 1200px) {
-               #img_whats img{
+               #img_whats{
               width:85px;
+               margin-left: 90%;
           
             }
              #body1 #div1 img{
@@ -1065,6 +1076,11 @@
         }             
            }
             @media (max-width: 900px) {
+                #img_whats{
+              width:85px;
+               margin-left: 88%;
+          
+            }
              #body1 #div1 img{
              width: 100%;
             max-height: 250px;
@@ -1140,8 +1156,9 @@
                
             }
          @media (max-width: 800px) {
-               #img_whats img{
+               #img_whats{
             width: 80px;
+             margin-left: 86%;
            }
            #body1 #div1 img{
               width: 100%;
@@ -1214,10 +1231,9 @@
              }
             }
           @media (max-width: 600px) {
-  
-            
-           #img_whats img{
-            width: 70px;
+           #img_whats{
+            width: 73px;
+             margin-left: 85%;
            }
              #body1 #div1 img{
              width: 100%;
@@ -1325,8 +1341,9 @@
            }
               @media (max-width: 400px) {
      
-           #img_whats img{
-            width: 70px;
+           #img_whats{
+            width: 73px;
+             margin-left: 85%;
            }
              #body1 #div1 img{
              width: 100%;
@@ -1422,16 +1439,9 @@
               width: 100%;
               min-width: unset; /* Remove o mínimo em telas pequenas */
           }
-         }
-          #img_whats{
-           width: 100%;
-           position: absolute;
-           position:fixed;
-           top: 333px;
-          
-           text-align: right;
-           cursor: pointer;
-         }
+        }
+  
+    
    
         
     </style>
@@ -1451,8 +1461,7 @@
             <br>   
             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
-            </video></div>         <div id="img_whats" >
-            <img src="src/whatsapp.png" onclick="Zap()" alt="WhatsApp" width="100"></div>
+            </video></div>         
             <div id="Procura">
               <h1>Busque aqui</h1>
               <div id="selector1">
@@ -1474,7 +1483,8 @@
                 </select>
                 <button id="buscas" onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
               </div>
-            </div>      
+            </div>  
+            <img id="img_whats"  src="src/whatsapp.png" onclick="Zap()" alt="WhatsApp" width="100">    
             <div id="body1">
                <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
                <button title="itens" id="itens_" > </button>
