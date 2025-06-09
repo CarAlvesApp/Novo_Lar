@@ -756,6 +756,7 @@
            #lista_pesquisa{
             display: flex;
             flex-direction: column;
+
         }
         .my-custom_resultpesquisa_   #lista_pesquisa div{
             width: 95%;
@@ -795,10 +796,152 @@
            .my-custom_resultpesquisa_  i{
             font-size: 70px;
            }
+           .my-custom_resultpesquisa{
+            border-radius: 10px;
+           }
+             .my-custom_resultpesquisa .lbl{
+              font-size: 16px;
+              font-weight: bold;
+              cursor: pointer;
+             }
+              .my-custom_resultpesquisa .lbl:hover{
+                text-decoration: underline 2px solid rgb(99, 0, 99);
+              }
+              .my-custom_Pesq_Swl{
+                border-radius: 10px;
+                
+              }
+              .my-custom_Pesq_Swl label{
+                font-size: 13px;
+              }
+              .my-custom_Pesq_Swl input{
+                width: 90%;
+                padding: 10px;
+                background-color: aliceblue;
+                color: rgb(23, 23, 23);
+                cursor: pointer;
+                border-radius: 5px;
+
+              }
+              .my-custom_Pesq_Swl #Swalpesq, .my-custom_Pesq_Swl #sair_ {
+                background-color: aliceblue;
+                color: rgb(33, 33, 33);
+                cursor: pointer;
+                border: 1px solid rgb(30, 30, 30);
+                padding: 10px;
+                border-radius: 5px;
+              }
+              .my-custom_Pesq_Swl #Swalpesq:hover, .my-custom_Pesq_Swl #sair_:hover{
+                background-color: rgb(101, 3, 109);
+                color: aliceblue;
+
+              }
+              .my-custom_edite{
+                background-color: rgb(101, 3, 105);
+                color: aliceblue;
+                border-radius: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              }
+               .my-custom_edite label{
+                font-size: 16px;
+                cursor: pointer;
+                color: aliceblue;
+
+               }
+                .my-custom_edite label:hover{
+                  text-decoration: underline 2px solid rgb(255, 255, 255);
+                  
+                }
+                #cad_imagem {
+                  margin: auto;
+                  width: 100%;
+                  max-width: 600px;
+                  min-width: 390px;
+                  padding-top: 30px;
+                  padding-bottom: 150px;
+                  display: none;
+                  background-color: rgba(0, 255, 255, 0);
+                }
+                #cad_imagem  #imgs{
+                  margin: auto;
+                  width: 90%;    
+                }
+                #cad_imagem label{
+                  font-size: 13px;
+                  
+                }
+                 #cad_imagem h1{
+                  width: 100%;
+                  color: rgb(92, 2, 97);
+                  margin-bottom: 40px;
+                
+                 }
+                  #cad_imagem h3{
+                    width: 100%;
+                    border: 0cap;
+                    border-top: 7px solid rgb(160, 2, 142);
+                    border-radius: 20px;
+                    padding-top: 20px;
+                     padding-bottom: 20px;
+
+                  }
+                  #cad_imagem input{
+                    width:90%;
+                    min-width: 370px;
+                    padding: 10px;
+                    cursor: pointer;
+                    background-color: rgb(233, 238, 255);
+                    color: rgb(21, 21, 21);
+                    border: 1px solid rgb(30, 30, 30);
+                    border-radius: 5px;
+                    margin-bottom: 15px;
+                    
+                  }
+                   #cad_imagem img{
+                    width: 95%;
+                    min-width: 390px;
+                    padding: 3px;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                   }
+                .input_visible{
+                  display: none;
+                }
+                  #cad_imagem button{
+                    width: 100%;
+                    font-size: 14px;
+
+                    background-color: rgba(240, 248, 255, 0);
+                    color: rgb(26, 26, 26);
+                    cursor: pointer;
+                    border: 0cap;
+                    font-weight: bold;
+                    text-align: center center;
+
+                  }
+                   #cad_imagem i{
+                    font-size: 40px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                   }
+                   #cad_imagem button:hover{
+                    color: rgb(116, 1, 118);
+                   }
+                    #cad_imagem p{
+                     min-width: 100%;
+                      border: 0cap;
+                      border-bottom: 7px solid rgb(160, 2, 142);
+                      border-radius:7px;
+                      margin-bottom: 70px;
+                      border-radius: 20px;
+                     padding-top: 20px;
+                     padding-bottom: 20px;
+                    }
+                    #h4_codigo{
+                      margin-bottom: 30px;
+                    }
        
          
-     
-
     </style> 
 
 </head>
@@ -1008,13 +1151,179 @@
                     <br><br><br>
                  </div>
                 </div>
+                <div id="cad_imagem" >
+                  <div id="imgs">
+                    <h1>Imagens</h1>
+                    <h2 id="h2_imóvel">Imovél</h2>
+                     <h4 id="end_edt"></h4>
+                     <h4 id="h4_codigo">Código</h4>
+                    
+                    <h3 id="h3_img1">Imagem 01</h3>
+                     <input class="input_visible" id="files_img" type="file">
+                    <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
+                    <br><button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 1 <br>
+                    <input id="input_edt_img" type="text" placeholder="Digite texto..." >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img2">Imagem 02</h3>
+                   <input  class="input_visible"  id="files_img2" type="file">
+                    <img id="edt_img2" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 2 <br>
+                    <input id="input_edt_im2" type="text" placeholder="Digite texto..." >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img3">Imagem 03</h3>
+                    <input  class="input_visible"  id="files_img3" type="file">
+                    <img id="edt_img3" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 3 <br>
+                    <input id="input_edt_im3" type="text" placeholder="Digite texto..." >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img4">Imagem 04</h3>
+                    <input  class="input_visible"  id="files_img4" type="file">
+                    <img id="edt_img4" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 4 <br>
+                    <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img4">Imagem 05</h3>
+                    <input  class="input_visible"  id="files_img5" type="file">
+                    <img id="edt_img5" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 5 <br>
+                    <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img6">Imagem 06</h3>
+                    <input  class="input_visible"  id="files_img6" type="file">
+                    <img id="edt_img6" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt5()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 6 <br>
+                    <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
+                    </label><p></p>
+                  <br>
+                   <h3 id="h3_img7">Imagem 07</h3>
+                    <input  class="input_visible"  id="files_img7" type="file">
+                    <img id="edt_img7" src="../src/Rutimoveis img.png" alt="">
+                     <br><button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
+                    <label for="">Texto da imagem 7 <br>
+                    <input id="input_edt_im7" type="text" placeholder="Digite texto..." >
+                    </label><p></p>
+                  <br>
+                </div>
+                </div>
               <div id="divList">
                       <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
                    <h2 id="h2Lista">Lista </h2>
                    <div id="listas">
                      </div>
              </div>
+             <script> //files
+             function img_edt(){
+              document.getElementById('files_img').click()
+             }
+             function img1(){
+              var img= sessionStorage.getItem('urlIMG')
+              window.open(img ,'blank_')
+             }
+          
+
+             </script>
+             <script>//fnção imagens
+
+             function onImagens(){
+                document.getElementById('cad_imagem').style.display='block'
+              var codigo_= document.getElementById('h4_codigo');
+              var titulo_= document.getElementById('h2_imóvel');
+              var id_imovel= sessionStorage.getItem('ID_imovel')
+              var end= document.getElementById('end_edt');
+               var pesquisa= sessionStorage.getItem('Pesquisa')
+
+       const firebaseConfig= {
+       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+       authDomain: "game-dbv.firebaseapp.com",
+       projectId: "game-dbv",
+       storageBucket: "game-dbv.appspot.com",
+       messagingSenderId: "118219151865",
+       appId: "1:118219151865:web:b6414d5255233264268528",
+       measurementId: "G-K17DLDBYGR"
+     };
+      firebase.initializeApp(firebaseConfig); 
+      const dbc = firebase.firestore();
+      dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
+
+      if(doc.exists){
+                 var doc= doc.data()
+           
+            if(!doc.IMG|| doc.IMG==''){
+               document.getElementById('edt_img1').src='../src/Rutimoveis img.png'
+            }else{
+               document.getElementById('edt_img1').src=doc.IMG
+            }
+            codigo_.innerHTML=doc.Código
+            titulo_.innerHTML=doc.Titulo
+            end.innerHTML=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+            sessionStorage.setItem('urlIMG',doc.IMG)
+          
+        
+              
+             // alert(`${doc.Lista}/${doc.Titulo}-${doc.Código}`)
+             
+       } else{
+        Swal.fire('Documento não encontrado!')
+
+      }
+      })
+    }
+    
+             </script>
+
               <script>
+                function Edit_imovel(){
+                   Swal.fire({
+             title: ` Edição do Imóvel!`,
+             html: `          
+               <br>
+                 <label id='cadastro'>Edite Cadastro..</label>
+               <br>
+               <br>
+                 <label id='imagens'>Edite Imagens..</label>
+               <br>
+               <br>
+                 <label id='videos'>Edite Vídeos..</label>
+               <br>
+               <br>
+               
+                 `,
+               showCancelButton: false,
+               showConfirmButton: true,
+               customClass: {
+               popup: 'my-custom_edite' // Aplica a classe CSS personalizada
+            },
+             didOpen: () => {
+              document.body.style.paddingRight = '0px';
+             }
+        });
+         document.getElementById('cadastro').addEventListener('click',function(){
+                Cadastros2('click')
+                Swal.fire('Edite cadastro')
+         });
+           document.getElementById('imagens').addEventListener('click',function(){
+               document.getElementById('body_div1').style.display='none'
+               document.getElementById('divList').style.display='none'
+                  onImagens('click') 
+               Swal.fire('Edite Imagens!')
+                 document.getElementById('cad_imagem').style.display='block'
+            
+               
+                
+         })
+                
+                }
                  function Menu(){
                     // window.open('../index.html','blank')
                  
@@ -1022,7 +1331,7 @@
              title: `Menu de Edição`,
              html: `          
                <br>
-                 <label id='Pesquisar'>Pesquisar..</label>
+                 <label class='lbl' id='Pesquisar'>Pesquisar..</label>
                <br>
                <br>
                  `,
@@ -1047,6 +1356,7 @@
         //
          sessionStorage.setItem('Pesquisa',``)
          function ResutPesquisa() {
+            sessionStorage.setItem('ID_imovel',``)
           var itens=   sessionStorage.getItem('itens_') 
        //   document.getElementById('select_lista1').value='Lista Destaques'
           //  document.getElementById('select_comprar_alugar').value=''  ;
@@ -1178,6 +1488,7 @@
               div.appendChild(br3)
                div.appendChild(lbl6)
               listaP.appendChild(div);
+           
               sessionStorage.setItem('itens_',itens)
               sessionStorage.setItem('iten',itens)
               document.getElementById('imgemoji').style.display='none'
@@ -1192,6 +1503,98 @@
                 img.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
+              div.addEventListener('click', function(){
+                      sessionStorage.setItem('ID_imovel',`${doc.Código}`)
+                      sessionStorage.setItem('EdtTela','tela')
+                        document.getElementById('salas_quant').value= doc.SalasQ;
+                        document.getElementById('salas_metragen').value= doc.SalasM;
+                        document.getElementById('suspensão').value= doc.Suspenso;
+                        document.getElementById('suspensãoData').value= doc.SuspensoData;
+                        document.getElementById('vendido').value= doc.Vendido;
+                        document.getElementById('vendidoData').value= doc.VendidoData;
+                        document.getElementById('Area_metragen').value= doc.AreaConst;
+                        document.getElementById('codigo').value= doc.Código;
+                        document.getElementById('titulo').value= doc.Titulo;
+                        document.getElementById('select_listas').value= doc.Lista;
+                        document.getElementById('obs').value= doc.OBS;
+                        document.getElementById('bairro').value= doc.Bairro;
+                        document.getElementById('valor').value= doc.Valor;
+                        document.getElementById('endereço').value= doc.End;
+                        document.getElementById('desconto').value=doc.Desconto;
+                        document.getElementById('cidade').value=doc.Cidade;
+                        document.getElementById('valorLoc').value= doc.Valor_Loc;
+                        document.getElementById('input_UF').value= doc.UF;
+                        document.getElementById('select_venda').value=doc.Tipo_Venda;
+                        document.getElementById('rua').value= doc.Rua;
+                        document.getElementById('numero').value=doc.Numero;
+                        document.getElementById('valorCond').value= doc.Cond;
+                        document.getElementById('valorIPTU').value= doc.IPTU;
+                        document.getElementById('Quint_quant').value=doc.QuintalQ;
+                        document.getElementById('Quint_metragen').value= doc.QuintalM;
+                        document.getElementById('Quarto_quant').value=doc.QuartoQ;
+                        document.getElementById('suite_quant').value=doc.SuiteQ;
+                        document.getElementById('input_cep').value= doc.CEP
+                        document.getElementById('banheiro_quant').value= doc.BanheiroQ;
+                        document.getElementById('varanda_quant').value=doc.VarandaQ;
+                        document.getElementById('andar_quant').value= doc.Andar;
+                        document.getElementById('duplex').value=doc.Duplex;
+                        document.getElementById('Triplex').value=doc.Triplex;
+                        document.getElementById('piscinas_quant').value= doc.PiscinaQ;
+                        document.getElementById('piscinas_metragen').value= doc.PiscinaM;
+                        document.getElementById('vagas_quant').value=  doc.Garagem;
+                        document.getElementById('playg_quant').value=  doc.Playgrowd;
+                        document.getElementById('playg_metragen').value=  doc.PlaygrowdMetragem;
+                        document.getElementById('nome_proprietario').value= doc.Proprietário;
+                        document.getElementById('Tel_proprietario').value= doc.TelP;
+                        document.getElementById('cpf_proprietario').value=doc.CPFP;
+                        sessionStorage.setItem('LIsta',doc.Lista);
+                        sessionStorage.setItem('DataHora',`${doc.DataHoraInit}`)
+                        sessionStorage.setItem('data_',`${doc.Data}`)
+                        sessionStorage.setItem('hora_',`${doc.Hora}`)
+                         sessionStorage.setItem('Url_Imagem',`${doc.IMG}`)
+                        sessionStorage.setItem('img2',`${doc.IMG_2}`)
+                        //document.getElementById('img2').value=doc.IMG_2;
+                         sessionStorage.setItem('img3',`${doc.IMG_3}`)
+                        //document.getElementById('img3').value=doc.IMG_3;
+                         sessionStorage.setItem('img4',`${doc.IMG_4}`)
+                      //  document.getElementById('img4').value=doc.IMG_4;
+                       sessionStorage.setItem('img5',`${doc.IMG_5}`)
+                        //document.getElementById('img5').value=doc.IMG_5;
+                         sessionStorage.setItem('img6',`${doc.IMG_6}`)
+                        //document.getElementById('img6').value=doc.IMG_6;
+                         sessionStorage.setItem('img7',`${doc.IMG_7}`)
+                      //  document.getElementById('img7').value=doc.IMG_7;
+                       sessionStorage.setItem('vd',`${doc.VD}`)
+                       // document.getElementById('vd').value=doc.VD;
+                       sessionStorage.setItem('vd2',`${doc.VD2}`)
+                        //document.getElementById('vd2').value=doc.VD2;
+                        sessionStorage.setItem('vd3',`${doc.VD3}`)
+                       //document.getElementById('vd3').value=doc.VD3;
+                       sessionStorage.setItem('id',`${doc.ID}`)
+                         //document.getElementById('id').value=doc.ID;
+                          sessionStorage.setItem('obs2',`${doc.OBS2}`)
+                         //document.getElementById('obs2').value=doc.OBS2;
+                         sessionStorage.setItem('obs3',`${doc.OBS3}`)
+                         //document.getElementById('obs3').value=doc.OBS3;
+                         sessionStorage.setItem('obs4',`${doc.OBS4}`)
+                         //document.getElementById('obs4').value=doc.OBS4;
+                         sessionStorage.setItem('obs5',`${doc.OBS5}`)
+                         //document.getElementById('obs5').value=doc.OBS5;
+                         sessionStorage.setItem('obs6',`${doc.OBS6}`)
+                         //document.getElementById('obs6').value=doc.OBS6;
+                         sessionStorage.setItem('obs7',`${doc.OBS7}`)
+                         //document.getElementById('obs7').value=doc.OBS7;
+                         sessionStorage.setItem('obs8',`${doc.OBS8}`)
+                         //document.getElementById('obs8').value=doc.OBS8;
+                         sessionStorage.setItem('obs9',`${doc.OBS9}`)
+                         //document.getElementById('obs9').value=doc.OBS9;
+                         sessionStorage.setItem('obs10',`${doc.OBS10}`)
+                         //document.getElementById('obs10').value=doc.OBS10;                     
+                        //Cadastros2('click')
+                        Edit_imovel('click')
+                  })
+          
+      
             } else{
             }
         })
@@ -1199,14 +1602,17 @@
      // SetItensZ()
     }
         function casa(){
+                document.getElementById('cad_imagem').style.display='none'
                 var listaP = document.getElementById('listaPesquisa');
               listaP.innerHTML = '';
               document.getElementById('body1').style.display='block'
               document.getElementById('divListaPesquisa').style.display='none'
+               
         }
   </script>
    <script>
       function Pesquisador(){
+         document.getElementById('cad_imagem').style.display='none'
        Swal.fire({
                     title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
                  html:` <div  class="menu-container">
@@ -1330,6 +1736,7 @@
      <script>
          sessionStorage.setItem('LIsta',``)
          function MT01(){
+            document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'      
              var list= 'Lista Destaques'
@@ -1338,6 +1745,7 @@
                sessionS('click') 
          }
          function MT02(){
+            document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Casas'
@@ -1346,6 +1754,7 @@
               sessionS('click')
          }
           function MT03(){
+              document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Apartamentos'
@@ -1354,6 +1763,7 @@
               sessionS('click')
          }
           function MT04(){
+              document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Chácaras e Sítios'
@@ -1362,6 +1772,7 @@
               sessionS('click')
          }
           function MT05(){
+              document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Sobrados'
@@ -1370,6 +1781,7 @@
               sessionS('click')
          }
           function MT06(){
+              document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Galpões'
@@ -1378,6 +1790,7 @@
               sessionS('click')
          }
           function MT07(){
+              document.getElementById('cad_imagem').style.display='none'
                document.getElementById('novocad').style.display='none'
             document.getElementById('body_div1').style.display='none'
              var list= 'Lista Terrenos'
@@ -1394,11 +1807,13 @@
               sessionS('click')
          }
           function startList(){
+              document.getElementById('cad_imagem').style.display='none'
             sessionStorage.setItem('itens','')
             document.getElementById('divList').style.display='block'
            var respList = sessionStorage.getItem('LIsta')
        
             SetItens('click')
+              sessionStorage.setItem('ID_imovel',``)
           var h2li= document.getElementById('h2Lista');
           var pItens= document.getElementById('itens');
           h2li.innerText=`${respList}`
@@ -1464,6 +1879,7 @@
                     swal(`${doc.Titulo}`,``,`${doc.IMG}`)
                   });
                      button.addEventListener('click', function(){
+                        sessionStorage.setItem('ID_imovel',`${doc.Código}`)
                       sessionStorage.setItem('EdtTela','tela')
                         document.getElementById('salas_quant').value= doc.SalasQ;
                         document.getElementById('salas_metragen').value= doc.SalasM;
@@ -1549,8 +1965,8 @@
                          //document.getElementById('obs9').value=doc.OBS9;
                          sessionStorage.setItem('obs10',`${doc.OBS10}`)
                          //document.getElementById('obs10').value=doc.OBS10;                     
-                         Cadastros2('click')
-                    Swal.fire(`Editar Cadastro!`,`${doc.Titulo}`,``)
+                        //Cadastros2('click')
+                        Edit_imovel('click')
                   })
            })
        })
@@ -1692,6 +2108,7 @@
             document.getElementById('body_div1').style.display='block'
             document.getElementById('body_div2').style.display='none'
             document.getElementById('divList').style.display='none'
+              document.getElementById('cad_imagem').style.display='none'
         }
          </script>
          <script> //Novo Cadastro
@@ -1795,6 +2212,7 @@
              }
             },200)
            function NovoCad(){
+             document.getElementById('cad_imagem').style.display='none'
              document.getElementById('input_UF').value='SP'
              document.getElementById('codigo').value=''
              var h1_notf= document.getElementById('h1_n_cad');
