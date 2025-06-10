@@ -2040,25 +2040,25 @@
                 Swal.fire({
                      title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
                      html: `
-                            <div id='divWhats'>
-                            <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label> </div>
-                             <br><br>    
-                            <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-                            <br><br><br><button id='sair_'>Sair,Cancelar</button>
-                      `,
-                      showCancelButton: false,
-                      showConfirmButton: false,
-                      customClass: {
-                      popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                     },
-                       didOpen: () => {
-                       document.body.style.paddingRight = '0px';
-                     }
+                          <div id='divWhats'>
+                          <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label> </div>
+                            <br><br>    
+                           <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+                           <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                         `,
+                        showCancelButton: false,
+                        showConfirmButton: false,
+                        customClass: {
+                        popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+                      },
+                        didOpen: () => {
+                        document.body.style.paddingRight = '0px';
+                      }
                    });
                      
-                       document.getElementById('btn_whats').addEventListener('click',function(){
-                         var resut= sessionStorage.getItem('resultTelWhats');
-                          var data= localStorage.getItem('data')
+                      document.getElementById('btn_whats').addEventListener('click',function(){
+                        var resut= sessionStorage.getItem('resultTelWhats');
+                        var data= localStorage.getItem('data')
                         var hora = localStorage.getItem('hora') 
                         var tel_= sessionStorage.getItem('tel_whats')       
                         var numero = `55${tel_}`; // Substitua pelo número de destino, incluindo o código do país
