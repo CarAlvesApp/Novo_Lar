@@ -219,6 +219,7 @@
             color: rgb(95, 95, 95);
             overflow: auto;
              font-family: Arial, Helvetica, sans-serif;
+             overflow: hidden;
           }
             #body1 #div1 {
              position: relative;
@@ -334,10 +335,9 @@
               color: rgb(43, 255, 0)        
          }
             #body1 #div1 img{
-             width: 100%;
+              width: 100%;
               max-height: 270px;
-            min-width: 270px;
-             border-radius: 1px;
+              min-height: 270px;
              margin-bottom: 20px;
              cursor: pointer;
              transition: transform 0.7s ease-in-out;
@@ -869,8 +869,8 @@
            }   
             #body1 #div1 img{
              width: 100%;
-            max-height: 250px;
-            min-width: 250px;
+            max-height: 270px;
+            min-height: 250px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -935,8 +935,8 @@
            }   
                  #body1 #div1 img{
              width: 100%;
-            max-height: 250px;
-            min-width: 250px;
+            max-height: 270px;
+            min-height: 270px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -1004,8 +1004,8 @@
             }
              #body1 #div1 img{
              width: 100%;
-             max-height: 250px;
-             min-width: 250px;
+             max-height: 270px;
+             min-height: 270px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -1083,8 +1083,8 @@
             }
              #body1 #div1 img{
              width: 100%;
-            max-height: 250px;
-            min-width: 250px;
+            max-height: 270px;
+            min-height: 270px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -1162,8 +1162,8 @@
            }
            #body1 #div1 img{
               width: 100%;
-             max-height: 250px;
-             min-width: 250px;
+             max-height: 270px;
+             min-height: 270px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -1238,8 +1238,8 @@
              #body1 #div1 img{
              width: 100%;
              max-height: 38vh;
-             max-height: 250px;
-            min-width: 250px;
+             max-height: 270px;
+            min-height: 270px;
              border-radius: 1px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -1347,8 +1347,8 @@
            }
              #body1 #div1 img{
              width: 100%;
-             max-height: 250px;
-             min-width: 250px;
+             max-height: 270px;
+             min-height: 270px;
              min-width: 300px;
              margin-bottom: 20px;
              cursor: pointer;
@@ -2055,7 +2055,7 @@
                       <label>Digite sua mensagem:<br>
                       <textarea id='mens_whats'  placeholder='Mensagem...'></textarea>
                       <br> <br>  
-                      <button id="Swalmenu11" title="">Enviar  <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>
+                      <button id="Swalmenu11" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>
                       <br><br><br><button id='sair_'>Sair,Cancelar</button>
                       `,
                       showCancelButton: false,
@@ -2246,15 +2246,15 @@
       produtosRef.get().then((querySnapshot) => {
         querySnapshot.forEach(doc => {
             var doc = doc.data();   
-            function removerAcentos(texto) {
-    return (texto ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-
-              if(
-    removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Cidade?.toLowerCase()) ||
-    removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Bairro?.toLowerCase()) ||
-    removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Código?.toLowerCase())
-) {
+                   function removerAcentos(texto) {
+           return (texto ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+       }
+       
+                     if(
+           removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Cidade?.toLowerCase()) ||
+           removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Bairro?.toLowerCase()) ||
+           removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Código?.toLowerCase())
+       ) {
 
                  itens+=1
             var div= document.createElement('div')
@@ -2338,11 +2338,9 @@
               document.getElementById('body1').style.display='none'
               document.getElementById('divListaPesquisa').style.display='block'
               document.getElementById('alist').click()
-                var valorP=document.getElementById('RRListP');
-                valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
+              var valorP=document.getElementById('RRListP');
+              valorP.innerHTML=`Total de (${itens}) imóveis encontrados`
                Swal.close()
-             
-
                 img.addEventListener('click',function(){
             swal(`${doc.Titulo}`,`Localizado no bairro ${doc.Bairro}\nem ${doc.Cidade}\n\nCódigo do imóvel: ${doc.Código}\n`,`${doc.IMG}`)
            })
