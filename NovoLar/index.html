@@ -1410,11 +1410,11 @@
               min-width: unset; /* Remove o mínimo em telas pequenas */
           }
         }
-        .my-custom_login_Swl #btn_whats{
+        .my-custom_login_Swl #btn_whats ,#Start{
             font-size: 18px;
             padding: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
             cursor: pointer;
             border: 2px solid rgb(191, 192, 196);
             border-radius: 7px;
@@ -1422,7 +1422,7 @@
              color: #313131;
              font-family: Arial, Helvetica, sans-serif;
          }
-        .my-custom_login_Swl #btn_whats:hover{
+        .my-custom_login_Swl #btn_whats:hover, #Start:hover{
             background-color: #ffffff;
             color: #18b903;
              border: 2px solid rgb(1, 95, 14);
@@ -1768,7 +1768,38 @@
             iten1.innerHTML= `Total de imóveis ( ${itens} )`
             sessionStorage.setItem('iten',`${itens}`)
             img.addEventListener('click',function(){
-           swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
+                Swal.fire({
+                     title: `Ver Imagem? `,
+                 html:` 
+                    <br><br>
+                    <button id="Start" title="">Sim</button>
+                    <br><br><br><button id='sair_'>Não, Sair</button>       
+                 `,
+                 showCancelButton: false,
+                  showConfirmButton: false,
+                  customClass: {
+                  popup: 'my-custom_Pesq_Swl' // Aplica a classe CSS personalizada
+                },
+                 didOpen: () => {
+                      document.body.style.paddingRight = '0px';
+                   }
+                 });
+                 document.getElementById('Start').addEventListener('click',function(){
+                    window.open(doc.IMG,'_blank')
+                    setTimeout(function(){
+                    Swal.close()
+                 },700)    
+                    Swal.fire('Ver imagem','','success')
+                 });
+                    document.getElementById('sair_').addEventListener('click',function(){
+                 Swal.fire('Cancelado','','error')
+                 setTimeout(function(){
+                    Swal.close()
+                 },700)
+                
+                 });
+            
+          // swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
             });
             button1.addEventListener('click',function(){
                swal(`Nova Tela`,` `,`#`);
@@ -2016,10 +2047,15 @@
          } else{
          var url_Inst= URL_Intagran;
         }
-             Swal.fire(`Instagran`,``,'success')
-         window.open(url_Inst,'_blank')
+           Swal.fire(`Instagran`,``,'success')
+           window.open(url_Inst,'_blank')
         };
-        function whatsapp(){
+           function whatsapp(){
+           var imagem_Whats='';
+           if(!imagem_Whats||imagem_Whats==''){
+            var imagem_Whats=`src/Rute.jpg`
+           }else{
+           }
              sessionStorage.setItem('Mens_Whats',``)
          //  localStorage.setItem('Mens_Whats',`${Mens_Whats}`)
          var mens_Wwats= localStorage.getItem('Mens_Whats')
@@ -2041,7 +2077,7 @@
                      title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
                      html: `
                           <div id='divWhats'>
-                          <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label> </div>
+                          <img id='imgWhats'src=''> <label>Rute (corretora)</label> </div>
                             <br><br>    
                            <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
                            <br><br><br><button id='sair_'>Sair,Cancelar</button>
@@ -2055,6 +2091,10 @@
                         document.body.style.paddingRight = '0px';
                       }
                    });
+                    document.getElementById('imgWhats').src=`${imagem_Whats}`
+                     document.getElementById('imgWhats').addEventListener('click',function(){
+                      swal('','',`${imagem_Whats}`)
+                     })
                      
                       document.getElementById('btn_whats').addEventListener('click',function(){
                         var resut= sessionStorage.getItem('resultTelWhats');
