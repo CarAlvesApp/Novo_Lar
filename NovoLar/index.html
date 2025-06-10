@@ -24,11 +24,9 @@
             padding: 0px;
         }
         body{
-
          font-family: Georgia, 'Times New Roman', Times, serif;
          background-color: rgb(228, 227, 255);
-         padding: 0;
-          
+         padding: 0;     
         }
         #DivGeral{
             margin: auto;
@@ -38,30 +36,24 @@
             min-width: 400px;
             background-color: rgba(238, 241, 255, 0);
             color: rgb(65, 64, 64);
-        
-            
-        }
-        
+        }  
         #divHeaad{
             width: 100%;
             max-width: 1920px;
             min-width: 400px;
              background-color: rgb(228, 227, 255);
             position: fixed;
-            z-index: 9999;
-            
-         
+            z-index: 9999;   
         }
         #heaad_apresent{
             display: flex;
             justify-content: space-between;
             align-items: center;
-             width: 100%;
-             padding-top: 5px;
-             padding-bottom: 5px;
-           background-color: rgb(78, 78, 78);
-            color: rgb(255, 255, 255);
-            
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: rgb(78, 78, 78);
+            color: rgb(255, 255, 255);    
         }
           ::-webkit-scrollbar {
                    width: 15px;
@@ -1788,14 +1780,14 @@
                     window.open(doc.IMG,'_blank')
                     setTimeout(function(){
                     Swal.close()
-                 },700)    
+                 })    
                     Swal.fire('Ver imagem','','success')
                  });
                     document.getElementById('sair_').addEventListener('click',function(){
                  Swal.fire('Cancelado','','error')
                  setTimeout(function(){
                     Swal.close()
-                 },700)
+                 })
                 
                  });
             
@@ -2076,11 +2068,11 @@
                 Swal.fire({
                      title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
                      html: `
-                          <div id='divWhats'>
-                          <img id='imgWhats'src=''> <label>Rute (corretora)</label> </div>
-                            <br><br>    
-                           <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-                           <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                         <div id='divWhats'>
+                         <img id='imgWhats'src=''> <label>Rute (corretora)</label> </div>
+                         <br><br>    
+                         <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+                         <br><br><br><button id='sair_'>Sair,Cancelar</button>
                          `,
                         showCancelButton: false,
                         showConfirmButton: false,
