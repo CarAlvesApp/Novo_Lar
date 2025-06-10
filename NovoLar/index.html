@@ -739,37 +739,12 @@
               font-size: 25px;
               color: #770171;
           
-             }
-             #mens_whats{
-              width: 90%;
-              max-width: 90%;
-              height: 7vh;
-              min-height: 8vh;
-              max-height: 15vh;
-              padding: 10px;
-              color: rgb(16, 1, 15);
-              border: 2px solid rgb(123, 0, 130);
-              border-radius: 10px;
-              cursor: pointer;
-              font-size: 15px;
-              font-family: Verdana, Geneva, Tahoma, sans-serif;
-               background-color:rgb(253, 252, 252);
-             }
-             #tel_whats{
-              width: 85%;
-              font-size: 16px;
-              background-color: #fbfbff;
-              color: rgb(21, 1, 21);
-              cursor: pointer;
-              border-radius: 5px;
-              margin-left: 5px;
-              border: 1px solid rgb(130, 0, 130);
-             }
-               .my-custom_login_Swl{
+             }        
+             .my-custom_login_Swl{
                 margin-bottom: 10px;
                 padding-right: 0;
-               }
-             .my-custom_login_Swl #i_whats{
+             }
+            .my-custom_login_Swl #i_whats{
              color: #028b3b;
              font-size: 37px;
              font-weight: bold;
@@ -796,19 +771,15 @@
                font-size: 20px;
                font-weight: bold;
 
-               }
-              .my-custom_login_Swl #Swalmenu11{
-                font-size: 18px;
-                border-radius: 7px;
-                padding: 7px;
-              }
-              .my-custom_login_Swl label{
+         }
+              
+           .my-custom_login_Swl label{
                 font-size: 13px;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 color: #393939;
                 font-weight: bold;
-              }
-                #iten01, #iten02, #iten03, #iten04, #iten05{
+          }
+          #iten01, #iten02, #iten03, #iten04, #iten05{
               font-size: 15px;
               font-weight: bold;
               background-color: rgba(240, 248, 255, 0);
@@ -860,8 +831,7 @@
            z-index:999;
            overflow: hidden; 
            background: #4d013900; /* Cor da linha */     
-           }  
-          
+           }            
           @media (max-width: 1600px) {      
            #img_whats{
             width: 100px;
@@ -1440,6 +1410,23 @@
               min-width: unset; /* Remove o mínimo em telas pequenas */
           }
         }
+        .my-custom_login_Swl #btn_whats{
+            font-size: 18px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            cursor: pointer;
+            border: 2px solid rgb(191, 192, 196);
+            border-radius: 7px;
+             background-color: rgb(236, 235, 255);
+             color: #313131;
+             font-family: Arial, Helvetica, sans-serif;
+         }
+        .my-custom_login_Swl #btn_whats:hover{
+            background-color: #ffffff;
+            color: #18b903;
+             border: 2px solid rgb(1, 95, 14);
+          }
   
     
    
@@ -1449,74 +1436,70 @@
 <body>
     <div id="DivGeral">
         <div id="divHeaad">
-        <div id="heaad_apresent">
+          <div id="heaad_apresent">
             <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='whatsapp()'>WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i></label>
-        </div>
-        <div id="heaad_btns">
-           <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
-            <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
-        </div>
-        </div>
-        <div id="DivBody">
-            <br>   
-            <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
+         </div>
+             <div id="heaad_btns">
+              <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+              <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
+         </div>
+         </div>
+           <div id="DivBody">
+             <br>   
+             <div id="banner"> <video width="100%" height="100%" autoplay loop muted>
               <source src="src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
-            </video></div>         
-            <div id="Procura">
-              <h1>Busque aqui</h1>
-              <div id="selector1">
-                <select name=""title='Oque procura?' id="select_lista1">
-                 <option value="Lista Destaques">Oque você procura? </option>
-                  <option value="Lista Destaques"> Destaques</option>
-                    <option value="Lista Casas"> Casas </option>
-                     <option value="Lista Sobrados"> Sobrados</option>
-                    <option value="Lista Apartamentos"> Apartamentos</option>
-                    <option value="Lista Galpões"> Galpões</option>
-                     <option value="Lista Terrenos"> Terrenos</option>
-                     <option value="Lista Lojas"> Loja</option>
-                    <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
-                </select>
-                 <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
-                 <option value="">Comprar ou Alugar? </option>
-                    <option value="Compra"> Comprar</option>
-                    <option value="Locação"> Alugar</option>
-                </select>
-                <button id="buscas" onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
-              </div>
-            </div>  
-            <img id="img_whats"  src="src/whatsapp.png" onclick="Zap()" alt="WhatsApp" width="100">    
-            <div id="body1">
-               <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
-               <button title="itens" id="itens_" > </button>
-                <div id="lista01"></div>     
-            </div>
-            <div id="divListaPesquisa">
-              <h2 id="RRListP">Resultado da pesquisa:</h2>
-              <a id="alist" href="#select_comprar_alugar"></a>
-              <div id="listaPesquisa"></div>
+              </video></div>         
+               <div id="Procura">
+                <h1>Busque aqui</h1>
+                 <div id="selector1">
+                   <select name=""title='Oque procura?' id="select_lista1">
+                      <option value="Lista Destaques">Oque você procura? </option>
+                      <option value="Lista Destaques"> Destaques</option>
+                      <option value="Lista Casas"> Casas </option>
+                      <option value="Lista Sobrados"> Sobrados</option>
+                      <option value="Lista Apartamentos"> Apartamentos</option>
+                      <option value="Lista Galpões"> Galpões</option>
+                      <option value="Lista Terrenos"> Terrenos</option>
+                      <option value="Lista Lojas"> Loja</option>
+                      <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
+                    </select>
+                    <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
+                       <option value="">Comprar ou Alugar? </option>
+                       <option value="Compra"> Comprar</option>
+                       <option value="Locação"> Alugar</option>
+                    </select>
+                     <button id="buscas" onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
+                  </div>
+               </div>  
+                <img id="img_whats"  src="src/whatsapp.png" onclick="Zap()" alt="WhatsApp" width="100">    
+               <div id="body1">
+                 <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
+                 <button title="itens" id="itens_" > </button>
+                 <div id="lista01"></div>     
+               </div>
+                <div id="divListaPesquisa">
+                  <h2 id="RRListP">Resultado da pesquisa:</h2>
+                   <a id="alist" href="#select_comprar_alugar"></a>
+                <div id="listaPesquisa"></div>
             </div>        
-        </div>
-     
-         <div id="DivFooter">
-           
-           <div id="paragrafo_inicial">
-                      <img src="src/LogoNovoLarPNG.png" alt="" width="100">
-                    <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
-                      <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. <br>
-                      Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir.<br> Entre em contato e descubra como podemos transformar seu sonho em realidade!
-                      </b>
-                    </p>
-                    <label id="lbl_contact" for="">
-                        📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>
-                        
-                    </div>
-                    <div id="sociais_contatos">
-                    <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
-           </div>
+         </div>
+         <div id="DivFooter"> 
+            <div id="paragrafo_inicial">
+              <img src="src/LogoNovoLarPNG.png" alt="" width="100">
+                 <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
+                 <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. <br>
+                  Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir.<br> Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                 </b>
+                 </p>
+                 <label id="lbl_contact" for="">
+                   📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>       
+             </div>
+              <div id="sociais_contatos">
+                  <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+              </div>
          </div>
          <a id="a_click" title="a" href="#h1_destaque"> </a>
           <script>
-          
             function procura(){
                Swal.fire({
              title: `Oque você procura?`,
@@ -2007,6 +1990,7 @@
         //localStorage.setItem('URL_Intagran','')
         //localStorage.setItem('URL_facebook','')
        // localStorage.setItem('TelWhats','')
+        //sessionStorage.setItem('Mens_Whats',``)
        function Zap(){
          whatsapp('click')
        }
@@ -2023,107 +2007,72 @@
              }
         
            window.open(URL_facebook,'_blank')
+             Swal.fire(`Facebook`,``,'success')
         }; 
           function instagran(){
               var URL_Intagran= localStorage.getItem('URL_Intagran')
-     if(!URL_Intagran|| URL_Intagran==''){
+       if(!URL_Intagran|| URL_Intagran==''){
         var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
-       } else{
+         } else{
          var url_Inst= URL_Intagran;
-     }
-           Swal.fire('Instagran')
+        }
+             Swal.fire(`Instagran`,``,'success')
          window.open(url_Inst,'_blank')
         };
         function whatsapp(){
-       var Tel_whats= localStorage.getItem('TelWhats')
-       if(!Tel_whats ||Tel_whats==''){
-        var telWahts= "11948865333"
-       } else{
-         var telWahts= Tel_whats
-       }
-           sessionStorage.setItem('resultTelWhats','')
-           Swal.fire({
-             title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
-                html: `
-                      <div id='divWhats'>
-                      <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label>
-                      </div>
-                      <br>
-                       <label>Tel /  Whats:<br>
-                      <input id='tel_whats' type='tel' placeholder='11 98888 8888'><i id='visao' class=""></i>
-                      <br> <br>  
-                      <label>Digite sua mensagem:<br>
-                      <textarea id='mens_whats'  placeholder='Mensagem...'></textarea>
-                      <br> <br>  
-                      <button id="Swalmenu11" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>
-                      <br><br><br><button id='sair_'>Sair,Cancelar</button>
+             sessionStorage.setItem('Mens_Whats',``)
+         //  localStorage.setItem('Mens_Whats',`${Mens_Whats}`)
+         var mens_Wwats= localStorage.getItem('Mens_Whats')
+           if(!mens_Wwats||mens_Wwats==''){
+             sessionStorage.setItem('Mens_Whats',`Rutimóveis solicitação de contato`)
+           }else{
+             sessionStorage.setItem('Mens_Whats',`${mens_Wwats}`)       
+           }
+           sessionStorage.setItem('tel_whats',``)
+           var Tel_whats= localStorage.getItem('TelWhats')
+           if(!Tel_whats ||Tel_whats==''){
+           sessionStorage.setItem('tel_whats',`11948865333`)
+            } else{
+             var telWahts= Tel_whats
+             sessionStorage.setItem('tel_whats',`${telWahts}`)   
+            }
+             sessionStorage.setItem('resultTelWhats','')
+                Swal.fire({
+                     title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
+                     html: `
+                            <div id='divWhats'>
+                            <img id='imgWhats'src='src/Rute.jpg'> <label>Rute (corretora)</label> </div>
+                             <br><br>    
+                            <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+                            <br><br><br><button id='sair_'>Sair,Cancelar</button>
                       `,
                       showCancelButton: false,
                       showConfirmButton: false,
                       customClass: {
                       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
-                    },
+                     },
                        didOpen: () => {
-                      document.body.style.paddingRight = '0px';
-                   }
-                     });
-                       document.getElementById('tel_whats').addEventListener('input', function (e) {
-                      let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-                      
-                      if (value.length > 11) value = value.slice(0, 11); // Limita ao tamanho correto
-                  
-                      let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
-                                                .replace(/(\d{4})(\d{4})$/, '$1-$2');
-                  
-                      e.target.value = formattedValue;
-                       sessionStorage.setItem('resultTelWhats', formattedValue)
-                  });
-                    document.getElementById('Swalmenu11').addEventListener('click',function(){
-                       var resut= sessionStorage.getItem('resultTelWhats');
-                       var mensagem_= document.getElementById('mens_whats').value;
-                       if(!resut || resut=='' || !mensagem_||mensagem_==''){
-                             Swal.fire(`Preencha os Campos`,'','error')
-                       } else{
-                        var data= localStorage.getItem('data')
-                        var hora = localStorage.getItem('hora')      
-                        var numero = `55+${telWahts}`; // Substitua pelo número de destino, incluindo o código do país
-                        var mensagem = `RutImóveis pedido de Contato: ${resut}\n\n ${mensagem_}`
-                        var url = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-                             window.open(url, "_blank");
-                              Swal.fire(`Sucesso!`,``,'success')
-                              setTimeout(function(){
-                                Swal.close()
-                              },2000)
-                              var firebaseConfigures = {
-                             apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-                             authDomain: "game-dbv.firebaseapp.com",
-                             projectId: "game-dbv",
-                             storageBucket: "game-dbv.appspot.com",
-                             messagingSenderId: "118219151865",
-                             appId: "1:118219151865:web:b6414d5255233264268528",
-                             measurementId: "G-K17DLDBYGR"
-                            };  
-                         
-                           //var cod= document.getElementById('codigo').
-                            firebase.initializeApp(firebaseConfigures);  
-                           var ddm= firebase.firestore();
-                           ddm.collection('Mensagens Contatos').doc(`${resut}-${hora}`).set({
-                              Data: data,
-                              Hora:hora,
-                              Tel:resut,
-                              Mensagem:mensagem_,
-
-                           })
-                       }
+                       document.body.style.paddingRight = '0px';
+                     }
+                   });
                      
+                       document.getElementById('btn_whats').addEventListener('click',function(){
+                         var resut= sessionStorage.getItem('resultTelWhats');
+                          var data= localStorage.getItem('data')
+                        var hora = localStorage.getItem('hora') 
+                        var tel_= sessionStorage.getItem('tel_whats')       
+                        var numero = `55${tel_}`; // Substitua pelo número de destino, incluindo o código do país
+                        var mensagem = sessionStorage.getItem('Mens_Whats')  
+                        var url = "https://wa.me/"+`${numero}?text= ${mensagem}`;
+                             window.open(url, "_blank");
+                              Swal.fire(`WhatsApp`,``,'success')
+                            
                     });
 
                     document.getElementById('sair_').addEventListener('click',function(){
                          Swal.fire('Sair')
                          Swal.close()
                     });
-                     document.getElementById("tel_whats").blur();
-
 
          //  Swal.fire('WhatsApp')
           // var url='https://www.facebook.com/share/1YP8t9Q7uR/'
