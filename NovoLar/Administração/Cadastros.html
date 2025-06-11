@@ -868,9 +868,9 @@
           
                             }
                             #cad_imagem input{
-                              width:90%;
+                              width:100%;
                               min-width: 360px;
-                              padding: 10px;
+                              padding: 10px 0px 10px 0px;
                               cursor: pointer;
                               background-color: rgb(233, 238, 255);
                               color: rgb(21, 21, 21);
@@ -893,21 +893,35 @@
                             #cad_imagem button{
                               width: 100%;
                               font-size: 14px;
-                              background-color: rgba(240, 248, 255, 0);
+                              background-color: rgb(255, 255, 255);
                               color: rgb(26, 26, 26);
                               cursor: pointer;
-                              border: 0cap;
                               font-weight: bold;
                               text-align: center center;
-          
+                              border: 2px solid  rgb(58, 58, 58);
+                              border-radius: 7px;
+                              padding: 3px 0px 3px 0px;       
+                            }
+                            #cad_imagem  #salverIMG{
+                               width: 100%;
+                              font-size: 16px;
+                              background-color: rgb(255, 255, 255);
+                              color: rgb(26, 26, 26);
+                              cursor: pointer;
+                              font-weight: bold;
+                              text-align: center center;
+                              border: 2px solid  rgb(58, 58, 58);
+                              border-radius: 10px;
+                              padding: 20px 0px 20px 0px;   
                             }
                              #cad_imagem i{
                               font-size: 40px;
-                              margin-top: 10px;
                               margin-bottom: 10px;
                              }
-                             #cad_imagem button:hover{
-                              color: rgb(116, 1, 118);
+                             #cad_imagem button:hover,  #cad_imagem  #salverIMG:hover{
+                                color: rgb(255, 255, 255);
+                                background-color: rgb(122, 0, 122);
+                                border: 2px solid  rgb(255, 255, 255);
                              }
                               #cad_imagem p{
                                width: 100%;
@@ -1166,7 +1180,7 @@
                   <br>
                    <h3 id="h3_img2">Imagem 02</h3>
                    <input  class="input_visible"  id="files_img2" type="file">
-                    <img id="edt_img2" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img2" src="../src/Rutimoveis img.png" alt=""onclick="img2()">
                      <br><button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 2 <br>
                     <input id="input_edt_img2" type="text" placeholder="Digite texto..." >
@@ -1174,7 +1188,7 @@
                   <br>
                    <h3 id="h3_img3">Imagem 03</h3>
                     <input  class="input_visible"  id="files_img3" type="file">
-                    <img id="edt_img3" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img3" src="../src/Rutimoveis img.png" alt=""onclick="img3()">
                      <br><button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 3 <br>
                     <input id="input_edt_img3" type="text" placeholder="Digite texto..." >
@@ -1182,7 +1196,7 @@
                   <br>
                    <h3 id="h3_img4">Imagem 04</h3>
                     <input  class="input_visible"  id="files_img4" type="file">
-                    <img id="edt_img4" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img4" src="../src/Rutimoveis img.png" alt=""onclick="img4()">
                      <br><button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 4 <br>
                     <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
@@ -1190,7 +1204,7 @@
                   <br>
                    <h3 id="h3_img4">Imagem 05</h3>
                     <input  class="input_visible"  id="files_img5" type="file">
-                    <img id="edt_img5" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img5" src="../src/Rutimoveis img.png" alt=""onclick="img5()">
                      <br><button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 5 <br>
                     <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
@@ -1198,7 +1212,7 @@
                   <br>
                    <h3 id="h3_img6">Imagem 06</h3>
                     <input  class="input_visible"  id="files_img6" type="file">
-                    <img id="edt_img6" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
                      <br><button onclick="img_edt5()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 6 <br>
                     <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
@@ -1206,7 +1220,7 @@
                   <br>
                    <h3 id="h3_img7">Imagem 07</h3>
                     <input  class="input_visible"  id="files_img7" type="file">
-                    <img id="edt_img7" src="../src/Rutimoveis img.png" alt="">
+                    <img id="edt_img7" src="../src/Rutimoveis img.png" alt=""onclick="img7()">
                      <br><button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem  </button><br>
                     <label for="">Texto da imagem 7 <br>
                     <input id="input_edt_img7" type="text" placeholder="Digite texto..." >
@@ -1259,49 +1273,96 @@
                   },1000)
                 
              }
-             
+             //obs
              function img_edt(){
-              teste('click')
-          //    document.getElementById('files_img').click();           
-             }
+               //document.getElementById('files_img').click(); 
+               Swal.fire('IMG 1 Em Breve!')          
+             };
+               function img_edt2(){
+               //document.getElementById('files_img2').click(); 
+               Swal.fire('IMG 2 Em Breve!')          
+             };
+               function img_edt3(){
+               //document.getElementById('files_img3').click(); 
+               Swal.fire('IMG 3 IMG 3 Em Breve!')          
+             };
+               function img_edt4(){
+               //document.getElementById('files_img4').click(); 
+               Swal.fire('IMG 4 Em Breve!')          
+             };
+               function img_edt5(){
+               //document.getElementById('files_img5').click(); 
+               Swal.fire('IMG 5 Em Breve!')          
+             };
+               function img_edt6(){
+               //document.getElementById('files_img6').click(); 
+               Swal.fire(' IMG 6 Em Breve!')          
+             };
+               function img_edt7(){
+               //document.getElementById('files_img7').click(); 
+               Swal.fire('IMG 7 Em Breve! ')          
+             };
+             
+             //imagens
              function img1(){
               var img= document.getElementById('img').value;
               window.open(`${img}`,'blank_ ');
-             }
+             };
+               function img2(){
+              var img2= document.getElementById('img2').value;
+              window.open(`${img2}`,'blank_ ');
+             };
+               function img3(){
+              var img3= document.getElementById('img3').value;
+              window.open(`${img3}`,'blank_ ');
+             };
+               function img4(){
+              var img4= document.getElementById('img4').value;
+              window.open(`${img4}`,'blank_ ');
+             };
+               function img5(){
+              var img5= document.getElementById('img5').value;
+              window.open(`${img5}`,'blank_ ');
+             };
+               function img6(){
+              var img6= document.getElementById('img6').value;
+              window.open(`${img6}`,'blank_ ');
+             };
+               function img7(){
+              var img7= document.getElementById('img7').value;
+              window.open(`${img7}`,'blank_ ');
+             };
+
+
              </script>
              <script>//fnção imagen
-       function onImagens(){
-         document.getElementById('cad_imagem').style.display='block'
-         salv_img_vd('click')
-       };
-       function salv_img_vd(){
-        var codigo_= document.getElementById('h4_codigo');
-        var titulo_= document.getElementById('h2_imóvel');
-        var id_imovel= sessionStorage.getItem('ID_imovel')
-        var end= document.getElementById('end_edt');
-        var pesquisa= sessionStorage.getItem('Pesquisa')
-
-       const firebaseConfig= {
-       apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-       authDomain: "game-dbv.firebaseapp.com",
-       projectId: "game-dbv",
-       storageBucket: "game-dbv.appspot.com",
-       messagingSenderId: "118219151865",
-       appId: "1:118219151865:web:b6414d5255233264268528",
-       measurementId: "G-K17DLDBYGR"
-     };
-      firebase.initializeApp(firebaseConfig); 
-      const dbc = firebase.firestore();
-      dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
-         if(doc.exists){
-                 var doc= doc.data()
-            if(!doc.IMG|| doc.IMG==''){
-               document.getElementById('edt_img1').src='../src/Rutimoveis img.png'
-            }else{
-               document.getElementById('edt_img1').src=doc.IMG
-            }
-                      sessionStorage.setItem('ID_imovel',`${doc.Código}`)
-                      sessionStorage.setItem('EdtTela','tela')
+             function onImagens(){
+             document.getElementById('cad_imagem').style.display='block'
+             salv_img_vd('click')
+           };
+            function salv_img_vd(){
+            var codigo_= document.getElementById('h4_codigo');
+            var titulo_= document.getElementById('h2_imóvel');
+            var id_imovel= sessionStorage.getItem('ID_imovel')
+            var end= document.getElementById('end_edt');
+            var pesquisa= sessionStorage.getItem('Pesquisa')
+    
+             const firebaseConfig= {
+             apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+             authDomain: "game-dbv.firebaseapp.com",
+             projectId: "game-dbv",
+             storageBucket: "game-dbv.appspot.com",
+             messagingSenderId: "118219151865",
+             appId: "1:118219151865:web:b6414d5255233264268528",
+             measurementId: "G-K17DLDBYGR"
+           };
+             firebase.initializeApp(firebaseConfig); 
+             const dbc = firebase.firestore();
+              dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
+                if(doc.exists){
+                   var doc= doc.data()   
+                       sessionStorage.setItem('ID_imovel',`${doc.Código}`)
+                       sessionStorage.setItem('EdtTela','tela')
                        document.getElementById('salas_quant').value= doc.SalasQ;
                         document.getElementById('salas_metragen').value= doc.SalasM;
                         document.getElementById('suspensão').value= doc.Suspenso;
@@ -1347,31 +1408,30 @@
                         sessionStorage.setItem('DataHora',`${doc.DataHoraInit}`)
                         sessionStorage.setItem('data_',`${doc.Data}`)
                         sessionStorage.setItem('hora_',`${doc.Hora}`)
-                        document.getElementById('img').value=doc.IMG;                   
-                        document.getElementById('img2').value=doc.IMG2;                      
-                        document.getElementById('img3').value=doc.IMG3;                      
-                        document.getElementById('img4').value=doc.IMG4;                   
-                        document.getElementById('img5').value=doc.IMG5;                    
-                        document.getElementById('img6').value=doc.IMG6;                    
-                        document.getElementById('img7').value=doc.IMG7;                   
-                        document.getElementById('vd').value=doc.VD;                  
-                        document.getElementById('vd2').value=doc.VD2;                     
-                        document.getElementById('vd3').value=doc.VD3;               
-                        document.getElementById('id').value=doc.ID;                   
-                        document.getElementById('obs2').value=doc.OBS2;                    
-                        document.getElementById('obs3').value=doc.OBS3;                   
-                        document.getElementById('obs4').value=doc.OBS4;                   
-                        document.getElementById('obs5').value=doc.OBS5;                    
-                        document.getElementById('obs6').value=doc.OBS6;                     
-                        document.getElementById('obs7').value=doc.OBS7;            
-                        document.getElementById('obs8').value=doc.OBS8;           
-                        document.getElementById('obs9').value=doc.OBS9;           
-                        document.getElementById('obs10').value=doc.OBS10;  
+                        document.getElementById('img').value= doc.IMG;                   
+                        document.getElementById('img2').value= doc.IMG2;                      
+                        document.getElementById('img3').value= doc.IMG3;                      
+                        document.getElementById('img4').value= doc.IMG4;                   
+                        document.getElementById('img5').value= doc.IMG5;                    
+                        document.getElementById('img6').value= doc.IMG6;                    
+                        document.getElementById('img7').value= doc.IMG7;                   
+                        document.getElementById('vd').value= doc.VD;                  
+                        document.getElementById('vd2').value= doc.VD2;                     
+                        document.getElementById('vd3').value= doc.VD3;               
+                        document.getElementById('id').value= doc.ID;                   
+                        document.getElementById('obs2').value= doc.OBS2;                    
+                        document.getElementById('obs3').value= doc.OBS3;                   
+                        document.getElementById('obs4').value= doc.OBS4;                   
+                        document.getElementById('obs5').value= doc.OBS5;                    
+                        document.getElementById('obs6').value= doc.OBS6;                     
+                        document.getElementById('obs7').value= doc.OBS7;            
+                        document.getElementById('obs8').value= doc.OBS8;           
+                        document.getElementById('obs9').value= doc.OBS9;           
+                        document.getElementById('obs10').value= doc.OBS10;  
 
                       codigo_.innerHTML=doc.Código
                       titulo_.innerHTML=doc.Titulo
                       end.innerHTML=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
-                     // sessionStorage.setItem('urlIMG',`${doc.IMG}`)   
                       document.getElementById('input_edt_img').value=`${doc.OBS}`  
                        document.getElementById('input_edt_img2').value=`${doc.OBS2}` 
                         document.getElementById('input_edt_img3').value=`${doc.OBS3}` 
@@ -1379,8 +1439,58 @@
                           document.getElementById('input_edt_img5').value=`${doc.OBS5}` 
                            document.getElementById('input_edt_img6').value=`${doc.OBS6}` 
                             document.getElementById('input_edt_img7').value=`${doc.OBS7}`   
-                       // alert(`${doc.Lista}/${doc.Titulo}-${doc.Código}`)     
-                       
+
+                          if(!doc.IMG || doc.IMG=='' || doc.IMG=='undefined'){
+               document.getElementById('edt_img1').src='../src/Rutimoveis img.png';
+                document.getElementById('img').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img1').src=doc.IMG;
+            };
+
+              if(!doc.IMG2 || doc.IMG2=='' || doc.IMG2=='undefined'){
+               document.getElementById('edt_img2').src='../src/Rutimoveis img.png';
+                document.getElementById('img2').value='../src/Rutimoveis img.png';
+       
+            }else{
+              document.getElementById('edt_img2').src=doc.IMG2;
+            };
+
+              if(!doc.IMG3 || doc.IMG3==''|| doc.IMG3=='undefined'){
+               document.getElementById('edt_img3').src='../src/Rutimoveis img.png';
+                document.getElementById('img3').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img3').src=doc.IMG3;
+            };
+
+              if(!doc.IMG4 || doc.IMG4==''|| doc.IMG4=='undefined'){
+               document.getElementById('edt_img4').src='../src/Rutimoveis img.png';
+                document.getElementById('img4').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img4').src=doc.IMG4;
+            };
+
+              if(!doc.IMG5 || doc.IMG5==''|| doc.IMG5=='undefined'){
+               document.getElementById('edt_img5').src='../src/Rutimoveis img.png';
+                document.getElementById('img5').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img5').src=doc.IMG5;
+            };
+
+              if(!doc.IMG6 || doc.IMG6==''|| doc.IMG6=='undefined'){
+               document.getElementById('edt_img6').src='../src/Rutimoveis img.png';
+                document.getElementById('img6').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img6').src=doc.IMG6;
+            };
+
+              if(!doc.IMG7 || doc.IMG7==''|| doc.IMG7=='undefined'){
+               document.getElementById('edt_img7').src='../src/Rutimoveis img.png';
+                document.getElementById('img7').value='../src/Rutimoveis img.png';
+            }else{
+               document.getElementById('edt_img7').src=doc.IMG7;
+            };
+            
+ 
                 } else{
                 Swal.fire('Documento não encontrado!')
               }
