@@ -1403,24 +1403,61 @@
               min-width: unset; /* Remove o mínimo em telas pequenas */
           }
         }
-        .my-custom_login_Swl #btn_whats ,#Start{
-            font-size: 18px;
+        .my-custom_login a{
+          margin-top: 20px;
+        }
+       
+        .my-custom_login_Swl #btn_whats ,#Start ,.btns {
+            width: 60%;
+            font-size: 14px;
             padding: 10px;
-            padding-left: 40px;
-            padding-right: 40px;
+            font-weight: bold;
+            cursor: pointer;
+             border: 0;
+            border-radius: 7px;
+             background-color: rgb(236, 235, 255);
+             color: #1d1d1d;
+             font-family: Arial, Helvetica, sans-serif;
+             padding: 10px;
+         }
+        .my-custom_login_Swl #btn_whats:hover, #Start:hover,.btns:hover{
+          
+             color: #85017e;
+              
+          }
+             .my-custom_login_Swl #btn_whats button,.cancelar{
+            width: 30%;
+            font-size: 14px;
+            padding: 10px;
             cursor: pointer;
             border: 2px solid rgb(191, 192, 196);
             border-radius: 7px;
-             background-color: rgb(236, 235, 255);
-             color: #313131;
+             background-color: rgb(255, 255, 255);
+             color: #272727;
              font-family: Arial, Helvetica, sans-serif;
+             padding: 10px;
          }
-        .my-custom_login_Swl #btn_whats:hover, #Start:hover{
-            background-color: #ffffff;
-            color: #18b903;
-             border: 2px solid rgb(1, 95, 14);
-          }
-  
+         button {
+       outline: none;
+     }
+     
+      button:focus {
+       border: 2px solid #ffffff; /* Exemplo de personalização */
+       box-shadow: 0 0 3px rgba(158, 1, 111, 0.5);
+       border-radius: 10px;
+     }
+        a {
+       outline: none;
+     }
+     
+      a:focus {
+       border: 2px solid #ffffff; /* Exemplo de personalização */
+       box-shadow: 0 0 3px rgba(158, 1, 111, 0.5);
+          border-radius: 10px;
+     }
+
+
+
     
    
         
@@ -1497,23 +1534,23 @@
                Swal.fire({
              title: `Oque você procura?`,
              html: `
-               <br>
+               
                 <a id='destaque' href="#">Destaques </a> 
                  <br><br>
                <a id='Casas' href="#">Casas </a>
               <br><br>
-               <a id='Sob' href="#">Sobrados </a>
+               <a id='Sob'  href="#">Sobrados </a>
                <br><br>
-               <a id='aps'href="#">Apartamentos </a>
+               <a id='aps' href="#">Apartamentos </a>
                <br><br>
-               <a id='galpão_'href="#">Galpões</a>
+               <a id='galpão_' href="#">Galpões</a>
                <br><br>
-               <a id='terrenos'href="#">Terrenos</a>
+               <a id='terrenos'  href="#">Terrenos</a>
                <br><br>
-                <a id='lojas'href="#">Lojas!</a>
-                <br><br>
+                <a id='lojas' href="#">Lojas!</a>
+                <br><br> 
                 <a id='Chacara' href="#">Chácaras e Sítios </a>
-                <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                <br><br><br><button  id='sair_'>Cancelar</button>
                  `,
                showCancelButton: false,
                showConfirmButton: false,
@@ -1624,11 +1661,11 @@
         }
    </script>
     <script>//Lista 01 
-     document.getElementById('select_lista1').value='Lista Destaques'
-     document.getElementById('select_comprar_alugar').value=''
-      function buscaragora(){
-        mostrarAlerta('click')
-          var list1= document.getElementById('lista01');
+       document.getElementById('select_lista1').value='Lista Destaques'
+       document.getElementById('select_comprar_alugar').value=''
+       function buscaragora(){
+       mostrarAlerta('click')
+      var list1= document.getElementById('lista01');
        list1.innerHTML='';
         document.getElementById('body1').style.display='block'
         document.getElementById('divListaPesquisa').style.display='none'
@@ -1738,10 +1775,10 @@
             div3.appendChild(br2);
             div3.appendChild(label3);
             div3.appendChild(br3);        
-             div3.appendChild(p2);
+            div3.appendChild(p2);
             p2.appendChild(label5);
-             div3.appendChild(p1);
-           p1.appendChild(label4);
+            div3.appendChild(p1);
+            p1.appendChild(label4);
             div2.appendChild(br7);
             div2.appendChild(label);
             div1.appendChild(div3);
@@ -1751,22 +1788,22 @@
             div4.appendChild(button1);
             div1.appendChild(div4);
             list1.appendChild(div1)
-              sessionStorage.setItem('teglist',doc.Titulo)
-              if(list!='Lista Destaques'){
-                  document.getElementById('alist').click()
-              }
+           sessionStorage.setItem('teglist',doc.Titulo)
+          if(list!='Lista Destaques'){
+              document.getElementById('alist').click()
+           }
              var nomeL= document.getElementById('h1_destaque')
             nomeL.innerHTML=`${doc.Lista}`
             var iten1= document.getElementById('itens_');
             iten1.innerHTML= `Total de imóveis ( ${itens} )`
             sessionStorage.setItem('iten',`${itens}`)
             img.addEventListener('click',function(){
-                Swal.fire({
-                     title: `Ver Imagem? `,
+               Swal.fire({
+                 title: `Ver Imagem? `,
                  html:` 
                     <br><br>
                     <button id="Start" title="">Sim</button>
-                    <br><br><br><button id='sair_'>Não, Sair</button>       
+                    <br><br><br><button id='sair_'>Cancelar</button>       
                  `,
                  showCancelButton: false,
                   showConfirmButton: false,
@@ -1809,17 +1846,14 @@
             setTimeout(function(){
             var Itens_ = sessionStorage.getItem('iten')
             if(!Itens_|Itens_==0 | Itens_==''){
-            Swal.fire(`Lista Vazia!`,'','warning')
            var nomeL= document.getElementById('h1_destaque')
             nomeL.innerHTML=`Lista Vazia!`
             var itenZ= document.getElementById('itens_');
             itenZ.innerHTML= `Total de ( 0 ) encontrados`
             setTimeout(function(){
-             //document.getElementById('select_lista1').value=''
-             //document.getElementById('select_comprar_alugar').value=''
-           //  SetItensZ('click')
+          
             },1500)
-              //document.getElementById('a_click').click()
+             
            } else{
          }
           },3000)
@@ -1835,7 +1869,7 @@
                    <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
                     <br><br>
                     <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
-                    <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                    <br><br><br><button class='cancelar' id='sair_'>Cancelar</button>
                     </div>
                  `,
                  showCancelButton: false,
@@ -1904,16 +1938,16 @@
                     title: `<labe id="label_titleSwal"> Menu <i class="fa-solid fa-bars"></i></labei>`,
                  html: `
                     <br>
-                    <a id="SwalmenuPesq" href="#"> Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </a> 
+                    <a id="SwalmenuPesq" class='btns'  href="#"> Pesquisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </a> 
+                    <br> <br> <br>
+                      <a id="Swalmenu10" class='btns'  href="#sociais_contatos"> <i class="fa-brands fa-facebook-f"></i> Redes Sociais <i class="fa-brands fa-instagram"></i></a> 
+                    <br> <br> <br>
+                      <a id="Swalmenu11" class='btns'  href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
                     <br><br>
-                    <button id="btn_swal_menu1" title="">Tela cheia </button>  
+                    <button class='btns'  id="btn_swal_menu1" title="">Tela cheia <i class="fa-solid fa-desktop"></i> </button>  
                      <br><br>
-                    <a id="Swalmenu10" href="#sociais_contatos"> Redes Sociais </a> 
-                    <br><br> 
-                      <a id="Swalmenu11" href="#paragrafo_inf_cont"> Contatos <i class="fa-solid fa-phone-volume"></i> </a> 
-                    <br><br>
-                    <button id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
-                    <br><br><button id='sair_'>Sair,Cancelar</button>
+                    <button class='btns'  id="Swalmenu12" title="">Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i> </button>
+                    <br><br><button class='cancelar' id='sair_'>Cancelar</button>
                  `,
                  showCancelButton: false,
                   showConfirmButton: false,
@@ -1948,7 +1982,7 @@
                      },1000)
                   });
                     document.getElementById('SwalmenuPesq').addEventListener('click', function() {          
-                       procura()
+                       Pesquisador()
                   });
                     document.getElementById('Swalmenu12').addEventListener('click', function() {
                     Swal.fire({
@@ -2073,7 +2107,7 @@
                          <img id='imgWhats'src=''> <label>Rute (corretora)</label> </div>
                          <br><br>    
                          <button id="btn_whats" title="">Enviar <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
-                         <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                         <br><br><br><button id='sair_'>Cancelar</button>
                          `,
                         showCancelButton: false,
                         showConfirmButton: false,

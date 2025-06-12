@@ -176,7 +176,7 @@
             padding: 10px;
             padding-top: 15px;
             padding-bottom: 15px;
-            border: 1px solid rgba(65, 64, 64, 0.619);
+             border-color: 1px rgb(117, 117, 117);
             cursor: pointer;
             border-radius: 5px;
             background-color: rgb(232, 236, 255);
@@ -782,8 +782,9 @@
                      }
                      .my-custom_resultpesquisa p,.my-custom_Pesq_Swl p{
                         font-family: Arial, Helvetica, sans-serif;
-                        font-size: 13px;  
+                        font-size: 14px;  
                         color: rgb(74, 28, 73);
+                        margin-bottom: 20px;
                      }
                      .my-custom_resultpesquisa label:hover{
                       color: rgb(163, 2, 115);
@@ -799,6 +800,7 @@
                           width: 80%;
                           padding: 10px;
                           background-color: aliceblue;
+                          border-color: rgb(220, 221, 221);
                           color: rgb(23, 23, 23);
                           cursor: pointer;
                           border-radius: 5px;
@@ -823,14 +825,14 @@
                           font-family: Verdana, Geneva, Tahoma, sans-serif;
                         }
                          .my-custom_edite label{
-                          font-size: 18px;
+                          font-size: 20px;
                           font-weight: bold;
                           cursor: pointer;
                           color: rgb(44, 44, 44);
           
                          }
                           .my-custom_edite label:hover{
-                            text-decoration: underline 2px solid rgb(125, 1, 115);
+                            color: #910078;
                             
                           }
                           #cad_imagem {
@@ -872,12 +874,16 @@
                               min-width: 360px;
                               padding: 10px 0px 10px 0px;
                               cursor: pointer;
-                              background-color: rgb(233, 238, 255);
+                              background-color: rgb(255, 255, 255);
+                              border-color: rgb(220, 221, 221);
                               color: rgb(21, 21, 21);
-                              border: 1px solid rgb(30, 30, 30);
+                              
                               border-radius: 5px;
                               margin-bottom: 10px;
                               margin-top: 3px;
+                              text-align: center;
+                              font-size: 16px;
+
                               
                             }
                              #cad_imagem img{
@@ -903,16 +909,18 @@
                               padding: 3px 0px 3px 0px;       
                             }
                             #cad_imagem  #salverIMG{
-                               width: 100%;
-                              font-size: 16px;
-                              background-color: rgb(255, 255, 255);
-                              color: rgb(26, 26, 26);
+                               width: 80%;
+                              font-size: 18px;
+                              background-color: rgb(102, 0, 102);
+                              color: rgb(255, 255, 255);
                               cursor: pointer;
                               font-weight: bold;
                               text-align: center center;
-                              border: 2px solid  rgb(58, 58, 58);
+                              border-color: antiquewhite;
+                              box-shadow: 0 3px 7px rgba(167, 0, 153, 0.767);
                               border-radius: 10px;
                               padding: 20px 0px 20px 0px;   
+                              margin-left: 10%;
                             }
                              #cad_imagem i{
                               font-size: 40px;
@@ -920,8 +928,8 @@
                              }
                              #cad_imagem button:hover,  #cad_imagem  #salverIMG:hover{
                                 color: rgb(255, 255, 255);
-                                background-color: rgb(122, 0, 122);
-                                border: 2px solid  rgb(255, 255, 255);
+                                background-color: rgb(139, 0, 139);
+                                box-shadow: 0 1px 5px rgba(223, 1, 123, 0.664);
                              }
                               #cad_imagem p{
                                width: 100%;
@@ -931,7 +939,7 @@
                                 margin-bottom: 70px;
                                 border-radius: 20px;
                                padding-top: 10px;
-                               padding-bottom: 20px;
+                               padding-bottom: 30px;
                               }
                               #h4_codigo{
                                 margin-bottom: 30px;
@@ -950,6 +958,64 @@
                              #cad_imagem #sair_:hover{
                                 color: rgb(117, 2, 117);
                               }
+           .btns {
+            width: 60%;
+            font-size: 15px;
+            padding: 10px 30px 10px 30px;
+            cursor: pointer;
+             border: 0;
+            border-radius: 7px;
+             background-color: rgba(236, 235, 255, 0);
+             color: #1d1d1d;
+             font-family: Arial, Helvetica, sans-serif;
+             margin-bottom: 20px;
+           }
+           
+         .btns:hover{
+          
+             color: #720055;
+          }
+             .cancelar{
+            width: 30%;
+            font-size: 13px;
+            cursor: pointer;
+            border: 2px solid rgb(191, 192, 196);
+            border-radius: 7px;
+             background-color: rgb(255, 255, 255);
+             color: #272727;
+             font-family: Arial, Helvetica, sans-serif;
+             padding: 10px;
+         }
+         button {
+       outline: none;
+     }
+     
+      button:focus {
+       border: 2px solid #ffffff; /* Exemplo de personalização */
+       box-shadow: 0 0 3px rgba(121, 0, 115, 0.473);
+          border-radius: 5px;
+     }
+        a {
+       outline: none;
+     }
+     
+      a:focus {
+       border: 2px solid #ffffff; /* Exemplo de personalização */
+       box-shadow: 0 0 3px rgba(158, 0, 111, 0.5);
+      border-radius: 10px;
+     }
+     #cad_imagem  #sairr{
+       float: right;
+       font-size: 28px;
+       cursor: pointer;
+       margin-bottom: 200px;
+       margin-top: 30px;
+       margin-right: 30px;
+       }
+     #cad_imagem #sairr:hover{
+        color: rgb(117, 2, 117);
+      }
+   
        
          
     </style> 
@@ -1229,6 +1295,7 @@
                 </div>
                   <button id='salverIMG' onclick="salverIMG()" >Salvar</button>
                   <br><br>
+                   <i id="sairr" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> 
                    <div id='div_input_oculta'>
                      <input id="img" type='text'><input id="img2" type='text'><input id="img3" type='text'><input id="img4" type='text'>
                      <input id="img5" type='text'><input id="img6" type='text'><input id="img7" type='text'>
@@ -1274,9 +1341,59 @@
                 
              }
              //obs
-             function img_edt(){
+             function img_edt(){ //${lista}/${titulo}-${codigo}
                //document.getElementById('files_img').click(); 
-               Swal.fire('IMG 1 Em Breve!')          
+               Swal.fire('IMG 1 Em Breve!')     
+               
+                 var uploader = document.getElementById('uploader ');
+         var fileButton = document.getElementById('files');
+         
+         fileButton.addEventListener('change', function(e) {
+             var file = e.target.files[0];
+             var storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}` );
+             var task = storageRef.put(file);
+             task.on('state_changed', function progress(snapshot) {
+         
+                 var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                 uploader.value = percentage;
+         
+             }, function error(err) {
+         
+             }, function complete() {
+
+        storageRef.getDownloadURL().then(function(url_imagem) {
+     
+            document.getElementById('myProgress').style.display = 'block'
+            var i = 0;
+
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, 30);
+
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i = 0;                     
+                        window.localStorage.setItem('add_foto_member', url_imagem);
+                        document.getElementById('img_foto').src= url_imagem                  
+                          setTimeout(function(){
+                              document.getElementById('myProgress').style.display = 'none'
+                          },2000)
+                        
+                    } else {
+                        width++;
+                        elem.style.width = width + "%";
+                        elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+                    }
+                }
+            }
+
+        })
+    })
+})
+
              };
                function img_edt2(){
                //document.getElementById('files_img2').click(); 
@@ -1502,16 +1619,19 @@
                    Swal.fire({
              title: ` Edição do Imóvel!`,
              html: `          
-               <br>
-                 <label id='cadastro'>Edite Cadastro..</label>
-               <br>
-               <br>
-                 <label id='imagens'>Edite Imagens..</label>
+                <br>
+                 <label class='btns' id='cadastro'>Edite Cadastro <i class="fa-solid fa-table-list"></i></label>
                <br>
                <br>
-                 <label id='videos'>Edite Vídeos..</label>
                <br>
-               <br>           
+                 <label class='btns' id='imagens'>Edite Imagens  <i class="fa-solid fa-image"></i></label>
+               <br>
+               <br>
+               <br>
+                 <label class='btns' id='videos'>Edite Vídeos <i class="fa-solid fa-video"></i></label>
+               <br>
+               <br>
+                     
                  `,
                showCancelButton: false,
                showConfirmButton: true,
@@ -1524,13 +1644,19 @@
         });
          document.getElementById('cadastro').addEventListener('click',function(){
                 Cadastros2('click')
-                Swal.fire('Edite cadastro')
+                setTimeout(function(){
+                   Swal.close()
+                },50)
+
          });
            document.getElementById('imagens').addEventListener('click',function(){
                document.getElementById('body_div1').style.display='none'
                document.getElementById('divList').style.display='none'
                   onImagens('click') 
                Swal.fire('Edite Imagens!')
+                setTimeout(function(){
+                   Swal.close()
+                },50)
                  document.getElementById('cad_imagem').style.display='block'                      
          })            
              }
@@ -1540,21 +1666,25 @@
                   Swal.fire({
              title: `Menu de Edição`,
              html: `      
-                  <p>Acesse pesquisa, troquea foto whatsapp, troque url de redes sociais...</p>
+                  <p>Acesse pesquisa, troque  foto do whatsapp, troque a url das redes sociais...</p>
                <br>
-                 <label class='lbl' id='Pesquisar'>Pesquisar..</label>
-               <br>
-               <br>
-                 <label class='lbl' id='Tel_whats'>Tel- Whastsapp</label>
+                 <label class='btns' id='Pesquisar'>Pesquisar <i class="fa-solid fa-magnifying-glass"></i> </label>
                <br>
                <br>
-                <label class='lbl' id='img_whats'>Imagem- Whastsapp</label>
+                <br>
+                 <label class='btns' id='Tel_whats'>Tel- WhastsApp <i class="fa-solid fa-phone-volume"></i></label>
                <br>
                <br>
-                <label class='lbl' id='url_insta'>Trocar Url- Instagran</label>
+                <br>
+                <label class='btns' id='img_whats'>Imagem- WhastsApp <i class="fa-solid fa-image"></i></label>
                <br>
                <br>
-                 <label class='lbl' id='url_face'>Trocar Url- Facebook</label>
+                <br>
+                <label class='btns' id='url_insta'>Trocar Url- Instagran <i class="fa-brands fa-instagram"></i></label>
+               <br>
+               <br>
+                <br>
+                 <label class='btns' id='url_face'>Trocar Url- Facebook <i class="fa-brands fa-facebook-f"></i></label>
                <br>
                <br>
                  `,
@@ -1802,7 +1932,7 @@
                    <input id='inputSwal' type='text' placeHolder='Pesquisar...'>
                     <br><br>
                     <button id="Swalpesq" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  </button>
-                    <br><br><br><button id='sair_'>Sair,Cancelar</button>
+                    <br><br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
                     </div>
                  `,
                  showCancelButton: false,
@@ -1814,10 +1944,10 @@
                       document.body.style.paddingRight = '0px';
                    }
                  });
-                  document.getElementById("inputSwal").blur();
-                     document.getElementById('sair_').addEventListener('click', function() {
-                      document.getElementById("inputSwal").blur();
-                    Swal.fire('Cancelado!')
+                
+
+                     document.getElementById('Sair').addEventListener('click', function() {
+                    Swal.fire('Cancelado!','','')
                        Swal.close()    
                  });
                    document.getElementById('Swalpesq').addEventListener('click', function() {
@@ -2065,6 +2195,7 @@
                         sessionStorage.setItem('DataHora',`${doc.DataHoraInit}`)
                         sessionStorage.setItem('data_',`${doc.Data}`)
                         sessionStorage.setItem('hora_',`${doc.Hora}`)
+                        sessionStorage.setItem('nomeImagem',`${doc.NomeImagem}`);
                          document.getElementById('img').value=doc.IMG;                     
                          document.getElementById('img2').value=doc.IMG2;                      
                          document.getElementById('img3').value=doc.IMG3;                      
@@ -2143,6 +2274,7 @@
          document.getElementById('cpf_proprietario').value=''
          document.getElementById('Triplex').value='não';  
         document.getElementById('duplex').value='não';  
+         sessionStorage.setItem('nomeImagem','');
      
         }
         limpar()
@@ -2299,6 +2431,7 @@
                var vendidoData= document.getElementById('vendidoData').value;
                var salasM= document.getElementById('salas_metragen').value;
                 var salasQ= document.getElementById('salas_quant').value;
+              
     
             if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda==''| !nome_proprietario| nome_proprietario==''| !Tel_proprietario| Tel_proprietario=='') {
             document.getElementById('lbl_IMG').style.display='none';
@@ -2429,6 +2562,7 @@
       var vendidoData= document.getElementById('vendidoData').value;
       var salasM= document.getElementById('salas_metragen').value;
       var salasQ= document.getElementById('salas_quant').value;
+      
 
        if(!CodRetur || CodRetur==''){
              document.getElementById('codigo').style.display='block'
@@ -2455,6 +2589,7 @@
             });
         }
            mostrarAlerta('click')
+            
           const file = e.target.files[0];
            const storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}`);
            const task = storageRef.put(file);
@@ -2472,9 +2607,9 @@
                if (width >= 100) {
             clearInterval(id);
             i = 0;                     
-            sessionStorage.setItem('IMG', url_imagem);
-            sessionStorage.setItem('Lista', lista);
-            sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
+         //   sessionStorage.setItem('IMG', url_imagem);
+           //  sessionStorage.setItem('Lista', lista);
+           // sessionStorage.setItem('dadosIMG', `${lista}/${codigo}`);
             var db = firebase.firestore();       
              db.collection(`${lista}`).doc(`${codigo}`).set({
                 Titulo: titulo,
@@ -2540,7 +2675,8 @@
                 Vendido:vendido,
                 VendidoData:vendidoData,
                 SalasQ:salasQ,
-                SalasM:salasM,     
+                SalasM:salasM,
+                NomeImagem: `${lista}/${titulo}-${codigo}`,     
             });
                var dbd = firebase.firestore();
               dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
@@ -2608,6 +2744,7 @@
                 VendidoData:vendidoData,
                 SalasQ:salasQ,
                 SalasM:salasM,
+                NomeImagem: `${lista}/${titulo}-${codigo}`,   
             });   
              swal('Cadastro Salvo!', `Titúlo: ${titulo}\n Data: ${data} _ Hora:${hora}`, url_imagem);
              setTimeout(() => {
@@ -2700,6 +2837,7 @@
                         var obs10=  document.getElementById('obs10').value;
                          var DataHora= sessionStorage.getItem('DataHora')
                           var lista= sessionStorage.getItem('LIsta');
+                            var nomeImagem= sessionStorage.getItem('nomeImagem');
                            
           var CodRetur= sessionStorage.getItem('códigoRetur')
           var data=  sessionStorage.getItem('data')
@@ -2749,6 +2887,7 @@
           var vendidoData= document.getElementById('vendidoData').value;
           var salasM= document.getElementById('salas_metragen').value;
           var salasQ= document.getElementById('salas_quant').value;          
+        
 
        if (!codigo| codigo==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda=='') {       
         Swal.fire('Atenção!', '<h3>Preencha todos os campos!</h3><br><b>01- Escolha uma Lista<br>02- De um Titulo ou nome <b>(Atenção O Titulo não podera ser alterado!)<br>', 'warning');   
@@ -2819,6 +2958,7 @@
                 VendidoData:vendidoData,
                 SalasQ:salasQ,
                 SalasM:salasM,
+                NomeImagem: nomeImagem,   
             });
                  var dbd = firebase.firestore();
              dbd.collection(`Pesquisar`).doc(`${codigo}`).set({
@@ -2885,7 +3025,8 @@
                 Vendido:vendido,
                 VendidoData:vendidoData,
                 SalasQ:salasQ,
-                SalasM:salasM,           
+                SalasM:salasM,
+                NomeImagem: nomeImagem,              
             });
                document.getElementById('myProgress').style.display = 'block';
                    var i = 0;
