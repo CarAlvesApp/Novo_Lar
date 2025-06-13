@@ -1480,11 +1480,14 @@ border-radius: 10px;
     </div>
     <br><br>
      <button id='salvarIMG' onclick="salvarIMG()" >Salvar</button>
+       <br><br>
+       <i id="sairr" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> 
       </div>
+     
       
     <div id="cad_videos" >
      <div id="imgs">
-        <i id="sair_" class="fa-solid fa-delete-left" onclick="sairVD()"></i> Sair
+        <i id="sairr" class="fa-solid fa-delete-left" onclick="sairVD()"></i> Sair
         <h1>Videos</h1>
         <h2 id="h2_imóvel">Imovél</h2>
         <h4 id="end_edt"></h4>
@@ -1592,10 +1595,12 @@ border-radius: 10px;
    <script> //files
    function sairIMGcad(){
     document.getElementById('cad_imagem').style.display='none'
+      document.getElementById('cad_videos').style.display='none'
     sair('click')
    }
-    function sairIMGcad(){
+    function sairVD(){
     document.getElementById('cad_videos').style.display='none'
+     document.getElementById('cad_imagem').style.display='none'
     sair('click')
    }
    function salvarIMG(){
