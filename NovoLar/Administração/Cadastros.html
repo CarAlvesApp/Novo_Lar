@@ -839,7 +839,7 @@ padding-bottom: 150px;
 display: none;
 background-color: rgba(0, 255, 255, 0);
 }
-#cad_imagem  #imgs{
+#cad_imagem  #imgs, #cad_videos #vds{
 margin: auto;
 width: 90%;    
 }
@@ -847,7 +847,7 @@ width: 90%;
 font-size: 13px;
 
 }
-#cad_imagem h1,#cad_videos h1{
+#cad_imagem h1, #cad_videos h1{
 width: 100%;
 min-width: 390px;
 color: rgb(92, 2, 97);
@@ -876,10 +876,8 @@ margin-bottom: 40px;
  margin-top: 3px;
  text-align: center;
  font-size: 16px;
-
- 
 }
-#cad_imagem img ,#cad_videos img{
+#cad_imagem img ,#cad_videos video{
  width: 98%;
  min-width: 370px;
  padding: 3px;
@@ -887,14 +885,17 @@ margin-bottom: 40px;
  border-radius: 10px;
  cursor: pointer;
 }
-#cad_imagem img:hover, #cad_videos img:hover{
+#cad_imagem img:hover, #cad_videos video:hover{
   background-color: #910078;
    border: 2px solid rgb(226, 226, 226);
 }
-.input_visible{
+.input_visible,.input_visible_V{
 display: none;
 }
 #cad_imagem button ,#cad_videos button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
  width: 100%;
  font-size: 14px;
  background-color: rgb(255, 255, 255);
@@ -906,30 +907,31 @@ display: none;
  border-radius: 7px;
  padding: 3px 0px 3px 0px;       
 }
-#cad_imagem  #salvarIMG, #cad_imagem  #salvarVD{
+#cad_imagem  #salvarIMG, #cad_videos  #salvarVD{
   width: 80%;
  font-size: 18px;
- background-color: rgb(102, 0, 102);
+ background-color: rgb(78, 0, 78);
  color: rgb(255, 255, 255);
  cursor: pointer;
  font-weight: bold;
  text-align: center center;
- border-color: antiquewhite;
- box-shadow: 0 3px 7px rgba(167, 0, 153, 0.767);
+ border-color: rgb(156, 131, 152);
+ box-shadow: 0 3px 7px rgba(29, 29, 29, 0.767);
  border-radius: 10px;
- padding: 20px 0px 20px 0px;   
+ padding: 15px 0px 15px 0px;   
  margin-left: 10%;
 }
 #cad_imagem i, #cad_videos i{
  font-size: 40px;
  margin-bottom: 10px;
+ margin-right: 10px;
 }
-#cad_imagem button:hover,  #cad_imagem  #salvarIMG:hover,#cad_videos #salvarVD:hover, #cad_videos button:hover{
+#cad_imagem button:hover,  #cad_imagem #salvarIMG:hover, #cad_videos #salvarVD:hover, #cad_videos button:hover{
    color: rgb(255, 255, 255);
    background-color: rgb(139, 0, 139);
    box-shadow: 0 1px 5px rgba(223, 1, 123, 0.664);
 }
- #cad_imagem p{
+ #cad_imagem p, #cad_videos p{
   width: 100%;
   border: 0cap;
   border-bottom: 7px solid rgb(160, 2, 142);
@@ -939,7 +941,7 @@ display: none;
   padding-top: 10px;
   padding-bottom: 30px;
  }
- #h4_codigo{
+ #h4_codigo,  #h4_codigo_v{
    margin-bottom: 30px;
  }
  #novocad input{
@@ -950,12 +952,12 @@ display: none;
    display: none;
    
  }
-#cad_imagem #sair_{
+#cad_imagem #sair_, #cad_videos #sair_{
    font-size: 22px;
    cursor: pointer;
    margin-bottom: 20px;
  }
-#cad_imagem #sair_:hover{
+#cad_imagem #sair_:hover, #cad_videos #sair_:hover{
    color: rgb(117, 2, 117);
  }
  .btns {
@@ -1001,7 +1003,7 @@ a:focus {
  box-shadow: 0 0 3px rgba(158, 0, 111, 0.5);
 border-radius: 10px;
 }
-#cad_imagem  #sairr{
+#cad_imagem  #sairr, #cad_videos  #sairr{
  float: right;
  font-size: 28px;
  cursor: pointer;
@@ -1009,7 +1011,7 @@ border-radius: 10px;
  margin-top: 30px;
  margin-right: 30px;
  }
-#cad_imagem #sairr:hover{
+#cad_imagem #sairr:hover, #cad_videos  #sairr:hover{
   color: rgb(117, 2, 117);
 }
 #myProgressIMG1 {
@@ -1024,7 +1026,7 @@ border-radius: 10px;
   width: 1%;
   /* Começa com 1% */
   height: 20px;
-  background-color:rgb(123, 2, 87);
+   background-color:rgb(123, 2, 87);
   text-align: center;
   /* Centraliza horizontalmente */
   line-height: 15px;
@@ -1032,7 +1034,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG2 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1053,7 +1055,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG3 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1074,7 +1076,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG4 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1095,7 +1097,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG5 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1116,7 +1118,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG6 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1137,7 +1139,7 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
-};
+}
 #myProgressIMG7 {
  width: 80%;
  background-color:rgb(134, 130, 130);
@@ -1179,6 +1181,73 @@ border-radius: 10px;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bold;
+}
+#myProgressVD1{
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+}   
+#myBarVD1 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+  background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressVD2{
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+}   
+#myBarVD2 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+  background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressVD3{
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+}   
+#myBarVD3 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+  background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+ #cad_videos #vds #id_video,  #cad_videos #vds  #id_video2,  #cad_videos #vds  #id_video3{
+  background-color: rgb(20, 0, 20);
+  padding-bottom: 5px;
 }
 
 
@@ -1402,11 +1471,12 @@ border-radius: 10px;
 
         <h3 id="h3_img1">Imagem 01</h3>
         <input class="input_visible" id="files_img" type="file">
-        <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
-        <br><button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br> 
+         <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
           <div id="myProgressIMG1" style="display:none">
            <div id="myBarIMG1">10%</div>
-       </div> </button><br>
+         </div>
+        <button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br> 
+       </button><br>
         <label for="">Texto da imagem 1 <br>
         <input id="input_edt_img" type="text" placeholder="Digite texto..." >
        </label><p></p>
@@ -1414,9 +1484,9 @@ border-radius: 10px;
       <h3 id="h3_img2">Imagem 02</h3>
        <input  class="input_visible"  id="files_img2" type="file">
        <img id="edt_img2" src="../src/Rutimoveis img.png" alt=""onclick="img2()">
-         <br><button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG2" style="display:none">
-           <div id="myBarIMG2">10%</div>
+         <div id="myProgressIMG2" style="display:none">
+           <div id="myBarIMG2">10%</div> </div>
+            <button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
            </button><br>
         <label for="">Texto da imagem 2 <br>
        <input id="input_edt_img2" type="text" placeholder="Digite texto..." >
@@ -1425,9 +1495,9 @@ border-radius: 10px;
       <h3 id="h3_img3">Imagem 03</h3>
        <input  class="input_visible"  id="files_img3" type="file">
         <img id="edt_img3" src="../src/Rutimoveis img.png" alt=""onclick="img3()">
-         <br><button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem <br>
-          <div id="myProgressIMG3" style="display:none">
-           <div id="myBarIMG3">10%</div>
+           <div id="myProgressIMG3" style="display:none">
+           <div id="myBarIMG3">10%</div></div>
+            <button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem <br>
            </button><br>
          <label for="">Texto da imagem 3 <br>
         <input id="input_edt_img3" type="text" placeholder="Digite texto..." >
@@ -1436,9 +1506,9 @@ border-radius: 10px;
       <h3 id="h3_img4">Imagem 04</h3>
        <input  class="input_visible"  id="files_img4" type="file">
         <img id="edt_img4" src="../src/Rutimoveis img.png" alt=""onclick="img4()">
-         <br><button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG4" style="display:none">
-           <div id="myBarIMG4">10%</div>
+         <div id="myProgressIMG4" style="display:none">
+           <div id="myBarIMG4">10%</div></div>
+            <button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
            </button><br>
            <label for="">Texto da imagem 4 <br>
         <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
@@ -1447,9 +1517,9 @@ border-radius: 10px;
       <h3 id="h3_img4">Imagem 05</h3>
         <input  class="input_visible"  id="files_img5" type="file">
          <img id="edt_img5" src="../src/Rutimoveis img.png" alt=""onclick="img5()">
-         <br><button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG5" style="display:none">
-           <div id="myBarIMG5">10%</div>
+           <div id="myProgressIMG5" style="display:none">
+           <div id="myBarIMG5">10%</div></div>
+            <button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
            </button><br>
          <label for="">Texto da imagem 5 <br>
          <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
@@ -1457,10 +1527,10 @@ border-radius: 10px;
      <br>
       <h3 id="h3_img6">Imagem 06</h3>
         <input  class="input_visible"  id="files_img6" type="file">
-        <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
-         <br><button onclick="img_edt6()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG6" style="display:none">
-           <div id="myBarIMG6">10%</div>
+          <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
+            <div id="myProgressIMG6" style="display:none">
+           <div id="myBarIMG6">10%</div></div>
+           <button onclick="img_edt6()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
            </button><br>
           <label for="">Texto da imagem 6 <br>
          <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
@@ -1469,9 +1539,9 @@ border-radius: 10px;
       <h3 id="h3_img7">Imagem 07</h3>
         <input  class="input_visible"  id="files_img7" type="file">
          <img id="edt_img7" src="../src/Rutimoveis img.png" alt=""onclick="img7()">
-          <br><button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           <div id="myProgressIMG7" style="display:none">
-            <div id="myBarIMG7">10%</div>
+          <div id="myProgressIMG7" style="display:none">
+            <div id="myBarIMG7">10%</div></div>
+             <button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
            </button><br>
          <label for="">Texto da imagem 7 <br>
         <input id="input_edt_img7" type="text" placeholder="Digite texto..." >
@@ -1482,100 +1552,6 @@ border-radius: 10px;
      <button id='salvarIMG' onclick="salvarIMG()" >Salvar</button>
        <br><br>
        <i id="sairr" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> 
-      </div>
-     
-      
-    <div id="cad_videos" >
-     <div id="imgs">
-        <i id="sairr" class="fa-solid fa-delete-left" onclick="sairVD()"></i> Sair
-        <h1>Videos</h1>
-        <h2 id="h2_imóvel">Imovél</h2>
-        <h4 id="end_edt"></h4>
-        <h4 id="h4_codigo">Código</h4>  
-        <h3 id="h3_img1">Imagem 01</h3>
-        <input class="input_visible" id="files_img" type="file">
-        <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
-        <br><button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br> 
-          <div id="myProgressIMG1" style="display:none">
-           <div id="myBarIMG1">10%</div>
-       </div> </button><br>
-        <label for="">Texto da imagem 1 <br>
-        <input id="input_edt_img" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
-      <h3 id="h3_img2">Imagem 02</h3>
-       <input  class="input_visible"  id="files_img2" type="file">
-       <img id="edt_img2" src="../src/Rutimoveis img.png" alt=""onclick="img2()">
-         <br><button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG2" style="display:none">
-           <div id="myBarIMG2">10%</div>
-           </button><br>
-        <label for="">Texto da imagem 2 <br>
-       <input id="input_edt_img2" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
-      <h3 id="h3_img3">Imagem 03</h3>
-       <input  class="input_visible"  id="files_img3" type="file">
-        <img id="edt_img3" src="../src/Rutimoveis img.png" alt=""onclick="img3()">
-         <br><button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem <br>
-          <div id="myProgressIMG3" style="display:none">
-           <div id="myBarIMG3">10%</div>
-           </button><br>
-         <label for="">Texto da imagem 3 <br>
-        <input id="input_edt_img3" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
-      <h3 id="h3_img4">Imagem 04</h3>
-       <input  class="input_visible"  id="files_img4" type="file">
-        <img id="edt_img4" src="../src/Rutimoveis img.png" alt=""onclick="img4()">
-         <br><button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG4" style="display:none">
-           <div id="myBarIMG4">10%</div>
-           </button><br>
-           <label for="">Texto da imagem 4 <br>
-        <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
-       </label><p></p>
-     <br>
-      <h3 id="h3_img4">Imagem 05</h3>
-        <input  class="input_visible"  id="files_img5" type="file">
-         <img id="edt_img5" src="../src/Rutimoveis img.png" alt=""onclick="img5()">
-         <br><button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG5" style="display:none">
-           <div id="myBarIMG5">10%</div>
-           </button><br>
-         <label for="">Texto da imagem 5 <br>
-         <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
-      <h3 id="h3_img6">Imagem 06</h3>
-        <input  class="input_visible"  id="files_img6" type="file">
-        <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
-         <br><button onclick="img_edt6()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-          <div id="myProgressIMG6" style="display:none">
-           <div id="myBarIMG6">10%</div>
-           </button><br>
-          <label for="">Texto da imagem 6 <br>
-         <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
-        </label><p></p>
-     <br>
-      <h3 id="h3_img7">Imagem 07</h3>
-        <input  class="input_visible"  id="files_img7" type="file">
-         <img id="edt_img7" src="../src/Rutimoveis img.png" alt=""onclick="img7()">
-          <br><button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           <div id="myProgressIMG7" style="display:none">
-            <div id="myBarIMG7">10%</div>
-           </button><br>
-         <label for="">Texto da imagem 7 <br>
-        <input id="input_edt_img7" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
-    </div>
-           <br><br>
-     <button id='salvarVD' onclick="salvarVD()" >Salvar</button>
-   
-     
-     <br><br>
-      <i id="sairr" class="fa-solid fa-delete-left" onclick="sairVD()"></i> 
       <div id='div_input_oculta'>
         <input id="img" type='text'><input id="img2" type='text'><input id="img3" type='text'><input id="img4" type='text'>
          <input id="img5" type='text'><input id="img6" type='text'><input id="img7" type='text'>
@@ -1584,9 +1560,64 @@ border-radius: 10px;
             <input id="obs2" type='text'><input id="obs3" type='text'><input id="obs4" type='text'><input id="obs5" type='text'>
               <input id="obs6" type='text'><input id="obs7" type='text'><input id="obs8" type='text'><input id="obs9" type='text'>
                 <input id="obs10" type='text'>
-         </div>
-    </div>
-      <div id="divList">
+       </div>
+   </div>
+      
+   <div id="cad_videos" >
+     <div id="vds">
+        <i id="sair_" class="fa-solid fa-delete-left" onclick="sairVD()"> </i> Sair
+        <h1>Vídeos</h1>
+        <h2 id="h2_imóvel_v">Imovél</h2>
+        <h4 id="end_edt_v"></h4>
+        <h4 id="h4_codigo_v">Código</h4>  
+
+        <h3 id="h3_vd1">Video 01</h3>
+        <input class="input_visible_V" id="files_vd" type="file" accept="video/mp4"> 
+        <video id="id_video"  width="640" height="360"  autoplay muted playsinline controls>
+          <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+          <div id="myProgressVD1" style="display:none">
+           <div id="myBarVD1">10%</div></div>
+           <button onclick="vd_edt()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
+           </button><br>
+         <label for="">Texto do vídeo 01 <br>
+        <input id="input_edt_vd" type="text" placeholder="Digite texto..." >
+       </label><p></p> <br>
+
+         <h3 id="h3_vd2">Video 02</h3>
+        <input class="input_visible_V" id="files_vd2" type="file" accept="video/mp4" > 
+        <video id="id_video2"  width="640" height="360" autoplay muted playsinline controls>
+          <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+         <div id="myProgressVD2" style="display:none">
+           <div id="myBarVD2">10%</div></div>
+           <button onclick="vd_edt2()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
+           </button><br>
+         <label for="">Texto do vídeo 02 <br>
+        <input id="input_edt_vd2" type="text" placeholder="Digite texto..." >
+       </label><p></p> <br>
+
+         <h3 id="h3_vd3">Video 03</h3>
+        <input class="input_visible_V" id="files_vd3" type="file"accept="video/mp4" > 
+        <video id="id_video3"   width="640" height="360" autoplay muted playsinline  controls>
+          <source src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+           <div id="myProgressVD3" style="display:none">
+            <div id="myBarVD3">10%</div></div>
+               <button onclick="vd_edt3()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br>
+           </button><br>
+         <label for="">Texto do vídeo 03 <br>
+        <input id="input_edt_vd3" type="text" placeholder="Digite texto..." >
+       </label><p></p> <br>
+      <br><br>
+     <button id='salvarVD' onclick="salvarVD()" >Salvar</button>
+      <br><br>
+       <i id="sairr" class="fa-solid fa-delete-left" onclick="sairVD()"></i> 
+       </div> </div>
+        <div id="divList">
         <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
        <h2 id="h2Lista">Lista </h2>
        <div id="listas">
@@ -1603,9 +1634,21 @@ border-radius: 10px;
      document.getElementById('cad_imagem').style.display='none'
     sair('click')
    }
+   function salvarVD(){
+    var respV1= document.getElementById('input_edt_vd').value;
+       document.getElementById('obs8').value=respV1;
+      var respV2= document.getElementById('input_edt_vd2').value;
+        document.getElementById('obs9').value=respV2;
+         var respV3= document.getElementById('input_edt_vd3').value;
+          document.getElementById('obs10').value=respV3;
+             mostrarAlerta2('click') 
+              setTimeout(function(){
+   Salvarcad('click') 
+  },1000)
+   }
+        
    function salvarIMG(){
     mostrarAlerta2('click') 
-   var img1=   ''; //    document.getElementById('').value;
    var resp1= document.getElementById('input_edt_img').value;
    document.getElementById('obs').value=resp1;
    var resp2= document.getElementById('input_edt_img2').value;
@@ -1653,8 +1696,199 @@ border-radius: 10px;
       setTimeout(function(){
        Swal.close()
       },10000)
+  };
+   function mostrarAlerta3() {
+      Swal.fire({
+        title: `Carregando vídeo... `,
+        text: `Aguarde carregando...`,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        didOpen: () => {
+            Swal.showLoading();
+             document.body.style.paddingRight = '0px';        
+        }
+      });
+      setTimeout(function(){
+       Swal.close()
+      },10000)
+  };
+
+
+  // Salve Vídeos
+  function vd_edt(){ //${lista}/${titulo}-${codigo}
+   document.getElementById('files_vd').click(); 
+   var nomevd1 = sessionStorage.getItem('nomeImagem');       
+   var firebaseConfigure= {
+    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+    authDomain: "game-dbv.firebaseapp.com",
+    projectId: "game-dbv",
+    storageBucket: "game-dbv.appspot.com",
+    messagingSenderId: "118219151865",
+    appId: "1:118219151865:web:b6414d5255233264268528",
+    measurementId: "G-K17DLDBYGR"
+   };
+   firebase.initializeApp(firebaseConfigure); 
+   var uploader = document.getElementById('uploader');
+   var fileButton = document.getElementById('files_vd');
+   fileButton.addEventListener('change', function(e) {
+   var file = e.target.files[0];
+   var storageRef = firebase.storage().ref(`${nomevd1}_VD1`);
+   mostrarAlerta3()
+   var task = storageRef.put(file);
+   task.on('state_changed', function progress(snapshot) {
+   var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+   uploader.value = percentage;
+   }, function error(err) {
+   }, function complete() {
+   storageRef.getDownloadURL().then(function(url_videos) {
+    Swal.close()
+   document.getElementById('myProgressVD1').style.display = 'block'
+
+  var i = 0;
+  if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("myBarVD1");
+      var width = 1;
+      var id = setInterval(frame, 30);
+      function frame() {
+   if (width >= 100) {
+       clearInterval(id);
+       i = 0;                     
+  
+         document.getElementById('id_video').src= url_videos
+        document.getElementById('vd').value=`${url_videos}`   
+       setTimeout(function(){
+       document.getElementById('myProgressVD1').style.display = 'none'
+         },1000)
+     } else {
+          width++;
+          elem.style.width = width + "%";
+          elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+        }
+      }
+    }
+ })
+})
+})
+  };
+  function vd_edt2(){ //${lista}/${titulo}-${codigo}
+   document.getElementById('files_vd2').click(); 
+   var nomevd2 = sessionStorage.getItem('nomeImagem');       
+   var firebaseConfigure= {
+    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+    authDomain: "game-dbv.firebaseapp.com",
+    projectId: "game-dbv",
+    storageBucket: "game-dbv.appspot.com",
+    messagingSenderId: "118219151865",
+    appId: "1:118219151865:web:b6414d5255233264268528",
+    measurementId: "G-K17DLDBYGR"
+   };
+   firebase.initializeApp(firebaseConfigure); 
+   var uploader = document.getElementById('uploader');
+   var fileButton = document.getElementById('files_vd2');
+   fileButton.addEventListener('change', function(e) {
+   var file = e.target.files[0];
+   var storageRef = firebase.storage().ref(`${nomevd2}_VD2`);
+   mostrarAlerta3()
+   var task = storageRef.put(file);
+   task.on('state_changed', function progress(snapshot) {
+   var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+   uploader.value = percentage;
+   }, function error(err) {
+   }, function complete() {
+   storageRef.getDownloadURL().then(function(url_videos2) {
+    Swal.close()
+   document.getElementById('myProgressVD2').style.display = 'block'
+
+  var i = 0;
+  if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("myBarVD2");
+      var width = 1;
+      var id = setInterval(frame, 30);
+      function frame() {
+   if (width >= 100) {
+       clearInterval(id);
+       i = 0;                     
+  
+         document.getElementById('id_video2').src= url_videos2
+        document.getElementById('vd2').value=`${url_videos2}`    
+       setTimeout(function(){
+       document.getElementById('myProgressVD2').style.display = 'none'
+         },1000)
+     } else {
+          width++;
+          elem.style.width = width + "%";
+          elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+        }
+      }
+    }
+ })
+})
+})
   }
-   //obs
+function vd_edt3(){ //${lista}/${titulo}-${codigo}
+   document.getElementById('files_vd3').click(); 
+   var nomevd3 = sessionStorage.getItem('nomeImagem');       
+   var firebaseConfigure= {
+    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
+    authDomain: "game-dbv.firebaseapp.com",
+    projectId: "game-dbv",
+    storageBucket: "game-dbv.appspot.com",
+    messagingSenderId: "118219151865",
+    appId: "1:118219151865:web:b6414d5255233264268528",
+    measurementId: "G-K17DLDBYGR"
+   };
+   firebase.initializeApp(firebaseConfigure); 
+   var uploader = document.getElementById('uploader');
+   var fileButton = document.getElementById('files_vd3');
+   fileButton.addEventListener('change', function(e) {
+   var file = e.target.files[0];
+   var storageRef = firebase.storage().ref(`${nomevd3}_VD3`);
+   mostrarAlerta3()
+   var task = storageRef.put(file);
+   task.on('state_changed', function progress(snapshot) {
+   var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+   uploader.value = percentage;
+   }, function error(err) {
+   }, function complete() {
+   storageRef.getDownloadURL().then(function(url_videos3) {
+    Swal.close()
+   document.getElementById('myProgressVD3').style.display = 'block'
+
+  var i = 0;
+  if (i == 0) {
+      i = 1;
+      var elem = document.getElementById("myBarVD3");
+      var width = 1;
+      var id = setInterval(frame, 30);
+      function frame() {
+   if (width >= 100) {
+       clearInterval(id);
+       i = 0;                     
+  
+         document.getElementById('id_video3').src= url_videos3
+        document.getElementById('vd3').value=`${url_videos3}`    
+
+    setTimeout(function(){
+         document.getElementById('myProgressVD3').style.display='none'
+         },1000)
+     } else {
+          width++;
+          elem.style.width = width + "%";
+          elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+        }
+      }
+    }
+ })
+})
+})
+  }
+
+   
+
+   // Salve imagens
+
    function img_edt(){ //${lista}/${titulo}-${codigo}
   
     document.getElementById('files_img').click(); 
@@ -1676,9 +1910,10 @@ border-radius: 10px;
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG}`);
+       mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
+
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1702,7 +1937,7 @@ border-radius: 10px;
         document.getElementById('img').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG1').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -1733,11 +1968,11 @@ border-radius: 10px;
    var uploader = document.getElementById('uploader');
    var fileButton = document.getElementById('files_img2');
    fileButton.addEventListener('change', function(e) {
+        mostrarAlerta()
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG2}img2`);
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1761,7 +1996,7 @@ border-radius: 10px;
         document.getElementById('img2').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG2').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -1794,9 +2029,10 @@ border-radius: 10px;
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG3}img3`);
+       mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
+
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1820,7 +2056,7 @@ border-radius: 10px;
         document.getElementById('img3').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG3').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -1852,10 +2088,10 @@ border-radius: 10px;
    var fileButton = document.getElementById('files_img4');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
+       mostrarAlerta()
    var storageRef = firebase.storage().ref(`${nomeIMG4}img4`);
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1879,7 +2115,7 @@ border-radius: 10px;
         document.getElementById('img4').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG4').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -1912,8 +2148,8 @@ border-radius: 10px;
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG5}img5`);
    var task = storageRef.put(file);
+       mostrarAlerta()
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1937,7 +2173,7 @@ border-radius: 10px;
         document.getElementById('img5').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG5').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -1970,9 +2206,9 @@ border-radius: 10px;
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG6}img6`);
+       mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -1996,7 +2232,7 @@ border-radius: 10px;
         document.getElementById('img6').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG6').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -2029,8 +2265,8 @@ border-radius: 10px;
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG7}img7`);
    var task = storageRef.put(file);
+       mostrarAlerta()
    task.on('state_changed', function progress(snapshot) {
-    mostrarAlerta()
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -2054,7 +2290,7 @@ border-radius: 10px;
         document.getElementById('img7').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG7').style.display = 'none'
-         },2000)
+         },1000)
      } else {
           width++;
           elem.style.width = width + "%";
@@ -2114,6 +2350,9 @@ var titulo_= document.getElementById('h2_imóvel');
 var id_imovel= sessionStorage.getItem('ID_imovel')
 var end= document.getElementById('end_edt');
 var pesquisa= sessionStorage.getItem('Pesquisa')
+var codigo_V= document.getElementById('h4_codigo_v');
+var titulo_V= document.getElementById('h2_imóvel_v');
+var end_V= document.getElementById('end_edt_v');
 
  const firebaseConfig= {
  apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
@@ -2197,16 +2436,44 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
     document.getElementById('obs8').value= doc.OBS8;           
     document.getElementById('obs9').value= doc.OBS9;           
     document.getElementById('obs10').value= doc.OBS10;  
-    codigo_.innerHTML=doc.Código
-    titulo_.innerHTML=doc.Titulo
-    end.innerHTML=`Bairro: ${doc.Bairro} em ${doc.Cidade}`
+
+    codigo_.innerHTML=doc.Código;
+    titulo_.innerHTML=doc.Titulo;
+    end.innerHTML=`Bairro: ${doc.Bairro} em ${doc.Cidade}`;
+    codigo_V.innerHTML= doc.Código;
+    titulo_V.innerHTML= doc.Titulo;
+    end_V.innerHTML=`Bairro: ${doc.Bairro} em ${doc.Cidade}`;
+
     document.getElementById('input_edt_img').value=`${doc.OBS}`  
      document.getElementById('input_edt_img2').value=`${doc.OBS2}` 
       document.getElementById('input_edt_img3').value=`${doc.OBS3}` 
        document.getElementById('input_edt_img4').value=`${doc.OBS4}` 
         document.getElementById('input_edt_img5').value=`${doc.OBS5}` 
          document.getElementById('input_edt_img6').value=`${doc.OBS6}` 
-          document.getElementById('input_edt_img7').value=`${doc.OBS7}`   
+          document.getElementById('input_edt_img7').value=`${doc.OBS7}` 
+           document.getElementById('input_edt_vd').value=`${doc.OBS8}` 
+            document.getElementById('input_edt_vd2').value=`${doc.OBS9}` 
+             document.getElementById('input_edt_vd3').value=`${doc.OBS10}` 
+
+   if(!doc.VD || doc.VD=='' || doc.VD=='undefined'){
+     document.getElementById('id_video').src='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+      document.getElementById('vd').value='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+   }else{
+      document.getElementById('id_video').src=doc.VD;
+   };
+    if(!doc.VD2 || doc.VD2=='' || doc.VD2=='undefined'){
+     document.getElementById('id_video2').src='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+      document.getElementById('vd2').value='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+   }else{
+      document.getElementById('id_video2').src=doc.VD2;
+   };
+   if(!doc.VD3 || doc.VD3=='' || doc.VD3=='undefined'){
+     document.getElementById('id_video3').src='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+      document.getElementById('vd3').value='../src/Banner para imobiliária fotografia casa vermelho e branco.mp4';
+   }else{
+      document.getElementById('id_video3').src=doc.VD3;
+   };
+    
   
   if(!doc.IMG || doc.IMG=='' || doc.IMG=='undefined'){
      document.getElementById('edt_img1').src='../src/Rutimoveis img.png';
@@ -2283,6 +2550,7 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
      }
 });
  document.getElementById('cadastro').addEventListener('click',function(){
+
         Cadastros2('click')
         setTimeout(function(){
            Swal.close()
@@ -2290,6 +2558,7 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
 
  });
    document.getElementById('imagens').addEventListener('click',function(){
+    //limp_Cad_V_I('click')
        document.getElementById('body_div1').style.display='none'
        document.getElementById('divList').style.display='none'
          document.getElementById('cad_videos').style.display='none' 
@@ -2302,6 +2571,7 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
  })            
 
  document.getElementById('videos').addEventListener('click',function(){
+ // limp_Cad_V_I('click')
        document.getElementById('body_div1').style.display='none'
         document.getElementById('divList').style.display='none'
          document.getElementById('cad_imagem').style.display='none' 
@@ -2310,10 +2580,32 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
         setTimeout(function(){
            Swal.close()
         },50)
-        alert('videos')
          document.getElementById('cad_videos').style.display='block'                      
  })            
 }
+ function limp_Cad_V_I(){
+  document.getElementById('id_video').value=''
+document.getElementById('vd').value=''
+document.getElementById('id_video2').value=''
+document.getElementById('vd2').value=''
+document.getElementById('id_video3').value=''
+document.getElementById('vd3').value=''
+document.getElementById('edt_img1').value=''
+document.getElementById('img').value=''
+document.getElementById('edt_img2').value=''
+document.getElementById('img2').value=''
+document.getElementById('edt_img3').value=''
+document.getElementById('img3').value=''
+document.getElementById('edt_img4').value=''
+document.getElementById('img4').value=''
+document.getElementById('edt_img5').value=''
+document.getElementById('img5').value=''
+document.getElementById('edt_img6').value=''
+document.getElementById('img6').value=''
+document.getElementById('edt_img7').value=''
+document.getElementById('img7').value=''
+
+ }
  function Menu(){
         // window.open('../index.html','blank')   
       Swal.fire({
@@ -2845,7 +3137,7 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
          sessionStorage.setItem('data_',`${doc.Data}`)
          sessionStorage.setItem('hora_',`${doc.Hora}`)
          sessionStorage.setItem('nomeImagem',`${doc.NomeImagem}`);
-         document.getElementById('img').value=doc.IMG;                     
+         document.getElementById('img').value= doc.IMG;                     
          document.getElementById('img2').value=doc.IMG2;                      
          document.getElementById('img3').value=doc.IMG3;                      
          document.getElementById('img4').value=doc.IMG4;                   
@@ -2864,7 +3156,10 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
          document.getElementById('obs7').value=doc.OBS7;                      
          document.getElementById('obs8').value=doc.OBS8;                     
          document.getElementById('obs9').value=doc.OBS9;             
-         document.getElementById('obs10').value=doc.OBS10;          
+         document.getElementById('obs10').value=doc.OBS10; 
+         var img= document.getElementById('img').value;
+        
+            var nomeImagem= sessionStorage.getItem('nomeImagem');         
          Edit_imovel('click')
        })
      })
@@ -3079,6 +3374,29 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
       var vendidoData= document.getElementById('vendidoData').value;
       var salasM= document.getElementById('salas_metragen').value;
        var salasQ= document.getElementById('salas_quant').value;
+       var img= document.getElementById('img').value;
+      var img2= document.getElementById('img2').value;
+      var img3= document.getElementById('img3').value;
+      var img4= document.getElementById('img4').value;
+      var img5= document.getElementById('img5').value;
+      var img6= document.getElementById('img6').value;
+      var img7= document.getElementById('img7').value;
+      var vd=  document.getElementById('vd').value;
+      var vd2= document.getElementById('vd2').value;
+      var vd3= document.getElementById('vd3').value;
+      var id= document.getElementById('id').value;
+      var obs2= document.getElementById('obs2').value;
+       var obs3=  document.getElementById('obs3').value;
+        var obs4=  document.getElementById('obs4').value;
+         var obs5= document.getElementById('obs5').value;
+          var obs6= document.getElementById('obs6').value;
+           var obs7=  document.getElementById('obs7').value;
+            var obs8=  document.getElementById('obs8').value
+             var obs9=  document.getElementById('obs9').value;
+              var obs10=  document.getElementById('obs10').value;
+               var DataHora= sessionStorage.getItem('DataHora')
+                var lista= sessionStorage.getItem('LIsta');
+                  var nomeImagem= sessionStorage.getItem('nomeImagem');
               
    if (!codigo| codigo ==''|!titulo| titulo==''| !lista| lista=='' | !bairro | bairro=='' | !cidade | cidade=='' |!uf |uf=='' | !tipo_Venda| tipo_Venda==''| !nome_proprietario| nome_proprietario==''| !Tel_proprietario| Tel_proprietario=='') {
      document.getElementById('lbl_IMG').style.display='none';
@@ -3210,7 +3528,30 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
       var vendidoData= document.getElementById('vendidoData').value;
       var salasM= document.getElementById('salas_metragen').value;
       var salasQ= document.getElementById('salas_quant').value;
-      
+      var img= document.getElementById('img').value;
+      var img2= document.getElementById('img2').value;
+      var img3= document.getElementById('img3').value;
+      var img4= document.getElementById('img4').value;
+      var img5= document.getElementById('img5').value;
+      var img6= document.getElementById('img6').value;
+      var img7= document.getElementById('img7').value;
+      var vd=  document.getElementById('vd').value;
+      var vd2= document.getElementById('vd2').value;
+      var vd3= document.getElementById('vd3').value;
+      var id= document.getElementById('id').value;
+      var obs2= document.getElementById('obs2').value;
+       var obs3=  document.getElementById('obs3').value;
+        var obs4=  document.getElementById('obs4').value;
+         var obs5= document.getElementById('obs5').value;
+          var obs6= document.getElementById('obs6').value;
+           var obs7=  document.getElementById('obs7').value;
+            var obs8=  document.getElementById('obs8').value
+             var obs9=  document.getElementById('obs9').value;
+              var obs10=  document.getElementById('obs10').value;
+               var DataHora= sessionStorage.getItem('DataHora')
+                var lista= sessionStorage.getItem('LIsta');
+              var nomeImagem= sessionStorage.getItem('nomeImagem');
+        
        if(!CodRetur || CodRetur==''){
              document.getElementById('codigo').style.display='block'
        }else{
