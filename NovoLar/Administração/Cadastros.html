@@ -834,7 +834,7 @@ margin: auto;
 width: 100%;
 max-width: 600px;
 min-width: 400px;
-padding-top: 30px;
+padding-top: 10px;
 padding-bottom: 150px;
 display: none;
 background-color: rgba(0, 255, 255, 0);
@@ -851,15 +851,15 @@ font-size: 13px;
 width: 100%;
 min-width: 390px;
 color: rgb(92, 2, 97);
-margin-bottom: 40px;
+margin-bottom: 20px;
 
 }
 #cad_imagem h3, #cad_videos h3{
  width: 100%;
  border: 0cap;
  border-radius: 20px;
- padding-top: 20px;
-  padding-bottom: 20px;
+ padding-top: 10px;
+  padding-bottom: 5px;
 
 }
 #cad_imagem input ,#cad_videos input{
@@ -1736,7 +1736,7 @@ border-radius: 10px;
    var fileButton = document.getElementById('files_vd');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomevd1}_VD1`);
+   var storageRef = firebase.storage().ref(`${nomevd1}_VD1.mp4`);
    mostrarAlerta3()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -1792,7 +1792,7 @@ border-radius: 10px;
    var fileButton = document.getElementById('files_vd2');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomevd2}_VD2`);
+   var storageRef = firebase.storage().ref(`${nomevd2}_VD2.mp4`);
    mostrarAlerta3()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -1848,7 +1848,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_vd3');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomevd3}_VD3`);
+   var storageRef = firebase.storage().ref(`${nomevd3}_VD3.mp4`);
    mostrarAlerta3()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -1913,7 +1913,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_img');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG}`);
+   var storageRef = firebase.storage().ref(`${nomeIMG}.jpg`);
        mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -1974,7 +1974,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    fileButton.addEventListener('change', function(e) {
         mostrarAlerta()
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG2}img2`);
+   var storageRef = firebase.storage().ref(`${nomeIMG2}img2.jpg`);
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -2032,7 +2032,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_img3');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG3}img3`);
+   var storageRef = firebase.storage().ref(`${nomeIMG3}img3.jpg`);
        mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -2093,7 +2093,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
        mostrarAlerta()
-   var storageRef = firebase.storage().ref(`${nomeIMG4}img4`);
+   var storageRef = firebase.storage().ref(`${nomeIMG4}img4.jpg`);
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -2150,7 +2150,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_img5');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG5}img5`);
+   var storageRef = firebase.storage().ref(`${nomeIMG5}img5.jpg`);
    var task = storageRef.put(file);
        mostrarAlerta()
    task.on('state_changed', function progress(snapshot) {
@@ -2209,7 +2209,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_img6');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG6}img6`);
+   var storageRef = firebase.storage().ref(`${nomeIMG6}img6.jpg`);
        mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
@@ -2267,7 +2267,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    var fileButton = document.getElementById('files_img7');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
-   var storageRef = firebase.storage().ref(`${nomeIMG7}img7`);
+   var storageRef = firebase.storage().ref(`${nomeIMG7}img7.jpg`);
    var task = storageRef.put(file);
        mostrarAlerta()
    task.on('state_changed', function progress(snapshot) {
@@ -3583,7 +3583,7 @@ document.getElementById('img7').value=''
      mostrarAlerta('click')
       
     const file = e.target.files[0];
-     const storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}`);
+     const storageRef = firebase.storage().ref(`${lista}/${titulo}-${codigo}.jpg`);
      const task = storageRef.put(file);
      task.on('state_changed', updateProgress, handleError, async () => {      
      const url_imagem = await storageRef.getDownloadURL();
