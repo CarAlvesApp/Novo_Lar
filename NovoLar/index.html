@@ -1439,6 +1439,21 @@ border: 2px solid #ffffff; /* Exemplo de personalização */
 box-shadow: 0 0 3px rgba(158, 1, 111, 0.5);
 border-radius: 10px;
 }
+#div_Mostruario{
+  width: 100%;
+  display: none;
+ padding-top:110px ;
+}
+#div_m1{
+  margin: auto;
+  max-width: 1600px;
+  min-width: 390px;
+  min-height: 60vh;
+  background-color: aqua;
+}
+#a_mostruario{
+  display: none;
+}
 
       </style>
 </head>
@@ -1452,6 +1467,12 @@ border-radius: 10px;
      <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
      <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
 </div>
+</div>
+<div id="div_Mostruario">
+  <div id="div_m1">
+  <h2>Mostruário</h2>
+  </div>
+ 
 </div>
   <div id="DivBody">
     <br>   
@@ -1508,6 +1529,11 @@ border-radius: 10px;
      </div>
 </div>
 <a id="a_click" title="a" href="#h1_destaque"> </a>
+<a id="a_mostruario" title="a" href="#lbl1_heaad"> </a>
+
+<script>
+ 
+</script>
    <script>
    function procura(){
     Swal.fire({
@@ -1811,7 +1837,14 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
        // swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
          });
          button1.addEventListener('click',function(){
-            swal(`Nova Tela`,` `,`#`);
+           
+           // document.getElementById('DivBody').style.display='none'
+           //  document.getElementById('div_Mostruario').style.display='block'
+             //document.getElementById('a_mostruario').click()
+             sessionStorage.setItem('Most_Imovel_Codigo', `${doc.Código}`)
+             window.open('Mostruário/mostruario.html')
+           //  swal(`${doc.Código}`,` `,`#`);
+             
          });
           } else{
           }
