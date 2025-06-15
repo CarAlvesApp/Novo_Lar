@@ -857,7 +857,6 @@ margin-bottom: 40px;
 #cad_imagem h3, #cad_videos h3{
  width: 100%;
  border: 0cap;
- border-top: 7px solid rgb(160, 2, 142);
  border-radius: 20px;
  padding-top: 20px;
   padding-bottom: 20px;
@@ -931,15 +930,18 @@ display: none;
    background-color: rgb(139, 0, 139);
    box-shadow: 0 1px 5px rgba(223, 1, 123, 0.664);
 }
- #cad_imagem p, #cad_videos p{
+ #cad_imagem #borda, #cad_videos #borda{
   width: 100%;
   border: 0cap;
-  border-bottom: 7px solid rgb(160, 2, 142);
+ box-shadow: 0 3px 10px rgba(12, 12, 12, 0);
+  border-bottom: 7px solid rgba(36, 35, 36, 0);
+  border-top: 3px solid rgba(32, 32, 32, 0);
   border-radius:7px;
   margin-bottom: 70px;
   border-radius: 20px;
-  padding-top: 10px;
-  padding-bottom: 30px;
+  padding: 10px;
+
+
  }
  #h4_codigo,  #h4_codigo_v{
    margin-bottom: 30px;
@@ -1462,13 +1464,16 @@ border-radius: 10px;
    </div>
    
    <div id="cad_imagem" >
-     <div id="imgs">
+ 
+     <div id="imgs">   
         <i id="sair_" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> Sair
-        <h1>Imagens</h1>
+         <h1>Imagens</h1>
+       
         <h2 id="h2_imóvel">Imovél</h2>
         <h4 id="end_edt"></h4>
         <h4 id="h4_codigo">Código</h4>  
 
+        <div id="borda">
         <h3 id="h3_img1">Imagem 01</h3>
         <input class="input_visible" id="files_img" type="file">
          <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
@@ -1476,77 +1481,76 @@ border-radius: 10px;
            <div id="myBarIMG1">10%</div>
          </div>
         <button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br> 
-       </button><br>
+       </button>
         <label for="">Texto da imagem 1 <br>
         <input id="input_edt_img" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
+       </label></div>
+      <div id="borda">
       <h3 id="h3_img2">Imagem 02</h3>
        <input  class="input_visible"  id="files_img2" type="file">
        <img id="edt_img2" src="../src/Rutimoveis img.png" alt=""onclick="img2()">
          <div id="myProgressIMG2" style="display:none">
            <div id="myBarIMG2">10%</div> </div>
             <button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           </button><br>
+           </button>
         <label for="">Texto da imagem 2 <br>
        <input id="input_edt_img2" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
+       </label> </div>
+       <div id="borda">
       <h3 id="h3_img3">Imagem 03</h3>
        <input  class="input_visible"  id="files_img3" type="file">
         <img id="edt_img3" src="../src/Rutimoveis img.png" alt=""onclick="img3()">
            <div id="myProgressIMG3" style="display:none">
            <div id="myBarIMG3">10%</div></div>
             <button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem <br>
-           </button><br>
+           </button>
          <label for="">Texto da imagem 3 <br>
         <input id="input_edt_img3" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
+       </label></div>
+     <div id="borda">
       <h3 id="h3_img4">Imagem 04</h3>
        <input  class="input_visible"  id="files_img4" type="file">
         <img id="edt_img4" src="../src/Rutimoveis img.png" alt=""onclick="img4()">
          <div id="myProgressIMG4" style="display:none">
            <div id="myBarIMG4">10%</div></div>
             <button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           </button><br>
+           </button>
            <label for="">Texto da imagem 4 <br>
         <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
-       </label><p></p>
-     <br>
+       </label></div>
+      <div id="borda">
       <h3 id="h3_img4">Imagem 05</h3>
         <input  class="input_visible"  id="files_img5" type="file">
          <img id="edt_img5" src="../src/Rutimoveis img.png" alt=""onclick="img5()">
            <div id="myProgressIMG5" style="display:none">
            <div id="myBarIMG5">10%</div></div>
             <button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           </button><br>
+           </button>
          <label for="">Texto da imagem 5 <br>
          <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
+       </label></div>
+      <div id="borda">
       <h3 id="h3_img6">Imagem 06</h3>
         <input  class="input_visible"  id="files_img6" type="file">
           <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
             <div id="myProgressIMG6" style="display:none">
            <div id="myBarIMG6">10%</div></div>
            <button onclick="img_edt6()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           </button><br>
+           </button>
           <label for="">Texto da imagem 6 <br>
          <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
-        </label><p></p>
-     <br>
+        </label></div>
+     <div id="borda">
       <h3 id="h3_img7">Imagem 07</h3>
         <input  class="input_visible"  id="files_img7" type="file">
          <img id="edt_img7" src="../src/Rutimoveis img.png" alt=""onclick="img7()">
           <div id="myProgressIMG7" style="display:none">
             <div id="myBarIMG7">10%</div></div>
              <button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
-           </button><br>
+           </button>
          <label for="">Texto da imagem 7 <br>
         <input id="input_edt_img7" type="text" placeholder="Digite texto..." >
-       </label><p></p>
-     <br>
+       </label><p></div>
     </div>
     <br><br>
      <button id='salvarIMG' onclick="salvarIMG()" >Salvar</button>
@@ -1570,7 +1574,7 @@ border-radius: 10px;
         <h2 id="h2_imóvel_v">Imovél</h2>
         <h4 id="end_edt_v"></h4>
         <h4 id="h4_codigo_v">Código</h4>  
-
+       <div id="borda">
         <h3 id="h3_vd1">Video 01</h3>
         <input class="input_visible_V" id="files_vd" type="file" accept="video/mp4"> 
         <video id="id_video"  width="640" height="360"  autoplay muted playsinline controls>
@@ -1580,11 +1584,11 @@ border-radius: 10px;
           <div id="myProgressVD1" style="display:none">
            <div id="myBarVD1">10%</div></div>
            <button onclick="vd_edt()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
-           </button><br>
+           </button>
          <label for="">Texto do vídeo 01 <br>
         <input id="input_edt_vd" type="text" placeholder="Digite texto..." >
-       </label><p></p> <br>
-
+       </label></div>
+        <div id="borda">
          <h3 id="h3_vd2">Video 02</h3>
         <input class="input_visible_V" id="files_vd2" type="file" accept="video/mp4" > 
         <video id="id_video2"  width="640" height="360" autoplay muted playsinline controls>
@@ -1594,11 +1598,11 @@ border-radius: 10px;
          <div id="myProgressVD2" style="display:none">
            <div id="myBarVD2">10%</div></div>
            <button onclick="vd_edt2()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
-           </button><br>
+           </button>
          <label for="">Texto do vídeo 02 <br>
         <input id="input_edt_vd2" type="text" placeholder="Digite texto..." >
-       </label><p></p> <br>
-
+       </label></div>
+      <div id="borda">
          <h3 id="h3_vd3">Video 03</h3>
         <input class="input_visible_V" id="files_vd3" type="file"accept="video/mp4" > 
         <video id="id_video3"   width="640" height="360" autoplay muted playsinline  controls>
@@ -1608,10 +1612,10 @@ border-radius: 10px;
            <div id="myProgressVD3" style="display:none">
             <div id="myBarVD3">10%</div></div>
                <button onclick="vd_edt3()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br>
-           </button><br>
+           </button>
          <label for="">Texto do vídeo 03 <br>
         <input id="input_edt_vd3" type="text" placeholder="Digite texto..." >
-       </label><p></p> <br>
+       </label></div>
       <br><br>
      <button id='salvarVD' onclick="salvarVD()" >Salvar</button>
       <br><br>
