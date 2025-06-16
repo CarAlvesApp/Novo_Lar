@@ -832,12 +832,23 @@ color: #910078;
 #cad_imagem, #cad_videos {
 margin: auto;
 width: 100%;
-max-width: 600px;
-min-width: 400px;
+max-width: 800px;
+min-width: 390px;
 padding-top: 10px;
 padding-bottom: 150px;
 display: none;
 background-color: rgba(0, 255, 255, 0);
+}
+#cad_imagem img, #cad_videos  video{
+  width: 100%;
+  height: auto;
+  max-width: 790px;
+  min-width: 380px;
+  max-height: 430px;
+  min-height: 250px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
 }
 #cad_imagem  #imgs, #cad_videos #vds{
 margin: auto;
@@ -876,14 +887,7 @@ margin-bottom: 20px;
  text-align: center;
  font-size: 16px;
 }
-#cad_imagem img ,#cad_videos video{
- width: 98%;
- min-width: 370px;
- padding: 3px;
- border: 2px solid black;
- border-radius: 10px;
- cursor: pointer;
-}
+
 #cad_imagem img:hover, #cad_videos video:hover{
   background-color: #910078;
    border: 2px solid rgb(226, 226, 226);
@@ -1577,7 +1581,7 @@ border-radius: 10px;
        <div id="borda">
         <h3 id="h3_vd1">Video 01</h3>
         <input class="input_visible_V" id="files_vd" type="file" accept="video/mp4"> 
-        <video id="id_video"  width="640" height="360"  autoplay muted playsinline controls>
+        <video id="id_video" autoplay muted playsinline controls>
           <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -1591,7 +1595,7 @@ border-radius: 10px;
         <div id="borda">
          <h3 id="h3_vd2">Video 02</h3>
         <input class="input_visible_V" id="files_vd2" type="file" accept="video/mp4" > 
-        <video id="id_video2"  width="640" height="360" autoplay muted playsinline controls>
+        <video id="id_video2" autoplay muted playsinline controls>
           <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -1605,7 +1609,7 @@ border-radius: 10px;
       <div id="borda">
          <h3 id="h3_vd3">Video 03</h3>
         <input class="input_visible_V" id="files_vd3" type="file"accept="video/mp4" > 
-        <video id="id_video3"   width="640" height="360" autoplay muted playsinline  controls>
+        <video id="id_video3"  autoplay muted playsinline  controls>
           <source src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
