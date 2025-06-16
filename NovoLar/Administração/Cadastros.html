@@ -835,7 +835,7 @@ width: 100%;
 max-width: 800px;
 min-width: 390px;
 padding-top: 10px;
-padding-bottom: 150px;
+padding-bottom: 250px;
 display: none;
 background-color: rgba(0, 255, 255, 0);
 }
@@ -844,9 +844,9 @@ background-color: rgba(0, 255, 255, 0);
   height: auto;
   max-width: 790px;
   min-width: 380px;
-  max-height: 430px;
+  max-height: 460px;
   min-height: 250px;
-  border: 2px solid black;
+  border: 2px solid rgb(105, 0, 109);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -880,7 +880,7 @@ margin-bottom: 20px;
  cursor: pointer;
  background-color: rgb(255, 255, 255);
  border-color: 1px rgb(226, 226, 226);
- color: rgb(21, 21, 21);
+  box-shadow: 0 3px 7px rgba(29, 29, 29, 0);
  border-radius: 5px;
  margin-bottom: 10px;
  margin-top: 3px;
@@ -889,50 +889,53 @@ margin-bottom: 20px;
 }
 
 #cad_imagem img:hover, #cad_videos video:hover{
-  background-color: #910078;
-   border: 2px solid rgb(226, 226, 226);
+  background-color: #910078; 
+ box-shadow: 0 3px 7px rgba(29, 29, 29, 0);
+  border: 2px solid rgb(0, 0, 0);
 }
 .input_visible,.input_visible_V{
 display: none;
 }
 #cad_imagem button ,#cad_videos button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+ align-items: center;
+ justify-content: center;
  width: 100%;
  font-size: 14px;
- background-color: rgb(255, 255, 255);
- color: rgb(26, 26, 26);
+  border-color: rgb(184, 158, 179);
+ background-color: rgb(105, 1, 109);
+ box-shadow: 0 3px 7px rgba(255, 255, 255, 0.856);
+ color: rgb(252, 252, 252);
  cursor: pointer;
  font-weight: bold;
  text-align: center center;
- border: 2px solid  rgb(58, 58, 58);
  border-radius: 7px;
  padding: 3px 0px 3px 0px;       
 }
 #cad_imagem  #salvarIMG, #cad_videos  #salvarVD{
   width: 80%;
  font-size: 18px;
- background-color: rgb(78, 0, 78);
+  background-color: rgb(105, 1, 109);
  color: rgb(255, 255, 255);
  cursor: pointer;
  font-weight: bold;
  text-align: center center;
  border-color: rgb(156, 131, 152);
- box-shadow: 0 3px 7px rgba(29, 29, 29, 0.767);
+ box-shadow: 0 3px 7px rgba(44, 44, 44, 0.815);
  border-radius: 10px;
  padding: 15px 0px 15px 0px;   
  margin-left: 10%;
 }
 #cad_imagem i, #cad_videos i{
- font-size: 40px;
- margin-bottom: 10px;
+ font-size: 28px;
  margin-right: 10px;
+ margin-bottom: 5px;
+ margin-top: 5px;
 }
 #cad_imagem button:hover,  #cad_imagem #salvarIMG:hover, #cad_videos #salvarVD:hover, #cad_videos button:hover{
    color: rgb(255, 255, 255);
-   background-color: rgb(139, 0, 139);
-   box-shadow: 0 1px 5px rgba(223, 1, 123, 0.664);
+   background-color: rgb(185, 0, 185);
+   box-shadow: 0 1px 5px rgba(223, 1, 205, 0.664);
 }
  #cad_imagem #borda, #cad_videos #borda{
   width: 100%;
@@ -943,9 +946,6 @@ display: none;
   border-radius:7px;
   margin-bottom: 30px;
   border-radius: 20px;
-
-
-
  }
  #h4_codigo,  #h4_codigo_v{
    margin-bottom: 30px;
@@ -1581,7 +1581,7 @@ border-radius: 10px;
        <div id="borda">
         <h3 id="h3_vd1">Video 01</h3>
         <input class="input_visible_V" id="files_vd" type="file" accept="video/mp4"> 
-        <video id="id_video" autoplay muted playsinline controls>
+        <video id="id_video"  muted playsinline controls>
           <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -1595,7 +1595,7 @@ border-radius: 10px;
         <div id="borda">
          <h3 id="h3_vd2">Video 02</h3>
         <input class="input_visible_V" id="files_vd2" type="file" accept="video/mp4" > 
-        <video id="id_video2" autoplay muted playsinline controls>
+        <video id="id_video2"  muted playsinline controls>
           <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
@@ -1609,7 +1609,7 @@ border-radius: 10px;
       <div id="borda">
          <h3 id="h3_vd3">Video 03</h3>
         <input class="input_visible_V" id="files_vd3" type="file"accept="video/mp4" > 
-        <video id="id_video3"  autoplay muted playsinline  controls>
+        <video id="id_video3" muted playsinline  controls>
           <source src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
           Seu navegador não suporta a tag de vídeo.
         </video>
