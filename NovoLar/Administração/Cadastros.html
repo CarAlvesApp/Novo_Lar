@@ -335,9 +335,16 @@ padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 5px;
-  border-bottom: 3px solid rgba(126, 125, 125, 0.363);
-  background-color: rgb(255, 255, 255);       
+  margin-top: 10px;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.378);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 5px;   
+  cursor: pointer;    
+ }
+ #listaid:hover{
+  background-color: rgb(80, 2, 69);
+  color: #ffffff;
  }
   #divList h2{ 
     width: 95%;
@@ -2875,6 +2882,7 @@ document.getElementById('img7').value=''
  </script>
  <script>
  function Pesquisador(){
+ sairlista('click')
                document.getElementById('cad_imagem').style.display='none'
     Swal.fire({
       title: `Pequisar <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> `,
@@ -3096,11 +3104,7 @@ document.getElementById('img7').value=''
          lista.appendChild(maylist)               
          Swal.fire(`(${itens}) Imóveis encontrados`,'','success')
          sessionStorage.setItem('itens',`${itens}`)
-         img.addEventListener('click', function(){
-           //swal(`${doc.Titulo}`,``,`${doc.IMG}`)
-              window.open(doc.IMG,'_blank')
-         });
-         button.addEventListener('click', function(){
+         maylist.addEventListener('click', function(){
          sessionStorage.setItem('ID_imovel',`${doc.Código}`)
          sessionStorage.setItem('EdtTela','tela')
          document.getElementById('salas_quant').value= doc.SalasQ;
