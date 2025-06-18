@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
+
+    <meta property="og:title" content="Meu Site Incrível">
+    <meta property="og:description" content="Confira informações interessantes sobre meu site!">
+    <meta property="og:image" content="https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html/favicon.png">
+    <meta property="og:url" content="https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html">
+
+    <meta property="og:type" content="website">
    
-     <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
+     <link rel="shortcut icon" href="https://caralvesapp.github.io/Novo_Lar/NovoLar/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -17,6 +24,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <style>
  *{
@@ -246,11 +254,27 @@
  padding: 10px;
  cursor: pointer;
  font-size: 14px;
- margin-bottom: 55px;
+ margin-bottom: 30px;
  margin-left: 15px;
   border: 1px solid rgb(160, 160, 160);
   min-width: 370px;
  }
+ #label6{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #5a014b;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  border: 2px solid rgb(73, 1, 43);
+  background-color: rgb(255, 255, 255);
+ }
+  #label6:hover{
+    color: #ffffff;
+    background-color: #570142;
+
+  }
   #div4 button:hover{
    background-color: #ad04a5;
    color: #ffffff;
@@ -1730,6 +1754,7 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
    var label3=document.createElement('label');
    var label4=document.createElement('label');
    var label5=document.createElement('label');
+   var label6=document.createElement('label');
    var button1=document.createElement('button');
    var br1=document.createElement('br');
    var br2=document.createElement('br');
@@ -1739,10 +1764,11 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
    var br6=document.createElement('br');
    var br7=document.createElement('br');
    var br8=document.createElement('br');
+   var br9=document.createElement('br');
    var p1=document.createElement('p')
-    var p2=document.createElement('p')
-    p1.id='p1_'
-    p2.id='p2_'
+   var p2=document.createElement('p')
+   p1.id='p1_'
+   p2.id='p2_'
    button1.id='butoon1';
    div1.id='div1';
    div2.id='div2';
@@ -1755,9 +1781,10 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
    label3.id='label3';
    label4.id='label4';
    label5.id='label5';
+   label6.id='label6';
    button1.textContent='Ver, Mais';
    img.src=`${doc.IMG}`
-    if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
+   if(!doc.Tipo_Venda||doc.Tipo_Venda==''){
          label.textContent=`#Meu novo lar`;
     } else{
        label.textContent=`Disponivel para ${resp1}`;
@@ -1786,26 +1813,28 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
    } else{
        var desconto=`Avista - ${doc.Desconto}% de desconto!`;
    }
-   div3.appendChild(img);
-   div3.appendChild(label1);
-   div3.appendChild(br1);
-   div3.appendChild(label2);
-   div3.appendChild(br2);
-   div3.appendChild(label3);
-   div3.appendChild(br3);        
-   div3.appendChild(p2);
-   p2.appendChild(label5);
-   div3.appendChild(p1);
-   p1.appendChild(label4);
-   div2.appendChild(br7);
-   div2.appendChild(label);
-   div1.appendChild(div3);
-   div1.appendChild(div2);
-   div1.appendChild(br4);
-   div1.appendChild(br8);
-   div4.appendChild(button1);
-   div1.appendChild(div4);
-   list1.appendChild(div1)
+    label6.className='fa-solid fa-share-nodes';
+    div3.appendChild(img);
+    div3.appendChild(label1);
+    div3.appendChild(br1);
+    div3.appendChild(label2);
+    div3.appendChild(br2);
+    div3.appendChild(label3);
+    div3.appendChild(br3);        
+    div3.appendChild(p2);
+    p2.appendChild(label5);
+    div3.appendChild(p1);
+    p1.appendChild(label4);
+    div2.appendChild(br4);
+    div2.appendChild(label);
+    div1.appendChild(div3);
+    div1.appendChild(div2);
+    div1.appendChild(br5);
+    div4.appendChild(button1);
+    div4.appendChild(label6);
+    div1.appendChild(div4);
+    list1.appendChild(div1)
+    div1.appendChild(br9);
   sessionStorage.setItem('teglist',doc.Titulo)
  if(list!='Lista Destaques'){
      document.getElementById('alist').click()
@@ -1815,6 +1844,26 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
   var iten1= document.getElementById('itens_');
   iten1.innerHTML= `Total de imóveis ( ${itens} )`
   sessionStorage.setItem('iten',`${itens}`)
+  label6.addEventListener('click',function(){
+
+var resp= doc.IMG
+  
+    var url = "https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html";
+var img = `${doc.Titulo}: ${resp}`;
+var whatsappMessage = `Confira estes imóveis incríveis 🏡: ${url} \n\n/📷  ${img}`;
+
+// Codificando a mensagem antes de gerar o link
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+
+window.open(whatsappLink, "_blank");
+  })
+  
+
+
+
+  
+
+
   img.addEventListener('click',function(){
      Swal.fire({
        title: `Ver Imagem? `,
@@ -1846,7 +1895,6 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
     })
    
     });
-         
        // swal(`${doc.Titulo}`,` Bairro ${doc.Bairro}\nCidade de ${doc.Cidade} - ${doc.UF}\n${valorCompra}\n${desconto}\n${valorLocação}\n\n\nCódigo do Imóvel:\n (  ${doc.Código}  )\n--------------------------`,`${doc.IMG}`);
          });
          button1.addEventListener('click',function(){
