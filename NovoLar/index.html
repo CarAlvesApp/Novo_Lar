@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
-   <link rel="shortcut icon" href="https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
     <meta property="og:title" content="Rutimóveis e seu novo Lar!">
     <meta property="og:description" content="Confira imóveis incriveis a baixo custo do imovel!">
     <meta property="og:image" content="https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html/favicon.png">
@@ -1847,7 +1847,8 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
   
     var url = "https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html";
 var img = `${doc.Titulo}: ${doc.IMG}`;
-var whatsappMessage = `Rutimóveis 🏡: ${url} \n\n/📷  ${img}\n\nCódigo do Imóvel: ${doc.Código}`;
+var cod=`${doc.Código}`
+var whatsappMessage = `Rutimóveis 🏡: ${url} \n\n/📷  ${img} \n\n Código do Imóvel: ${cod}`;
 
 // Codificando a mensagem antes de gerar o link
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
