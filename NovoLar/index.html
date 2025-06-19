@@ -1841,18 +1841,12 @@ if(resp1 == comp_alug | comp_alug== '' || resp1=='Compra ou Locação'){
  var url = "https://caralvesapp.github.io/Novo_Lar/NovoLar/index.html";
 var img = `${doc.Titulo}: ${doc.IMG}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Rutimóveis 🏡: ${url}\n\n📷 ${img} \n\n Código do Imóvel: ${cod}`;
+var whatsappMessage =`\n\n📷 ${img} \n\n Código do Imóvel: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 window.open(whatsappLink, "_blank");
   })
   
-
-
-
-  
-
-
   img.addEventListener('click',function(){
      Swal.fire({
        title: `Ver Imagem? `,
