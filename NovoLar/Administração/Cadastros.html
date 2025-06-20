@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastros Rutimóveis</title>
-    <link rel="shortcut icon" href="../src/NovoLar.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../src/lg01.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -1741,13 +1741,13 @@ border-radius: 10px;
    document.getElementById('files_vd').click(); 
    var nomevd1 = sessionStorage.getItem('nomeImagem');       
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
    var uploader = document.getElementById('uploader');
@@ -1797,13 +1797,13 @@ border-radius: 10px;
    document.getElementById('files_vd2').click(); 
    var nomevd2 = sessionStorage.getItem('nomeImagem');       
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+     apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
    var uploader = document.getElementById('uploader');
@@ -1853,13 +1853,13 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    document.getElementById('files_vd3').click(); 
    var nomevd3 = sessionStorage.getItem('nomeImagem');       
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
    var uploader = document.getElementById('uploader');
@@ -1906,24 +1906,18 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
 })
 })
   }
-
-   
-
    // Salve imagens
-
    function img_edt(){ //${lista}/${titulo}-${codigo}
-  
     document.getElementById('files_img').click(); 
-   var  nomeIMG = sessionStorage.getItem('nomeImagem'); 
-          
+   var  nomeIMG = sessionStorage.getItem('nomeImagem');  
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
 
@@ -1943,7 +1937,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    storageRef.getDownloadURL().then(function(url_imagem) {
     Swal.close()
    document.getElementById('myProgressIMG1').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -1954,7 +1947,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    if (width >= 100) {
        clearInterval(id);
        i = 0;                     
-      
          document.getElementById('edt_img1').src=url_imagem  
         document.getElementById('img').value=`${url_imagem}`                
        setTimeout(function(){
@@ -1974,16 +1966,15 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  };
    function img_edt2(){
    document.getElementById('files_img2').click(); 
-   var  nomeIMG2 = sessionStorage.getItem('nomeImagem'); 
-          
+   var  nomeIMG2 = sessionStorage.getItem('nomeImagem');          
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
 
@@ -2002,7 +1993,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    storageRef.getDownloadURL().then(function(url_imagem) {
     Swal.close()
    document.getElementById('myProgressIMG2').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -2012,8 +2002,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
       function frame() {
    if (width >= 100) {
        clearInterval(id);
-       i = 0;                     
-      
+       i = 0;                       
          document.getElementById('edt_img2').src=url_imagem  
         document.getElementById('img2').value=`${url_imagem}`                
        setTimeout(function(){
@@ -2033,28 +2022,25 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  };
    function img_edt3(){
    document.getElementById('files_img3').click(); 
-    var  nomeIMG3 = sessionStorage.getItem('nomeImagem'); 
-          
+    var  nomeIMG3 = sessionStorage.getItem('nomeImagem');         
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
-
    var uploader = document.getElementById('uploader');
    var fileButton = document.getElementById('files_img3');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG3}img3.jpg`);
-       mostrarAlerta()
+   mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
-
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
    uploader.value = percentage;
    }, function error(err) {
@@ -2062,7 +2048,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    storageRef.getDownloadURL().then(function(url_imagem) {
     Swal.close()
    document.getElementById('myProgressIMG3').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -2073,8 +2058,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    if (width >= 100) {
        clearInterval(id);
        i = 0;                     
-      
-         document.getElementById('edt_img3').src=url_imagem  
+        document.getElementById('edt_img3').src=url_imagem  
         document.getElementById('img3').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG3').style.display = 'none'
@@ -2089,23 +2073,20 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  })
 })
 })
-      
  };
-   function img_edt4(){
-   document.getElementById('files_img4').click(); 
-     var  nomeIMG4 = sessionStorage.getItem('nomeImagem'); 
-          
-   var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    function img_edt4(){
+    document.getElementById('files_img4').click(); 
+    var  nomeIMG4 = sessionStorage.getItem('nomeImagem'); 
+    var firebaseConfigure= {
+     apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
-
    var uploader = document.getElementById('uploader');
    var fileButton = document.getElementById('files_img4');
    fileButton.addEventListener('change', function(e) {
@@ -2121,7 +2102,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    storageRef.getDownloadURL().then(function(url_imagem) {
     Swal.close()
    document.getElementById('myProgressIMG4').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -2132,9 +2112,8 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    if (width >= 100) {
        clearInterval(id);
        i = 0;                     
-      
-         document.getElementById('edt_img4').src=url_imagem  
-        document.getElementById('img4').value=`${url_imagem}`                
+      document.getElementById('edt_img4').src=url_imagem  
+      document.getElementById('img4').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG4').style.display = 'none'
          },1000)
@@ -2151,16 +2130,15 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  };
    function img_edt5(){
    document.getElementById('files_img5').click(); 
-     var  nomeIMG5 = sessionStorage.getItem('nomeImagem'); 
-          
+   var  nomeIMG5 = sessionStorage.getItem('nomeImagem');      
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
 
@@ -2210,25 +2188,23 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  };
    function img_edt6(){
    document.getElementById('files_img6').click(); 
-    var  nomeIMG6 = sessionStorage.getItem('nomeImagem'); 
-          
+   var  nomeIMG6 = sessionStorage.getItem('nomeImagem');  
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
-
    var uploader = document.getElementById('uploader');
    var fileButton = document.getElementById('files_img6');
    fileButton.addEventListener('change', function(e) {
    var file = e.target.files[0];
    var storageRef = firebase.storage().ref(`${nomeIMG6}img6.jpg`);
-       mostrarAlerta()
+   mostrarAlerta()
    var task = storageRef.put(file);
    task.on('state_changed', function progress(snapshot) {
    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -2236,9 +2212,8 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    }, function error(err) {
    }, function complete() {
    storageRef.getDownloadURL().then(function(url_imagem) {
-    Swal.close()
+  Swal.close()
    document.getElementById('myProgressIMG6').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -2249,8 +2224,7 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    if (width >= 100) {
        clearInterval(id);
        i = 0;                     
-      
-         document.getElementById('edt_img6').src=url_imagem  
+       document.getElementById('edt_img6').src=url_imagem  
         document.getElementById('img6').value=`${url_imagem}`                
        setTimeout(function(){
        document.getElementById('myProgressIMG6').style.display = 'none'
@@ -2268,19 +2242,17 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
  };
    function img_edt7(){
    document.getElementById('files_img7').click(); 
-   var  nomeIMG7 = sessionStorage.getItem('nomeImagem'); 
-          
+   var  nomeIMG7 = sessionStorage.getItem('nomeImagem');    
    var firebaseConfigure= {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };
    firebase.initializeApp(firebaseConfigure); 
-
    var uploader = document.getElementById('uploader');
    var fileButton = document.getElementById('files_img7');
    fileButton.addEventListener('change', function(e) {
@@ -2296,7 +2268,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    storageRef.getDownloadURL().then(function(url_imagem) {
     Swal.close()
    document.getElementById('myProgressIMG7').style.display = 'block'
-
   var i = 0;
   if (i == 0) {
       i = 1;
@@ -2307,7 +2278,6 @@ function vd_edt3(){ //${lista}/${titulo}-${codigo}
    if (width >= 100) {
        clearInterval(id);
        i = 0;                     
-      
          document.getElementById('edt_img7').src=url_imagem  
         document.getElementById('img7').value=`${url_imagem}`                
        setTimeout(function(){
@@ -2377,13 +2347,13 @@ var titulo_V= document.getElementById('h2_imóvel_v');
 var end_V= document.getElementById('end_edt_v');
 
  const firebaseConfig= {
- apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
- authDomain: "game-dbv.firebaseapp.com",
- projectId: "game-dbv",
- storageBucket: "game-dbv.appspot.com",
- messagingSenderId: "118219151865",
- appId: "1:118219151865:web:b6414d5255233264268528",
- measurementId: "G-K17DLDBYGR"
+ apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfig); 
 const dbc = firebase.firestore();
@@ -2495,8 +2465,6 @@ dbc.collection('Pesquisar').doc(`${id_imovel}`).get().then((doc) => {
    }else{
       document.getElementById('id_video3').src=doc.VD3;
    };
-    
-  
   if(!doc.IMG || doc.IMG=='' || doc.IMG=='undefined'){
      document.getElementById('edt_img1').src='../src/Rutimoveis img.png';
       document.getElementById('img').value='../src/Rutimoveis img.png';
@@ -2694,13 +2662,13 @@ document.getElementById('img7').value=''
     var itens= 0
     var pesquisa= sessionStorage.getItem('Pesquisa')
     const firebaseConfigure = {
-    apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-    authDomain: "game-dbv.firebaseapp.com",
-    projectId: "game-dbv",
-    storageBucket: "game-dbv.appspot.com",
-    messagingSenderId: "118219151865",
-    appId: "1:118219151865:web:b6414d5255233264268528",
-    measurementId: "G-K17DLDBYGR"
+    apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
   };
    firebase.initializeApp(firebaseConfigure); 
    const dbP = firebase.firestore();
@@ -3056,13 +3024,13 @@ document.getElementById('img7').value=''
                          h2li.innerText=`${respList}`;
 
   const firebaseConfig = {
-  apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-  authDomain: "game-dbv.firebaseapp.com",
-  projectId: "game-dbv",
-  storageBucket: "game-dbv.appspot.com",
-  messagingSenderId: "118219151865",
-  appId: "1:118219151865:web:b6414d5255233264268528",
-  measurementId: "G-K17DLDBYGR"
+  apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
   };
    firebase.initializeApp(firebaseConfig);  
  const db = firebase.firestore();
@@ -3494,13 +3462,13 @@ document.getElementById('img7').value=''
      document.getElementById('vendidoData').value=''
 }
  var firebaseConfigs = {
-   apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
-   authDomain: "game-dbv.firebaseapp.com",
-   projectId: "game-dbv",
-   storageBucket: "game-dbv.appspot.com",
-   messagingSenderId: "118219151865",
-   appId: "1:118219151865:web:b6414d5255233264268528",
-   measurementId: "G-K17DLDBYGR"
+  apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
    };  
      firebase.initializeApp(firebaseConfigs); 
       var data=  sessionStorage.getItem('data')
@@ -3812,13 +3780,13 @@ document.getElementById('vendidoData').value=''
 document.getElementById('vendido').value='Não'
 }
 var firebaseConfigures = {
- apiKey: "AIzaSyCV5kHc_GG_eMfQJfSVscQYvaGIl4Auj3k",
- authDomain: "game-dbv.firebaseapp.com",
- projectId: "game-dbv",
- storageBucket: "game-dbv.appspot.com",
- messagingSenderId: "118219151865",
- appId: "1:118219151865:web:b6414d5255233264268528",
- measurementId: "G-K17DLDBYGR"
+  apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+    authDomain: "rutimoveis-bc114.firebaseapp.com",
+    projectId: "rutimoveis-bc114",
+    storageBucket: "rutimoveis-bc114.firebasestorage.app",
+    messagingSenderId: "457038463744",
+    appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+    measurementId: "G-K330CH24NV"
 };     
 
 firebase.initializeApp(firebaseConfigures);  
