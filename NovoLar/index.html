@@ -19,10 +19,12 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="module" src="index.js"></script>
 
 <style>
  *{
@@ -2472,6 +2474,51 @@ listaP.innerHTML = '';
 document.getElementById('body1').style.display='block'
 document.getElementById('divListaPesquisa').style.display='none'
 }
+  </script>
+  <script>
+    var firebaseConfig = {
+  apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+
+firebase.initializeApp(firebaseConfig);
+var messaging = firebase.messaging();
+  navigator.serviceWorker.register('firebase-messaging-sw.js')
+      .then((registration) => {
+        messaging.useServiceWorker(registration);
+
+        // Solicita permissão ao usuário
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            messaging.getToken({
+              vapidKey: "BJbThSc9Otg3Gri-BLVBMwCv5Y0ryLwAva2imox0cAqOfg9pCS9VU-W1hGZTmpatP4wuN8y9tlqNZhC8gNUAKZU"
+            }).then((currentToken) => {
+              if (currentToken) {
+                console.log("Token:", currentToken);
+                alert("Token: " + currentToken);
+              } else {
+                console.warn("Token não disponível.");
+              }
+            }).catch((err) => {
+              console.error("Erro ao buscar token:", err);
+            });
+          } else {
+            console.warn("Permissão de notificação negada");
+          }
+        });
+      });
+
+    // Recebe mensagens quando a aba está ativa
+    messaging.onMessage((payload) => {
+      console.log("Mensagem recebida:", payload);
+      alert("Mensagem: " + payload.notification.title + "\n" + payload.notification.body);
+
+    })
   </script>
     
 </body>
