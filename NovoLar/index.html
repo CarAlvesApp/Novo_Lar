@@ -2488,7 +2488,7 @@ measurementId: "G-K330CH24NV"
 
 firebase.initializeApp(firebaseConfig);
 var messaging = firebase.messaging();
-  navigator.serviceWorker.register('firebase-messaging-sw.js')
+  navigator.serviceWorker.register('https://caralvesapp.github.io/Novo_Lar/NovoLar/firebase-messaging-sw.js')
       .then((registration) => {
         messaging.useServiceWorker(registration);
 
