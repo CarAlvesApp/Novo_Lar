@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
-   <link rel="shortcut icon" href="src/NovoLar.png" type="image/x-icon">
+   <link rel="shortcut icon" href="src/lg01.png" type="image/x-icon">
   
     <meta property="og:title" content="Rutimóveis e seu novo Lar!">
     <meta property="og:description" content="Confira imóveis incriveis a baixo custo do imovel!">
@@ -114,7 +114,7 @@
 }
 #heaad_btns{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding-bottom: 4px;
   padding-top: 4px;
@@ -133,9 +133,10 @@
  #heaad_btns button, #heaad_btns a{
  position: relative;
  border: none;
- font-size: 16px;
+ font-size: 14px;
  cursor: pointer;
  overflow: visible;
+ margin-left: 10px;
 }      
 #heaad_btns button::after, #heaad_btns a::after {
  content: "";
@@ -153,16 +154,12 @@
 #heaad_btns button:hover , #heaad_btns a:hover{
  color:  #ffffff;
 }
-#heaad_btns img{
- width: 40px;
- margin-top: 7px;
- margin-left: 5px;
-}
+
 #DivBody{
  width: 100%;
  min-height: 90vh;
  background-color: rgba(240, 247, 255, 0);
- padding-top: 85px;
+ padding-top: 25px;
  display: flex;
  flex-direction: column;
  align-items: stretch;
@@ -894,6 +891,15 @@ color: rgb(65, 64, 64);
 
 }
 @media (max-width: 1400px) {
+   #DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #img_whats{
 width: 52px;
 margin-left: 94%;
@@ -962,6 +968,15 @@ color: rgb(65, 64, 64);
 
 }
 @media (max-width: 1200px) {
+   #DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #img_whats{
 width:52px;
 margin-left: 93%;
@@ -1040,6 +1055,15 @@ color: rgb(65, 64, 64);
 }             
 }
 @media (max-width: 900px) {
+   #DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #img_whats{
 width:50px;
 margin-left: 90%;
@@ -1120,6 +1144,15 @@ color: rgb(65, 64, 64);
 
 }
 @media (max-width: 800px) {
+#DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #img_whats{
 width: 50px;
 margin-left: 89%;
@@ -1195,6 +1228,15 @@ margin-left: 5px;
 }
 }
 @media (max-width: 700px) {
+  #DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #divListaPesquisa  #listaPesquisa img{
 width: 400px;
 min-width: 400px;
@@ -1202,6 +1244,15 @@ min-width: 400px;
 }}
 
 @media (max-width: 600px) {
+#DivBody{
+width: 100%;
+min-height: 90vh;
+background-color: rgba(240, 247, 255, 0);
+padding-top: 63px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+}
 #img_whats{
 width: 48px;
 margin-left: 85%;
@@ -1313,7 +1364,6 @@ color: rgb(65, 64, 64);
 
 }
 @media (max-width: 400px) {
-
 #img_whats{
 width: 48px;
 margin-left: 83%;
@@ -1493,7 +1543,7 @@ border-radius: 10px;
    <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='whatsapp()'>WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i></label>
 </div>
     <div id="heaad_btns">
-     <div id="logoHeaad"> <img src="src/Logo novo lar 01 PNG.png" alt="" ></div> <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
+    <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
      <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
 </div>
 </div>
